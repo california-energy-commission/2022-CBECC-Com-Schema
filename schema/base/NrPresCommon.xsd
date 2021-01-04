@@ -6,7 +6,7 @@
    xmlns:dtyp="http://www.lmonte.com/besm/dtyp"
    xmlns:hvac="http://www.lmonte.com/besm/hvac"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2019.0.006">
+   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2019.0.008">
    <xsd:import namespace="http://www.lmonte.com/besm/hvac" schemaLocation="NrPresHvac.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/dtyp" schemaLocation="DataTypes.xsd"/>
    <xsd:simpleType name="AdditionTotalConditionedFloorArea">
@@ -993,6 +993,27 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
          <xsd:enumeration value="Type2HeatSteam"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="LaboratoryFumeHoodLength">
+      <xsd:annotation>
+         <xsd:documentation>  Units: ft</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LaboratoryFumeHoodVerticalAutomaticSashControlFraction">
+      <xsd:annotation>
+         <xsd:documentation>  Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LaboratoryFumeHoodVerticalSashExhaustFlow">
+      <xsd:annotation>
+         <xsd:documentation>  Units: ft3 per min</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="LampType">
       <xsd:annotation>
          <xsd:documentation>Enumeration type for determining luminaire heat gain distribution</xsd:documentation>
@@ -1965,6 +1986,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="Healthcare">Healthcare</dtyp:displayterm>
             <dtyp:displayterm value="HighRiseResidential">High-Rise Residential</dtyp:displayterm>
             <dtyp:displayterm value="HotelMotel">Hotel/Motel</dtyp:displayterm>
+            <dtyp:displayterm value="MixedOccupancy">Mixed Occupancy</dtyp:displayterm>
             <dtyp:displayterm value="Nonresidential">Nonresidential</dtyp:displayterm>
             <dtyp:displayterm value="OtherOccupancy">Other</dtyp:displayterm>
             <dtyp:displayterm value="RelocableSchoolBuildingAllZones">Relocable Public School Building for use in all climate zones Occupancy: E</dtyp:displayterm>
@@ -1977,6 +1999,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="Healthcare"/>
          <xsd:enumeration value="HighRiseResidential"/>
          <xsd:enumeration value="HotelMotel"/>
+         <xsd:enumeration value="MixedOccupancy"/>
          <xsd:enumeration value="Nonresidential"/>
          <xsd:enumeration value="OtherOccupancy"/>
          <xsd:enumeration value="RelocableSchoolBuildingAllZones"/>
