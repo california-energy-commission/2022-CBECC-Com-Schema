@@ -1,35 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema
-   targetNamespace="http://www.lmonte.com/besm/bld"
-   xmlns:d="http://www.lmonte.com/besm/d"
-   xmlns:bld="http://www.lmonte.com/besm/bld"
-   xmlns:env="http://www.lmonte.com/besm/env"
-   xmlns:lit="http://www.lmonte.com/besm/lit"
-   xmlns:hvac="http://www.lmonte.com/besm/hvac"
-   xmlns:com="http://www.lmonte.com/besm/com"
-   xmlns:dtyp="http://www.lmonte.com/besm/dtyp"
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2019.0.006">
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/bld" version="2019.0.009" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:env="http://www.lmonte.com/besm/env" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:lit="http://www.lmonte.com/besm/lit" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="NrPresCommon.xsd"/>
-   <xsd:import namespace="http://www.lmonte.com/besm/env" schemaLocation="NrPresEnvelope.xsd"/>
-   <xsd:import namespace="http://www.lmonte.com/besm/lit" schemaLocation="NrPresLighting.xsd"/>
-   <xsd:import namespace="http://www.lmonte.com/besm/hvac" schemaLocation="NrPresHvac.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/dtyp" schemaLocation="DataTypes.xsd"/>
+   <xsd:import namespace="http://www.lmonte.com/besm/env" schemaLocation="NrPresEnvelope.xsd"/>
+   <xsd:import namespace="http://www.lmonte.com/besm/hvac" schemaLocation="NrPresHvac.xsd"/>
+   <xsd:import namespace="http://www.lmonte.com/besm/lit" schemaLocation="NrPresLighting.xsd"/>
    <xsd:simpleType name="BuildingAdditionalConditionedFloorArea">
       <xsd:annotation>
          <xsd:documentation>Conditioned floor area for an addition to the Building.  Units: ft2</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="BuildingAdditionalSlabArea">
       <xsd:annotation>
          <xsd:documentation>Floor area for a slab addition to the Building.  Units: ft2</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ControlSystemType">
       <xsd:annotation>
@@ -57,15 +45,13 @@
             <dtyp:displayterm>Existing Conditioned Floor Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="HighRiseResidentialLivingUnitCount">
       <xsd:annotation>
          <xsd:documentation>The total number of high-rise residential or hotel/motel living units in the building  Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:IntegerNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="NewAdditionConditionedFloorArea">
       <xsd:annotation>
@@ -75,15 +61,13 @@
             <dtyp:displayterm>Total Conditioned Floor Area New Construction/Addition</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="NonresidentialFloorArea">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SiteTotalGrossFloorArea">
       <xsd:annotation>
@@ -93,8 +77,7 @@
             <dtyp:displayterm>Site Total Gross Floor Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SiteTotalParkingArea">
       <xsd:annotation>
@@ -104,7 +87,6 @@
             <dtyp:displayterm>Site Total Parking Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
 </xsd:schema>

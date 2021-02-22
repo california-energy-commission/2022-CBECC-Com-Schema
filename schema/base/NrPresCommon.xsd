@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema
-   targetNamespace="http://www.lmonte.com/besm/com"
-   xmlns:d="http://www.lmonte.com/besm/d"
-   xmlns:com="http://www.lmonte.com/besm/com"
-   xmlns:dtyp="http://www.lmonte.com/besm/dtyp"
-   xmlns:hvac="http://www.lmonte.com/besm/hvac"
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2019.0.008">
-   <xsd:import namespace="http://www.lmonte.com/besm/hvac" schemaLocation="NrPresHvac.xsd"/>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/com" version="2019.0.009" xmlns:com="http://www.lmonte.com/besm/com" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <xsd:import namespace="http://www.lmonte.com/besm/dtyp" schemaLocation="DataTypes.xsd"/>
+   <xsd:import namespace="http://www.lmonte.com/besm/hvac" schemaLocation="NrPresHvac.xsd"/>
    <xsd:simpleType name="AdditionTotalConditionedFloorArea">
       <xsd:annotation>
          <xsd:documentation>All conditioned floor area in an addition project.  It can be derived from all conditioned area in the Zones  Units: ft2</xsd:documentation>
@@ -17,15 +10,13 @@
             <dtyp:displayterm>Addition Total Conditioned Floor Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="AddressFull">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="AdjacentSpaceName">
       <xsd:annotation>
@@ -35,8 +26,7 @@
             <dtyp:displayterm>Adjacent Space Name</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:ObjectNamePermissive">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
    <xsd:simpleType name="AnnualWeatherFile">
       <xsd:annotation>
@@ -46,8 +36,7 @@
             <dtyp:displayterm>Annual Weather File</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:token">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="AssemblyContext">
       <xsd:annotation>
@@ -69,17 +58,15 @@
    </xsd:simpleType>
    <xsd:simpleType name="BedroomCount">
       <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
+         <xsd:documentation>Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:ItemCount">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:ItemCount"/>
    </xsd:simpleType>
    <xsd:simpleType name="BuildingStoryName">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:ObjectNamePermissive">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
    <xsd:simpleType name="BuildingTerrain">
       <xsd:annotation>
@@ -107,14 +94,176 @@
       <xsd:annotation>
          <xsd:documentation>This token uniquely identifies a whole building, developed by the  California Energy Commission.</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CBC_OccupancyGroup">
+      <xsd:annotation>
+         <xsd:documentation>One of the occupancy categories defined by the California Building Code (CBC).</xsd:documentation>
+         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>CBC Occupancy Group</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="GroupAssembly">Group A Assembly</dtyp:displayterm>
+            <dtyp:displayterm value="GroupBusiness">Group B Business</dtyp:displayterm>
+            <dtyp:displayterm value="GroupEducational">Group E Educational</dtyp:displayterm>
+            <dtyp:displayterm value="GroupFactory">Group F Factory/Industrial</dtyp:displayterm>
+            <dtyp:displayterm value="GroupHighHazard">Group H HighHazard</dtyp:displayterm>
+            <dtyp:displayterm value="GroupMercantile">Group M Mercantile</dtyp:displayterm>
+            <dtyp:displayterm value="GroupResidentialR1">Group R Residential:  R-1</dtyp:displayterm>
+            <dtyp:displayterm value="GroupResidentialR2">Group R Residential:  R-2</dtyp:displayterm>
+            <dtyp:displayterm value="GroupResidentialR3">Group R Residential:  R-3</dtyp:displayterm>
+            <dtyp:displayterm value="GroupStorage">Group S Storage</dtyp:displayterm>
+            <dtyp:displayterm value="GroupUtility">Group U Utility</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="GroupAssembly"/>
+         <xsd:enumeration value="GroupBusiness"/>
+         <xsd:enumeration value="GroupEducational"/>
+         <xsd:enumeration value="GroupFactory"/>
+         <xsd:enumeration value="GroupHighHazard"/>
+         <xsd:enumeration value="GroupMercantile"/>
+         <xsd:enumeration value="GroupResidentialR1"/>
+         <xsd:enumeration value="GroupResidentialR2"/>
+         <xsd:enumeration value="GroupResidentialR3"/>
+         <xsd:enumeration value="GroupStorage"/>
+         <xsd:enumeration value="GroupUtility"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="CFactor">
+      <xsd:annotation>
+         <xsd:documentation>A measurement of thermal conductivity of a material and is used in the JA 4 tables for masonry and concrete walls  Units: Btu per h ft2 F</xsd:documentation>
+         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>CFactor</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="CaliforniaCounty">
       <xsd:annotation>
          <xsd:documentation>CaliforniaCounty is one of the counties in the state of California and is the base property for geograpic data as well as for  specific applications such as the climate zone county.</xsd:documentation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Alameda">Alameda</dtyp:displayterm>
+            <dtyp:displayterm value="Alpine">Alpine</dtyp:displayterm>
+            <dtyp:displayterm value="Amador">Amador</dtyp:displayterm>
+            <dtyp:displayterm value="Butte">Butte</dtyp:displayterm>
+            <dtyp:displayterm value="Calaveras">Calaveras</dtyp:displayterm>
+            <dtyp:displayterm value="Colusa">Colusa</dtyp:displayterm>
+            <dtyp:displayterm value="ContraCosta">Contra Costa</dtyp:displayterm>
+            <dtyp:displayterm value="DelNorte">Del Norte</dtyp:displayterm>
+            <dtyp:displayterm value="ElDorado">El Dorado</dtyp:displayterm>
+            <dtyp:displayterm value="Fresno">Fresno</dtyp:displayterm>
+            <dtyp:displayterm value="Glenn">Glenn</dtyp:displayterm>
+            <dtyp:displayterm value="Humboldt">Humboldt</dtyp:displayterm>
+            <dtyp:displayterm value="Imperial">Imperial</dtyp:displayterm>
+            <dtyp:displayterm value="Inyo">Inyo</dtyp:displayterm>
+            <dtyp:displayterm value="Kern">Kern</dtyp:displayterm>
+            <dtyp:displayterm value="Kings">Kings</dtyp:displayterm>
+            <dtyp:displayterm value="Lake">Lake</dtyp:displayterm>
+            <dtyp:displayterm value="Lassen">Lassen</dtyp:displayterm>
+            <dtyp:displayterm value="LosAngeles">Los Angeles</dtyp:displayterm>
+            <dtyp:displayterm value="Madera">Madera</dtyp:displayterm>
+            <dtyp:displayterm value="Marin">Marin</dtyp:displayterm>
+            <dtyp:displayterm value="Mariposa">Mariposa</dtyp:displayterm>
+            <dtyp:displayterm value="Mendocino">Mendocino</dtyp:displayterm>
+            <dtyp:displayterm value="Merced">Merced</dtyp:displayterm>
+            <dtyp:displayterm value="Modoc">Modoc</dtyp:displayterm>
+            <dtyp:displayterm value="Mono">Mono</dtyp:displayterm>
+            <dtyp:displayterm value="Monterey">Monterey</dtyp:displayterm>
+            <dtyp:displayterm value="Napa">Napa</dtyp:displayterm>
+            <dtyp:displayterm value="Nevada">Nevada</dtyp:displayterm>
+            <dtyp:displayterm value="Orange">Orange</dtyp:displayterm>
+            <dtyp:displayterm value="Placer">Placer</dtyp:displayterm>
+            <dtyp:displayterm value="Plumas">Plumas</dtyp:displayterm>
+            <dtyp:displayterm value="Riverside">Riverside</dtyp:displayterm>
+            <dtyp:displayterm value="Sacramento">Sacramento</dtyp:displayterm>
+            <dtyp:displayterm value="SanBenito">San Benito</dtyp:displayterm>
+            <dtyp:displayterm value="SanBernardino">San Bernardino</dtyp:displayterm>
+            <dtyp:displayterm value="SanDiego">San Diego</dtyp:displayterm>
+            <dtyp:displayterm value="SanFrancisco">San Francisco</dtyp:displayterm>
+            <dtyp:displayterm value="SanJoaquin">San Joaquin</dtyp:displayterm>
+            <dtyp:displayterm value="SanLuisObispo">San Luis Obispo</dtyp:displayterm>
+            <dtyp:displayterm value="SanMateo">San Mateo</dtyp:displayterm>
+            <dtyp:displayterm value="SantaBarbara">Santa Barbara</dtyp:displayterm>
+            <dtyp:displayterm value="SantaClara">Santa Clara</dtyp:displayterm>
+            <dtyp:displayterm value="SantaCruz">Santa Cruz</dtyp:displayterm>
+            <dtyp:displayterm value="Shasta">Shasta</dtyp:displayterm>
+            <dtyp:displayterm value="Sierra">Sierra</dtyp:displayterm>
+            <dtyp:displayterm value="Siskiyou">Siskiyou</dtyp:displayterm>
+            <dtyp:displayterm value="Solano">Solano</dtyp:displayterm>
+            <dtyp:displayterm value="Sonoma">Sonoma</dtyp:displayterm>
+            <dtyp:displayterm value="Stanislaus">Stanislaus</dtyp:displayterm>
+            <dtyp:displayterm value="Sutter">Sutter</dtyp:displayterm>
+            <dtyp:displayterm value="Tehama">Tehama</dtyp:displayterm>
+            <dtyp:displayterm value="Trinity">Trinity</dtyp:displayterm>
+            <dtyp:displayterm value="Tulare">Tulare</dtyp:displayterm>
+            <dtyp:displayterm value="Tuolumne">Tuolumne</dtyp:displayterm>
+            <dtyp:displayterm value="Ventura">Ventura</dtyp:displayterm>
+            <dtyp:displayterm value="Yolo">Yolo</dtyp:displayterm>
+            <dtyp:displayterm value="Yuba">Yuba</dtyp:displayterm>
+         </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="Alameda"/>
+         <xsd:enumeration value="Alpine"/>
+         <xsd:enumeration value="Amador"/>
+         <xsd:enumeration value="Butte"/>
+         <xsd:enumeration value="Calaveras"/>
+         <xsd:enumeration value="Colusa"/>
+         <xsd:enumeration value="ContraCosta"/>
+         <xsd:enumeration value="DelNorte"/>
+         <xsd:enumeration value="ElDorado"/>
+         <xsd:enumeration value="Fresno"/>
+         <xsd:enumeration value="Glenn"/>
+         <xsd:enumeration value="Humboldt"/>
+         <xsd:enumeration value="Imperial"/>
+         <xsd:enumeration value="Inyo"/>
+         <xsd:enumeration value="Kern"/>
+         <xsd:enumeration value="Kings"/>
+         <xsd:enumeration value="Lake"/>
+         <xsd:enumeration value="Lassen"/>
+         <xsd:enumeration value="LosAngeles"/>
+         <xsd:enumeration value="Madera"/>
+         <xsd:enumeration value="Marin"/>
+         <xsd:enumeration value="Mariposa"/>
+         <xsd:enumeration value="Mendocino"/>
+         <xsd:enumeration value="Merced"/>
+         <xsd:enumeration value="Modoc"/>
+         <xsd:enumeration value="Mono"/>
+         <xsd:enumeration value="Monterey"/>
+         <xsd:enumeration value="Napa"/>
+         <xsd:enumeration value="Nevada"/>
+         <xsd:enumeration value="Orange"/>
+         <xsd:enumeration value="Placer"/>
+         <xsd:enumeration value="Plumas"/>
+         <xsd:enumeration value="Riverside"/>
+         <xsd:enumeration value="Sacramento"/>
+         <xsd:enumeration value="SanBenito"/>
+         <xsd:enumeration value="SanBernardino"/>
+         <xsd:enumeration value="SanDiego"/>
+         <xsd:enumeration value="SanFrancisco"/>
+         <xsd:enumeration value="SanJoaquin"/>
+         <xsd:enumeration value="SanLuisObispo"/>
+         <xsd:enumeration value="SanMateo"/>
+         <xsd:enumeration value="SantaBarbara"/>
+         <xsd:enumeration value="SantaClara"/>
+         <xsd:enumeration value="SantaCruz"/>
+         <xsd:enumeration value="Shasta"/>
+         <xsd:enumeration value="Sierra"/>
+         <xsd:enumeration value="Siskiyou"/>
+         <xsd:enumeration value="Solano"/>
+         <xsd:enumeration value="Sonoma"/>
+         <xsd:enumeration value="Stanislaus"/>
+         <xsd:enumeration value="Sutter"/>
+         <xsd:enumeration value="Tehama"/>
+         <xsd:enumeration value="Trinity"/>
+         <xsd:enumeration value="Tulare"/>
+         <xsd:enumeration value="Tuolumne"/>
+         <xsd:enumeration value="Ventura"/>
+         <xsd:enumeration value="Yolo"/>
+         <xsd:enumeration value="Yuba"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="CardinalDirection">
@@ -162,59 +311,12 @@
          <xsd:enumeration value="West"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="CBC_OccupancyGroup">
-      <xsd:annotation>
-         <xsd:documentation>One of the occupancy categories defined by the California Building Code (CBC).</xsd:documentation>
-         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
-         <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>CBC Occupancy Group</dtyp:displayterm>
-         </xsd:appinfo>
-         <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="GroupAssembly">Group A Assembly</dtyp:displayterm>
-            <dtyp:displayterm value="GroupBusiness">Group B Business</dtyp:displayterm>
-            <dtyp:displayterm value="GroupEducational">Group E Educational</dtyp:displayterm>
-            <dtyp:displayterm value="GroupFactory">Group F Factory/Industrial</dtyp:displayterm>
-            <dtyp:displayterm value="GroupHighHazard">Group H HighHazard</dtyp:displayterm>
-            <dtyp:displayterm value="GroupMercantile">Group M Mercantile</dtyp:displayterm>
-            <dtyp:displayterm value="GroupResidentialR1">Group R Residential:  R-1</dtyp:displayterm>
-            <dtyp:displayterm value="GroupResidentialR2">Group R Residential:  R-2</dtyp:displayterm>
-            <dtyp:displayterm value="GroupResidentialR3">Group R Residential:  R-3</dtyp:displayterm>
-            <dtyp:displayterm value="GroupStorage">Group S Storage</dtyp:displayterm>
-            <dtyp:displayterm value="GroupUtility">Group U Utility</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="GroupAssembly"/>
-         <xsd:enumeration value="GroupBusiness"/>
-         <xsd:enumeration value="GroupEducational"/>
-         <xsd:enumeration value="GroupFactory"/>
-         <xsd:enumeration value="GroupHighHazard"/>
-         <xsd:enumeration value="GroupMercantile"/>
-         <xsd:enumeration value="GroupResidentialR1"/>
-         <xsd:enumeration value="GroupResidentialR2"/>
-         <xsd:enumeration value="GroupResidentialR3"/>
-         <xsd:enumeration value="GroupStorage"/>
-         <xsd:enumeration value="GroupUtility"/>
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="CFactor">
-      <xsd:annotation>
-         <xsd:documentation>A measurement of thermal conductivity of a material and is used in the JA 4 tables for masonry and concrete walls  Units: Btu per h ft2 F</xsd:documentation>
-         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
-         <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>CFactor</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
    <xsd:simpleType name="City">
       <xsd:annotation>
          <xsd:documentation>Part of an address</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:City">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:City"/>
    </xsd:simpleType>
    <xsd:simpleType name="ClimateZone">
       <xsd:annotation>
@@ -266,8 +368,126 @@
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Climate Zone County</dtyp:displayterm>
          </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Alameda">Alameda</dtyp:displayterm>
+            <dtyp:displayterm value="Alpine">Alpine</dtyp:displayterm>
+            <dtyp:displayterm value="Amador">Amador</dtyp:displayterm>
+            <dtyp:displayterm value="Butte">Butte</dtyp:displayterm>
+            <dtyp:displayterm value="Calaveras">Calaveras</dtyp:displayterm>
+            <dtyp:displayterm value="Colusa">Colusa</dtyp:displayterm>
+            <dtyp:displayterm value="ContraCosta">Contra Costa</dtyp:displayterm>
+            <dtyp:displayterm value="DelNorte">Del Norte</dtyp:displayterm>
+            <dtyp:displayterm value="ElDorado">El Dorado</dtyp:displayterm>
+            <dtyp:displayterm value="Fresno">Fresno</dtyp:displayterm>
+            <dtyp:displayterm value="Glenn">Glenn</dtyp:displayterm>
+            <dtyp:displayterm value="Humboldt">Humboldt</dtyp:displayterm>
+            <dtyp:displayterm value="Imperial">Imperial</dtyp:displayterm>
+            <dtyp:displayterm value="Inyo">Inyo</dtyp:displayterm>
+            <dtyp:displayterm value="Kern">Kern</dtyp:displayterm>
+            <dtyp:displayterm value="Kings">Kings</dtyp:displayterm>
+            <dtyp:displayterm value="Lake">Lake</dtyp:displayterm>
+            <dtyp:displayterm value="Lassen">Lassen</dtyp:displayterm>
+            <dtyp:displayterm value="LosAngeles">Los Angeles</dtyp:displayterm>
+            <dtyp:displayterm value="Madera">Madera</dtyp:displayterm>
+            <dtyp:displayterm value="Marin">Marin</dtyp:displayterm>
+            <dtyp:displayterm value="Mariposa">Mariposa</dtyp:displayterm>
+            <dtyp:displayterm value="Mendocino">Mendocino</dtyp:displayterm>
+            <dtyp:displayterm value="Merced">Merced</dtyp:displayterm>
+            <dtyp:displayterm value="Modoc">Modoc</dtyp:displayterm>
+            <dtyp:displayterm value="Mono">Mono</dtyp:displayterm>
+            <dtyp:displayterm value="Monterey">Monterey</dtyp:displayterm>
+            <dtyp:displayterm value="Napa">Napa</dtyp:displayterm>
+            <dtyp:displayterm value="Nevada">Nevada</dtyp:displayterm>
+            <dtyp:displayterm value="Orange">Orange</dtyp:displayterm>
+            <dtyp:displayterm value="Placer">Placer</dtyp:displayterm>
+            <dtyp:displayterm value="Plumas">Plumas</dtyp:displayterm>
+            <dtyp:displayterm value="Riverside">Riverside</dtyp:displayterm>
+            <dtyp:displayterm value="Sacramento">Sacramento</dtyp:displayterm>
+            <dtyp:displayterm value="SanBenito">San Benito</dtyp:displayterm>
+            <dtyp:displayterm value="SanBernardino">San Bernardino</dtyp:displayterm>
+            <dtyp:displayterm value="SanDiego">San Diego</dtyp:displayterm>
+            <dtyp:displayterm value="SanFrancisco">San Francisco</dtyp:displayterm>
+            <dtyp:displayterm value="SanJoaquin">San Joaquin</dtyp:displayterm>
+            <dtyp:displayterm value="SanLuisObispo">San Luis Obispo</dtyp:displayterm>
+            <dtyp:displayterm value="SanMateo">San Mateo</dtyp:displayterm>
+            <dtyp:displayterm value="SantaBarbara">Santa Barbara</dtyp:displayterm>
+            <dtyp:displayterm value="SantaClara">Santa Clara</dtyp:displayterm>
+            <dtyp:displayterm value="SantaCruz">Santa Cruz</dtyp:displayterm>
+            <dtyp:displayterm value="Shasta">Shasta</dtyp:displayterm>
+            <dtyp:displayterm value="Sierra">Sierra</dtyp:displayterm>
+            <dtyp:displayterm value="Siskiyou">Siskiyou</dtyp:displayterm>
+            <dtyp:displayterm value="Solano">Solano</dtyp:displayterm>
+            <dtyp:displayterm value="Sonoma">Sonoma</dtyp:displayterm>
+            <dtyp:displayterm value="Stanislaus">Stanislaus</dtyp:displayterm>
+            <dtyp:displayterm value="Sutter">Sutter</dtyp:displayterm>
+            <dtyp:displayterm value="Tehama">Tehama</dtyp:displayterm>
+            <dtyp:displayterm value="Trinity">Trinity</dtyp:displayterm>
+            <dtyp:displayterm value="Tulare">Tulare</dtyp:displayterm>
+            <dtyp:displayterm value="Tuolumne">Tuolumne</dtyp:displayterm>
+            <dtyp:displayterm value="Ventura">Ventura</dtyp:displayterm>
+            <dtyp:displayterm value="Yolo">Yolo</dtyp:displayterm>
+            <dtyp:displayterm value="Yuba">Yuba</dtyp:displayterm>
+         </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="Alameda"/>
+         <xsd:enumeration value="Alpine"/>
+         <xsd:enumeration value="Amador"/>
+         <xsd:enumeration value="Butte"/>
+         <xsd:enumeration value="Calaveras"/>
+         <xsd:enumeration value="Colusa"/>
+         <xsd:enumeration value="ContraCosta"/>
+         <xsd:enumeration value="DelNorte"/>
+         <xsd:enumeration value="ElDorado"/>
+         <xsd:enumeration value="Fresno"/>
+         <xsd:enumeration value="Glenn"/>
+         <xsd:enumeration value="Humboldt"/>
+         <xsd:enumeration value="Imperial"/>
+         <xsd:enumeration value="Inyo"/>
+         <xsd:enumeration value="Kern"/>
+         <xsd:enumeration value="Kings"/>
+         <xsd:enumeration value="Lake"/>
+         <xsd:enumeration value="Lassen"/>
+         <xsd:enumeration value="LosAngeles"/>
+         <xsd:enumeration value="Madera"/>
+         <xsd:enumeration value="Marin"/>
+         <xsd:enumeration value="Mariposa"/>
+         <xsd:enumeration value="Mendocino"/>
+         <xsd:enumeration value="Merced"/>
+         <xsd:enumeration value="Modoc"/>
+         <xsd:enumeration value="Mono"/>
+         <xsd:enumeration value="Monterey"/>
+         <xsd:enumeration value="Napa"/>
+         <xsd:enumeration value="Nevada"/>
+         <xsd:enumeration value="Orange"/>
+         <xsd:enumeration value="Placer"/>
+         <xsd:enumeration value="Plumas"/>
+         <xsd:enumeration value="Riverside"/>
+         <xsd:enumeration value="Sacramento"/>
+         <xsd:enumeration value="SanBenito"/>
+         <xsd:enumeration value="SanBernardino"/>
+         <xsd:enumeration value="SanDiego"/>
+         <xsd:enumeration value="SanFrancisco"/>
+         <xsd:enumeration value="SanJoaquin"/>
+         <xsd:enumeration value="SanLuisObispo"/>
+         <xsd:enumeration value="SanMateo"/>
+         <xsd:enumeration value="SantaBarbara"/>
+         <xsd:enumeration value="SantaClara"/>
+         <xsd:enumeration value="SantaCruz"/>
+         <xsd:enumeration value="Shasta"/>
+         <xsd:enumeration value="Sierra"/>
+         <xsd:enumeration value="Siskiyou"/>
+         <xsd:enumeration value="Solano"/>
+         <xsd:enumeration value="Sonoma"/>
+         <xsd:enumeration value="Stanislaus"/>
+         <xsd:enumeration value="Sutter"/>
+         <xsd:enumeration value="Tehama"/>
+         <xsd:enumeration value="Trinity"/>
+         <xsd:enumeration value="Tulare"/>
+         <xsd:enumeration value="Tuolumne"/>
+         <xsd:enumeration value="Ventura"/>
+         <xsd:enumeration value="Yolo"/>
+         <xsd:enumeration value="Yuba"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ClimateZoneNumber">
@@ -283,7 +503,6 @@
             <dtyp:displayterm value="14">14</dtyp:displayterm>
             <dtyp:displayterm value="15">15</dtyp:displayterm>
             <dtyp:displayterm value="16">16</dtyp:displayterm>
-            <dtyp:displayterm value="2">2</dtyp:displayterm>
             <dtyp:displayterm value="3">3</dtyp:displayterm>
             <dtyp:displayterm value="4">4</dtyp:displayterm>
             <dtyp:displayterm value="5">5</dtyp:displayterm>
@@ -302,7 +521,6 @@
          <xsd:enumeration value="14"/>
          <xsd:enumeration value="15"/>
          <xsd:enumeration value="16"/>
-         <xsd:enumeration value="2"/>
          <xsd:enumeration value="3"/>
          <xsd:enumeration value="4"/>
          <xsd:enumeration value="5"/>
@@ -352,22 +570,19 @@
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="ContactEmailAddress">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="ContactName">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="ContactRole">
       <xsd:annotation>
@@ -392,23 +607,20 @@
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="CoolingDegreeDays">
       <xsd:annotation>
-         <xsd:documentation>  Units: F</xsd:documentation>
+         <xsd:documentation>Units: F</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="DaylightingControlName">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:ObjectNamePermissive">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
    <xsd:simpleType name="DaylightingControlType">
       <xsd:annotation>
@@ -456,8 +668,7 @@
             <dtyp:displayterm>Density</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="Diffusing">
       <xsd:annotation>
@@ -467,15 +678,13 @@
             <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:boolean">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="DwellingUnitsCount">
       <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
+         <xsd:documentation>Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:IntegerNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ElectricalLoadType">
       <xsd:annotation>
@@ -513,37 +722,32 @@
             <dtyp:displayterm>Elevation</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExhaustMaxFlowPerHoodLF">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft3 per min</xsd:documentation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExhaustNumberFixtures">
       <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
+         <xsd:documentation>Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:IntegerNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExhaustPerSpace">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft3 per min</xsd:documentation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc exclude;  CBECC NR include</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExhaustSpaceRequiredMin">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft3 per min</xsd:documentation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExteriorSolarAbsorptance">
       <xsd:annotation>
@@ -555,8 +759,7 @@ ExtWall/IntWall: 0.7
 Ceilings: 0.7
 ExtFlr/IntFlr: 0.7  Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExteriorSolarAbsorptanceRequired">
       <xsd:annotation>
@@ -568,8 +771,7 @@ ExtWall/IntWall: 0.7
 Ceilings: 0.7
 ExtFlr/IntFlr: 0.7  Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExteriorThermalAbsorptance">
       <xsd:annotation>
@@ -580,8 +782,7 @@ ExtWall/IntWall: 0.9
 Ceilings: 0.9
 ExtFlr/IntFlr: 0.9  Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExteriorThermalAbsorptanceRequired">
       <xsd:annotation>
@@ -592,8 +793,7 @@ ExtWall/IntWall: 0.9
 Ceilings: 0.9
 ExtFlr/IntFlr: 0.9  Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExteriorVisibleAbsorptance">
       <xsd:annotation>
@@ -603,8 +803,7 @@ ExtWall/IntWall: 0.5
 Ceilings: 0.3
 ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExteriorVisibleAbsorptanceRequired">
       <xsd:annotation>
@@ -614,8 +813,24 @@ ExtWall/IntWall: 0.5
 Ceilings: 0.3
 ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FFactor">
+      <xsd:annotation>
+         <xsd:documentation>The quantity of heat that will flow through a unit area of the material when the temperature difference through the material is 1 degree F.  Units: Btu per h ft F</xsd:documentation>
+         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>FFactor</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FFactorLimit">
+      <xsd:annotation>
+         <xsd:documentation>Prescribed value for the F-Factor of a construction assembly.  Units: Btu per h ft F</xsd:documentation>
+         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="FenestrationFramingNR">
       <xsd:annotation>
@@ -651,45 +866,23 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
          <xsd:enumeration value="West"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="FFactor">
-      <xsd:annotation>
-         <xsd:documentation>The quantity of heat that will flow through a unit area of the material when the temperature difference through the material is 1 degree F.  Units: Btu per h ft F</xsd:documentation>
-         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
-         <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>FFactor</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="FFactorLimit">
-      <xsd:annotation>
-         <xsd:documentation>Prescribed value for the F-Factor of a construction assembly.  Units: Btu per h ft F</xsd:documentation>
-         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
    <xsd:simpleType name="FieldName">
       <xsd:annotation>
          <xsd:documentation>This property is part of a user defined field in an SDD data exchange or report schema that allows clients the ability to add new fields to data that are needed either temporarily or as a placeholder for elements that will be added in the next version of the schema.</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="FieldValue">
       <xsd:annotation>
          <xsd:documentation>This property is part of a user defined field in an SDD data exchange or report schema that allows clients the ability to add new fields to data that are needed either temporarily or as a placeholder for elements that will be added in the next version of the schema.</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="FieldValueType">
       <xsd:annotation>
          <xsd:documentation>This property is part of a user defined field in an SDD data exchange or report schema.  Use this element to record data type, units, and other information needed when it is permanently added to the schema.</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="FixtureType">
       <xsd:annotation>
@@ -711,14 +904,13 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
    </xsd:simpleType>
    <xsd:simpleType name="FloorArea">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Floor Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="FloorToCeilingHeight">
       <xsd:annotation>
@@ -727,8 +919,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Floor To Ceiling Height</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="FloorToFloorHeight">
       <xsd:annotation>
@@ -737,8 +928,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Floor To Floor Height</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="FunctionScheduleGroup">
       <xsd:annotation>
@@ -804,15 +994,18 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Heat Capacity</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="HeatCapacityRange">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="GTE15">[d:gte/] 15</dtyp:displayterm>
-            <dtyp:displayterm value="GTE7LT15">[d:gte/] 7 [d:lt/] 15</dtyp:displayterm>
-            <dtyp:displayterm value="LT7">[d:lt/] 7</dtyp:displayterm>
+            <dtyp:displayterm value="GTE15">
+               <d:gte/> 15</dtyp:displayterm>
+            <dtyp:displayterm value="GTE7LT15">
+               <d:gte/> 7 
+               <d:lt/> 15</dtyp:displayterm>
+            <dtyp:displayterm value="LT7">
+               <d:lt/> 7</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -823,32 +1016,16 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
    </xsd:simpleType>
    <xsd:simpleType name="HeatingDegreeDays">
       <xsd:annotation>
-         <xsd:documentation>  Units: F</xsd:documentation>
+         <xsd:documentation>Units: F</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="HighRiseResidentialConditionedFloorArea">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="HotelModelGuestRoomConditionedFloorArea">
-      <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="HotelMotelGuestRoomCount">
-      <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:IntegerNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="HotWaterHeatingRate">
       <xsd:annotation>
@@ -858,8 +1035,19 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Hot Water Heating Rate</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="HotelModelGuestRoomConditionedFloorArea">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="HotelMotelGuestRoomCount">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ImprovementStatus">
       <xsd:annotation>
@@ -900,8 +1088,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:boolean">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="IsBuildingHeathcare">
       <xsd:annotation>
@@ -913,8 +1100,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:boolean">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="IsSpaceRectangular">
       <xsd:annotation>
@@ -924,8 +1110,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm value="false">Non-Rectangular</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:boolean">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="KitchenExhaustHoodDuty">
       <xsd:annotation>
@@ -946,19 +1131,17 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
    </xsd:simpleType>
    <xsd:simpleType name="KitchenExhaustHoodFlow">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft3 per min</xsd:documentation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR include</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="KitchenExhaustHoodLength">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft</xsd:documentation>
+         <xsd:documentation>Units: ft</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR include</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="KitchenExhaustHoodStyle">
       <xsd:annotation>
@@ -995,24 +1178,21 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
    </xsd:simpleType>
    <xsd:simpleType name="LaboratoryFumeHoodLength">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft</xsd:documentation>
+         <xsd:documentation>Units: ft</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="LaboratoryFumeHoodVerticalAutomaticSashControlFraction">
       <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
+         <xsd:documentation>Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="LaboratoryFumeHoodVerticalSashExhaustFlow">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft3 per min</xsd:documentation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="LampType">
       <xsd:annotation>
@@ -1048,8 +1228,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Latent Heat Rate Per Occupant</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="Latitude">
       <xsd:annotation>
@@ -1058,24 +1237,21 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Latitude</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:Latitude">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:Latitude"/>
    </xsd:simpleType>
    <xsd:simpleType name="LightedHardscapeArea">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="LightedHardscapeAreaTotal">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="Location">
       <xsd:annotation>
@@ -1085,8 +1261,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Building Story Location</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:EnumerationConstant"/>
    </xsd:simpleType>
    <xsd:simpleType name="Longitude">
       <xsd:annotation>
@@ -1095,8 +1270,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Longitude</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:Longitude">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:Longitude"/>
    </xsd:simpleType>
    <xsd:simpleType name="LuminaireStatus">
       <xsd:annotation>
@@ -1161,17 +1335,15 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
    </xsd:simpleType>
    <xsd:simpleType name="OA_SpaceRequiredMin">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft3 per min</xsd:documentation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="OA_SystemRequiredMin">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft3 per min</xsd:documentation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="OccupancySensorControl">
       <xsd:annotation>
@@ -1180,8 +1352,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:boolean">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="OccupantCount">
       <xsd:annotation>
@@ -1190,8 +1361,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Occupant Capacity</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:IntegerNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="OccupantDensity">
       <xsd:annotation>
@@ -1201,37 +1371,32 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm>Occupant Density</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="OverhangDepth">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft</xsd:documentation>
+         <xsd:documentation>Units: ft</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc exclude;  CBECC NR include</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ParkingGarageArea">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="PartitionWindowDoorArea">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="Perimeter">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft</xsd:documentation>
+         <xsd:documentation>Units: ft</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="PermitScope">
       <xsd:annotation>
@@ -1263,8 +1428,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="PrimarySideDaylightingControls">
       <xsd:annotation>
@@ -1274,23 +1438,46 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:boolean">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="PrimarySidelitDaylitArea">
       <xsd:annotation>
          <xsd:documentation>The primary daylighted area is the portion that is closest to the daylighting source and
 receives the most illumination.  Units: ft2</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ProjectNarrative">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RSHGC">
+      <xsd:annotation>
+         <xsd:documentation>The ratio of the solar heat gain entering a space, through the subject fenestration product, (corrected for external shading) to the incident solar radiation.  Solar heat gain includes directly transmitted solar heat and absorbed solar radiation which is then re-radiated, conducted or convected into the space. referred to as RSGH.  Units: none</xsd:documentation>
+         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Relative Solar Heat Gain</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RSHGC_Limit">
+      <xsd:annotation>
+         <xsd:documentation>This is the regulatory limit for the RelativeSolarHeatGain of a building element  Units: none</xsd:documentation>
+         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RValue">
+      <xsd:annotation>
+         <xsd:documentation>A measure of thermal resistance of a type of Material found in construction layers or Insulation in a pre-defined ConstructionAssembly.  It is usually expressed in whole number units of (hr x ft2 x degrees F)/Btu but can be a decimal value e.g.  JA IV 4.1.5 Wood Based Sheathing R-values  Units: h ft2 F per Btu</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>R Value</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="RoomCavityRatio">
       <xsd:annotation>
@@ -1300,8 +1487,7 @@ receives the most illumination.  Units: ft2</xsd:documentation>
             <dtyp:displayterm>Room Cavity Ratio</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="Roughness">
       <xsd:annotation>
@@ -1326,25 +1512,6 @@ receives the most illumination.  Units: ft2</xsd:documentation>
          <xsd:enumeration value="Smooth"/>
          <xsd:enumeration value="VeryRough"/>
          <xsd:enumeration value="VerySmooth"/>
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="RSHGC">
-      <xsd:annotation>
-         <xsd:documentation>The ratio of the solar heat gain entering a space, through the subject fenestration product, (corrected for external shading) to the incident solar radiation.  Solar heat gain includes directly transmitted solar heat and absorbed solar radiation which is then re-radiated, conducted or convected into the space. referred to as RSGH.  Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
-         <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>Relative Solar Heat Gain</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="RSHGC_Limit">
-      <xsd:annotation>
-         <xsd:documentation>This is the regulatory limit for the RelativeSolarHeatGain of a building element  Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="RuleAuthority">
@@ -1396,15 +1563,39 @@ receives the most illumination.  Units: ft2</xsd:documentation>
          <xsd:enumeration value="NEMA"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="RValue">
+   <xsd:simpleType name="SHGC">
       <xsd:annotation>
-         <xsd:documentation>A measure of thermal resistance of a type of Material found in construction layers or Insulation in a pre-defined ConstructionAssembly.  It is usually expressed in whole number units of (hr x ft2 x degrees F)/Btu but can be a decimal value e.g.  JA IV 4.1.5 Wood Based Sheathing R-values  Units: h ft2 F per Btu</xsd:documentation>
+         <xsd:documentation>The ratio of the solar heat gain entering a space, through the subject fenestration product, to the incident solar radiation.   Solar heat gain includes directly transmitted solar heat and absorbed solar radiation which is then re-radiated, conducted or convected into the space.  often referred to as SHGC.  Units: none</xsd:documentation>
          <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>R Value</dtyp:displayterm>
+            <dtyp:displayterm>Solar Heat Gain Coefficient</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SHGC_110Default">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SHGC_CenterOfGlass">
+      <xsd:annotation>
+         <xsd:documentation>The ratio of the solar heat gain entering a space, through the subject fenestration product, to the incident solar radiation.   Solar heat gain includes directly transmitted solar heat and absorbed solar radiation which is then re-radiated, conducted or convected into the space.  often referred to as SHGC.  Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SHGC_Limit">
+      <xsd:annotation>
+         <xsd:documentation>This is the regulatory limit for the SolarHeatGain of a building element  Units: none</xsd:documentation>
+         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SHGC_NA6">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SecondarySideDaylightingControls">
       <xsd:annotation>
@@ -1413,15 +1604,13 @@ receives the most illumination.  Units: ft2</xsd:documentation>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:boolean">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="SecondarySidelitDaylitArea">
       <xsd:annotation>
          <xsd:documentation>The secondary daylighted area is an area farther from the daylighting source, but still receives useful daylight.  Units: ft2</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SensibleHeatRatePerOccupant">
       <xsd:annotation>
@@ -1431,47 +1620,7 @@ receives the most illumination.  Units: ft2</xsd:documentation>
             <dtyp:displayterm>Sensible Heat Rate Per Occupant</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="SHGC">
-      <xsd:annotation>
-         <xsd:documentation>The ratio of the solar heat gain entering a space, through the subject fenestration product, to the incident solar radiation.   Solar heat gain includes directly transmitted solar heat and absorbed solar radiation which is then re-radiated, conducted or convected into the space.  often referred to as SHGC.  Units: none</xsd:documentation>
-         <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>Solar Heat Gain Coefficient</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="SHGC_110Default">
-      <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="SHGC_CenterOfGlass">
-      <xsd:annotation>
-         <xsd:documentation>The ratio of the solar heat gain entering a space, through the subject fenestration product, to the incident solar radiation.   Solar heat gain includes directly transmitted solar heat and absorbed solar radiation which is then re-radiated, conducted or convected into the space.  often referred to as SHGC.  Units: none</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="SHGC_Limit">
-      <xsd:annotation>
-         <xsd:documentation>This is the regulatory limit for the SolarHeatGain of a building element  Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="SHGC_NA6">
-      <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SiteCounty">
       <xsd:annotation>
@@ -1480,17 +1629,133 @@ receives the most illumination.  Units: ft2</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Site County</dtyp:displayterm>
          </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Alameda">Alameda</dtyp:displayterm>
+            <dtyp:displayterm value="Alpine">Alpine</dtyp:displayterm>
+            <dtyp:displayterm value="Amador">Amador</dtyp:displayterm>
+            <dtyp:displayterm value="Butte">Butte</dtyp:displayterm>
+            <dtyp:displayterm value="Calaveras">Calaveras</dtyp:displayterm>
+            <dtyp:displayterm value="Colusa">Colusa</dtyp:displayterm>
+            <dtyp:displayterm value="ContraCosta">Contra Costa</dtyp:displayterm>
+            <dtyp:displayterm value="DelNorte">Del Norte</dtyp:displayterm>
+            <dtyp:displayterm value="ElDorado">El Dorado</dtyp:displayterm>
+            <dtyp:displayterm value="Fresno">Fresno</dtyp:displayterm>
+            <dtyp:displayterm value="Glenn">Glenn</dtyp:displayterm>
+            <dtyp:displayterm value="Humboldt">Humboldt</dtyp:displayterm>
+            <dtyp:displayterm value="Imperial">Imperial</dtyp:displayterm>
+            <dtyp:displayterm value="Inyo">Inyo</dtyp:displayterm>
+            <dtyp:displayterm value="Kern">Kern</dtyp:displayterm>
+            <dtyp:displayterm value="Kings">Kings</dtyp:displayterm>
+            <dtyp:displayterm value="Lake">Lake</dtyp:displayterm>
+            <dtyp:displayterm value="Lassen">Lassen</dtyp:displayterm>
+            <dtyp:displayterm value="LosAngeles">Los Angeles</dtyp:displayterm>
+            <dtyp:displayterm value="Madera">Madera</dtyp:displayterm>
+            <dtyp:displayterm value="Marin">Marin</dtyp:displayterm>
+            <dtyp:displayterm value="Mariposa">Mariposa</dtyp:displayterm>
+            <dtyp:displayterm value="Mendocino">Mendocino</dtyp:displayterm>
+            <dtyp:displayterm value="Merced">Merced</dtyp:displayterm>
+            <dtyp:displayterm value="Modoc">Modoc</dtyp:displayterm>
+            <dtyp:displayterm value="Mono">Mono</dtyp:displayterm>
+            <dtyp:displayterm value="Monterey">Monterey</dtyp:displayterm>
+            <dtyp:displayterm value="Napa">Napa</dtyp:displayterm>
+            <dtyp:displayterm value="Nevada">Nevada</dtyp:displayterm>
+            <dtyp:displayterm value="Orange">Orange</dtyp:displayterm>
+            <dtyp:displayterm value="Placer">Placer</dtyp:displayterm>
+            <dtyp:displayterm value="Plumas">Plumas</dtyp:displayterm>
+            <dtyp:displayterm value="Riverside">Riverside</dtyp:displayterm>
+            <dtyp:displayterm value="Sacramento">Sacramento</dtyp:displayterm>
+            <dtyp:displayterm value="SanBenito">San Benito</dtyp:displayterm>
+            <dtyp:displayterm value="SanBernardino">San Bernardino</dtyp:displayterm>
+            <dtyp:displayterm value="SanDiego">San Diego</dtyp:displayterm>
+            <dtyp:displayterm value="SanFrancisco">San Francisco</dtyp:displayterm>
+            <dtyp:displayterm value="SanJoaquin">San Joaquin</dtyp:displayterm>
+            <dtyp:displayterm value="SanLuisObispo">San Luis Obispo</dtyp:displayterm>
+            <dtyp:displayterm value="SanMateo">San Mateo</dtyp:displayterm>
+            <dtyp:displayterm value="SantaBarbara">Santa Barbara</dtyp:displayterm>
+            <dtyp:displayterm value="SantaClara">Santa Clara</dtyp:displayterm>
+            <dtyp:displayterm value="SantaCruz">Santa Cruz</dtyp:displayterm>
+            <dtyp:displayterm value="Shasta">Shasta</dtyp:displayterm>
+            <dtyp:displayterm value="Sierra">Sierra</dtyp:displayterm>
+            <dtyp:displayterm value="Siskiyou">Siskiyou</dtyp:displayterm>
+            <dtyp:displayterm value="Solano">Solano</dtyp:displayterm>
+            <dtyp:displayterm value="Sonoma">Sonoma</dtyp:displayterm>
+            <dtyp:displayterm value="Stanislaus">Stanislaus</dtyp:displayterm>
+            <dtyp:displayterm value="Sutter">Sutter</dtyp:displayterm>
+            <dtyp:displayterm value="Tehama">Tehama</dtyp:displayterm>
+            <dtyp:displayterm value="Trinity">Trinity</dtyp:displayterm>
+            <dtyp:displayterm value="Tulare">Tulare</dtyp:displayterm>
+            <dtyp:displayterm value="Tuolumne">Tuolumne</dtyp:displayterm>
+            <dtyp:displayterm value="Ventura">Ventura</dtyp:displayterm>
+            <dtyp:displayterm value="Yolo">Yolo</dtyp:displayterm>
+            <dtyp:displayterm value="Yuba">Yuba</dtyp:displayterm>
+         </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="Skylight_SkylitDaylitRatio">
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
+         <xsd:enumeration value="Alameda"/>
+         <xsd:enumeration value="Alpine"/>
+         <xsd:enumeration value="Amador"/>
+         <xsd:enumeration value="Butte"/>
+         <xsd:enumeration value="Calaveras"/>
+         <xsd:enumeration value="Colusa"/>
+         <xsd:enumeration value="ContraCosta"/>
+         <xsd:enumeration value="DelNorte"/>
+         <xsd:enumeration value="ElDorado"/>
+         <xsd:enumeration value="Fresno"/>
+         <xsd:enumeration value="Glenn"/>
+         <xsd:enumeration value="Humboldt"/>
+         <xsd:enumeration value="Imperial"/>
+         <xsd:enumeration value="Inyo"/>
+         <xsd:enumeration value="Kern"/>
+         <xsd:enumeration value="Kings"/>
+         <xsd:enumeration value="Lake"/>
+         <xsd:enumeration value="Lassen"/>
+         <xsd:enumeration value="LosAngeles"/>
+         <xsd:enumeration value="Madera"/>
+         <xsd:enumeration value="Marin"/>
+         <xsd:enumeration value="Mariposa"/>
+         <xsd:enumeration value="Mendocino"/>
+         <xsd:enumeration value="Merced"/>
+         <xsd:enumeration value="Modoc"/>
+         <xsd:enumeration value="Mono"/>
+         <xsd:enumeration value="Monterey"/>
+         <xsd:enumeration value="Napa"/>
+         <xsd:enumeration value="Nevada"/>
+         <xsd:enumeration value="Orange"/>
+         <xsd:enumeration value="Placer"/>
+         <xsd:enumeration value="Plumas"/>
+         <xsd:enumeration value="Riverside"/>
+         <xsd:enumeration value="Sacramento"/>
+         <xsd:enumeration value="SanBenito"/>
+         <xsd:enumeration value="SanBernardino"/>
+         <xsd:enumeration value="SanDiego"/>
+         <xsd:enumeration value="SanFrancisco"/>
+         <xsd:enumeration value="SanJoaquin"/>
+         <xsd:enumeration value="SanLuisObispo"/>
+         <xsd:enumeration value="SanMateo"/>
+         <xsd:enumeration value="SantaBarbara"/>
+         <xsd:enumeration value="SantaClara"/>
+         <xsd:enumeration value="SantaCruz"/>
+         <xsd:enumeration value="Shasta"/>
+         <xsd:enumeration value="Sierra"/>
+         <xsd:enumeration value="Siskiyou"/>
+         <xsd:enumeration value="Solano"/>
+         <xsd:enumeration value="Sonoma"/>
+         <xsd:enumeration value="Stanislaus"/>
+         <xsd:enumeration value="Sutter"/>
+         <xsd:enumeration value="Tehama"/>
+         <xsd:enumeration value="Trinity"/>
+         <xsd:enumeration value="Tulare"/>
+         <xsd:enumeration value="Tuolumne"/>
+         <xsd:enumeration value="Ventura"/>
+         <xsd:enumeration value="Yolo"/>
+         <xsd:enumeration value="Yuba"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="SkylightVT_SkylitDaylitRatio">
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="Skylight_SkylitDaylitRatio">
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SkylitDaylightingControls">
       <xsd:annotation>
@@ -1500,15 +1765,13 @@ receives the most illumination.  Units: ft2</xsd:documentation>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:boolean">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="SkylitDaylitArea">
       <xsd:annotation>
          <xsd:documentation>The skylit area is the portion of the floor area that gets daylighting from a skylight.  Units: ft2</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SolarAbsorptance">
       <xsd:annotation>
@@ -1518,16 +1781,14 @@ receives the most illumination.  Units: ft2</xsd:documentation>
             <dtyp:displayterm>Solar Absorptance</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SolarHeatGainCoefficientNFRC">
       <xsd:annotation>
          <xsd:documentation>The solar heat gain coefficient given by the NFRC and displayed on a label on the fenestration product  Units: none</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SolarReflectanceAged">
       <xsd:annotation>
@@ -1537,8 +1798,7 @@ receives the most illumination.  Units: ft2</xsd:documentation>
             <dtyp:displayterm>Solar Reflectance Aged</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SolarReflectanceInitial">
       <xsd:annotation>
@@ -1550,22 +1810,19 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Solar Reflectance</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceDescription">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:token">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceFloorArea">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceFloorToCeilingHeight">
       <xsd:annotation>
@@ -1574,8 +1831,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Space Floor To Ceiling Height</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceFunction">
       <xsd:annotation>
@@ -1594,8 +1850,9 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="ClassroomLectureTrainingVocationalArea">Classroom, Lecture, or Training Vocational Area</dtyp:displayterm>
             <dtyp:displayterm value="CommercialIndustrialStorageArea">Commercial Industrial Storage Area</dtyp:displayterm>
             <dtyp:displayterm value="CommercialIndustrialStorageAreaRefrigerated">Commercial and Industrial Storage Area (refrigerated)</dtyp:displayterm>
-            <dtyp:displayterm value="CommercialIndustrialStorageShipping">Commercial Industrial Storage Shipping &amp; Handling</dtyp:displayterm>
+            <dtyp:displayterm value="CommercialIndustrialStorageShipping">Commercial Industrial Storage Shipping &amp;amp; Handling</dtyp:displayterm>
             <dtyp:displayterm value="CommercialIndustrialWarehouse">Warehouse</dtyp:displayterm>
+            <dtyp:displayterm value="ComputerRoom">Computer Room</dtyp:displayterm>
             <dtyp:displayterm value="ConventionConferenceMultipurposeMeetingCenterArea">Convention, Conference, Multipurpose and Meeting Center Areas</dtyp:displayterm>
             <dtyp:displayterm value="CopyRoom">Copy Room</dtyp:displayterm>
             <dtyp:displayterm value="CorridorArea">Corridor Area</dtyp:displayterm>
@@ -1612,6 +1869,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="GeneralCommercialIndustrialWorkAreaPrecision">General Commercial Industrial Work Area Precision</dtyp:displayterm>
             <dtyp:displayterm value="GeneralCommercialIndustrialWorkBuilding">General Commercial Industrial Work Building</dtyp:displayterm>
             <dtyp:displayterm value="GrocerySalesArea">Grocery Sales Area</dtyp:displayterm>
+            <dtyp:displayterm value="HighRiseResidentialLivingSpace">High Rise Residential Living Space</dtyp:displayterm>
             <dtyp:displayterm value="HospitalExamTreatment">Exam/Treatment Room</dtyp:displayterm>
             <dtyp:displayterm value="HospitalImaging">Imaging Room</dtyp:displayterm>
             <dtyp:displayterm value="HospitalMedicalSupply">Medical Supply Room</dtyp:displayterm>
@@ -1622,7 +1880,11 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="HospitalPhysicalTherapy">Physical Therapy Room</dtyp:displayterm>
             <dtyp:displayterm value="HospitalRecovery">Recovery Room</dtyp:displayterm>
             <dtyp:displayterm value="HotelFunctionArea">Hotel Function Area</dtyp:displayterm>
+            <dtyp:displayterm value="HotelMotelGuestRoom">Hotel Motel Guest Room</dtyp:displayterm>
+            <dtyp:displayterm value="HousingPublicCommonAreaMultifamilyDormitory">Multifamily Public Housing Common Area  Dormitory</dtyp:displayterm>
+            <dtyp:displayterm value="HousingPublicCommonAreaSeniorHousing">Senior Public Housing Common Area</dtyp:displayterm>
             <dtyp:displayterm value="KitchenCommercialFoodPreparation">Kitchen/ Food Preparation Area</dtyp:displayterm>
+            <dtyp:displayterm value="KitchenetteResidentialKitchen">Kitchenette or Residential Kitchen</dtyp:displayterm>
             <dtyp:displayterm value="LaboratoryScientific">Scientific Laboratory Area</dtyp:displayterm>
             <dtyp:displayterm value="Laundry">Laundry Area</dtyp:displayterm>
             <dtyp:displayterm value="LaundryCoinOperated">Coin-operated Laundry</dtyp:displayterm>
@@ -1666,6 +1928,9 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="TransportationFunction">Transportation Function</dtyp:displayterm>
             <dtyp:displayterm value="TransportationFunctionConcourseBaggage">Transportation Function,  Concourse and Baggage</dtyp:displayterm>
             <dtyp:displayterm value="TransportationFunctionTicketing">Transportation Function, Ticketing</dtyp:displayterm>
+            <dtyp:displayterm value="UnleasedTenantArea">Unleased Tenant Area</dtyp:displayterm>
+            <dtyp:displayterm value="UnoccupiedExcludeInGrossFloorArea">Unoccupied Exclude In Gross Floor Area</dtyp:displayterm>
+            <dtyp:displayterm value="UnoccupiedIncludeInGrossFloorArea">Unoccupied Include In Gross Floor Area</dtyp:displayterm>
             <dtyp:displayterm value="VideoConferencingStudio">Video Conferencing Studio</dtyp:displayterm>
             <dtyp:displayterm value="WaitingArea">Waiting Area</dtyp:displayterm>
          </xsd:appinfo>
@@ -1683,6 +1948,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="CommercialIndustrialStorageAreaRefrigerated"/>
          <xsd:enumeration value="CommercialIndustrialStorageShipping"/>
          <xsd:enumeration value="CommercialIndustrialWarehouse"/>
+         <xsd:enumeration value="ComputerRoom"/>
          <xsd:enumeration value="ConventionConferenceMultipurposeMeetingCenterArea"/>
          <xsd:enumeration value="CopyRoom"/>
          <xsd:enumeration value="CorridorArea"/>
@@ -1699,6 +1965,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="GeneralCommercialIndustrialWorkAreaPrecision"/>
          <xsd:enumeration value="GeneralCommercialIndustrialWorkBuilding"/>
          <xsd:enumeration value="GrocerySalesArea"/>
+         <xsd:enumeration value="HighRiseResidentialLivingSpace"/>
          <xsd:enumeration value="HospitalExamTreatment"/>
          <xsd:enumeration value="HospitalImaging"/>
          <xsd:enumeration value="HospitalMedicalSupply"/>
@@ -1709,7 +1976,11 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="HospitalPhysicalTherapy"/>
          <xsd:enumeration value="HospitalRecovery"/>
          <xsd:enumeration value="HotelFunctionArea"/>
+         <xsd:enumeration value="HotelMotelGuestRoom"/>
+         <xsd:enumeration value="HousingPublicCommonAreaMultifamilyDormitory"/>
+         <xsd:enumeration value="HousingPublicCommonAreaSeniorHousing"/>
          <xsd:enumeration value="KitchenCommercialFoodPreparation"/>
+         <xsd:enumeration value="KitchenetteResidentialKitchen"/>
          <xsd:enumeration value="LaboratoryScientific"/>
          <xsd:enumeration value="Laundry"/>
          <xsd:enumeration value="LaundryCoinOperated"/>
@@ -1753,33 +2024,33 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="TransportationFunction"/>
          <xsd:enumeration value="TransportationFunctionConcourseBaggage"/>
          <xsd:enumeration value="TransportationFunctionTicketing"/>
+         <xsd:enumeration value="UnleasedTenantArea"/>
+         <xsd:enumeration value="UnoccupiedExcludeInGrossFloorArea"/>
+         <xsd:enumeration value="UnoccupiedIncludeInGrossFloorArea"/>
          <xsd:enumeration value="VideoConferencingStudio"/>
          <xsd:enumeration value="WaitingArea"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceHeight">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft</xsd:documentation>
+         <xsd:documentation>Units: ft</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:Height">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:Height"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceLength">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft</xsd:documentation>
+         <xsd:documentation>Units: ft</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:Length">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:Length"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceModifiedLuminaireCount">
       <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
+         <xsd:documentation>Units: none</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:IntegerNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceName">
       <xsd:annotation>
@@ -1788,46 +2059,41 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Space Name</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:ObjectNamePermissive">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpacePerimeter">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft</xsd:documentation>
+         <xsd:documentation>Units: ft</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SpaceWidth">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft</xsd:documentation>
+         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Width"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpacesConditionedArea">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Spaces Conditioned Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpacesUnconditionedArea">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft2</xsd:documentation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Spaces Unconditioned Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="SpaceWidth">
-      <xsd:annotation>
-         <xsd:documentation>  Units: ft</xsd:documentation>
-         <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Width">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpecificHeat">
       <xsd:annotation>
@@ -1837,8 +2103,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Specific Heat</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="Status">
       <xsd:annotation>
@@ -1864,22 +2129,19 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:StreetAddress">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:StreetAddress"/>
    </xsd:simpleType>
    <xsd:simpleType name="StreetBuildingNumber">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="StreetName">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="StreetOrientation">
       <xsd:annotation>
@@ -1910,8 +2172,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
       <xsd:annotation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="T24Part6Section">
       <xsd:annotation>
@@ -1921,8 +2182,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Title24 Part6 Section</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:token">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="ThermalAbsorptance">
       <xsd:annotation>
@@ -1932,8 +2192,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Thermal Absorptance</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ThermalConductivity">
       <xsd:annotation>
@@ -1943,15 +2202,13 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Thermal Conductivity</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ThermalEmittance">
       <xsd:annotation>
          <xsd:documentation>Thermal Emittance for a roof is the ratio of the electromagnetic radiation emitted by a surface to that of a perfect black body at the same temperature.  Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ThermalEmittanceLimit">
       <xsd:annotation>
@@ -1961,8 +2218,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Emissivity</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="Thickness">
       <xsd:annotation>
@@ -1972,8 +2228,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Thickness</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="TopLevelOccupancy">
       <xsd:annotation>
@@ -2015,8 +2270,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Total Conditioned Floor Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="TotalGrossFloorArea">
       <xsd:annotation>
@@ -2025,8 +2279,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Building Total Floor Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="TotalStoryCount">
       <xsd:annotation>
@@ -2035,8 +2288,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Total Story Count</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:IntegerNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="TotalUnconditionedFloorArea">
       <xsd:annotation>
@@ -2045,16 +2297,14 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Total Unconditioned Floor Area</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="TypeOtherDescription">
       <xsd:annotation>
          <xsd:documentation>Text describing type not in list</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:token">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="UFactor">
       <xsd:annotation>
@@ -2063,39 +2313,52 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>UFactor</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="UFactorCenterOfGlass">
       <xsd:annotation>
          <xsd:documentation>The overall coefficient of thermal transmittance through glass of a fenestration product.  Units: Btu per h ft2 F</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="UFactorLimit">
       <xsd:annotation>
          <xsd:documentation>This is the regulatory limit for the UFactor of a building element  Units: Btu per h ft2 F</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="UFactorLimitSkylight">
       <xsd:annotation>
          <xsd:documentation>This is the regulatory limit for the UFactor of a Skylight fenestration  Units: Btu per h ft2 F</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VT">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VT_CenterOfGlass">
+      <xsd:annotation>
+         <xsd:documentation>The fraction of incident visible radiation that is transmitted by the material. Visible radiation includes only a sub-range of solar radiation and excludes infrared and ultraviolet wavelengths.  Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VT_Limit">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="VentilationPerSpace">
       <xsd:annotation>
-         <xsd:documentation>  Units: ft3 per min</xsd:documentation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc exclude;  CBECC NR include</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="VentilationRate">
       <xsd:annotation>
@@ -2105,8 +2368,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Ventilation Rate</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="VentilationSpaceFunction">
       <xsd:annotation>
@@ -2298,8 +2560,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Visible Absorptance</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="VisibleTransmittance">
       <xsd:annotation>
@@ -2308,8 +2569,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Visible Transmittance</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="Volume">
       <xsd:annotation>
@@ -2318,47 +2578,22 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm>Space Volume</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:DecimalNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="VT">
-      <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="VT_CenterOfGlass">
-      <xsd:annotation>
-         <xsd:documentation>The fraction of incident visible radiation that is transmitted by the material. Visible radiation includes only a sub-range of solar radiation and excludes infrared and ultraviolet wavelengths.  Units: none</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="VT_Limit">
-      <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="WeatherFile">
-      <xsd:restriction base="xsd:token">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="WeatherStation">
       <xsd:annotation>
          <xsd:documentation>86 different weather stations that provide weather data for different climate zones.</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:EnumerationConstant"/>
    </xsd:simpleType>
    <xsd:simpleType name="WeatherStationNumber">
       <xsd:annotation>
          <xsd:documentation>A numeric value for each of the 86 weather stations used for table lookup  Units: none</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:IntegerNonnegative">
-      </xsd:restriction>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="WholeBuildingOccupancy">
       <xsd:annotation>
@@ -2435,21 +2670,19 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
    </xsd:simpleType>
    <xsd:simpleType name="YearBuilt">
       <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
+         <xsd:documentation>Units: none</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="xsd:gYear">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:gYear"/>
    </xsd:simpleType>
    <xsd:simpleType name="YearLastMajorRemodel">
       <xsd:annotation>
-         <xsd:documentation>  Units: none</xsd:documentation>
+         <xsd:documentation>Units: none</xsd:documentation>
          <xsd:documentation source="propertyrules">NR Presc include;  CBECC NR exclude</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Year of Last Major Remodel</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:gYear">
-      </xsd:restriction>
+      <xsd:restriction base="xsd:gYear"/>
    </xsd:simpleType>
 </xsd:schema>
