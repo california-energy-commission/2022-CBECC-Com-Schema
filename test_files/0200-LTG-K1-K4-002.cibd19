@@ -2,9 +2,9 @@ RulesetFilename   "T24N_2019.bin"
 
 Proj   "020012-OffSml-CECStd19"  
    BldgEngyModelVersion = 14
-   CreateDate = 1612464543
-   ModDate = 1615312244
-   RunDate = 1615312177
+   CreateDate = 1612462660
+   ModDate = 1615312287
+   RunDate = 1615312288
    ZipCode = 95814
    DDWeatherFile = "D:/AEC Ruleset/branches/CBECC-Com13-BZ/Data/EPW/SACRAMENTO-EXECUTIVE_724830_CZ2010.ddy"
    AnnualWeatherFile = "D:/AEC Ruleset/branches/CBECC-Com13-BZ/Data/EPW/SACRAMENTO-EXECUTIVE_724830_CZ2010.epw"
@@ -191,6 +191,7 @@ Spc   "Perimeter_ZN_1"
    ThrmlZnRef = "Perimeter_ZN_1 Thermal Zone"
    Vol = 12219.7
    SpcFunc = "Office Area (Open plan office)"
+   LtgStatus = "New"
    PriSide100PctControlled = 1
    SecSide100PctControlled = 1
    ..
@@ -470,11 +471,43 @@ CartesianPt   "CartesianPoint 147"
    Coord = ( 40.8465, 0, 7.95276 )
    ..
 
+IntLtgSys   "InteriorLightingSystem 1"  
+   LumRef[1] = "A"
+   LumRef[2] = "B"
+   LumRef[3] = "C"
+   LumRef[4] = "D"
+   LumCnt[1] = 1
+   LumCnt[2] = 2
+   LumCnt[3] = 3
+   LumCnt[4] = 4
+   PAFCredType = ( "OccupantSensingControls-251to500SF", 
+                   "InstitutionalTuning", "DemandResponsiveControl", 
+                   "- none specified -", "- none specified -" )
+   DaylitAreaType = "PrimarySidelit"
+   ..
+
+IntLtgSys   "InteriorLightingSystem 2"  
+   LumRef[1] = "A"
+   LumRef[2] = "B"
+   LumRef[3] = "C"
+   LumRef[4] = "D"
+   LumCnt[1] = 1
+   LumCnt[2] = 1
+   LumCnt[3] = 1
+   LumCnt[4] = 1
+   PAFCredType[1] = "OccupantSensingControls-251to500SF"
+   PAFCredType[2] = "InstitutionalTuning"
+   PAFCredType[3] = "- none specified -"
+   PAFCredType[4] = "DemandResponsiveControl"
+   DaylitAreaType = "SecondarySidelit"
+   ..
+
 Spc   "Perimeter_ZN_2"  
    TreeState = 254
    ThrmlZnRef = "Perimeter_ZN_2 Thermal Zone"
    Vol = 7248.87
    SpcFunc = "Office Area (Open plan office)"
+   LtgStatus = "New"
    PriSide100PctControlled = 1
    SecSide100PctControlled = 1
    ..
@@ -634,6 +667,21 @@ CartesianPt   "CartesianPoint 230"
 
 CartesianPt   "CartesianPoint 231"  
    Coord = ( 74.4423, 44.1601, 0 )
+   ..
+
+IntLtgSys   "InteriorLightingSystem 3"  
+   LumRef[1] = "A"
+   LumRef[2] = "B"
+   LumRef[3] = "C"
+   LumRef[4] = "D"
+   LumCnt[1] = 1
+   LumCnt[2] = 1
+   LumCnt[3] = 1
+   LumCnt[4] = 1
+   PAFCredType[1] = "OccupantSensingControls-251to500SF"
+   PAFCredType[2] = "InstitutionalTuning"
+   PAFCredType[4] = "- none specified -"
+   DaylitAreaType = "PrimarySidelit"
    ..
 
 Spc   "Perimeter_ZN_3"  
@@ -1215,6 +1263,7 @@ Spc   "Attic"
    ThrmlZnRef = "Attic Thermal Zone"
    Vol = 28195.7
    SpcFunc = "Unoccupied-Exclude from Gross Floor Area"
+   LtgStatus = "New"
    SecSide100PctControlled = 0
    ..
 
@@ -1641,49 +1690,49 @@ EUseSummary   "SummaryResults"
    Title3[23] = "Margin (tonne)"
    Enduse1[1] = "Space Heating"
    Enduse1[2] = "--"
-   Enduse1[3] = "26.2"
-   Enduse1[4] = "9.83"
+   Enduse1[3] = "27.2"
+   Enduse1[4] = "10.21"
    Enduse1[5] = "--"
    Enduse1[6] = "26.2"
    Enduse1[7] = "9.83"
-   Enduse1[8] = "--"
+   Enduse1[8] = "-0.38"
    Enduse1[9] = "--"
    Enduse1[10] = "--"
-   Enduse1[18] = "1.39"
-   Enduse1[19] = "1.39"
+   Enduse1[18] = "1.44"
+   Enduse1[19] = "1.44"
    Enduse1[21] = "1.39"
    Enduse1[22] = "1.39"
-   Enduse1[23] = "0.00"
+   Enduse1[23] = "-0.05"
    Enduse2[1] = "Space Cooling"
-   Enduse2[2] = "9.2"
+   Enduse2[2] = "9.1"
    Enduse2[3] = "--"
-   Enduse2[4] = "74.20"
+   Enduse2[4] = "73.24"
    Enduse2[5] = "9.2"
    Enduse2[6] = "--"
    Enduse2[7] = "74.20"
-   Enduse2[8] = "--"
-   Enduse2[9] = "5.2"
+   Enduse2[8] = "0.96"
+   Enduse2[9] = "5.1"
    Enduse2[10] = "5.2"
-   Enduse2[17] = "2.02"
-   Enduse2[19] = "2.02"
+   Enduse2[17] = "1.98"
+   Enduse2[19] = "1.98"
    Enduse2[20] = "2.02"
    Enduse2[22] = "2.02"
-   Enduse2[23] = "0.00"
+   Enduse2[23] = "0.04"
    Enduse3[1] = "Indoor Fans"
-   Enduse3[2] = "20.1"
+   Enduse3[2] = "19.8"
    Enduse3[3] = "--"
-   Enduse3[4] = "106.75"
+   Enduse3[4] = "105.39"
    Enduse3[5] = "20.1"
    Enduse3[6] = "--"
    Enduse3[7] = "106.75"
-   Enduse3[8] = "--"
+   Enduse3[8] = "1.36"
    Enduse3[9] = "3.5"
    Enduse3[10] = "3.5"
-   Enduse3[17] = "4.27"
-   Enduse3[19] = "4.27"
+   Enduse3[17] = "4.21"
+   Enduse3[19] = "4.21"
    Enduse3[20] = "4.27"
    Enduse3[22] = "4.27"
-   Enduse3[23] = "0.00"
+   Enduse3[23] = "0.06"
    Enduse4[1] = "Heat Rejection"
    Enduse4[2] = "--"
    Enduse4[3] = "--"
@@ -1718,37 +1767,37 @@ EUseSummary   "SummaryResults"
    Enduse6[10] = "--"
    Enduse6[23] = "0.00"
    Enduse7[1] = "Indoor Lighting"
-   Enduse7[2] = "5.5"
+   Enduse7[2] = "4.8"
    Enduse7[3] = "--"
-   Enduse7[4] = "28.68"
+   Enduse7[4] = "24.79"
    Enduse7[5] = "5.5"
    Enduse7[6] = "--"
    Enduse7[7] = "28.68"
-   Enduse7[8] = "--"
-   Enduse7[9] = "0.9"
+   Enduse7[8] = "3.89"
+   Enduse7[9] = "0.8"
    Enduse7[10] = "0.9"
-   Enduse7[17] = "1.15"
-   Enduse7[19] = "1.15"
+   Enduse7[17] = "0.99"
+   Enduse7[19] = "0.99"
    Enduse7[20] = "1.15"
    Enduse7[22] = "1.15"
-   Enduse7[23] = "0.00"
+   Enduse7[23] = "0.16"
    Enduse8[1] = "Compliance Total"
-   Enduse8[2] = "34.8"
-   Enduse8[3] = "26.2"
-   Enduse8[4] = "219.46"
+   Enduse8[2] = "33.7"
+   Enduse8[3] = "27.2"
+   Enduse8[4] = "213.63"
    Enduse8[5] = "34.8"
    Enduse8[6] = "26.2"
    Enduse8[7] = "219.46"
-   Enduse8[8] = "--"
-   Enduse8[9] = "9.6"
+   Enduse8[8] = "5.83"
+   Enduse8[9] = "9.4"
    Enduse8[10] = "9.6"
-   Enduse8[17] = "7.44"
-   Enduse8[18] = "1.39"
-   Enduse8[19] = "8.83"
+   Enduse8[17] = "7.18"
+   Enduse8[18] = "1.44"
+   Enduse8[19] = "8.62"
    Enduse8[20] = "7.44"
    Enduse8[21] = "1.39"
    Enduse8[22] = "8.83"
-   Enduse8[23] = "0.00"
+   Enduse8[23] = "0.21"
    Enduse9[1] = "Receptacle"
    Enduse9[2] = "23.6"
    Enduse9[3] = "--"
@@ -1820,22 +1869,22 @@ EUseSummary   "SummaryResults"
    Enduse14[10] = "--"
    Enduse14[23] = "0.00"
    Enduse15[1] = "TOTAL"
-   Enduse15[2] = "58.4"
-   Enduse15[3] = "26.2"
-   Enduse15[4] = "340.14"
+   Enduse15[2] = "57.3"
+   Enduse15[3] = "27.2"
+   Enduse15[4] = "334.31"
    Enduse15[5] = "58.4"
    Enduse15[6] = "26.2"
    Enduse15[7] = "340.14"
-   Enduse15[8] = "--"
-   Enduse15[9] = "12.7"
+   Enduse15[8] = "5.83"
+   Enduse15[9] = "12.4"
    Enduse15[10] = "12.7"
-   Enduse15[17] = "12.15"
-   Enduse15[18] = "1.39"
-   Enduse15[19] = "13.54"
+   Enduse15[17] = "11.89"
+   Enduse15[18] = "1.44"
+   Enduse15[19] = "13.33"
    Enduse15[20] = "12.15"
    Enduse15[21] = "1.39"
    Enduse15[22] = "13.54"
-   Enduse15[23] = "0.00"
+   Enduse15[23] = "0.21"
    ZoneUMLHsLoaded = ( 0, 1 )
    ZoneUMLHs = ( 
                  "clg: 0  htg: 0  'Attic Thermal Zone'
@@ -1850,14 +1899,14 @@ clg: 0  htg: 0  'Perimeter_ZN_1 Thermal Zone'
 clg: 0  htg: 0  'Perimeter_ZN_2 Thermal Zone'
 clg: 0  htg: 0  'Perimeter_ZN_3 Thermal Zone'
 clg: 1  htg: 0  'Perimeter_ZN_4 Thermal Zone'" )
-   SimSummary[1] = "Successful (91 warnings)"
+   SimSummary[1] = "Successful (90 warnings)"
    SimSummary[3] = "Successful (91 warnings)"
    PassFail = "PASS"
-   PctSavingsTDV = 0
-   PctSavingsCmpTDV = 0
-   PctSavTDVLbl = "-"
-   PctSavCmpTDVLbl = "-"
-   MarginkW = 0
+   PctSavingsTDV = 1.714
+   PctSavingsCmpTDV = 2.65652
+   PctSavTDVLbl = "1.7"
+   PctSavCmpTDVLbl = "2.7"
+   MarginkW = 0.3
    PVBattResultsValid = 0
    PropPV_Total = 0
    PropPV_Export = 0
