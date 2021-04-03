@@ -1,6 +1,8 @@
 # CBECC-Com-PRF-Reporting-Schema
 
-Nonresidential PRF01 
+[![Remote Dispatch Action Dispatcher](https://github.com/RASENTSolutionsLLC-NORESCO/CBECC-NonRes-PRF-Schema/actions/workflows/dispatch.yml/badge.svg)](https://github.com/RASENTSolutionsLLC-NORESCO/CBECC-NonRes-PRF-Schema/actions/workflows/dispatch.yml)
+
+Nonresidential PRF01
 
 # Folder Structure
 
@@ -8,7 +10,7 @@ Nonresidential PRF01
 
 :open_file_folder: `schema`: Schema files (.xsd)
 
-:open_file_folder: `deployed`: Deployed schema files 
+:open_file_folder: `deployed`: Deployed schema files
 
 # Contributing
 
