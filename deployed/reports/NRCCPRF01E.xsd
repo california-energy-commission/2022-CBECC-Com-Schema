@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/NRCCPRF01E" version="2019.0.009" xmlns="http://www.lmonte.com/besm/NRCCPRF01E" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:env="http://www.lmonte.com/besm/env" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:lit="http://www.lmonte.com/besm/lit" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/NRCCPRF01E" version="2019.1.010" xmlns="http://www.lmonte.com/besm/NRCCPRF01E" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:env="http://www.lmonte.com/besm/env" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:lit="http://www.lmonte.com/besm/lit" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <xsd:import namespace="http://www.lmonte.com/besm/bld" schemaLocation="../base/NrPresBuilding.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="../base/NrPresCommon.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/comp" schemaLocation="../base/NrPresCompliance.xsd"/>
@@ -2901,6 +2901,11 @@
                   <d:b>C4. UNMET LOAD HOURS</d:b>
                </xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if unmet heating load hours are greater than unmet heating load hour limit OR unmet cooling load hours are greater than unmet cooling load hour limit</xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required if any combinaiton of conditions is true</dtyp:CBECCnrXMLterm>
+                  <dtyp:termConditions>p:Proj:Bldg:ThrmlZn:BypassClgUMLHLimit = 0 AND p:Proj:Bldg:ThrmlZn:ClgUnmetLdHrs GT ( p:Proj:Bldg:ThrmlZn:ClgUMLHLimit + 0.1 )  OR 
+If p:Proj:Bldg:ThrmlZn:BypassHtgUMLHLimit = 0 AND p:Proj:Bldg:ThrmlZn:HtgUnmetLdHrs GT ( p:Proj:Bldg:ThrmlZn:HtgUMLHLimit + 0.1 )</dtyp:termConditions>
+               </xsd:appinfo>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -2953,6 +2958,33 @@
                <xsd:documentation source="FieldText">
                   <d:b>D. EXCEPTIONAL CONDITIONS</d:b>
                </xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required if any condition is true</dtyp:CBECCnrXMLterm>
+                  <dtyp:termConditions>p:Proj:ExcptCondFlexEnduse == Yes
+p:Proj:ExcptCondPart1Comp== 1 Or  Yes
+p:Proj:ExcptCondPart2Comp== 1 Or  Yes
+p:Proj:ExcptCondPart3Comp== 1 Or  Yes
+p:Proj:ExcptCondDisplayPerim == 1 Or  Yes
+p:Proj:ExcptCondCRRC== 1 Or  Yes
+p:Proj:ExcptCondLtgCred == 1 Or  Yes
+p:Proj:ExcptCondNoLtg == 1 Or  Yes
+p:Proj:ExcptCondDsgnIllum == 1 Or  Yes
+p:Proj:ExcptCondNoClgSys == 1 Or  Yes
+p:Proj:ExcptCondRtdCap == 1 Or  Yes
+p:Proj:ExcptCondWtrHtr == 1 Or  Yes
+p:Proj:ExcptCondNarrative == 1 Or  Yes
+p:Proj:ExcptCondPAFCredit == 1 Or  Yes
+p:Proj:ExcptCondMinEffCheck == 1 Or  Yes
+p:Proj:ExcptCondPropane == 1 Or  Yes
+p:Proj:ExcptCondPrkgGarExhFan == 1 Or  Yes
+p:Proj:ExcptCondInterlockWarn1 == 1 Or  Yes
+p:Proj:ExcptCondInterlockWarn2 == 1 Or  Yes
+p:Proj:ExcptPrescriptiveDayltg == 1 Or  Yes
+p:Proj:PropHasUnknownHVACZns GT 0
+p:Proj:ExcptCondVentStdOther == 1 Or  Yes
+p:Proj:AddClgSysZns GT 0
+sum (p:Proj:Bldg:ThrmlZn:HasNoClg) GT 0</dtyp:termConditions>
+               </xsd:appinfo>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -2970,6 +3002,19 @@
                <xsd:documentation source="FieldText">
                   <d:b>E. HERS VERIFICATION</d:b>
                </xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required if any condition is true</dtyp:CBECCnrXMLterm>
+                  <dtyp:termConditions>p:ExcptCondHERSDuctReqTested == Yes
+p:ExcptCondHERSDrainWtrHtRcvrySys == Yes
+p:ExcptCondHERSResDHWSysPipeIns == Yes
+p:ExcptCondHERSResDHWSysParallelPiping == Yes
+p:ExcptCondHERSResDHWSysRecircDemCtrlPushButton == Yes
+p:ExcptCondHERSResDHWSysRecircDemCtrlOccSensor == Yes
+p:ExcptCondHERSResDHWSysCompactDistSys == Yes
+p:ExcptCondHERSVent == Yes
+p:ExcptCondHERSKitHood == Yes
+p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
+               </xsd:appinfo>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -2995,6 +3040,10 @@
                <xsd:documentation source="FieldText">
                   <d:b>F. ADDITIONAL REMARKS</d:b>
                </xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required if the condition is true</dtyp:CBECCnrXMLterm>
+                  <dtyp:termConditions>p:Proj:NarrativeDetails != " - specify - "</dtyp:termConditions>
+               </xsd:appinfo>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -3231,6 +3280,12 @@
                <xsd:documentation source="FieldText">
                   <d:b>G2. CRRC ROOFING PRODUCT SUMMARY  </d:b>
                </xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required if all conditions are true</dtyp:CBECCnrXMLterm>
+                  <dtyp:termConditions>p:Proj:CompPathEnv == Performance And 
+p:ConsAssm:CompatibleSufrType == Roof And
+p:ConsAssm:HasCRRCProdID == 1</dtyp:termConditions>
+               </xsd:appinfo>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -3285,12 +3340,16 @@
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_Opaq" minOccurs="1">
+         <xsd:element name="Section_Opaq" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>G3. OPAQUE SURFACE ASSEMBLY SUMMARY  </d:b>
                </xsd:documentation>
-               <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required if the condition is true</dtyp:CBECCnrXMLterm>
+                  <dtyp:termConditions>p:Proj:CompPathEnv == Performance</dtyp:termConditions>
+               </xsd:appinfo>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
@@ -3403,7 +3462,7 @@ End If</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Value</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ConsAssm:UFactor If ConsAssm:SpecMthd == Layers</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>ConsAssm:UFactor</dtyp:CBECCnrXMLterm>
                                                 <dtyp:termConditions>If ConsAssm:SpecMthd == Layers result = ConsAssm:UFactor</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
@@ -3412,7 +3471,7 @@ End If</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Value</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ConsAssm:FFactor  If ConsAssm:SpecMthd == FFactor</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>ConsAssm:FFactor</dtyp:CBECCnrXMLterm>
                                                 <dtyp:termConditions>If ConsAssm:SpecMthd == FFactor result = ConsAssm:FFactor
 End If</dtyp:termConditions>
                                              </xsd:appinfo>
@@ -3422,7 +3481,7 @@ End If</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Value</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ConsAssm:CFactor If ConsAssm:SpecMthd == CFactor</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>ConsAssm:CFactor</dtyp:CBECCnrXMLterm>
                                                 <dtyp:termConditions>If ConsAssm:SpecMthd == CFactor result = ConsAssm:CFactor
 End If</dtyp:termConditions>
                                              </xsd:appinfo>
@@ -3630,13 +3689,14 @@ Proj:ConsAssm:MatRef index = 10</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Fen02a1_DynamicGlazing" type="env:DynamicGlazing" minOccurs="0">
+                                    <xsd:element name="Fen02a1_DynamicGlazing" type="env:DynamicGlazing">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText"/>
-                                          <xsd:documentation source="CalculationsAndRules">This field is required and displayed If result = true
+                                          <xsd:documentation source="CalculationsAndRules">If result == true or 1  display term Uses Dynamic Glazing 
+Else If result == false or 0 nothing is displayed 
 End If</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Proj:FenCons:DynamicGlz  If Proj:FenCons:DynamicGlz == 0 not required Else required</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>Proj:FenCons:DynamicGlz</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -3652,12 +3712,11 @@ End If</xsd:documentation>
                                        <xsd:element name="Fen02c_FenestrationFramingNR" type="com:FenestrationFramingNR">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText"/>
+                                             <xsd:documentation source="CalculationsAndRules">If Fen03_FenestrationCertificationMethod != NFRCRated possible values are MetalFraming, MetalFramingWithThermalBreak, NonMetalFraming</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:FenFrm If Proj:FenCons:CertificationMthd != NFRCRated</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:FenFrm</dtyp:CBECCnrXMLterm>
                                                 <dtyp:termConditions>If Proj:FenCons:CertificationMthd != NFRCRated 
 result = Proj:FenCons:FenFrm
-Else If Proj:FenCons:CertificationMthd == NFRCRated 
-result = NotApplicable stored in NotApplicableMessage
 End If</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
@@ -3669,9 +3728,8 @@ End If</dtyp:termConditions>
 result = NotApplicable stored in NotApplicableMessage
 End If</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>NotApplicable  If Proj:FenCons:CertificationMthd == NFRCRated</dtyp:CBECCnrXMLterm>
-                                                <dtyp:termConditions>If Proj:FenCons:CertificationMthd != NFRCRated result = Proj:FenCons:FenFrm
-Else If Proj:FenCons:CertificationMthd == NFRCRated 
+                                                <dtyp:CBECCnrXMLterm>NotApplicable</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If Proj:FenCons:CertificationMthd == NFRCRated 
 result = NotApplicable
 End If</dtyp:termConditions>
                                              </xsd:appinfo>
@@ -3717,7 +3775,9 @@ End If</dtyp:termConditions>
                                              <xsd:documentation source="CalculationsAndRules">Use this choice If Fen03_FenestrationCertificationMethod != COGEquations
 End If</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:Ufactor If Proj:FenCons:CertificationMthd != COGEquations</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:Ufactor</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If Proj:FenCons:CertificationMthd != COGEquations
+result = Proj:FenCons:Ufactor</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -3727,7 +3787,9 @@ End If</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Use this choice If Fen03_FenestrationCertificationMethod == COGEquations
 End If</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:UfactorCOG If Proj:FenCons:CertificationMthd == COGEquations</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:UfactorCOG</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If Proj:FenCons:CertificationMthd == COGEquations
+result = Proj:FenCons:UfactorCOG</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -3739,7 +3801,9 @@ End If</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Use this choice If Fen03_FenestrationCertificationMethod != COGEquations
 End If</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:SHGC If Proj:FenCons:CertificationMthd != COGEquations</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:SHGC</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If Proj:FenCons:CertificationMthd != COGEquations
+result = Proj:FenCons:SHGC</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -3749,7 +3813,9 @@ End If</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Use this choice If Fen03_FenestrationCertificationMethod == COGEquations
 End If</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:SHGCCOG If Proj:FenCons:CertificationMthd == COGEquations</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:SHGCCOG</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If Proj:FenCons:CertificationMthd == COGEquations
+result = Proj:FenCons:SHGCCOG</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -3761,7 +3827,9 @@ End If</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Use this choice If Fen03_FenestrationCertificationMethod != COGEquations
 End If</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:VT If Proj:FenCons:CertificationMthd != COGEquations</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:VT</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If Proj:FenCons:CertificationMthd != COGEquations
+result = Proj:FenCons:VT</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -3771,7 +3839,9 @@ End If</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Use this choice If Fen03_FenestrationCertificationMethod == COGEquations
 End If</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:VTCOG If Proj:FenCons:CertificationMthd == COGEquations</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>Proj:FenCons:VTCOG</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If Proj:FenCons:CertificationMthd == COGEquations
+result = Proj:FenCons:VTCOG</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -3901,6 +3971,11 @@ End If</xsd:documentation>
                <xsd:documentation source="FieldText">
                   <d:b>G7. FIN DETAILS </d:b>
                </xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required if any condition is true</dtyp:CBECCnrXMLterm>
+                  <dtyp:termConditions>Proj:Bldg:Story;Spc:ExtWall:Win:RightFinDepth GT 0
+Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
+               </xsd:appinfo>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -5951,7 +6026,7 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                            <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="WaterCHPWH01_WaterHeaterName" type="hvac:WaterHeaterName">
+                                    <xsd:element name="WaterCHPWH01_WaterHeatingSystemName" type="hvac:WaterHeatingSystemName">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Name</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -6550,54 +6625,62 @@ End If</dtyp:termConditions>
                                           <xsd:documentation source="FieldText">Space Name</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="ProcKitch02_KitchenExhaustHoodStyle" type="com:KitchenExhaustHoodStyle">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust Hood Style</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="ProcKitch02_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust Hood Style</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="ProcKitch03_KitchenExhaustHoodDuty" type="com:KitchenExhaustHoodDuty">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust Hood Duty</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="ProcKitch03_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust Hood Duty</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="ProcKitch04_KitchenExhaustHoodLength" type="com:KitchenExhaustHoodLength">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust Length</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="ProcKitch04_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust Length</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="ProcKitch05_KitchenExhaustHoodFlow" type="com:KitchenExhaustHoodFlow">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust Flow Rate (cfm)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="ProcKitch05_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust Flow Rate (cfm)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
+                                    <xsd:element name="TableKitchHoods">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText"/>
+                                       </xsd:annotation>
+                                       <xsd:complexType>
+                                          <xsd:sequence>
+                                             <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                                                <xsd:complexType>
+                                                   <xsd:sequence>
+                                                      <xsd:element name="ProcKitch02_KitchenExhaustHoodStyle" type="com:KitchenExhaustHoodStyle">
+                                                         <xsd:annotation>
+                                                            <xsd:documentation source="FieldText">Exhaust Hood Style</xsd:documentation>
+                                                         </xsd:annotation>
+                                                      </xsd:element>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="ProcKitch03_KitchenExhaustHoodDuty" type="com:KitchenExhaustHoodDuty">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Exhaust Hood Duty</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="ProcKitch03_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Exhaust Hood Duty</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="ProcKitch04_KitchenExhaustHoodLength" type="com:KitchenExhaustHoodLength">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Exhaust Length</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="ProcKitch04_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Exhaust Length</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="ProcKitch05_KitchenExhaustHoodFlow" type="com:KitchenExhaustHoodFlow">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Exhaust Flow Rate (cfm)</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="ProcKitch05_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Exhaust Flow Rate (cfm)</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                   </xsd:sequence>
+                                                </xsd:complexType>
+                                             </xsd:element>
+                                          </xsd:sequence>
+                                       </xsd:complexType>
+                                    </xsd:element>
                                  </xsd:sequence>
                               </xsd:complexType>
                            </xsd:element>
@@ -6719,14 +6802,6 @@ End If</dtyp:termConditions>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:element name="ProcLab07_FanPowerModeled" type="hvac:FanPowerModeled">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Fan Power (Watts)</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Fan:PwrIRpt</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
                                  </xsd:sequence>
                               </xsd:complexType>
                            </xsd:element>

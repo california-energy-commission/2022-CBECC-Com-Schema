@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/comp" version="2019.0.009" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/comp" version="2019.1.010" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <xsd:import namespace="http://www.lmonte.com/besm/bld" schemaLocation="NrPresBuilding.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="NrPresCommon.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/dtyp" schemaLocation="DataTypes.xsd"/>
@@ -100,14 +100,14 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="EvaporativeCoolerNA">NA: Evaporative Cooler</dtyp:displayterm>
-            <dtyp:displayterm value="ProvidedAlteration">Provided per
-               <d:t24ref h="141.0(b)2c"/>(alteration)</dtyp:displayterm>
-            <dtyp:displayterm value="ProvidedHiRiseRes">Provided per
+            <dtyp:displayterm value="ProvidedAlteration">Provided per 
+               <d:t24ref h="141.0(b)2c"/> (alteration)</dtyp:displayterm>
+            <dtyp:displayterm value="ProvidedHiRiseRes">Provided per 
                <d:t24ref h="120.1(b)"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="ProvidedNA">NA: Not system type specified in Table J footnote 2</dtyp:displayterm>
-            <dtyp:displayterm value="ProvidedNR">Provided per
-               <d:t24ref h="120.1(c)"/>(NR and Hotel/Motel))</dtyp:displayterm>
+            <dtyp:displayterm value="ProvidedNR">Provided per 
+               <d:t24ref h="120.1(c)"/> (NR and Hotel/Motel))</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -284,7 +284,7 @@
       <xsd:annotation>
          <xsd:documentation>Units: dollar US per ft2</xsd:documentation>
          <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>OPR Annual Energy Cost per ft<d:sup>2</d:sup>Goal</dtyp:displayterm>
+            <dtyp:displayterm>OPR Annual Energy Cost per ft<d:sup>2</d:sup> Goal</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
@@ -595,7 +595,7 @@
    <xsd:simpleType name="AreaWeightAvgType">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="Concrete">Span Deck &amp;amp;amp; Concrete</dtyp:displayterm>
+            <dtyp:displayterm value="Concrete">Span Deck &amp;amp; Concrete</dtyp:displayterm>
             <dtyp:displayterm value="ConcreteSandwich">Concrete Sandwich Panel</dtyp:displayterm>
             <dtyp:displayterm value="Framed">Framed</dtyp:displayterm>
             <dtyp:displayterm value="ICF">ICF</dtyp:displayterm>
@@ -609,7 +609,7 @@
             <dtyp:displayterm value="MetalPanel">Metal Panel</dtyp:displayterm>
             <dtyp:displayterm value="RaisedMass">Raised Mass</dtyp:displayterm>
             <dtyp:displayterm value="SIPS">SIPS</dtyp:displayterm>
-            <dtyp:displayterm value="Spandrel">Spandrel &amp;amp;amp; Curtain</dtyp:displayterm>
+            <dtyp:displayterm value="Spandrel">Spandrel &amp;amp; Curtain</dtyp:displayterm>
             <dtyp:displayterm value="StrawBale">Straw Bale</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -695,7 +695,7 @@
             <dtyp:displayterm>Area Weighted Average Ufactor</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+      <xsd:restriction base="dtyp:Decimal3PlacesNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="AutoScheduleControlsOutdoors">
       <xsd:annotation>
@@ -828,8 +828,8 @@
    <xsd:simpleType name="BoilerFanControl">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="ControlFanMotorDemand">Controls limit fan motor demand to
-               <d:lte/>30% of the total design wattage at 50% of design air volume provided</dtyp:displayterm>
+            <dtyp:displayterm value="ControlFanMotorDemand">Controls limit fan motor demand to 
+               <d:lte/> 30% of the total design wattage at 50% of design air volume provided</dtyp:displayterm>
             <dtyp:displayterm value="FanVarSpeedDrive">Variable speed drive provided</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -841,7 +841,7 @@
    <xsd:simpleType name="BoilerStackControl">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="true">Designed and controlled per
+            <dtyp:displayterm value="true">Designed and controlled per 
                <d:t24ref h="120.6(d)"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="false"/>
@@ -977,12 +977,12 @@
    <xsd:simpleType name="ChillerExceptionPathB">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="EfficiencyException1">1. Electrical service
-               <d:gt/>600V</dtyp:displayterm>
-            <dtyp:displayterm value="EfficiencyException2">2. Heat recovery w/design capacity
-               <d:gt/>40% of the design chiller cooling capacity</dtyp:displayterm>
-            <dtyp:displayterm value="EfficiencyException3">3. Charging energy storage systems w/ charging temperature
-               <d:lt/>40
+            <dtyp:displayterm value="EfficiencyException1">1. Electrical service 
+               <d:gt/> 600V</dtyp:displayterm>
+            <dtyp:displayterm value="EfficiencyException2">2. Heat recovery w/design capacity 
+               <d:gt/> 40% of the design chiller cooling capacity</dtyp:displayterm>
+            <dtyp:displayterm value="EfficiencyException3">3. Charging energy storage systems w/ charging temperature  
+               <d:lt/> 40
                <d:deg/>F</dtyp:displayterm>
             <dtyp:displayterm value="EfficiencyException4">4. 4th (or more) chiller in this building</dtyp:displayterm>
             <dtyp:displayterm value="NoExceptionTaken">No Exception Taken</dtyp:displayterm>
@@ -1098,7 +1098,7 @@
    <xsd:simpleType name="CombustionAirShutOff">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="InputLT2_5MMBtuhNA">NA: combined rated input of all boilers per stack
+            <dtyp:displayterm value="InputLT2_5MMBtuhNA">NA: combined rated input of all boilers per stack 
                <d:lt/>2.5  MMBtuh</dtyp:displayterm>
             <dtyp:displayterm value="ShutOffProvided">Combustion air positive shut-off provided</dtyp:displayterm>
          </xsd:appinfo>
@@ -1128,7 +1128,7 @@
             <dtyp:displayterm value="AllOthers">All other occupancy types</dtyp:displayterm>
             <dtyp:displayterm value="Healthcare">Healthcare Facility</dtyp:displayterm>
             <dtyp:displayterm value="HighRiseResidential">High-rise Residential (
-               <d:gte/>4 stories)</dtyp:displayterm>
+               <d:gte/> 4 stories)</dtyp:displayterm>
             <dtyp:displayterm value="HotelMotel">Hotel/Motel</dtyp:displayterm>
             <dtyp:displayterm value="MixedUse">Mixed Use</dtyp:displayterm>
             <dtyp:displayterm value="Nonresidential">Nonresidential</dtyp:displayterm>
@@ -1176,7 +1176,7 @@
             <dtyp:displayterm value="AdditionAlteration">Addition or Alteration</dtyp:displayterm>
             <dtyp:displayterm value="MajorRenovation">Major renovation</dtyp:displayterm>
             <dtyp:displayterm value="NewConstruction">Newly constructed</dtyp:displayterm>
-            <dtyp:displayterm value="ShellCoreOnly">Core &amp;amp;amp; shell only</dtyp:displayterm>
+            <dtyp:displayterm value="ShellCoreOnly">Core &amp;amp; shell only</dtyp:displayterm>
             <dtyp:displayterm value="TenantFitOutOnly">Tenant fit out only</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -1226,6 +1226,20 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
+   <xsd:simpleType name="CompletionStatus">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Complete">Complete</dtyp:displayterm>
+            <dtyp:displayterm value="NA">NA</dtyp:displayterm>
+            <dtyp:displayterm value="NotComplete">Not Complete</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="Complete"/>
+         <xsd:enumeration value="NA"/>
+         <xsd:enumeration value="NotComplete"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ComplianceApplicationDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
@@ -1258,6 +1272,7 @@
          <xsd:element name="Footer" type="comp:Footer"/>
          <xsd:element name="FooterNRCC" type="comp:FooterNRCC"/>
          <xsd:element name="FooterNRCCPRF" type="comp:FooterNRCCPRF"/>
+         <xsd:element name="FooterNRPSR" type="comp:FooterNRPSR"/>
          <xsd:element name="HeaderNRCA" type="comp:HeaderNRCA"/>
          <xsd:element name="HeaderNRCC" type="comp:HeaderNRCC"/>
          <xsd:element name="HeaderNRCCPRF" type="comp:HeaderNRCCPRF"/>
@@ -1309,6 +1324,7 @@
             <dtyp:displayterm value="NRCVPLB21H">NRCVPLB21H</dtyp:displayterm>
             <dtyp:displayterm value="NRCVPLB22H">NRCVPLB22H</dtyp:displayterm>
             <dtyp:displayterm value="NRGPDE">NRG-PD-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRPSRE">NR-PSR-E</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstantPermissive">
@@ -1330,6 +1346,7 @@
          <xsd:enumeration value="NRCVPLB21H"/>
          <xsd:enumeration value="NRCVPLB22H"/>
          <xsd:enumeration value="NRGPDE"/>
+         <xsd:enumeration value="NRPSRE"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceDocumentTitleNR">
@@ -1342,7 +1359,8 @@
             <dtyp:displayterm value="Indoor Lighting">Indoor Lighting</dtyp:displayterm>
             <dtyp:displayterm value="Mechanical Systems">Mechanical Systems</dtyp:displayterm>
             <dtyp:displayterm value="Nonresidential Building Commissioning">Nonresidential Building Commissioning</dtyp:displayterm>
-            <dtyp:displayterm value="NonResidentialPerformanceCompliance">Residential Performance Compliance Method</dtyp:displayterm>
+            <dtyp:displayterm value="NonResidentialPerformanceCompliance">Nonresidential Performance Compliance Method</dtyp:displayterm>
+            <dtyp:displayterm value="ProjectSummaryReportNR">Nonresidential Project Summary Report</dtyp:displayterm>
             <dtyp:displayterm value="Outdoor Air Acceptance">Outdoor Air Acceptance</dtyp:displayterm>
             <dtyp:displayterm value="Outdoor Lighting">Outdoor Lighting</dtyp:displayterm>
             <dtyp:displayterm value="Process Systems">Process Systems</dtyp:displayterm>
@@ -1359,6 +1377,7 @@
          <xsd:enumeration value="Mechanical Systems"/>
          <xsd:enumeration value="Nonresidential Building Commissioning"/>
          <xsd:enumeration value="NonResidentialPerformanceCompliance"/>
+         <xsd:enumeration value="ProjectSummaryReportNR"/>
          <xsd:enumeration value="Outdoor Air Acceptance"/>
          <xsd:enumeration value="Outdoor Lighting"/>
          <xsd:enumeration value="Process Systems"/>
@@ -1374,7 +1393,7 @@
             <dtyp:displayterm value="CERTIFICATE OF COMPLIANCE NR">CERTIFICATE OF COMPLIANCE</dtyp:displayterm>
             <dtyp:displayterm value="CERTIFICATE OF VERIFICATION NR">CERTIFICATE OF VERIFICATION</dtyp:displayterm>
             <dtyp:displayterm value="CertificateComplianceNonResPerformance">CERTIFICATE OF COMPLIANCE -  NONRESIDENTIAL PERFORMANCE COMPLIANCE METHOD</dtyp:displayterm>
-            <dtyp:displayterm value="PROJECT REPORT NR">PROJECT REPORT</dtyp:displayterm>
+            <dtyp:displayterm value="ProjectReportNR">PROJECT REPORT</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstantPhrase">
@@ -1382,7 +1401,7 @@
          <xsd:enumeration value="CERTIFICATE OF COMPLIANCE NR"/>
          <xsd:enumeration value="CERTIFICATE OF VERIFICATION NR"/>
          <xsd:enumeration value="CertificateComplianceNonResPerformance"/>
-         <xsd:enumeration value="PROJECT REPORT NR"/>
+         <xsd:enumeration value="ProjectReportNR"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceDocumentVariant">
@@ -1485,7 +1504,7 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="Equation140_3B">Equation 140.3-B</dtyp:displayterm>
-            <dtyp:displayterm value="NA_SkylitOverlap">NA: Skylit &amp;amp;amp; Sidelit Daylit zones overlap</dtyp:displayterm>
+            <dtyp:displayterm value="NA_SkylitOverlap">NA: Skylit &amp;amp; Sidelit Daylit zones overlap</dtyp:displayterm>
             <dtyp:displayterm value="NoOverHang">1st flr display perimeter- no overhang</dtyp:displayterm>
             <dtyp:displayterm value="Table140_3BCD">Table 140.3-B/C/D</dtyp:displayterm>
             <dtyp:displayterm value="Table141_0A">Table141.0-A</dtyp:displayterm>
@@ -1700,10 +1719,10 @@
    <xsd:simpleType name="CompressorControls">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="LT100HP_NA">NA:
-               <d:lt/>100 combined HP rating</dtyp:displayterm>
-            <dtyp:displayterm value="Only1CompressorNA">NA: Do not have
-               <d:gt/>1 compressor online</dtyp:displayterm>
+            <dtyp:displayterm value="LT100HP_NA">NA: 
+               <d:lt/> 100 combined HP rating</dtyp:displayterm>
+            <dtyp:displayterm value="Only1CompressorNA">NA: Do not have 
+               <d:gt/> 1 compressor online</dtyp:displayterm>
             <dtyp:displayterm value="SensorControllerProvided">Design includes sensor/ controller capable of using most efficient combination of compressors to meet load</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -1716,11 +1735,11 @@
    <xsd:simpleType name="CompressorCoolingMethod">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="CoolingCascadeNA">NA: Cascade system per Exception
+            <dtyp:displayterm value="CoolingCascadeNA">NA: Cascade system per Exception 
                <d:t24ref h="120.6(b)2B"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="CoolingLT100kBtuhNA">NA: Design cooling
-               <d:lt/>100kBtuh per
+            <dtyp:displayterm value="CoolingLT100kBtuhNA">NA: Design cooling 
+               <d:lt/>100kBtuh per 
                <d:t24ref h="120.6(b)2B"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="CoolingNoExceptions">No exceptions apply</dtyp:displayterm>
@@ -1741,7 +1760,7 @@
             <dtyp:displayterm value="NoVariableCapNA">NA: Single compressor system with no variable capacity capability</dtyp:displayterm>
             <dtyp:displayterm value="SecondaryCoolingNA">NA: Suction group serves the secondary cooling fluid chiller</dtyp:displayterm>
             <dtyp:displayterm value="SST_Control">Floating suction pressure logic used to reset target SST</dtyp:displayterm>
-            <dtyp:displayterm value="TempGTE30degNA">NA: Suction group with design SST
+            <dtyp:displayterm value="TempGTE30degNA">NA: Suction group with design SST 
                <d:gte/>30
                <d:deg/>F</dtyp:displayterm>
          </xsd:appinfo>
@@ -1757,8 +1776,8 @@
    <xsd:simpleType name="CompressorTemps">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="MinTempLTE70">Min condensing temp
-               <d:lte/>70 deg</dtyp:displayterm>
+            <dtyp:displayterm value="MinTempLTE70">Min condensing temp 
+               <d:lte/> 70 deg</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -1768,12 +1787,12 @@
    <xsd:simpleType name="CompressorTrimMethod">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="DedicatedTrimCompressor">Dedicated trim compressor provided per
+            <dtyp:displayterm value="DedicatedTrimCompressor">Dedicated trim compressor provided per 
                <d:t24ref h="120.6(e)1B"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="Only50PctCapChangeNA">NA: Not adding or replacing
-               <d:gt/>50% of online system capacity</dtyp:displayterm>
-            <dtyp:displayterm value="VarSpeedDriveCompressor">Variable Speed Drive Compressor provided per
+            <dtyp:displayterm value="Only50PctCapChangeNA">NA: Not adding or replacing 
+               <d:gt/> 50% of online system capacity</dtyp:displayterm>
+            <dtyp:displayterm value="VarSpeedDriveCompressor">Variable Speed Drive Compressor provided per 
                <d:t24ref h="120.6(e)1A"/>
             </dtyp:displayterm>
          </xsd:appinfo>
@@ -1797,12 +1816,12 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="CompressorSpeedControlled">Controls compressor speed in response to refrigeration load</dtyp:displayterm>
-            <dtyp:displayterm value="GT1DedicatedCompressorNA">NA:
+            <dtyp:displayterm value="GT1DedicatedCompressorNA">NA: 
                <d:gt/>1 dedicated compressor per suction group</dtyp:displayterm>
-            <dtyp:displayterm value="GT20pctQuickChillNA">NA:
-               <d:gt/>20% for quick chill/freezing or cooling another refrigerated space</dtyp:displayterm>
-            <dtyp:displayterm value="NotNewScrewCompressorNA">NA: Not new open-drive screw compressor w SST
-               <d:lte/>28 deg</dtyp:displayterm>
+            <dtyp:displayterm value="GT20pctQuickChillNA">NA:  
+               <d:gt/> 20% for quick chill/freezing or cooling another refrigerated space</dtyp:displayterm>
+            <dtyp:displayterm value="NotNewScrewCompressorNA">NA: Not new open-drive screw compressor w SST 
+               <d:lte/> 28 deg</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -1815,14 +1834,14 @@
    <xsd:simpleType name="ComputerRmAirBarrier">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="AirBarrierProvided">Air barrier provided per
+            <dtyp:displayterm value="AirBarrierProvided">Air barrier provided per 
                <d:t24ref h="140.9(a)6"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="AlternativeAnalysisNA">NA: Equivalent energy performance based on computational fluid dynamics or other analysis.</dtyp:displayterm>
             <dtyp:displayterm value="ComputerRackLoadNA">NA: Computer racks with a design load less than 1 kW/rack</dtyp:displayterm>
             <dtyp:displayterm value="ExpansionExistingNA">NA: Expansion of existing computer rooms</dtyp:displayterm>
-            <dtyp:displayterm value="NotAirCooledNA">NA: Not air-cooled where process design load
-               <d:gt/>175 kW</dtyp:displayterm>
+            <dtyp:displayterm value="NotAirCooledNA">NA: Not air-cooled where process design load 
+               <d:gt/> 175 kW</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -1837,14 +1856,14 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="ExistingRm50TonsCoolingNA">NA: New cooling systems serving an existing computer room in an existing building up to a total of 50 tons of new cooling equipment per building</dtyp:displayterm>
-            <dtyp:displayterm value="IntegratedAirEconomizer">Integrated air economizer designed to provide 100% of cooling load @ OSA 55deg db and 50deg wb and below &amp;amp;amp; includes FDD per
+            <dtyp:displayterm value="IntegratedAirEconomizer">Integrated air economizer designed to provide 100% of cooling load @ OSA 55deg db and 50deg wb and below &amp;amp; includes FDD per  
                <d:t24ref h="120.2(i)"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="IntegratedWaterEconomizer">Integrated water economizer designed to provide 100% of cooling load @ OSA 40deg db and 35deg wb and below</dtyp:displayterm>
-            <dtyp:displayterm value="LT5TonsCoolingNA">NA: Computer room load
-               <d:lt/>5 tons &amp;amp;amp; building HVAC does not have any economizers</dtyp:displayterm>
+            <dtyp:displayterm value="LT5TonsCoolingNA">NA: Computer room load 
+               <d:lt/> 5 tons &amp;amp; building HVAC does not have any economizers</dtyp:displayterm>
             <dtyp:displayterm value="NewRm20TonsCoolingNA">NA: New cooling systems serving a new computer room in an existing building up to a total of 20 tons of new cooling equipment per building</dtyp:displayterm>
-            <dtyp:displayterm value="ServesOtherSpacesNA">NA: A computer room being served by a fan system (not economizer) meeting the requirements of Exception 4
+            <dtyp:displayterm value="ServesOtherSpacesNA">NA: A computer room being served by a fan system (not economizer) meeting the requirements of Exception 4 
                <d:t24ref h="140.9(a)1"/>
             </dtyp:displayterm>
          </xsd:appinfo>
@@ -1861,9 +1880,9 @@
    <xsd:simpleType name="ComputerRmFanControl">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="SystemFanControlsNA">NA: Not Unitary AC System
-               <d:gt/>60kBtuh or CHW Fan System</dtyp:displayterm>
-            <dtyp:displayterm value="VarAirflowControls">Variable airflow controls/ devices provided per
+            <dtyp:displayterm value="SystemFanControlsNA">NA: Not Unitary AC System 
+               <d:gt/> 60kBtuh or CHW Fan System</dtyp:displayterm>
+            <dtyp:displayterm value="VarAirflowControls">Variable airflow controls/ devices provided per 
                <d:t24ref h="140.9(a)5"/>
             </dtyp:displayterm>
          </xsd:appinfo>
@@ -1898,11 +1917,11 @@
    <xsd:simpleType name="CondenserCapTHR">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="Cap_NA">NA: Transcritical CO<d:sub>2</d:sub>refrigeration</dtyp:displayterm>
+            <dtyp:displayterm value="Cap_NA">NA: Transcritical CO<d:sub>2</d:sub> refrigeration</dtyp:displayterm>
             <dtyp:displayterm value="GTE8000MBH">
-               <d:gte/>8,000 MBH</dtyp:displayterm>
+               <d:gte/> 8,000 MBH</dtyp:displayterm>
             <dtyp:displayterm value="LT8000MBH">
-               <d:lt/>8,000 MBH</dtyp:displayterm>
+               <d:lt/> 8,000 MBH</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -1916,9 +1935,9 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="EfficiencyCZ1NA">NA: Located in CZ 1</dtyp:displayterm>
             <dtyp:displayterm value="EfficiencyExistingNA">NA: Existing condenser being reused</dtyp:displayterm>
-            <dtyp:displayterm value="EfficiencyLT150kBtuhNA">NA: Total Heat Rejection Capacity
+            <dtyp:displayterm value="EfficiencyLT150kBtuhNA">NA: Total Heat Rejection Capacity 
                <d:lt/>150kBtuh</dtyp:displayterm>
-            <dtyp:displayterm value="EfficiencyNA">NA: Transcritical CO<d:sub>2</d:sub>refrigeration</dtyp:displayterm>
+            <dtyp:displayterm value="EfficiencyNA">NA: Transcritical CO<d:sub>2</d:sub> refrigeration</dtyp:displayterm>
             <dtyp:displayterm value="EfficiencyNoExceptions">No exceptions apply</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -1934,7 +1953,7 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="FinsLTE10PerIn">
-               <d:lte/>10 fins/in</dtyp:displayterm>
+               <d:lte/> 10 fins/in</dtyp:displayterm>
             <dtyp:displayterm value="FinsNA">NA: Using microchannel condenser</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -1947,13 +1966,13 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AdiabaticCZ16NA">NA: Adiabatic in Climate Zone 16</dtyp:displayterm>
-            <dtyp:displayterm value="AdiabaticLTE70db">Adiabatic: designed to
-               <d:lte/>70 @ ambient db temp</dtyp:displayterm>
-            <dtyp:displayterm value="SetpointLTE70db">Designed to
-               <d:lte/>70 @ ambient db temp</dtyp:displayterm>
-            <dtyp:displayterm value="SetpointLTE70wb">Designed to
-               <d:lte/>70 @ ambient wb temp</dtyp:displayterm>
-            <dtyp:displayterm value="SetpointTempNA">NA: Transcritical CO<d:sub>2</d:sub>refrigeration</dtyp:displayterm>
+            <dtyp:displayterm value="AdiabaticLTE70db">Adiabatic: designed to 
+               <d:lte/> 70 @ ambient db temp</dtyp:displayterm>
+            <dtyp:displayterm value="SetpointLTE70db">Designed to 
+               <d:lte/> 70 @ ambient db temp</dtyp:displayterm>
+            <dtyp:displayterm value="SetpointLTE70wb">Designed to 
+               <d:lte/> 70 @ ambient wb temp</dtyp:displayterm>
+            <dtyp:displayterm value="SetpointTempNA">NA: Transcritical CO<d:sub>2</d:sub> refrigeration</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -1967,18 +1986,18 @@
    <xsd:simpleType name="CondenserTemps">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="GT20pctQuickChillNA">NA:
-               <d:gt/>20% for quick chill/freezing or cooling another refrigerated space</dtyp:displayterm>
-            <dtyp:displayterm value="HP_LT100NA">NA: Total HP
-               <d:lt/>100</dtyp:displayterm>
-            <dtyp:displayterm value="TempsAdiabaticComply">Designed per
+            <dtyp:displayterm value="GT20pctQuickChillNA">NA:  
+               <d:gt/> 20% for quick chill/freezing or cooling another refrigerated space</dtyp:displayterm>
+            <dtyp:displayterm value="HP_LT100NA">NA: Total HP 
+               <d:lt/> 100</dtyp:displayterm>
+            <dtyp:displayterm value="TempsAdiabaticComply">Designed per 
                <d:t24ref h="120.6(a)4C"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="TempsAirComply">Designed per
+            <dtyp:displayterm value="TempsAirComply">Designed per 
                <d:t24ref h="120.6(a)4B"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="TempsNA">NA: Transcritical CO<d:sub>2</d:sub>refrigeration</dtyp:displayterm>
-            <dtyp:displayterm value="TempsWaterComply">Designed per
+            <dtyp:displayterm value="TempsNA">NA: Transcritical CO<d:sub>2</d:sub> refrigeration</dtyp:displayterm>
+            <dtyp:displayterm value="TempsWaterComply">Designed per 
                <d:t24ref h="120.6(a)4A"/>
             </dtyp:displayterm>
          </xsd:appinfo>
@@ -2123,17 +2142,17 @@
             <dtyp:displayterm value="AgedSolarReflectanceThermaEmittance">Aged solar reflectance  and thermal emittance</dtyp:displayterm>
             <dtyp:displayterm value="DemisingRoof">NA: Demising Roof</dtyp:displayterm>
             <dtyp:displayterm value="InitialSolarReflectanceThermaEmittance">Initial solar reflectance  and thermal emittance</dtyp:displayterm>
-            <dtyp:displayterm value="MassRoofGTE25Lbs">NA: Weight
-               <d:gte/>25lb/ft<d:sup>2</d:sup>over membrane</dtyp:displayterm>
+            <dtyp:displayterm value="MassRoofGTE25Lbs">NA: Weight 
+               <d:gte/> 25lb/ft<d:sup>2</d:sup> over membrane</dtyp:displayterm>
             <dtyp:displayterm value="RoofAlteredLT2000Ft2">NA:
-               <d:lte/>50% roof area &amp;amp;amp;
+               <d:lte/> 50% roof area &amp;amp; 
                <d:lt/>2,000ft2 altered</dtyp:displayterm>
             <dtyp:displayterm value="RoofSolarPV">NA: Roof-integrated PV or Solar Thermal</dtyp:displayterm>
             <dtyp:displayterm value="SolarReflectanceIndex">SRI</dtyp:displayterm>
             <dtyp:displayterm value="UfactorTradeOff">U-factor Trade-off per Table 140.3</dtyp:displayterm>
             <dtyp:displayterm value="UfactorTradeOffAlterations">U-factor Trade-off per Table 141.0-B</dtyp:displayterm>
             <dtyp:displayterm value="WoodFrameLTEU034">NA: Wood Frame Roof U :
-               <d:lte/>0.034</dtyp:displayterm>
+               <d:lte/> 0.034</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -2225,21 +2244,21 @@
    <xsd:simpleType name="DaylitZonesMethod">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="DaylitAreasProvided">Provided Min Daylit Areas per
+            <dtyp:displayterm value="DaylitAreasProvided">Provided Min Daylit Areas per 
                <d:t24ref h="140.3(c)"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="NA_Auditorium">NA: Auditorium</dtyp:displayterm>
-            <dtyp:displayterm value="NA_CeilingLT15Ft">NA: Future ceiling to be
+            <dtyp:displayterm value="NA_CeilingLT15Ft">NA: Future ceiling to be 
                <d:lt/>15 ft</dtyp:displayterm>
             <dtyp:displayterm value="NA_Church">NA: Church</dtyp:displayterm>
-            <dtyp:displayterm value="NA_LightLT0_5WperFt2">NA: All space types w/lighting
+            <dtyp:displayterm value="NA_LightLT0_5WperFt2">NA: All space types w/lighting 
                <d:lt/>0.5 w/ft<d:sup>2</d:sup>
             </dtyp:displayterm>
             <dtyp:displayterm value="NA_MovieTheater">NA: Movie Theater</dtyp:displayterm>
             <dtyp:displayterm value="NA_Museum">NA: Museum</dtyp:displayterm>
             <dtyp:displayterm value="NA_NoSolarAccess">NA: Documented no solar access</dtyp:displayterm>
             <dtyp:displayterm value="NA_RefrigeratedWarehouse">NA: Refrigerated Warehouse</dtyp:displayterm>
-            <dtyp:displayterm value="NA_SpaceLT5000Ft2">NA: Future space to be
+            <dtyp:displayterm value="NA_SpaceLT5000Ft2">NA: Future space to be 
                <d:lt/>5,000 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
          </xsd:appinfo>
@@ -2272,18 +2291,18 @@
    <xsd:simpleType name="DemandControlVent">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="AreaOccupancyNA">NA: Area
-               <d:lt/>150ft<d:sup>2</d:sup>or design occupancy
-               <d:lt/>10 people</dtyp:displayterm>
+            <dtyp:displayterm value="AreaOccupancyNA">NA: Area 
+               <d:lt/> 150ft<d:sup>2</d:sup> or design occupancy 
+               <d:lt/> 10 people</dtyp:displayterm>
             <dtyp:displayterm value="NoLocalExhaustNA">NA: Processes that generate dust, fumes, etc. and no local exhaust</dtyp:displayterm>
-            <dtyp:displayterm value="NotRequiredDCV">NA: Not required per
+            <dtyp:displayterm value="NotRequiredDCV">NA: Not required per 
                <d:t24ref h="120.1(d)3"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="ProvidedDCV">Provided per
+            <dtyp:displayterm value="ProvidedDCV">Provided per 
                <d:t24ref h="120.1(d)4"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="SpaceExhaustNA">NA: Space exhaust is
-               <d:gt/>design ventilation rate exception</dtyp:displayterm>
+            <dtyp:displayterm value="SpaceExhaustNA">NA: Space exhaust is 
+               <d:gt/> design ventilation rate exception</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -2460,6 +2479,7 @@
             <dtyp:displayterm value="NRCC-PRC-E">NRCC-PRC-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCC-PRF-E">NRCC-PRF-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCC-SRA-E">NRCC-SRA-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRPSR01E">NR-PSR-01-E</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstantPermissive">
@@ -2474,6 +2494,185 @@
          <xsd:enumeration value="NRCC-PRC-E"/>
          <xsd:enumeration value="NRCC-PRF-E"/>
          <xsd:enumeration value="NRCC-SRA-E"/>
+         <xsd:enumeration value="NRPSR01E"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DisplayTagNRCA">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="NRCAENV02F">NRCA-ENV-02-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAENV03F">NRCA-ENV-03-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCALTI02A">NRCA-LTI-02-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCALTI03A">NRCA-LTI-03-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCALTI04A">NRCA-LTI-04-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCALTI05A">NRCA-LTI-05-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCALTO02A">NRCA-LTO-02-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH02A">NRCA-MCH-02-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH04A">NRCA-MCH-04-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH05A">NRCA-MCH-05-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH06A">NRCA-MCH-06-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH07A">NRCA-MCH-07-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH08A">NRCA-MCH-08-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH09A">NRCA-MCH-09-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH10A">NRCA-MCH-10-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH11A">NRCA-MCH-11-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH12A">NRCA-MCH-12-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH13A">NRCA-MCH-13-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH14A">NRCA-MCH-14-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH15A">NRCA-MCH-15-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH16A">NRCA-MCH-16-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH17A">NRCA-MCH-17-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH18A">NRCA-MCH-18-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH19A">NRCA-MCH-19-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH20">NRCA-MCH-20</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH21">NRCA-MCH-21</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC01F">NRCA-PRC-01-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC02F">NRCA-PRC-02-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC03F">NRCA-PRC-03-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC04F">NRCA-PRC-04-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC05F">NRCA-PRC-05-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC06F">NRCA-PRC-06-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC07F">NRCA-PRC-07-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC08F">NRCA-PRC-08-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC12F">NRCA-PRC-12-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC13F">NRCA-PRC-13-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC14F">NRCA-PRC-14-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC15F">NRCA-PRC-15-F</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAPRC16F">NRCA-PRC-16-F</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstantPermissive">
+         <xsd:enumeration value="NRCAENV02F"/>
+         <xsd:enumeration value="NRCAENV03F"/>
+         <xsd:enumeration value="NRCALTI02A"/>
+         <xsd:enumeration value="NRCALTI03A"/>
+         <xsd:enumeration value="NRCALTI04A"/>
+         <xsd:enumeration value="NRCALTI05A"/>
+         <xsd:enumeration value="NRCALTO02A"/>
+         <xsd:enumeration value="NRCAMCH02A"/>
+         <xsd:enumeration value="NRCAMCH04A"/>
+         <xsd:enumeration value="NRCAMCH05A"/>
+         <xsd:enumeration value="NRCAMCH06A"/>
+         <xsd:enumeration value="NRCAMCH07A"/>
+         <xsd:enumeration value="NRCAMCH08A"/>
+         <xsd:enumeration value="NRCAMCH09A"/>
+         <xsd:enumeration value="NRCAMCH10A"/>
+         <xsd:enumeration value="NRCAMCH11A"/>
+         <xsd:enumeration value="NRCAMCH12A"/>
+         <xsd:enumeration value="NRCAMCH13A"/>
+         <xsd:enumeration value="NRCAMCH14A"/>
+         <xsd:enumeration value="NRCAMCH15A"/>
+         <xsd:enumeration value="NRCAMCH16A"/>
+         <xsd:enumeration value="NRCAMCH17A"/>
+         <xsd:enumeration value="NRCAMCH18A"/>
+         <xsd:enumeration value="NRCAMCH19A"/>
+         <xsd:enumeration value="NRCAMCH20"/>
+         <xsd:enumeration value="NRCAMCH21"/>
+         <xsd:enumeration value="NRCAPRC01F"/>
+         <xsd:enumeration value="NRCAPRC02F"/>
+         <xsd:enumeration value="NRCAPRC03F"/>
+         <xsd:enumeration value="NRCAPRC04F"/>
+         <xsd:enumeration value="NRCAPRC05F"/>
+         <xsd:enumeration value="NRCAPRC06F"/>
+         <xsd:enumeration value="NRCAPRC07F"/>
+         <xsd:enumeration value="NRCAPRC08F"/>
+         <xsd:enumeration value="NRCAPRC12F"/>
+         <xsd:enumeration value="NRCAPRC13F"/>
+         <xsd:enumeration value="NRCAPRC14F"/>
+         <xsd:enumeration value="NRCAPRC15F"/>
+         <xsd:enumeration value="NRCAPRC16F"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DisplayTagNRCC">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="NRCCCXRE">NRCC-CXR-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCELCE">NRCC-ELC-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCENVE">NRCC-ENV-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCLTIE">NRCC-LTI-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCLTOE">NRCC-LTO-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCLTSE">NRCC-LTS-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCMCHE">NRCC-MCH-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCPLBE">NRCC-PLB-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCPRCE">NRCC-PRC-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCPRFE">NRCC-PRF-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCSRAE">NRCC-SRA-E</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstantPermissive">
+         <xsd:enumeration value="NRCCCXRE"/>
+         <xsd:enumeration value="NRCCELCE"/>
+         <xsd:enumeration value="NRCCENVE"/>
+         <xsd:enumeration value="NRCCLTIE"/>
+         <xsd:enumeration value="NRCCLTOE"/>
+         <xsd:enumeration value="NRCCLTSE"/>
+         <xsd:enumeration value="NRCCMCHE"/>
+         <xsd:enumeration value="NRCCPLBE"/>
+         <xsd:enumeration value="NRCCPRCE"/>
+         <xsd:enumeration value="NRCCPRFE"/>
+         <xsd:enumeration value="NRCCSRAE"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DisplayTagNRCI">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="NRCIELC01E">NRCI-ELC-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCIENV01E">NRCI-ENV-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCILTI01E">NRCI-LTI-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCILTI02E">NRCI-LTI-02-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCILTI04E">NRCI-LTI-04-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCILTI05E">NRCI-LTI-05-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCILTI06E">NRCI-LTI-06-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCILTO01E">NRCI-LTO-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCILTO02E">NRCI-LTO-02-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCILTS01E">NRCI-LTS-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCIMCH01E">NRCI-MCH-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCIPLB01E">NRCI-PLB-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCIPLB02E">NRCI-PLB-02-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCIPLB03E">NRCI-PLB-03-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCIPRC01E">NRCI-PRC-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCISPV01E">NRCI-SPV-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCISTH01E">NRCI-STH-01-E</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstantPermissive">
+         <xsd:enumeration value="NRCIELC01E"/>
+         <xsd:enumeration value="NRCIENV01E"/>
+         <xsd:enumeration value="NRCILTI01E"/>
+         <xsd:enumeration value="NRCILTI02E"/>
+         <xsd:enumeration value="NRCILTI04E"/>
+         <xsd:enumeration value="NRCILTI05E"/>
+         <xsd:enumeration value="NRCILTI06E"/>
+         <xsd:enumeration value="NRCILTO01E"/>
+         <xsd:enumeration value="NRCILTO02E"/>
+         <xsd:enumeration value="NRCILTS01E"/>
+         <xsd:enumeration value="NRCIMCH01E"/>
+         <xsd:enumeration value="NRCIPLB01E"/>
+         <xsd:enumeration value="NRCIPLB02E"/>
+         <xsd:enumeration value="NRCIPLB03E"/>
+         <xsd:enumeration value="NRCIPRC01E"/>
+         <xsd:enumeration value="NRCISPV01E"/>
+         <xsd:enumeration value="NRCISTH01E"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DisplayTagNRCV">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="NRCVMCH04H">NRCV-MCH-04-H</dtyp:displayterm>
+            <dtyp:displayterm value="NRCVMCH24H">NRCV-MCH-24-H</dtyp:displayterm>
+            <dtyp:displayterm value="NRCVMCH27H">NRCV-MCH-27-H</dtyp:displayterm>
+            <dtyp:displayterm value="NRCVMCH32H">NRCV-MCH-32-H</dtyp:displayterm>
+            <dtyp:displayterm value="NRCVPLB21H">NRCV-PLB-21-H</dtyp:displayterm>
+            <dtyp:displayterm value="NRCVPLB22H">NRCV-PLB-22-H</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstantPermissive">
+         <xsd:enumeration value="NRCVMCH04H"/>
+         <xsd:enumeration value="NRCVMCH24H"/>
+         <xsd:enumeration value="NRCVMCH27H"/>
+         <xsd:enumeration value="NRCVMCH32H"/>
+         <xsd:enumeration value="NRCVPLB21H"/>
+         <xsd:enumeration value="NRCVPLB22H"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DoAllSectionsComply">
@@ -2732,7 +2931,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="DoesElectricalCodeExceptionApply">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>System subject to CA Electrical Code (Exception to
+            <dtyp:displayterm>System subject to CA Electrical Code (Exception to 
                <d:t24ref h="130.5(a)"/>)</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
@@ -3046,8 +3245,8 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="EconomizerMeetsRequiredControls">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="ControlsMeetRequirements">Designed per
-               <d:t24ref h="140.4(e)"/>and (m)</dtyp:displayterm>
+            <dtyp:displayterm value="ControlsMeetRequirements">Designed per 
+               <d:t24ref h="140.4(e)"/> and (m)</dtyp:displayterm>
             <dtyp:displayterm value="HealthcareFacilityNA">NA: System serves Healthcare Facility</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -4134,7 +4333,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="EscalatorControl">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="SpeedControlled">Escalators and moving walkways are designed to automatically slow when not conveying passengers per
+            <dtyp:displayterm value="SpeedControlled">Escalators and moving walkways are designed to automatically slow when not conveying passengers per 
                <d:t24ref h="120.6(g)"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="SpeedControlledNA">NA: Project does not include an airport, hotel, or transportation function area.</dtyp:displayterm>
@@ -4195,11 +4394,11 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="CalculationsProvidedInH">The permit applicant has indicated on Table H that voltage drop calculations will be provided by the contractor.</dtyp:displayterm>
             <dtyp:displayterm value="NoteMissingInG">Table G. indicates a Compliance Method requiring a note describing the compliance approach, but no notes have been entered.</dtyp:displayterm>
             <dtyp:displayterm value="NoteMissingInI">Table I. indicates a control requiring a note describing the compliance approach, but no notes have been entered.</dtyp:displayterm>
-            <dtyp:displayterm value="ProjectExemptElecCode517B">Table B indicates the project is exempt from
-               <d:t24ref h="130.5(a)"/>Service Electrical Metering requirements and
-               <d:t24ref h="130.5(b)"/>Separation of electrical Circuits requirements because the  system is subject to CA Elec Code Article 517</dtyp:displayterm>
-            <dtyp:displayterm value="ProjectExemptUtilMeterSysB">Table B indicates the project is exempt from
-               <d:t24ref h="130.5(a)"/>Service Electrical Metering requirements because the utility company has provided the project a metering system that indicates instantaneous kW demand and kWh for a utility-defined period.</dtyp:displayterm>
+            <dtyp:displayterm value="ProjectExemptElecCode517B">Table B indicates the project is exempt from 
+               <d:t24ref h="130.5(a)"/> Service Electrical Metering requirements and 
+               <d:t24ref h="130.5(b)"/> Separation of electrical Circuits requirements because the  system is subject to CA Elec Code Article 517</dtyp:displayterm>
+            <dtyp:displayterm value="ProjectExemptUtilMeterSysB">Table B indicates the project is exempt from 
+               <d:t24ref h="130.5(a)"/> Service Electrical Metering requirements because the utility company has provided the project a metering system that indicates instantaneous kW demand and kWh for a utility-defined period.</dtyp:displayterm>
             <dtyp:displayterm value="UserChangedSelectionInJ">Selections made in Table J have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -4220,11 +4419,11 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AdditionalDocJA4OtherSoftware">Additional documentation for any assembly complying using "Approved Software" or "Other per JA4.1.2.1" to calculate design thermal performance may be requested by the plans examiner.</dtyp:displayterm>
             <dtyp:displayterm value="FloorAreaWeightedAveInI">Table I indicates an area weighted average is being used for one or more floor assemblies to demonstrate compliance.  Area-weighted average tables are included at the bottom of Table I.</dtyp:displayterm>
-            <dtyp:displayterm value="RoofAlterationExceptionInF">Table F indicates the roof alteration scope meets an exception listed in
-               <d:t24ref h="141.0(b)2Biii"/>and therefore does not trigger roof assembly insulation requirements.</dtyp:displayterm>
+            <dtyp:displayterm value="RoofAlterationExceptionInF">Table F indicates the roof alteration scope meets an exception listed in 
+               <d:t24ref h="141.0(b)2Biii"/> and therefore does not trigger roof assembly insulation requirements.</dtyp:displayterm>
             <dtyp:displayterm value="RoofAreaWeightedAveInF">Table F indicates an area weighted average is being used for one or more roof assemblies to demonstrate compliance.  Area-weighted average tables are included at the bottom of Table F.</dtyp:displayterm>
-            <dtyp:displayterm value="SiteBuiltSkylightInK">Table K indicates more than 200ft<d:sup>2</d:sup>of site built skylight is using the NA6 default to demonstrate compliance.  Please review Table K to reduce the area of site built skylight using NA6 to 200ft<d:sup>2</d:sup>or less.</dtyp:displayterm>
-            <dtyp:displayterm value="SiteBuiltVerticalFenestrationInK">Table K indicates more than 200ft<d:sup>2</d:sup>of site built vertical fenestration is using the NA6 default to demonstrate compliance.  Please review Table K to reduce the area of site built vertical fenestration using NA6 to 200ft<d:sup>2</d:sup>or less.</dtyp:displayterm>
+            <dtyp:displayterm value="SiteBuiltSkylightInK">Table K indicates more than 200ft<d:sup>2</d:sup> of site built skylight is using the NA6 default to demonstrate compliance.  Please review Table K to reduce the area of site built skylight using NA6 to 200ft<d:sup>2</d:sup> or less.</dtyp:displayterm>
+            <dtyp:displayterm value="SiteBuiltVerticalFenestrationInK">Table K indicates more than 200ft<d:sup>2</d:sup> of site built vertical fenestration is using the NA6 default to demonstrate compliance.  Please review Table K to reduce the area of site built vertical fenestration using NA6 to 200ft<d:sup>2</d:sup> or less.</dtyp:displayterm>
             <dtyp:displayterm value="UserChangedSelectionInM">Selections made in Table M have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
             <dtyp:displayterm value="UserChangedSelectionInN">Selections made in Table N have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
             <dtyp:displayterm value="VerticalFenestrationOverhangsInK">Table K indicates that overhangs are being used to adjust vertical fenestrationSHGC to RSHGC.  Overhang details are included in Table K for the fenestration assembly being adjusted.</dtyp:displayterm>
@@ -4250,19 +4449,19 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm>NRCC-LTI-E Exceptional Condition Message</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="AccentDisplayLightingInKorL">Accent/ Display lighting has been indicated in Tables K or L.  These spaces must include dedicated luminaires controlled as general lighting per
-               <d:t24ref h="130.1"/>and
+            <dtyp:displayterm value="AccentDisplayLightingInKorL">Accent/ Display lighting has been indicated in Tables K or L.  These spaces must include dedicated luminaires controlled as general lighting per 
+               <d:t24ref h="130.1"/> and 
                <d:t24ref h="140.6"/>.</dtyp:displayterm>
             <dtyp:displayterm value="ATMsInK">ATMs have been indicated in Table K as qualifying for additional allowance using Area Category Method footnotes.</dtyp:displayterm>
             <dtyp:displayterm value="ControlNoteMissingInH">Table H. indicates a control requiring a note describing the compliance approach, but no notes have been entered.</dtyp:displayterm>
             <dtyp:displayterm value="ControlNoteMissingInS">Table S. indicates a control requiring a note describing the compliance approach, but no notes have been entered.</dtyp:displayterm>
-            <dtyp:displayterm value="LP80PercentAlterationExceededInR">Table H. indicates multi-level, daylighting or demand response controls are not required in one or more spaces because the project includes  an alteration where lighting power does not exceed 80% of the allowance from
+            <dtyp:displayterm value="LP80PercentAlterationExceededInR">Table H. indicates multi-level, daylighting or demand response controls are not required in one or more spaces because the project includes  an alteration where lighting power does not exceed 80% of the allowance from 
                <d:t24ref h="140.6"/>.  However, alteration lighting power documented in Table R. exceeds .8.</dtyp:displayterm>
-            <dtyp:displayterm value="LP80PercentAlterationMissingDataInR">Table H. indicates multi-level, daylighting or demand response controls are not required in one or more spaces because the project includes  an alteration where lighting power does not exceed 80% of the allowance from
+            <dtyp:displayterm value="LP80PercentAlterationMissingDataInR">Table H. indicates multi-level, daylighting or demand response controls are not required in one or more spaces because the project includes  an alteration where lighting power does not exceed 80% of the allowance from 
                <d:t24ref h="140.6"/>.  However, Table R. has not been completed to demonstrate compliance.</dtyp:displayterm>
-            <dtyp:displayterm value="LP80PercentAlterationOnlyIssueInH">Table H. indicates multi-level, daylighting or demand response controls are not required in one or more spaces because the project is an alteration where lighting power does not exceed 80% of the allowance from
-               <d:t24ref h="140.6"/>.  However, Total Adjusted Power
-               <d:gt/>0.8 x Total Allowed in Table C.</dtyp:displayterm>
+            <dtyp:displayterm value="LP80PercentAlterationOnlyIssueInH">Table H. indicates multi-level, daylighting or demand response controls are not required in one or more spaces because the project is an alteration where lighting power does not exceed 80% of the allowance from 
+               <d:t24ref h="140.6"/>.  However, Total Adjusted Power 
+               <d:gt/> 0.8 x Total Allowed in Table C.</dtyp:displayterm>
             <dtyp:displayterm value="TrackLightingDetailsInG">Track Lighting has been included in this project, details are provided in Table G.</dtyp:displayterm>
             <dtyp:displayterm value="UserChangedSelectionInT">Selections made in Table T have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
             <dtyp:displayterm value="UserChangedSelectionInU">Selections made in Table U have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
@@ -4335,19 +4534,19 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm>NRCC-MCH-E Exceptional Condition Message</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="BoilerSizeConflictInF">Table F indicates a boiler with rated capacity greater than 500kBtu/h, however an exception for temperature reset controls has been indicated that only applies to boilers
-               <d:lte/>500kBtu/h.  Please revise Table F. prior to permit application.</dtyp:displayterm>
+            <dtyp:displayterm value="BoilerSizeConflictInF">Table F indicates a boiler with rated capacity greater than 500kBtu/h, however an exception for temperature reset controls has been indicated that only applies to boilers 
+               <d:lte/> 500kBtu/h.  Please revise Table F. prior to permit application.</dtyp:displayterm>
             <dtyp:displayterm value="CalculationsAttachedInJ">The permit applicant has indicated on Table J that ventilation calculations have been attached or included elsewhere on the plans.</dtyp:displayterm>
             <dtyp:displayterm value="CalculationsAttachedInM">The permit applicant has indicated on Table M that cooling tower Maximum Cycles of Concentration calculations have been attached or included elsewhere on the plans.</dtyp:displayterm>
             <dtyp:displayterm value="ElectricHeatExceptionInF">An exception has been taken to allow electric resistance heating.  See Table F. for details.</dtyp:displayterm>
-            <dtyp:displayterm value="FanPowerIndexExceedsMaxInH">Table H indicates a Fan Power System Index that exceeds the maximum allowed per
+            <dtyp:displayterm value="FanPowerIndexExceedsMaxInH">Table H indicates a Fan Power System Index that exceeds the maximum allowed per 
                <d:t24ref h="140.4(c)"/>.  Please revise to demonstrate compliance.</dtyp:displayterm>
             <dtyp:displayterm value="HRRContinuousVentInJ">Table J indicates continuous ventilation is being used as an alternative to a balanced systems.  However, Table J also indicates that both supply and exhaust fans are being used.  Please verify the same ventilation type is being used in all dwelling units.</dtyp:displayterm>
             <dtyp:displayterm value="MultipleBoilerConflictInF">Table F indicates more than one boiler, however an exception for isolation valve has been indicated that only applies to plants with only one boiler.  Please revise Table F. prior to permit application.</dtyp:displayterm>
             <dtyp:displayterm value="MultipleChillerConflictInF">Table F indicates more than one chiller, however an exception for isolation valve has been indicated that only applies to plants with only one chiller.  Please revise Table F. prior to permit application.</dtyp:displayterm>
             <dtyp:displayterm value="NaturalVentilationInJ">The permit applicant has indicated on Table J that natural ventilation is being utilized to meet ventilation requirements.  Additional documentation may be requested by the Authority Having Jurisdiction demonstrating compliance for natural ventilation design.</dtyp:displayterm>
-            <dtyp:displayterm value="TransferAirUsedInJ">Transfer air is being used in at least one zone to meet minimum ventilation requirements. See Table J for details. Transfer air must be designed per
-               <d:t24ref h="120.1(g)"/>for air classification and recirculation limitations and be documented within construction documents.</dtyp:displayterm>
+            <dtyp:displayterm value="TransferAirUsedInJ">Transfer air is being used in at least one zone to meet minimum ventilation requirements. See Table J for details. Transfer air must be designed per 
+               <d:t24ref h="120.1(g)"/> for air classification and recirculation limitations and be documented within construction documents.</dtyp:displayterm>
             <dtyp:displayterm value="UserChangedSelectionInO">Selections made in Table O have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
             <dtyp:displayterm value="UserChangedSelectionInP">Selections made in Table P have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
          </xsd:appinfo>
@@ -4374,9 +4573,9 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="ElectricWaterHeaterNoGas">Table F indicates an electric water heater is being used because natural gas is not available to the water heater location.</dtyp:displayterm>
-            <dtyp:displayterm value="ReplaceHPinCZ16">Table F indicates a heat pump water heater replacement in Climate Zone 16.  In addition to meeting the minimum Uniform Energy Factor (UEF), this requires a solar water heating systems with solar savings fraction
-               <d:gte/>0.4.  Document the solar water heating system on the NRCC-SRA-E compliance document.</dtyp:displayterm>
-            <dtyp:displayterm value="StateBuilding">Tables A and  B indicate the project is a new State building.  This requires 60% of energy for service water heating from site solar energy or recovered energy per
+            <dtyp:displayterm value="ReplaceHPinCZ16">Table F indicates a heat pump water heater replacement in Climate Zone 16.  In addition to meeting the minimum Uniform Energy Factor (UEF), this requires a solar water heating systems with solar savings fraction 
+               <d:gte/> 0.4.  Document the solar water heating system on the NRCC-SRA-E compliance document.</dtyp:displayterm>
+            <dtyp:displayterm value="StateBuilding">Tables A and  B indicate the project is a new State building.  This requires 60% of energy for service water heating from site solar energy or recovered energy per 
                <d:t24ref h="110.3(c)6"/>.</dtyp:displayterm>
             <dtyp:displayterm value="UseNRCCMCHE">Table B indicates a combined hydronic system will be used to comply with title 24, Part 6.  These systems shall be documented on the NRCC-MCH-E compliance document.</dtyp:displayterm>
             <dtyp:displayterm value="UseNRCCSRAE">Table B indicates a solar water heating system will be used to comply with title 24, Part 6.  These systems shall be documented on the NRCC-SRA-E compliance document.</dtyp:displayterm>
@@ -4396,7 +4595,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm>NRCC-PRC-E Exceptional Condition Message</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="CFD_AnalysisInK">Table M indicates a computational fluid dynamics (CFD) analysis was performed to meet computer room containment requirements in
+            <dtyp:displayterm value="CFD_AnalysisInK">Table M indicates a computational fluid dynamics (CFD) analysis was performed to meet computer room containment requirements in 
                <d:t24ref h="140.9(a)6"/>.  Authority Having Jurisdiction may ask for calculations to confirm compliance at their discretion.</dtyp:displayterm>
             <dtyp:displayterm value="ElevLgtPowerExceedsMaxInK">Table K indicates one or more elevators which have designed lighting power greater than the Maximum Power Allowed.  Please revise Table K to demonstrate compliance.</dtyp:displayterm>
             <dtyp:displayterm value="ElevVentPowerExceedsMaxInK">Table K indicates one or more elevators which have designed ventilation Watts/cfm greater than the maximum Watts/cfm allowed.  Please revise Table K to demonstrate compliance.</dtyp:displayterm>
@@ -4545,7 +4744,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="HasSpecialOutsideAirFiltration">NA: Special OA filtration</dtyp:displayterm>
             <dtyp:displayterm value="HasWatersideEconomizer">Waterside Economizer (see Tbl. F)</dtyp:displayterm>
             <dtyp:displayterm value="HighRiseResHotelMotel">NA: High-rise res/hotel/motel</dtyp:displayterm>
-            <dtyp:displayterm value="LTE54kBtuPerHrCooling">NA:
+            <dtyp:displayterm value="LTE54kBtuPerHrCooling">NA: 
                <d:lte/>54 kBtu/h cooling</dtyp:displayterm>
             <dtyp:displayterm value="MeetsEfficiencyTable140_4A">NA: Efficiency per Table 140.4-D</dtyp:displayterm>
             <dtyp:displayterm value="ServingComputerRoom">See NRCC-PRC for details</dtyp:displayterm>
@@ -4568,7 +4767,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="NA6DefaultCOG">NA6 Default (COG)</dtyp:displayterm>
             <dtyp:displayterm value="NFRC_Certified">NFRC Certified</dtyp:displayterm>
             <dtyp:displayterm value="Table110_6Defaults">
-               <d:t24ref h="110.6"/>Defaults</dtyp:displayterm>
+               <d:t24ref h="110.6"/> Defaults</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -4643,6 +4842,24 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:element name="reportGenerationDateTime" type="comp:ReportGenerationDateTime"/>
       </xsd:sequence>
    </xsd:complexType>
+   <xsd:complexType name="FooterNRPSR">
+      <xsd:sequence>
+         <xsd:element name="reportGeneratedDate" type="comp:ReportGeneratedDate"/>
+         <xsd:element name="t24StandardsCodeYear" type="comp:T24StandardsCodeYear"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:simpleType name="FormStatus">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Finished"/>
+            <dtyp:displayterm value="NotFinished">X</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="Finished"/>
+         <xsd:enumeration value="NotFinished"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="FunctionalPerformanceTestingActivities">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -4994,11 +5211,11 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="CZ15NA">NA: Located in CZ 15</dtyp:displayterm>
-            <dtyp:displayterm value="HeatRecoveryProvided">Heat recovery provided using 25% or more of Total Heat of Rejection and will not increase HFC refrigerant charge more than 0.35lb/kBtuh of heat recovery capacity per
+            <dtyp:displayterm value="HeatRecoveryProvided">Heat recovery provided using 25% or more of Total Heat of Rejection and will not increase HFC refrigerant charge more than 0.35lb/kBtuh of heat recovery capacity per 
                <d:t24ref h="120.6(b)4"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="NoSysGT150kBtuhNA">NA: No individual refrigeration systems
-               <d:gt/>150kBtuh</dtyp:displayterm>
+            <dtyp:displayterm value="NoSysGT150kBtuhNA">NA: No individual refrigeration systems 
+               <d:gt/> 150kBtuh</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -5027,12 +5244,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="HoodExhaustCompliance">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="ExhaustLTE5000cfmNA">NA: Kitchen/ dining facility has a total Type I and Type II kitchen hood exhaust airflow rate
-               <d:lte/>5,000 cfm</dtyp:displayterm>
+            <dtyp:displayterm value="ExhaustLTE5000cfmNA">NA: Kitchen/ dining facility has a total Type I and Type II kitchen hood exhaust airflow rate 
+               <d:lte/> 5,000 cfm</dtyp:displayterm>
             <dtyp:displayterm value="ExistHoodsReplacedNA">NA: Existing hoods are being replaced as part of an addition or alteration</dtyp:displayterm>
             <dtyp:displayterm value="ReplaceAir75PctTransferAirNA">NA: 75% of total Type I and Type II exhaust replacement air is transfer air that would otherwise be exhausted</dtyp:displayterm>
-            <dtyp:displayterm value="Type1RateMeetsReq">Type1 hood design exhaust rates do not exceed the maximum allowed per
-               <d:t24ref h="140.9(b)1"/>as documented below</dtyp:displayterm>
+            <dtyp:displayterm value="Type1RateMeetsReq">Type1 hood design exhaust rates do not exceed the maximum allowed per 
+               <d:t24ref h="140.9(b)1"/> as documented below</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -5072,10 +5289,10 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="DemandVentilation">Demand ventilation system(s) on at least 75% of the exhaust air per 140.9(b)2Bii</dtyp:displayterm>
-            <dtyp:displayterm value="EnergyRecoveryDevices">Listed energy recovery devices with a sensible heat recovery effectiveness of
-               <d:gt/>40 on at least 50% of the total exhaust airflow</dtyp:displayterm>
-            <dtyp:displayterm value="ExhaustLessThanReqNA">NA: Not a kitchen/ dining facility having a total Type I and Type II kitchen hood exhaust airflow rate
-               <d:gt/>5,000 cfm</dtyp:displayterm>
+            <dtyp:displayterm value="EnergyRecoveryDevices">Listed energy recovery devices with a sensible heat recovery effectiveness of 
+               <d:gt/> 40 on at least 50% of the total exhaust airflow</dtyp:displayterm>
+            <dtyp:displayterm value="ExhaustLessThanReqNA">NA: Not a kitchen/ dining facility having a total Type I and Type II kitchen hood exhaust airflow rate 
+               <d:gt/> 5,000 cfm</dtyp:displayterm>
             <dtyp:displayterm value="MakeupAirReq">A minimum of 75% of makeup air volume having a total of no more than 60
                <d:deg/>F and uncooled or cooled without the use of mechanical cooling</dtyp:displayterm>
             <dtyp:displayterm value="ReplaceAir50PctTransferAir">At least 50% of all replacement air is transferred air that would otherwise be exhausted</dtyp:displayterm>
@@ -5171,7 +5388,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm>Equipment Smallest Size Available</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="AlteredSystem">NA: Altered per
+            <dtyp:displayterm value="AlteredSystem">NA: Altered per 
                <d:t24ref h="141.0(b)2E"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="HealthcareException">NA: System serves Healthcare</dtyp:displayterm>
@@ -5352,12 +5569,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="DockForTrailersNA">NA: Dock doorway for trailers</dtyp:displayterm>
-            <dtyp:displayterm value="InfiltrationBarriersComply">Passageway between freezers and non-refrigerated spaces shall include infiltration barriers per
+            <dtyp:displayterm value="InfiltrationBarriersComply">Passageway between freezers and non-refrigerated spaces shall include infiltration barriers per 
                <d:t24ref h="120.6(a)6"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="InfiltrationBarriersNA">NA: Room doesn't incude passageways between freezers and non-refrigerated spaces</dtyp:displayterm>
-            <dtyp:displayterm value="OpeningsLT16ft2NA">NA: openings
-               <d:lt/>16 ft<d:sup>2</d:sup>
+            <dtyp:displayterm value="OpeningsLT16ft2NA">NA: openings 
+               <d:lt/> 16 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -5775,11 +5992,11 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="LabAirflowReductMethod">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="ConstantVolSysRequiredNA">NA: Constant volume system required by AHJ or Environmental, Health &amp;amp;amp; Safety</dtyp:displayterm>
+            <dtyp:displayterm value="ConstantVolSysRequiredNA">NA: Constant volume system required by AHJ or Environmental, Health &amp;amp; Safety</dtyp:displayterm>
             <dtyp:displayterm value="NewZoneExistingSysNA">NA: New zones on an existing constant volume system</dtyp:displayterm>
             <dtyp:displayterm value="ReducedExhaustMakeupAir">Exhaust airflow capable of reducing exhaust and make-up air to min circulation/ pressurization rate</dtyp:displayterm>
-            <dtyp:displayterm value="SysGT10achNA">NA: Systems designed for
-               <d:gt/>10 ACH</dtyp:displayterm>
+            <dtyp:displayterm value="SysGT10achNA">NA: Systems designed for 
+               <d:gt/> 10 ACH</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -5793,13 +6010,13 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AirTreatmentSysRate">Max 0.85 W/cfm for systems with air treatment (filters, etc.)</dtyp:displayterm>
-            <dtyp:displayterm value="NewExhaustLTE10000cfmNA">NA: Newly installed exhaust system
+            <dtyp:displayterm value="NewExhaustLTE10000cfmNA">NA: Newly installed exhaust system 
                <d:lte/>10,000 cfm</dtyp:displayterm>
             <dtyp:displayterm value="NoAirTreatmentSysRate">Max 0.65 W/cfm for systems without air treatment</dtyp:displayterm>
-            <dtyp:displayterm value="StackControlAnemometer">Volume flowrate @ stack controlled by anemometer per
+            <dtyp:displayterm value="StackControlAnemometer">Volume flowrate @ stack controlled by anemometer per 
                <d:t24ref h="140.9(c)3C"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="StackControlSensor">Volume flowrate @ stack controlled by contaminant sensor per
+            <dtyp:displayterm value="StackControlSensor">Volume flowrate @ stack controlled by contaminant sensor per 
                <d:t24ref h="140.9(c)3D"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="SysMeetsDischargeReq">System meets discharge requirements in ANSI Z9.5-2012</dtyp:displayterm>
@@ -5817,7 +6034,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="LabHoodSashMethod">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="HoodSashMeetsReq">Hood sash closure system design controlled   per
+            <dtyp:displayterm value="HoodSashMeetsReq">Hood sash closure system design controlled   per 
                <d:t24ref h="140.9(c)4"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="NotVAV_HoodNA">NA: Not VAV hood with vertical sashes in hood intensive lab</dtyp:displayterm>
@@ -5831,12 +6048,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="LabTransferAirMethod">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="BioSafetyLevelGTE3NA">NA: Laboratory is classified as biosafety level
+            <dtyp:displayterm value="BioSafetyLevelGTE3NA">NA: Laboratory is classified as biosafety level 
                <d:gte/>3</dtyp:displayterm>
             <dtyp:displayterm value="NegativePressureRequiredNA">NA: Space required to be at negative pressure and where highest amount of transfer air used for make-up exceeds available transfer airflow rate</dtyp:displayterm>
             <dtyp:displayterm value="PositivePressureRequiredNA">NA: Space required to be at positive pressure</dtyp:displayterm>
             <dtyp:displayterm value="ServingVivariumNA">NA: Serving vivarium space</dtyp:displayterm>
-            <dtyp:displayterm value="SysMeetsTransferAirReq">Conditioned supply air delivered to any space with mechanical exhaust is designed  per
+            <dtyp:displayterm value="SysMeetsTransferAirReq">Conditioned supply air delivered to any space with mechanical exhaust is designed  per 
                <d:t24ref h="140.4(o)"/>
             </dtyp:displayterm>
          </xsd:appinfo>
@@ -6158,12 +6375,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="GTE10PercentLT50Percent">
-               <d:gte/>10% and
-               <d:lt/>50%</dtyp:displayterm>
+               <d:gte/> 10% and 
+               <d:lt/> 50%</dtyp:displayterm>
             <dtyp:displayterm value="GTE50Percent">
-               <d:gte/>50%</dtyp:displayterm>
+               <d:gte/> 50%</dtyp:displayterm>
             <dtyp:displayterm value="LT10Percent">
-               <d:lt/>10%</dtyp:displayterm>
+               <d:lt/> 10%</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -6176,8 +6393,8 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="CutoffGTE6200Lumens">Yes</dtyp:displayterm>
-            <dtyp:displayterm value="CutoffLT6200Lumens">NA:
-               <d:lt/>6200 lumens</dtyp:displayterm>
+            <dtyp:displayterm value="CutoffLT6200Lumens">NA: 
+               <d:lt/> 6200 lumens</dtyp:displayterm>
             <dtyp:displayterm value="CutoffLtgZone0">NA: Ltg Zone LZ-0</dtyp:displayterm>
             <dtyp:displayterm value="Exempt">Exempt*</dtyp:displayterm>
          </xsd:appinfo>
@@ -6290,14 +6507,14 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="NotRequiredInstallingAsPAF">Not Required - Installing as PAF</dtyp:displayterm>
-            <dtyp:displayterm value="NA_LTE80PctAllowedLP">NA:
-               <d:lte/>80 % LP (alt only)</dtyp:displayterm>
-            <dtyp:displayterm value="NotRequiredLTE10000SF">Not Required
-               <d:lte/>10,000 SF</dtyp:displayterm>
-            <dtyp:displayterm value="NotRequiredLTE0_5WperSF">Not Required- Building
-               <d:lte/>0.5W/SF</dtyp:displayterm>
-            <dtyp:displayterm value="RequiredGT10000SF">Required
-               <d:gt/>10,000 SF</dtyp:displayterm>
+            <dtyp:displayterm value="NA_LTE80PctAllowedLP">NA:  
+               <d:lte/> 80 % LP (alt only)</dtyp:displayterm>
+            <dtyp:displayterm value="NotRequiredLTE10000SF">Not Required 
+               <d:lte/> 10,000 SF</dtyp:displayterm>
+            <dtyp:displayterm value="NotRequiredLTE0_5WperSF">Not Required- Building 
+               <d:lte/> 0.5W/SF</dtyp:displayterm>
+            <dtyp:displayterm value="RequiredGT10000SF">Required 
+               <d:gt/> 10,000 SF</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -6359,6 +6576,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="NA"/>
          <xsd:enumeration value="Required"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="MaxDisplayLength">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="MaximumAirflowRate">
       <xsd:annotation>
@@ -6434,9 +6657,9 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="MotionSensorCompliance">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="FacadeGTE24Ft">NA: Facade, etc.
+            <dtyp:displayterm value="FacadeGTE24Ft">NA: Facade, etc. 
                <d:gte/>24 ft</dtyp:displayterm>
-            <dtyp:displayterm value="WallGTE24Ft">NA: Wall
+            <dtyp:displayterm value="WallGTE24Ft">NA: Wall 
                <d:gte/>24 ft</dtyp:displayterm>
             <dtyp:displayterm value="Exempt">Exempt*</dtyp:displayterm>
             <dtyp:displayterm value="MotionSensorCompliant">Yes</dtyp:displayterm>
@@ -6454,12 +6677,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="Back1To2MH">Back hemisphere is 1 - 2 MH from prop line</dtyp:displayterm>
             <dtyp:displayterm value="BackHalfTo1MH">Back hemisphere is 0.5 - 1 MH from prop line</dtyp:displayterm>
-            <dtyp:displayterm value="BackLessThanHalfMH">Back hemisphere
-               <d:lt/>0.5 MH from prop line</dtyp:displayterm>
+            <dtyp:displayterm value="BackLessThanHalfMH">Back hemisphere 
+               <d:lt/> 0.5 MH from prop line</dtyp:displayterm>
             <dtyp:displayterm value="Front1To2MH">Front hemisphere is 1 - 2 MH from prop line</dtyp:displayterm>
             <dtyp:displayterm value="FrontHalfTo1MH">Front hemisphere is 0.5 - 1 MH from prop line</dtyp:displayterm>
             <dtyp:displayterm value="GT2MH">
-               <d:gt/>2 MH from property  line</dtyp:displayterm>
+               <d:gt/> 2 MH from property  line</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -6478,8 +6701,8 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="DimmerControl">Dimmer</dtyp:displayterm>
             <dtyp:displayterm value="MultilevelControlsExempt">Exempt</dtyp:displayterm>
             <dtyp:displayterm value="MultilevelControlsOther">Other</dtyp:displayterm>
-            <dtyp:displayterm value="NA_LTE80PctAllowedLP">NA:
-               <d:lte/>80 % LP (alt only)</dtyp:displayterm>
+            <dtyp:displayterm value="NA_LTE80PctAllowedLP">NA:  
+               <d:lte/> 80 % LP (alt only)</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -6624,14 +6847,14 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="OccupantSensorVent">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="ContinuousOperationNA">NA: Continuously operated per
-               <d:t24ref h="120.2(e)3"/>exception</dtyp:displayterm>
-            <dtyp:displayterm value="HotelMotelNA">NA: Hotel/ Motel + manual shutoff per
-               <d:t24ref h="120.2(e)3"/>exception</dtyp:displayterm>
-            <dtyp:displayterm value="LowPowerNA">NA: System
-               <d:lt/>2kW demand + manual shutoff per
-               <d:t24ref h="120.2(e)3"/>exception</dtyp:displayterm>
-            <dtyp:displayterm value="ProvidedOccSensors">Provided per
+            <dtyp:displayterm value="ContinuousOperationNA">NA: Continuously operated per 
+               <d:t24ref h="120.2(e)3"/> exception</dtyp:displayterm>
+            <dtyp:displayterm value="HotelMotelNA">NA: Hotel/ Motel + manual shutoff per 
+               <d:t24ref h="120.2(e)3"/> exception</dtyp:displayterm>
+            <dtyp:displayterm value="LowPowerNA">NA: System 
+               <d:lt/> 2kW demand + manual shutoff per 
+               <d:t24ref h="120.2(e)3"/> exception</dtyp:displayterm>
+            <dtyp:displayterm value="ProvidedOccSensors">Provided per 
                <d:t24ref h="120.1(d)5"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="SpaceTypeNA">NA: Not required space type</dtyp:displayterm>
@@ -6680,13 +6903,13 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="OutdoorLightingCalculationMethod">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="CalculatedAllowance">Calculated Allowance per
+            <dtyp:displayterm value="CalculatedAllowance">Calculated Allowance per 
                <d:t24ref h="140.7"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="ExistingPowerMaintained">Maintain Existing Power Method per
+            <dtyp:displayterm value="ExistingPowerMaintained">Maintain Existing Power Method per 
                <d:t24ref h="141.0(b)2L"/>
             </dtyp:displayterm>
-            <dtyp:displayterm value="ExistingPowerReduction">40% Reduced Wattage Exception per
+            <dtyp:displayterm value="ExistingPowerReduction">40% Reduced Wattage Exception per 
                <d:t24ref h="141.0(b)2L"/>
             </dtyp:displayterm>
          </xsd:appinfo>
@@ -6895,11 +7118,10 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:complexType name="Payload">
-      <xsd:sequence>
-         <xsd:element name="compMgrVersion" type="comp:CompMgrVersion" minOccurs="0"/>
-      </xsd:sequence>
+      <xsd:sequence/>
       <xsd:attribute name="complianceDocumentGUID" type="comp:ComplianceDocumentGUID" use="required"/>
       <xsd:attribute name="complianceDocumentSchemaVersion" type="comp:ComplianceDocumentSchemaVersion" use="required"/>
+      <xsd:attribute name="compMgrVersion" type="comp:CompMgrVersion" use="optional"/>
       <xsd:attribute name="displayTagNR" type="comp:DisplayTagNR" use="required"/>
       <xsd:attribute name="payloadDocumentNR" type="comp:ComplianceDocumentTagNR" use="required"/>
       <xsd:attribute name="processedDate" type="comp:ComplianceApplicationDate" use="required"/>
@@ -7227,8 +7449,8 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="Exempt">Exempt</dtyp:displayterm>
             <dtyp:displayterm value="Included">Included</dtyp:displayterm>
-            <dtyp:displayterm value="NA_LTE80PctAllowedLP">NA:
-               <d:lte/>80 % LP (alt only)</dtyp:displayterm>
+            <dtyp:displayterm value="NA_LTE80PctAllowedLP">NA:  
+               <d:lte/> 80 % LP (alt only)</dtyp:displayterm>
             <dtyp:displayterm value="NA">N/A</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -7255,18 +7477,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:simpleType>
    <xsd:simpleType name="ProjectCity">
       <xsd:restriction base="dtyp:City"/>
-   </xsd:simpleType>
-   <xsd:simpleType name="ProjectCompletionStatus">
-      <xsd:annotation>
-         <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="Complete">COMPLETE</dtyp:displayterm>
-            <dtyp:displayterm value="NotComplete">NOT COMPLETE</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="Complete"/>
-         <xsd:enumeration value="NotComplete"/>
-      </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ProjectConditionedFloorArea">
       <xsd:annotation>
@@ -7604,35 +7814,35 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="ProjectScopeAdditions">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="AdditionGT300LTE400">Addition
-               <d:gt/>300 ft<d:sup>2</d:sup>to
-               <d:lte/>400 ft<d:sup>2</d:sup>
+            <dtyp:displayterm value="AdditionGT300LTE400">Addition 
+               <d:gt/> 300 ft<d:sup>2</d:sup> to 
+               <d:lte/> 400 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
-            <dtyp:displayterm value="AdditionGT300LTE400ADU">ADU Addition
-               <d:gt/>300 ft<d:sup>2</d:sup>to
-               <d:lte/>400 ft<d:sup>2</d:sup>
+            <dtyp:displayterm value="AdditionGT300LTE400ADU">ADU Addition 
+               <d:gt/> 300 ft<d:sup>2</d:sup> to 
+               <d:lte/> 400 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
-            <dtyp:displayterm value="AdditionGT400LTE700">Addition
-               <d:gt/>400 ft<d:sup>2</d:sup>to
-               <d:lte/>700 ft<d:sup>2</d:sup>
+            <dtyp:displayterm value="AdditionGT400LTE700">Addition 
+               <d:gt/> 400 ft<d:sup>2</d:sup> to 
+               <d:lte/> 700 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
-            <dtyp:displayterm value="AdditionGT400LTE700ADU">ADU Addition
-               <d:gt/>400 ft<d:sup>2</d:sup>to
-               <d:lte/>700 ft<d:sup>2</d:sup>
+            <dtyp:displayterm value="AdditionGT400LTE700ADU">ADU Addition 
+               <d:gt/> 400 ft<d:sup>2</d:sup> to 
+               <d:lte/> 700 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
-            <dtyp:displayterm value="AdditionGT700LTE1000">Addition
-               <d:gt/>700 ft<d:sup>2</d:sup>to
-               <d:lte/>1,000 ft<d:sup>2</d:sup>
+            <dtyp:displayterm value="AdditionGT700LTE1000">Addition 
+               <d:gt/> 700 ft<d:sup>2</d:sup> to 
+               <d:lte/> 1,000 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
-            <dtyp:displayterm value="AdditionGT700LTE1000ADU">ADU Addition
-               <d:gt/>700 ft<d:sup>2</d:sup>to
-               <d:lte/>1,000 ft<d:sup>2</d:sup>
+            <dtyp:displayterm value="AdditionGT700LTE1000ADU">ADU Addition 
+               <d:gt/> 700 ft<d:sup>2</d:sup> to 
+               <d:lte/> 1,000 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
-            <dtyp:displayterm value="AdditionLTE300">Addition
-               <d:lte/>300 ft<d:sup>2</d:sup>
+            <dtyp:displayterm value="AdditionLTE300">Addition 
+               <d:lte/> 300 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
-            <dtyp:displayterm value="AdditionLTE300ADU">ADU Addition
-               <d:lte/>300 ft<d:sup>2</d:sup>
+            <dtyp:displayterm value="AdditionLTE300ADU">ADU Addition 
+               <d:lte/> 300 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
             <dtyp:displayterm value="CoolingSystemAddition">Space cooling system</dtyp:displayterm>
             <dtyp:displayterm value="DuctSystemAddition">Space conditioning duct system</dtyp:displayterm>
@@ -7830,7 +8040,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="Ammonia">Ammonia</dtyp:displayterm>
             <dtyp:displayterm value="Halocarbon">Halocarbon</dtyp:displayterm>
-            <dtyp:displayterm value="RefrigerantNA">NA: Transcritical CO<d:sub>2</d:sub>refrigeration</dtyp:displayterm>
+            <dtyp:displayterm value="RefrigerantNA">NA: Transcritical CO<d:sub>2</d:sub> refrigeration</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -7859,6 +8069,16 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ReportGeneratedDate">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+         <xsd:documentation source="propertyrules">Date report was generated in format yyyy-mm-dd</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Generated on:</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:date"/>
    </xsd:simpleType>
    <xsd:simpleType name="ReportGenerationDateTime">
       <xsd:annotation>
@@ -8724,6 +8944,9 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="Revision">
       <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
+   <xsd:simpleType name="RevisionNumber">
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
    <xsd:simpleType name="Role">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -8781,8 +9004,8 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="RoofInsulationException">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="InsulationReducesFlashingHeightLT8In">Adding required insulation will reduce base flashing height to less that 8 inches at penthouse or parapet walls &amp;amp;amp; conditions i-v in exception c to
-               <d:t24ref h="141.0(b)2Biii"/>have been met.</dtyp:displayterm>
+            <dtyp:displayterm value="InsulationReducesFlashingHeightLT8In">Adding required insulation will reduce base flashing height to less that 8 inches at penthouse or parapet walls &amp;amp; conditions i-v in exception c to 
+               <d:t24ref h="141.0(b)2Biii"/> have been met.</dtyp:displayterm>
             <dtyp:displayterm value="MechanicalEquipmentOnRoof">Mechanical equipment will not be lifted as part of the roof replacement, insulation added may be limited to the maximum insulation thickness that will allow a height of 8 inches from the roof membrane surface to the top of the flashing</dtyp:displayterm>
             <dtyp:displayterm value="NoExceptionApplies">No exception applies</dtyp:displayterm>
             <dtyp:displayterm value="R7OrUfactorLT0_089">Existing roof is insulated with at least R-7 or has a U-factor lower than 0.089</dtyp:displayterm>
@@ -8893,8 +9116,8 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="Exempt">Exempt</dtyp:displayterm>
             <dtyp:displayterm value="Included">Included</dtyp:displayterm>
-            <dtyp:displayterm value="NA_LTE80PctAllowedLP">NA:
-               <d:lte/>80 % LP (alt only)</dtyp:displayterm>
+            <dtyp:displayterm value="NA_LTE80PctAllowedLP">NA:  
+               <d:lte/> 80 % LP (alt only)</dtyp:displayterm>
             <dtyp:displayterm value="NA">N/A</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -9032,7 +9255,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="SignDemandResponseControls">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="LTE15kwNA">NA:
+            <dtyp:displayterm value="LTE15kwNA">NA: 
                <d:lte/>15 kW</dtyp:displayterm>
             <dtyp:displayterm value="DemandResponseNA">NA</dtyp:displayterm>
             <dtyp:displayterm value="PowerReduced30">Power reduced 30%+</dtyp:displayterm>
@@ -9130,14 +9353,14 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="SolarReadyAlternativeEfficiencyMeasure">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="AlternativePlumbingForGrayWaterIrrigation">Install alternative plumbing piping to permit the discharge from the clothes washer and all showers and bathtubs to be used for an irrigation system in compliance with the
-               <d:i>California Plumbing Code</d:i>and any applicable local ordinances.</dtyp:displayterm>
+            <dtyp:displayterm value="AlternativePlumbingForGrayWaterIrrigation">Install alternative plumbing piping to permit the discharge from the clothes washer and all showers and bathtubs to be used for an irrigation system in compliance with the 
+               <d:i>California Plumbing Code</d:i> and any applicable local ordinances.</dtyp:displayterm>
             <dtyp:displayterm value="EnergyStarAppliances">Install a dishwasher that meets or exceeds ENERGY STAR Program requirements with either a refrigerator that meets or exceeds the ENERGY STAR Program requirements or a whole house fan driven by an electronically commutated motor or a Level 2 EVSE/ EV Charger</dtyp:displayterm>
             <dtyp:displayterm value="ChargingSpaceForEV">The bulding meets T24 Part11 Section A4.106.8.2 requirement of 15% of total parking as EV charging spaces</dtyp:displayterm>
             <dtyp:displayterm value="HomeAutomationDemandResponseCapable">Install a home automation system capable of, at a minimum, controlling the appliances and lighting of the dwelling and responding to demand response signals.</dtyp:displayterm>
             <dtyp:displayterm value="NoEfficiencyMeasure"/>
-            <dtyp:displayterm value="RainwaterCatchmentSystem">Install a rainwater catchment system designed to comply with the
-               <d:i>California Plumbing Code</d:i>and any applicable local ordinances, and that uses rainwater flowing from at least 65 percent of the available roof area.</dtyp:displayterm>
+            <dtyp:displayterm value="RainwaterCatchmentSystem">Install a rainwater catchment system designed to comply with the 
+               <d:i>California Plumbing Code</d:i> and any applicable local ordinances, and that uses rainwater flowing from at least 65 percent of the available roof area.</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -9152,10 +9375,10 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="SolarReadyBuildingScopeNR">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="RoofIncreaseGT2000ft2">Addition/ Alteration increases roof area
-               <d:gt/>2,000 ft2</dtyp:displayterm>
-            <dtyp:displayterm value="RoofIncreaseLTE2000ft2">Addition/ Alteration increases roof area
-               <d:lte/>2,000 ft2</dtyp:displayterm>
+            <dtyp:displayterm value="RoofIncreaseGT2000ft2">Addition/ Alteration increases roof area 
+               <d:gt/> 2,000 ft2</dtyp:displayterm>
+            <dtyp:displayterm value="RoofIncreaseLTE2000ft2">Addition/ Alteration increases roof area 
+               <d:lte/> 2,000 ft2</dtyp:displayterm>
             <dtyp:displayterm value="RoofNewConstruction">New Construction</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -9168,7 +9391,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="SolarReadyBuildingTypeNR">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="BuildingRoofLTE533Ft2">Building with total roof area
+            <dtyp:displayterm value="BuildingRoofLTE533Ft2">Building with total roof area 
                <d:lte/>533 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
             <dtyp:displayterm value="HealthcareFacility">Healthcare Facilities</dtyp:displayterm>
@@ -9491,8 +9714,17 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="SystemFieldVerified">
       <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
+   <xsd:simpleType name="SystemsMaxCharMessage">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SystemsToFieldVerify">
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
    <xsd:simpleType name="T24StandardsCodeYear">
       <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Code Cycle</dtyp:displayterm>
+         </xsd:appinfo>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="2013">2013</dtyp:displayterm>
             <dtyp:displayterm value="2016">2016</dtyp:displayterm>
@@ -9573,11 +9805,11 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="10Ft7InTo14Ft">10'7" to 14'</dtyp:displayterm>
             <dtyp:displayterm value="GT14FtTo18Ft">
-               <d:gt/>14' to 18'</dtyp:displayterm>
+               <d:gt/> 14' to 18'</dtyp:displayterm>
             <dtyp:displayterm value="GTE18Ft">
-               <d:gt/>18'</dtyp:displayterm>
+               <d:gt/> 18'</dtyp:displayterm>
             <dtyp:displayterm value="LT10Ft7In">
-               <d:lt/>10'-7"</dtyp:displayterm>
+               <d:lt/> 10'-7"</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -10477,7 +10709,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="GuardStation">Guard Stations</dtyp:displayterm>
             <dtyp:displayterm value="NonSalesCanopy">Non-sales Canopies/Tunnels</dtyp:displayterm>
             <dtyp:displayterm value="OutdoorDining">Outdoor Dining</dtyp:displayterm>
-            <dtyp:displayterm value="ParkingPedestrianSecurity">Security for Retail Parking &amp;amp;amp;  Pedestrian Hardscape</dtyp:displayterm>
+            <dtyp:displayterm value="ParkingPedestrianSecurity">Security for Retail Parking &amp;amp;  Pedestrian Hardscape</dtyp:displayterm>
             <dtyp:displayterm value="SalesCanopy">Sales Canopies</dtyp:displayterm>
             <dtyp:displayterm value="SalesLot">Outdoor Sales Lot</dtyp:displayterm>
             <dtyp:displayterm value="ServiceStationCanopy">Service Station Canopy</dtyp:displayterm>
@@ -10586,7 +10818,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AutoVaryVolRatio">Auto vary volume ratio in response to operating pressure</dtyp:displayterm>
-            <dtyp:displayterm value="GT1DedicatedCompressorNA">NA: Not screw compressor w
+            <dtyp:displayterm value="GT1DedicatedCompressorNA">NA: Not screw compressor w 
                <d:gt/>150 HP motor</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -10794,8 +11026,8 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="HealthcareNA">NA: Healthcare Facility</dtyp:displayterm>
             <dtyp:displayterm value="HumidityControlNA">NA: Humidity control</dtyp:displayterm>
             <dtyp:displayterm value="NoReheatRecool">No Reheat, Recool, Mixing</dtyp:displayterm>
-            <dtyp:displayterm value="PeakLTE300NA">NA: Peak SA
-               <d:lte/>300 CFM</dtyp:displayterm>
+            <dtyp:displayterm value="PeakLTE300NA">NA: Peak SA 
+               <d:lte/> 300 CFM</dtyp:displayterm>
             <dtyp:displayterm value="PressurizationControlNA">NA: Pressurization control</dtyp:displayterm>
             <dtyp:displayterm value="ReheatSourceNA">NA: Reheat via site/ solar source</dtyp:displayterm>
             <dtyp:displayterm value="VAVnoDDC">VAV without DDC @ zone</dtyp:displayterm>
