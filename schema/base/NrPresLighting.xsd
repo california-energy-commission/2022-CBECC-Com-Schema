@@ -5,7 +5,7 @@
    xmlns:com="http://www.lmonte.com/besm/com"
    xmlns:dtyp="http://www.lmonte.com/besm/dtyp"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2019.0.010">
+   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2019.1.003">
    <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="NrPresCommon.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/dtyp" schemaLocation="DataTypes.xsd"/>
    <xsd:simpleType name="AllLuminairePowerInArea">
@@ -495,6 +495,18 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LuminaireUse">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="SmallApertureColorChanging">Small Aperture and Color Change</dtyp:displayterm>
+            <dtyp:displayterm value="TrackLighting">Modular (Track)</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="SmallApertureColorChanging"/>
+         <xsd:enumeration value="TrackLighting"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="LuminaireWattsPerLF">

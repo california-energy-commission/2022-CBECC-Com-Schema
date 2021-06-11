@@ -12,7 +12,7 @@
    xmlns:dtyp="http://www.lmonte.com/besm/dtyp"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
    xmlns:altova="http://www.altova.com/xml-schema-extensions"
-   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2019.0.010">
+   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2019.0.011">
    <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="../base/NrPresCommon.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/bld" schemaLocation="../base/NrPresBuilding.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/env" schemaLocation="../base/NrPresEnvelope.xsd"/>
@@ -34,16 +34,15 @@
             <xsd:element name="DocumentData">
                <xsd:complexType>
                   <xsd:sequence>
-                     <xsd:element name="Header" type="comp:HeaderNRCCPRF" />
+                     <xsd:element name="Header" type="comp:HeaderNRCC" />
                      <xsd:element ref="nRCCPRF" />
-                     <xsd:element name="DeclarationsBlock" type="comp:DeclarationsNRCCPRF" maxOccurs="unbounded" />
-                     <xsd:element name="Footer" type="comp:FooterNRCCPRF" />
+                     <xsd:element name="DeclarationsBlock" type="comp:DeclarationsNRCC" maxOccurs="unbounded" />
+                     <xsd:element name="Footer" type="comp:FooterNRCC" />
                   </xsd:sequence>
                </xsd:complexType>
             </xsd:element>
-            <xsd:element name="Report" type="xsd:base64Binary" id="Sign2"/>
-            <xsd:element name="Report2" type="xsd:base64Binary" id="Sign3"/>
-            <xsd:element name="Input" type="xsd:base64Binary" id="Sign4"/>
+            <xsd:element name="Report" type="xsd:base64Binary" minOccurs="0"/>
+            <xsd:element name="ReportMMB" type="xsd:base64Binary" minOccurs="0"/>
          </xsd:sequence>
          <xsd:attribute name="revision" use="required" type="xsd:string" fixed="rev 20201101"/>
          <xsd:attribute name="doc" use="required" type="comp:ComplianceDocumentTagNR" fixed="NRCCPRFE"/>
@@ -832,12 +831,12 @@
                   </xsd:element>
                   <xsd:element name="Result2Tier1_CALGreenTier1" type="comp:CALGreenTier1" >
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">This project is pursuing CalGreen Tier 1</xsd:documentation>
+                        <xsd:documentation source="FieldText">This project achieved CalGreen Tier 1</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Result2Tier2_CALGreenTier2" type="comp:CALGreenTier2" >
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">This project is pursuing CalGreen Tier 2</xsd:documentation>
+                        <xsd:documentation source="FieldText">This project achieved CalGreen Tier 2</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Result2Recpt" minOccurs="0">
@@ -2865,7 +2864,7 @@
                <xsd:documentation source="FieldText">[d:b]C4. UNMET LOAD HOURS[/d:b]</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if unmet heating load hours are greater than unmet heating load hour limit OR unmet cooling load hours are greater than unmet cooling load hour limit</xsd:documentation>
                <xsd:appinfo source="CBECCnrXML">
-                  <dtyp:CBECCnrXMLterm>This section is required if any combinaiton of conditions is true</dtyp:CBECCnrXMLterm>
+                  <dtyp:CBECCnrXMLterm>This section is required if any combination of conditions is true</dtyp:CBECCnrXMLterm>
                   <dtyp:termConditions>p:Proj:Bldg:ThrmlZn:BypassClgUMLHLimit = 0 AND p:Proj:Bldg:ThrmlZn:ClgUnmetLdHrs GT ( p:Proj:Bldg:ThrmlZn:ClgUMLHLimit + 0.1 )  OR 
 If p:Proj:Bldg:ThrmlZn:BypassHtgUMLHLimit = 0 AND p:Proj:Bldg:ThrmlZn:HtgUnmetLdHrs GT ( p:Proj:Bldg:ThrmlZn:HtgUMLHLimit + 0.1 )</dtyp:termConditions>
                </xsd:appinfo>
@@ -3979,7 +3978,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:documentation source="FieldText">Equipment Name</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">This is a string that identifies either an  Air System, Zone System or VRF System</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>AirSys:Desc or ZnSys:Desc or VRFSys:Desc</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:Nameor ZnSys:Name or VRFSys:Name</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -4038,22 +4037,32 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Total Heating Output [d:line1/] (kBtu/h)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>CoilHtg:CapTotGrossRtd Or CoilHtg:CapTotNetRtd  Or VRFSys:HtgCapNetRated</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="HvacDry05_HeatingSupplementalCapacity" type="hvac:HeatingSupplementalCapacity" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Supp Heat Output [d:line1/] (kBtu/h)</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>? HtPumpSuppCoilHtgRef:CapTotNetRtd</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:HtgCap/1000 Or ZnSys:HtgCap/1000 Or VRFSys:HtgCapNetRtd/1000</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
+                                       <xsd:element name="HvacDry05_HeatingSupplementalCapacity" type="hvac:HeatingSupplementalCapacity" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Supp Heat Output [d:line1/] (kBtu/h)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:SuppHtgCap/1000 Or ZnSys:SuppHtgCap/1000</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="HvacDry05_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Supp Heat Output [d:line1/] (kBtu/h)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
                                        <xsd:element name="HvacDry06a_EfficiencyType" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency Units</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:HtgEffUnitRpt Or ZnSys:HtgEffUnitRpt Or VRFSys:HtgEffUnitRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
                                           </xsd:annotation>
                                           <xsd:simpleType>
                                              <xsd:restriction base="hvac:EfficiencyType">
@@ -4076,7 +4085,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>CoilHtg:FurnAFUE</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -4084,7 +4093,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>CoilHtg:HtPumpCOP Or VRFSys:COP</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -4092,11 +4101,11 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>CoilHtg:HtPumpHSPF Or VRFSys:HSPF</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="HvacDry06b_EfficencyNA" type="comp:EfficencyNA" >
+                                       <xsd:element name="HvacDry06b_EfficiencyNA" type="comp:EfficiencyNA" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                           </xsd:annotation>
@@ -4111,7 +4120,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Total Cooling Output [d:line1/] (kBtu/h)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>CoilClg:CapTotGrossRtd Or CoilClg:CapTotNetRtd Or VRFSys:ClgCapNetRated</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:ClgCap/1000 Or ZnSys:ClgCap/1000 Or VRFSys:ClgCapNetRtd/1000</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -4119,6 +4128,9 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:element name="HvacDry08a_EfficiencyType" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:ClgEffUnitRpt Or ZnSys:ClgEffUnitRpt Or VRFSys:ClgEffUnitRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
                                           </xsd:annotation>
                                           <xsd:simpleType>
                                              <xsd:restriction base="hvac:EfficiencyType">
@@ -4138,7 +4150,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>CoilClg:DXEER Or VRFSys:EER</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:ClgEffRpt Or ZnSys:ClgEffRpt Or VRFSys:ClgEffRpt</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -4146,11 +4158,11 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>CoilClg:DXSEER Or VRFSys:SEER</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:ClgEffRpt Or ZnSys:ClgEffRpt Or VRFSys:ClgEffRpt</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="HvacDry08b_EfficencyNA" type="comp:EfficencyNA" >
+                                       <xsd:element name="HvacDry08b_EfficiencyNA" type="comp:EfficiencyNA" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                           </xsd:annotation>
@@ -4208,7 +4220,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
          </xsd:element>
          <xsd:element name="Section_Fan" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H2.FAN SYSTEMS SUMMARY[d:sup]1[/d:sup][/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]H2.FAN SYSTEMS SUMMARY [/d:b]</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -4226,31 +4238,28 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Name or Item Tag</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">This is a string that identifies either an  Air System, Zone System or Terminal Unit in a VRF System</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:Nameor ZnSys:Name</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="Fan02_FanCount" type="hvac:FanCount" >
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Multiplier</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Qty</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:Cnt Or ZnSys:Cnt</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="Fan03_VentSystemOA" type="hvac:VentSystemOA" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Design OA [d:line1/]CFM</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:SysVentFlow Or ZnSys:SysVentFlow</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Fan03a_OA_SpaceRequiredMin" type="com:OA_SpaceRequiredMin" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Required Min OA CFM [d:line1/]CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Fan03a_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Required Min OA CFM [d:line1/]CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:element name="FanCol04to07Label" minOccurs="0">
+                                    <xsd:element name="Fanl04to07Subheading" minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">[d:b]Supply Fan [/d:b]</xsd:documentation>
                                        </xsd:annotation>
@@ -4260,64 +4269,83 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">CFM</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:FlowCap</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:FlowCap Or ZnSys:Fan:FlowCap</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Fan04_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">CFM</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If no supply fan, result is NA</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Fan05_MotorBHP" type="hvac:MotorBHP" >
+                                       <xsd:element name="Fan05_ModelingMethod" type="hvac:ModelingMethod" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Modeling Method</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:MtrBHP</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Fan05_FanPowerPerFlow" type="hvac:FanPowerPerFlow" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:PwrIdx Or TrmlUnit:FanPwrPerFlow</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Fan05_TotalStaticPressure" type="hvac:TotalStaticPressure" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:TotStaticPress</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:ModelingMthd Or ZnSys:Fan:ModelingMthd</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Fan05_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Modeling Method</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If no supply fan, result is NA</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Fan06_ModelingMethod" type="hvac:ModelingMethod" >
+                                       <xsd:element name="Fan06_MotorBHP" type="hvac:MotorBHP" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Units</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:ModelingMthd</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrRpt Or ZnSys:Fan:PwrRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Fan06_FanPowerPerFlow" type="hvac:FanPowerPerFlow" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrRpt Or ZnSys:Fan:PwrRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Fan06_TotalStaticPressure" type="hvac:TotalStaticPressure" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrRpt Or ZnSys:Fan:PwrRpt</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Fan06_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Units</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If no supply fan, result is NA</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Fan07_ControlMethod" type="hvac:ControlMethod" >
+                                       <xsd:element name="Fan07_FanPowerUnits" type="hvac:FanPowerUnits" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power Units</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrUnitRpt Or ZnSys:Fan:PwrUnitRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Fan07_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power Units</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If no supply fan, result is NA</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Fan08_ControlMethod" type="hvac:ControlMethod" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Control</xsd:documentation>
                                              <xsd:appinfo source="displayterm">
@@ -4325,84 +4353,112 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                              </xsd:appinfo>
                                              
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:CtrlMthd</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Fan07_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Control</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:element name="FanCol08to11Label" minOccurs="0">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">[d:b]Return Fan [/d:b]</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Fan08_FanFlowCapacity" type="hvac:FanFlowCapacity" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">CFM</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:FlowCap</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:CtrlMthd Or ZnSys:Fan:CtrlMthd</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Fan08_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">CFM</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Control</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If no supply fan, result is NA</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
+                                    <xsd:element name="Fan08to11Subheading" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">[d:b]Return Fan [/d:b]</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Fan09_MotorBHP" type="hvac:MotorBHP" >
+                                       <xsd:element name="Fan09_FanFlowCapacity" type="hvac:FanFlowCapacity" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:documentation source="FieldText">CFM</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:MtrBHP</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:FlowCap</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Fan09_FanPowerModeled" type="hvac:FanPowerModeled" >
+                                       <xsd:element name="Fan09_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:documentation source="FieldText">CFM</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:PwrIRpt</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>If ZnSys result = NA or no return fan</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Fan09_TotalStaticPressure" type="hvac:TotalStaticPressure" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:TotStaticPress</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Fan10_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Fan10_ModelingMethod" type="hvac:ModelingMethod" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Units</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Modeling Method</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:ModelingMthd</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:ModelingMthd</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Fan10_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Units</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Modeling Method</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If ZnSys result = NA or no return fan</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Fan11_ControlMethod" type="hvac:ControlMethod" >
+                                       <xsd:element name="Fan11_MotorBHP" type="hvac:MotorBHP" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrIRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Fan11_FanPowerModeled" type="hvac:FanPowerModeled" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrIRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Fan11_TotalStaticPressure" type="hvac:TotalStaticPressure" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrIRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Fan11_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If ZnSys result = NA or no return fan</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Fan12_FanPowerUnits" type="hvac:FanPowerUnits" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power Units</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrUnitRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Fan12_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power Units</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If ZnSys result = NA or no return fan</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Fan13_ControlMethod" type="hvac:ControlMethod" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Control</xsd:documentation>
                                              <xsd:appinfo source="displayterm">
@@ -4410,17 +4466,20 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                              </xsd:appinfo>
                                              
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Fan:CtrlMthd</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:CtrlMthd</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Fan11_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Fan13_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Control</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If ZnSys result = NA or no return fan</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:element name="Fan12_Status" >
+                                    <xsd:element name="Fan14_Status" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Status[d:sup]1[/d:sup]</xsd:documentation>
                                           <xsd:appinfo source="displayterm">
@@ -4429,6 +4488,9 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                              <dtyp:displayterm value="New">N</dtyp:displayterm>
                                           </xsd:appinfo>
                                           
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:Status Or ZnSys:AirSeg:Fan:Status</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
                                        </xsd:annotation>
                                        <xsd:simpleType>
                                           <xsd:restriction base="com:Status">
@@ -4454,7 +4516,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
          </xsd:element>
          <xsd:element name="Section_FanExh" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H3. EXHAUST FAN SUMMARY[d:sup]1[/d:sup][/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]H3. EXHAUST FAN SUMMARY[/d:b]</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -4472,7 +4534,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">System ID</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>ThrmlZn:ExhSysRef</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:Name Or ZnSys:Name</dtyp:CBECCnrXMLterm>
                                              <dtyp:termConditions>Result is AirSys If AirSys:Type == Exhaust Or ZnSys If ZnSys:Type == Exhaust</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
@@ -4481,20 +4543,23 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Zone Name</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>ThrmlZn:Desc Or AirSys:CtrlZnRef ??</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:ZnServedAsExhSys Or ZnSys:ZnServedAsExhSys</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="FanExh03_FanCount" type="hvac:FanCount" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Qty</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:SysCnt Or ZnSys:Fan:SysCnt</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="FanExh04_ExhaustFlowRate" type="hvac:ExhaustFlowRate" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">CFM</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Fan:FlowCap</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:FlowCap Or ZnSys:Fan:FlowCap</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -4502,15 +4567,15 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Motor BHP</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Fan:MtrBHP</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:MtrBHP Or ZnSys:Fan:MtrBHP</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="FanExh06_MotorWatts" type="hvac:MotorWatts" >
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Motor Watts</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Power Per Flow (W/cfm)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Fan:PwrRpt</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrIdx Or ZnSys:Fan:PwrIdx</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -4518,15 +4583,41 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Total Static Pressure (in H2O)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Fan:TotStaticPress</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:TotStaticPress Or ZnSys:Fan:TotStaticPress</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="FanExh08_Status" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Status[d:sup]1[/d:sup]</xsd:documentation>
+                                          <xsd:appinfo source="displayterm">
+                                             <dtyp:displayterm value="ExistingAlteration">A</dtyp:displayterm>
+                                             <dtyp:displayterm value="ExistingUnchanged">E</dtyp:displayterm>
+                                             <dtyp:displayterm value="New">N</dtyp:displayterm>
+                                          </xsd:appinfo>
+                                          
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:Status Or ZnSys:AirSeg:Fan:Status</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="com:Status">
+                                             <xsd:enumeration value="ExistingAlteration"/>
+                                             <xsd:enumeration value="ExistingUnchanged"/>
+                                             <xsd:enumeration value="New"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
                                     </xsd:element>
                                  </xsd:sequence>
                               </xsd:complexType>
                            </xsd:element>
                         </xsd:sequence>
                      </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="FanExhFootNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">[d:i][d:sup]1[/d:sup] Status: N - New, A - Altered, E - Existing[/d:i]</xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
@@ -4599,6 +4690,18 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="HvacWet03a_HvacEquipmentCount" type="hvac:HvacEquipmentCount" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Qty</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="HvacWet03a_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Qty</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="HvacWet03_TEStorageCapacity" type="hvac:TEStorageCapacity" >
                                           <xsd:annotation>
@@ -4713,17 +4816,28 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="HvacWet06_EfficencyNA" type="comp:EfficencyNA" >
+                                       <xsd:element name="HvacWet06_EfficiencyNA" type="comp:EfficiencyNA" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="HvacWet07_EfficiencyType" type="hvac:EfficiencyType" >
+                                       <xsd:element name="HvacWet07_EfficiencyType" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
                                           </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:EfficiencyType">
+                                                <xsd:enumeration value="AFUE"/>
+                                                <xsd:enumeration value="CombustionEfficiency"/>
+                                                <xsd:enumeration value="COP"/>
+                                                <xsd:enumeration value="EER"/>
+                                                <xsd:enumeration value="GalPerMinHp"/>
+                                                <xsd:enumeration value="KWperTon"/>
+                                                <xsd:enumeration value="ThermalEfficiency"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
                                        </xsd:element>
                                        <xsd:element name="HvacWet07_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
@@ -4768,7 +4882,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
          </xsd:element>
          <xsd:element name="Section_Pump" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H4. PUMPS [/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]H5. PUMPS [/d:b]</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -4866,7 +4980,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
          </xsd:element>
          <xsd:element name="Section_HvacSpec" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H5. SYSTEM SPECIAL FEATURES [/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]H6. SYSTEM SPECIAL FEATURES [/d:b]</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -4974,7 +5088,8 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
          </xsd:element>
          <xsd:element name="Section_Vent" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H6. MECHANICAL VENTILATION [/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]H7. MECHANICAL VENTILATION [/d:b]</xsd:documentation>
+               <xsd:documentation source="CalculationsAndRules">If project includes ventilation, this table is required If Info13_TopLevelOccupancy != HighRiseResidential Or HotelMotel Or ResidentialNR</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -5153,7 +5268,7 @@ for all Spc  in this ThrmlZn</dtyp:termConditions>
          </xsd:element>
          <xsd:element name="Section_Zone" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H7. ZONAL SYSTEM AND TERMINAL UNIT SUMMARY[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]H8. ZONAL SYSTEM AND TERMINAL UNIT SUMMARY[/d:b]</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -5251,18 +5366,18 @@ for all Spc  in this ThrmlZn</dtyp:termConditions>
                                           <xsd:documentation source="FieldText">Airflow (cfm)</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Zone06_PrimaryAirFlowMaximum" type="hvac:PrimaryAirFlowMaximum" >
+                                    <xsd:element name="Zone06_RatedFlowCapacity" type="hvac:RatedFlowCapacity" >
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Peak Primary Airflow</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Design</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>ThrmlUnit:PriAirFlowMax Of ZnSys:RtdFlowCap</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>ThrmlUnit:PriAirFlowMax Or ZnSys:RtdFlowCap</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Zone07_PrimaryAirInDeadband" type="hvac:PrimaryAirInDeadband" >
+                                       <xsd:element name="Zone07_AirFlowMinimum" type="hvac:AirFlowMinimum" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Primary Air In Deadband</xsd:documentation>
+                                             <xsd:documentation source="FieldText">MIn.</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Zone07_NotApplicableMessage" type="comp:NotApplicableMessage" >
@@ -5362,7 +5477,7 @@ for all Spc  in this ThrmlZn</dtyp:termConditions>
          </xsd:element>
          <xsd:element name="Section_Evap" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H8. EVAPORATIVE COOLER SUMMARY[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]H9. EVAPORATIVE COOLER SUMMARY[/d:b]</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -5380,7 +5495,7 @@ for all Spc  in this ThrmlZn</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">System ID</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:Name</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -5388,20 +5503,23 @@ for all Spc  in this ThrmlZn</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Type</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>EvapClr:Type</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:Type</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="Evap03_EvaporativeCoolerCount" type="hvac:EvaporativeCoolerCount" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Qty</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:SysCnt</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="Evap04_Effectiveness" type="hvac:Effectiveness" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Effectiveness</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>:EvapClr:Eff</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>:AirSys:AirSeg:EvapClr:Eff</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -5409,46 +5527,79 @@ for all Spc  in this ThrmlZn</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Pump Power (Watts)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>EvapClr:PumpPwr</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:PumpPwr</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Evap06_SecondaryFanFlowCapacity" type="hvac:SecondaryFanFlowCapacity" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Secondary Fan Flow Rate (cfm)</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>EvapClr:SecFanFlowCap</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="Evap07_SecondaryFanTotalEfficiency" type="hvac:SecondaryFanTotalEfficiency" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Secondary Fan Total Efficiency</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>EvapClr:SecFanTotEff</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="Evap08_SecondaryFanTotalStaticPressure" type="hvac:SecondaryFanTotalStaticPressure" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Secondary Fan Static Pressure (in H2O)</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>SecFanTotStaticPress</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Evap06_SecondaryFanFlowCapacity" type="hvac:SecondaryFanFlowCapacity" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Secondary Fan Flow Rate (cfm)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:SecFanFlowCap</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Evap06_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Secondary Fan Flow Rate (cfm)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If AirSys:AirSeg:EvapClr:Type == Direct  result = NA</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Evap07_SecondaryFanTotalEfficiency" type="hvac:SecondaryFanTotalEfficiency" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Secondary Fan Total Efficiency</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:SecFanTotEff</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Evap07_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Secondary Fan Total Efficiency</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If AirSys:AirSeg:EvapClr:Type == Direct  result = NA</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Evap08_SecondaryFanTotalStaticPressure" type="hvac:SecondaryFanTotalStaticPressure" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Secondary Fan Static Pressure (in H2O)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:SecFanTotStaticPress</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Evap08_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Secondary Fan Static Pressure (in H[d:sub]2[/d:sub]O)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If AirSys:AirSeg:EvapClr:Type == Direct  result = NA</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Evap09_SecondaryAirSource" type="hvac:SecondaryAirSource" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Secondary Air Source</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>EvapClr:SecAirSrc</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:SecAirSrc</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Evap09_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Secondary Air Source</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If AirSys:AirSeg:EvapClr:Type == Direct  result = NA</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -6387,7 +6538,7 @@ End If</dtyp:termConditions>
                                     </xsd:element>
                                     <xsd:element name="WaterSolar15_DHWSystemDwellingUnitsCount" type="hvac:DHWSystemDwellingUnitsCount" >
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText"># of Dwelling Units Served</xsd:documentation>
+                                          <xsd:documentation source="FieldText"># of Units Served</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
                                              <dtyp:CBECCnrXMLterm>DHWSolarSys:DwellUnitsServed</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
@@ -8205,7 +8356,7 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Nrca03Label_VerifedByInspector" type="comp:VerifedByInspector" >
+                  <xsd:element name="Nrca03Label" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
