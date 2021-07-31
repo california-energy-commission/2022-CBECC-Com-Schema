@@ -342,16 +342,20 @@
             <dtyp:displayterm>Boiler Type</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="HotWater">Hot Water</dtyp:displayterm>
             <dtyp:displayterm value="HotWaterGas">Hot Water, Gas-Fired</dtyp:displayterm>
             <dtyp:displayterm value="HotWaterOil">Hot Water, Oil-Fired</dtyp:displayterm>
+            <dtyp:displayterm value="Steam">Steam</dtyp:displayterm>
             <dtyp:displayterm value="SteamGas">Steam, Gas-Fired, natural draft</dtyp:displayterm>
             <dtyp:displayterm value="SteamGasNotNaturalDraft">Steam, Gas-Fired, not natural draft</dtyp:displayterm>
             <dtyp:displayterm value="SteamOil">Steam, Oil-Fired</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="HotWater"/>
          <xsd:enumeration value="HotWaterGas"/>
          <xsd:enumeration value="HotWaterOil"/>
+         <xsd:enumeration value="Steam"/>
          <xsd:enumeration value="SteamGas"/>
          <xsd:enumeration value="SteamGasNotNaturalDraft"/>
          <xsd:enumeration value="SteamOil"/>
@@ -2502,6 +2506,7 @@
             <dtyp:displayterm value="EER_IPLV">IPLV</dtyp:displayterm>
             <dtyp:displayterm value="EnergyFactor">EF</dtyp:displayterm>
             <dtyp:displayterm value="GalPerMinHp">GPM/Hp</dtyp:displayterm>
+            <dtyp:displayterm value="HP">HP</dtyp:displayterm>
             <dtyp:displayterm value="HSPF">HSPF</dtyp:displayterm>
             <dtyp:displayterm value="IEER">IEER</dtyp:displayterm>
             <dtyp:displayterm value="KWperTon">kWperTon</dtyp:displayterm>
@@ -2524,6 +2529,7 @@
          <xsd:enumeration value="EER_IPLV"/>
          <xsd:enumeration value="EnergyFactor"/>
          <xsd:enumeration value="GalPerMinHp"/>
+         <xsd:enumeration value="HP"/>
          <xsd:enumeration value="HSPF"/>
          <xsd:enumeration value="IEER"/>
          <xsd:enumeration value="KWperTon"/>
@@ -3470,6 +3476,17 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:ObjectNamePermissive">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="HeatExchangerType">
+      <xsd:annotation>
+         <xsd:documentation>HeatExchangerType</xsd:documentation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="CounterFlow">Counter Flow</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="CounterFlow"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="HeatingCapacity">
@@ -4931,11 +4948,13 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="DCV">DCV</dtyp:displayterm>
+            <dtyp:displayterm value="OccSensorsDCV">Both</dtyp:displayterm>
             <dtyp:displayterm value="OccupantSensors">Occupant Sensor</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="DCV"/>
+         <xsd:enumeration value="OccSensorsDCV"/>
          <xsd:enumeration value="OccupantSensors"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -6362,6 +6381,10 @@
          <xsd:enumeration value="StaticPressure"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ModelNumber">
+      <xsd:restriction base="xsd:string">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="MotorBHP">
       <xsd:annotation>
          <xsd:documentation>  Units: hp</xsd:documentation>
@@ -6400,7 +6423,7 @@
    </xsd:simpleType>
    <xsd:simpleType name="MotorWatts">
       <xsd:annotation>
-         <xsd:documentation>  Units: W</xsd:documentation>
+         <xsd:documentation>  Units: W per ft3 per min</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Motor Watts</dtyp:displayterm>
          </xsd:appinfo>
@@ -8185,6 +8208,13 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="TotalFanHP">
+      <xsd:annotation>
+         <xsd:documentation>The sum of the nameplate rated horsepower (hp) of all fan motors on the cooling tower  Units: hp</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="TotalHead">
       <xsd:annotation>
          <xsd:documentation>  Units: ft</xsd:documentation>
@@ -8488,6 +8518,10 @@
          <xsd:enumeration value="Maximum"/>
          <xsd:enumeration value="NoVentilation"/>
          <xsd:enumeration value="Sum"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="VentilationStandardDescription">
+      <xsd:restriction base="xsd:token">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="VentilationSystemCoolingName">
