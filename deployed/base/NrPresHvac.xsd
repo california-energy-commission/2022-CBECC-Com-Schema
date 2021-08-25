@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/hvac" version="2019.1.010" xmlns:com="http://www.lmonte.com/besm/com" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/hvac" version="2019.1.003" xmlns:com="http://www.lmonte.com/besm/com" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="NrPresCommon.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/dtyp" schemaLocation="DataTypes.xsd"/>
    <xsd:simpleType name="AirFlowMinimum">
@@ -4160,30 +4160,40 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="DCV">DCV Controls</dtyp:displayterm>
             <dtyp:displayterm value="DDC">DDC Controls</dtyp:displayterm>
-            <dtyp:displayterm value="DDC_DualMaxReheat">DDC Controls and Dual Maximum Reheat Controls</dtyp:displayterm>
-            <dtyp:displayterm value="EconDifferentialDB">Differential Dry Bulb Economizer</dtyp:displayterm>
-            <dtyp:displayterm value="EvapCooling">Evaporative Cooling</dtyp:displayterm>
+            <dtyp:displayterm value="DualMaxReheat">Dual Maximum Reheat Controls</dtyp:displayterm>
+            <dtyp:displayterm value="Fixed2SetpointTempControl">Fixed Dual SetpointTemperature Control</dtyp:displayterm>
+            <dtyp:displayterm value="FixedSupplyAirTemp">Fixed Supply Air Temp.</dtyp:displayterm>
             <dtyp:displayterm value="FixedTempControl">Fixed Temperature Control</dtyp:displayterm>
             <dtyp:displayterm value="HeatRecovery">Heat Recovery</dtyp:displayterm>
             <dtyp:displayterm value="OptimumStart">Optimum Start</dtyp:displayterm>
             <dtyp:displayterm value="OutsideAirReset">Outside Air Reset Temperature Control</dtyp:displayterm>
-            <dtyp:displayterm value="SupplyAirTempControl">Supply Air Temperature Control</dtyp:displayterm>
+            <dtyp:displayterm value="ScheduledTempControl">Scheduled Temperature Control</dtyp:displayterm>
+            <dtyp:displayterm value="SingleMaxReheat">Single Maximum Reheat Controls</dtyp:displayterm>
+            <dtyp:displayterm value="SupplyAirTempResetOA">Supply Air Temp. Reset on Outside Air Temp.</dtyp:displayterm>
+            <dtyp:displayterm value="SupplyAirTempScheduled">Scheduled Supply Air Temp.</dtyp:displayterm>
             <dtyp:displayterm value="WarmestZoneReset">Warmest Zone Supply Air Temp. Reset</dtyp:displayterm>
+            <dtyp:displayterm value="WarmestZoneResetFlow">Warmest Zone Supply Air Temp. Reset - Flow First</dtyp:displayterm>
+            <dtyp:displayterm value="WarmestZoneResetTemp">Warmest Zone Supply Air Temp. Reset - Temp. First</dtyp:displayterm>
             <dtyp:displayterm value="ZoneWithCO2Sensor">Zone(s) With CO2 Sensor Vent. Control</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="DCV"/>
          <xsd:enumeration value="DDC"/>
-         <xsd:enumeration value="DDC_DualMaxReheat"/>
-         <xsd:enumeration value="EconDifferentialDB"/>
-         <xsd:enumeration value="EvapCooling"/>
+         <xsd:enumeration value="DualMaxReheat"/>
+         <xsd:enumeration value="Fixed2SetpointTempControl"/>
+         <xsd:enumeration value="FixedSupplyAirTemp"/>
          <xsd:enumeration value="FixedTempControl"/>
          <xsd:enumeration value="HeatRecovery"/>
          <xsd:enumeration value="OptimumStart"/>
          <xsd:enumeration value="OutsideAirReset"/>
-         <xsd:enumeration value="SupplyAirTempControl"/>
+         <xsd:enumeration value="ScheduledTempControl"/>
+         <xsd:enumeration value="SingleMaxReheat"/>
+         <xsd:enumeration value="SupplyAirTempResetOA"/>
+         <xsd:enumeration value="SupplyAirTempScheduled"/>
          <xsd:enumeration value="WarmestZoneReset"/>
+         <xsd:enumeration value="WarmestZoneResetFlow"/>
+         <xsd:enumeration value="WarmestZoneResetTemp"/>
          <xsd:enumeration value="ZoneWithCO2Sensor"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -7946,6 +7956,15 @@
          <xsd:enumeration value="Fdb47Fwb43"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="TerminalUnitCount">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Terminal Unit Count</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="TerminalUnitName">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -8853,6 +8872,15 @@
          <xsd:enumeration value="Split3Phase"/>
          <xsd:enumeration value="Wall"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ZoneSysCount">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Zone System Count</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ZoneSystemName">
       <xsd:annotation>
