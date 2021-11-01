@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/NRCCPRF01E" version="2019.1.010" xmlns="http://www.lmonte.com/besm/NRCCPRF01E" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:env="http://www.lmonte.com/besm/env" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:lit="http://www.lmonte.com/besm/lit" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/NRCCPRF01E" version="2019.1.003" xmlns="http://www.lmonte.com/besm/NRCCPRF01E" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:env="http://www.lmonte.com/besm/env" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:lit="http://www.lmonte.com/besm/lit" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <xsd:import namespace="http://www.lmonte.com/besm/bld" schemaLocation="../base/NrPresBuilding.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="../base/NrPresCommon.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/comp" schemaLocation="../base/NrPresCompliance.xsd"/>
@@ -5237,9 +5237,9 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:element name="HvacSpec04">
+                                    <xsd:element name="HvacSpec04Choice">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Other Special Features and Controls</xsd:documentation>
+                                          <xsd:documentation source="FieldText"/>
                                        </xsd:annotation>
                                        <xsd:complexType>
                                           <xsd:choice>
@@ -5488,14 +5488,21 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                     <xsd:element name="VentRes05_VentSystemOA" type="hvac:VentSystemOA">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Supply OA CFM</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>ThermalZn:VentFlow</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="VentRes06_ExhaustFlowRate" type="hvac:ExhaustFlowRate">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Exhaust CFM</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>ThrmlZn:MinExhFlow Or ThrmlZn:ExhFlow</dtyp:CBECCnrXMLterm>
-                                             <dtyp:termConditions>If ThrmlZn:MinExhFlow greater than 0 result = ThrmlZn:MinExhFlow  Else result = ThrmlZn:ExhFlow</dtyp:termConditions>
+                                             <dtyp:CBECCnrXMLterm>ThermalZn:VentFlow Or ThrmlZn:MinExhFlow Or ThrmlZn:ExhFlow  See conditions</dtyp:CBECCnrXMLterm>
+                                             <dtyp:termConditions>If ThrmlZn:HighRiseResVentType = "Balanced" or "HeatRecovery" then 
+ThermalZn:VentFlow 
+else if ThrmlZn:MinExhFlow GT 0 then 
+ThrmlZn:MinExhFlow 
+else ThrmlZn:ExhFlow</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -5660,7 +5667,12 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Design</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>ThrmlUnit:PriAirFlowMax Or ZnSys:RtdFlowCap</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>If AirSys:ThrmlUnit  result = AirSys:ThrmlUnit:PriAirFlowMax Else If ZnSys  See conditions Either result = ZnSys:RtdFlowCap Or result = ZnSys:Fan:FlowCap End If</dtyp:CBECCnrXMLterm>
+                                             <dtyp:termConditions>if ZnSys:Type = "VentilatonOnly"
+result = ZnSys:RtdFlowCap
+else
+result = ZnSys:Fan:FlowCap
+end if</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -5698,7 +5710,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Power</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ZnSys:Fan:MtrBHP If ZnSys:Desc in Zone01,  Or TrmlUnit:Fan:MtrBHP If TrmlUnit in Zone01,</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>If ZnSys result = ZnSys:Fan:MtrBHP  Else If TrmlUnit result = TrmlUnit:Fan:MtrBHP</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -5706,7 +5718,20 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Power</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ZnSys:Fan:PwrRpt  If ZnSys:Desc in Zone01,  Or TrmlUnit:Fan:PwrRpt If TrmlUnit in Zone01,</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>If ZnSys: See conditions result = ZnSys:Fan:PwrRpt  Or ZnSys:RtdPwrIdx    Else If TrmlUnit  result =  TrmlUnit:Fan:PwrRpt</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>if ZnSys:Type = "VentilatonOnly"
+result = ZnSys:RtdPwrIdx
+else
+result = ZnSys:Fan:PwrRpt
+end If</dtyp:termConditions>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Zone10_TotalStaticPressure" type="hvac:TotalStaticPressure">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:Fan:PwrRpt Or ZnSys:Fan:PwrRpt</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -5720,6 +5745,13 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:element name="Zone11_FanPowerUnits" type="hvac:FanPowerUnits">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Units</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If AirSys result = AirSys:AirSeg:Fan:PwrUnitRpt Else If ZnSys See conditions result = Watts Or ZnSys:Fan:PwrUnitRpt End If</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>if ZnSys:Type = "VentilatonOnly"
+result = Watts
+else
+result = ZnSys:Fan:PwrUnitRpt</dtyp:termConditions>
+                                             </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Zone11_NotApplicableMessage" type="comp:NotApplicableMessage">
@@ -5899,6 +5931,202 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                            </xsd:element>
                         </xsd:sequence>
                      </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="Section_HtRecovery" minOccurs="0">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">
+                  <d:b>H11. HEAT RECOVERY SUMMARY</d:b>
+               </xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This table is required If AirSys:BaseSysNum == 0 And Type != Exhaust And AirSys:HRcvry IsPresent   OR ZnSys:BaseSysNum == 0 And Type == VentilationOnly And SysCtrlRpt[1] == Heat Recovery</dtyp:CBECCnrXMLterm>
+               </xsd:appinfo>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="TableHtRecovery">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="HtRecovery01_HvacSystemName" type="hvac:HvacSystemName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Equipment Name</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:Name Or ZnSys:Name</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="HtRecovery02_AirSystemType" type="hvac:AirSystemType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:Type</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="HtRecovery02_ZoneSystemType" type="hvac:ZoneSystemType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>ZnSys:Type</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="HtRecovery03_HvacCertificationType" type="comp:HvacCertificationType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Certification Type</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:HRcvry:HtRcvryCertification  Or ZnSys:HtRcvryCertification</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="HtRecovery04to06Label" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Heating</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="HtRecovery04_HeatingSensibleEffectiveness100" type="hvac:HeatingSensibleEffectiveness100">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Sensible</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:HtRcvry:HtgSensEff100 Or ZnSys:HtgSensEff100</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="HtRecovery05_HeatingLatentEffectiveness100" type="hvac:HeatingLatentEffectiveness100">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Latent</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:HtRcvry:HtgLatEff100 Or ZnSys:HtgLatEff100  Or 0 See conditions</dtyp:CBECCnrXMLterm>
+                                             <dtyp:termConditions>if AirSys:HtRcvry:HtRcvryCertification = "HVI"
+result = 0.00
+else if AirSys:HtRcvry:RcvryType = "SensibleOnly"
+result =  0.00
+else
+result = AirSys:HtRcvry:HtgLatEff100
+end If
+if ZnSys:HtRcvryCertification = "HVI"
+tresult =  0.00
+else if ZnSys:RcvryType = "SensibleOnly"
+result =  0.00
+else
+result = ZnSys:HtgLatEff100
+end If</dtyp:termConditions>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="HtRecovery06_HeatingTotalEffectiveness100" type="hvac:HeatingTotalEffectiveness100">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Total</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:HtRcvry:HtgTotEff100  Or ZnSys:HtgTotEff100  Or 0  See conditions</dtyp:CBECCnrXMLterm>
+                                             <dtyp:termConditions>if AirSys:HtRcvry:HtRcvryCertification = "HVI"
+result =   0.00
+else
+result =  AirSys:HtRcvry:HtgTotEff100
+end if
+if ZnSys: HtRcvryCertification = "HVI"
+result =   0.00
+else
+result =  ZnSys:HtgTotEff100</dtyp:termConditions>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="HtRecovery07to09Label" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Cooling</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="HtRecovery07_CoolingSensibleEffectiveness100" type="hvac:CoolingSensibleEffectiveness100">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Sensible</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:HtRcvry:ClgSensEff100 Or ZnSys:ClgSensEff100</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="HtRecovery08_CoolingLatentEffectiveness100" type="hvac:CoolingLatentEffectiveness100">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Latent</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:HtRcvry:ClgLatEff100 Or ZnSys:ClgLatEff100  Or 0 See conditions</dtyp:CBECCnrXMLterm>
+                                             <dtyp:termConditions>if AirSys:HtRcvry:HtRcvryCertification = "HVI"
+result = 0.00
+else if AirSys:HtRcvry:RcvryType = "SensibleOnly"
+result =  0.00
+else
+result = AirSys:HtRcvry:ClgLatEff100
+end If
+if ZnSys:HtRcvryCertification = "HVI"
+tresult =  0.00
+else if ZnSys:RcvryType = "SensibleOnly"
+result =  0.00
+else
+result = ZnSys:ClgLatEff100
+end If</dtyp:termConditions>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="HtRecovery09_CoolingTotalEffectiveness100" type="hvac:CoolingTotalEffectiveness100">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Total</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:HtRcvry:ClgTotEff100  Or ZnSys:ClgTotEff100  Or 0  See conditions</dtyp:CBECCnrXMLterm>
+                                             <dtyp:termConditions>if AirSys:HtRcvry:HtRcvryCertification = "HVI"
+result =   0.00
+else
+result =  AirSys:HtRcvry:ClgTotEff100
+end if
+if ZnSys: HtRcvryCertification = "HVI"
+result =   0.00
+else
+result =  ZnSys:ClgTotEff100</dtyp:termConditions>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="HtRecovery10_Status">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Status<d:sup>1</d:sup>
+                                          </xsd:documentation>
+                                          <xsd:appinfo source="displayterm">
+                                             <dtyp:displayterm value="ExistingAlteration">A</dtyp:displayterm>
+                                             <dtyp:displayterm value="ExistingUnchanged">E</dtyp:displayterm>
+                                             <dtyp:displayterm value="New">N</dtyp:displayterm>
+                                          </xsd:appinfo>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>AirSys:HtRcvry:Status or ZnSys: Status</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="com:Status">
+                                             <xsd:enumeration value="ExistingAlteration"/>
+                                             <xsd:enumeration value="ExistingUnchanged"/>
+                                             <xsd:enumeration value="New"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
+                                    </xsd:element>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HtRecoveryFootNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">
+                           <d:i><d:sup>1</d:sup> Status: N - New, A - Altered, E - Existing</d:i>
+                        </xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
@@ -6845,6 +7073,194 @@ End If</dtyp:termConditions>
                                           <xsd:documentation source="FieldText"># of Units Served</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
                                              <dtyp:CBECCnrXMLterm>DHWSolarSys:DwellUnitsServed</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="Section_WaterCompact" minOccurs="0">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">
+                  <d:b>I7.  WATER HEATING - COMPACT DISTRIBUTION </d:b>
+               </xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required If Spc:ResSpcDHWFeatures:CompactDistErrorID = 0  AND Spc:ResSpcDHWFeatures:CompactDistIdx GT 0</dtyp:CBECCnrXMLterm>
+               </xsd:appinfo>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="TableWaterCompact">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="WaterCompact01_SpaceName" type="com:SpaceName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Name</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:Name</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="WaterCompact02_DwellingUnitType" type="com:DwellingUnitType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Dwelling Unit Type</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>DwellingUnitBedroomCnt</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="WaterCompact03_WaterHeatingSystemName" type="hvac:WaterHeatingSystemName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Water Heating System Name</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:ResDHWSysRef</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterCompact04_WaterHeaterToBath" type="comp:WaterHeaterToBath">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Master Bath distance of furthest fixture to Water Heater (ft)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:MasterBathFxtrDistance</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterCompact04_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Master Bath distance of furthest fixture to Water Heater (ft)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterCompact05_WaterHeaterToKitchen" type="comp:WaterHeaterToKitchen">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Kitchen distance of furthest fixture to Water Heater (ft)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:KitFxtrDistance</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterCompact05_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Kitchen distance of furthest fixture to Water Heater (ft)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterCompact06_WaterHeaterToFurthest3rdFixture" type="comp:WaterHeaterToFurthest3rdFixture">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Furthest Third furthest fixture to Water Heater (ft)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:ThirdRoomFxtrDistance</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterCompact06_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Furthest Third furthest fixture to Water Heater (ft)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="WaterCompact07_CompactDistributionVerificationRequired" type="comp:CompactDistributionVerificationRequired">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">HERS Verification</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:CompactDistIdx = 2 result = true; else false</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="Section_WaterDWHR" minOccurs="0">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">I8. WATER HEATING - DRAIN WATER HEAT RECOVERY</xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required If Spc:NumResDWHRSysRefs GT 0 AND Spc:TotResDWHRSysShowers GT 0</dtyp:CBECCnrXMLterm>
+               </xsd:appinfo>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="TableDWHR">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="WaterDWHR01_SpaceName" type="com:SpaceName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Name</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:Name</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="WaterDWHR02_DwellingUnitType" type="com:DwellingUnitType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Dwelling Unit Type</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>DwellingUnitBedroomCnt</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="WaterDWHR03a_WaterHeatingSystemName" type="hvac:WaterHeatingSystemName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">DHW System and DWHR Names</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:ResDHWSysRef</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="WaterDWHR03b_DWHR_Name" type="comp:DWHR_Name" minOccurs="1" maxOccurs="6">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">DHW System and DWHR Names</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:ResDWHRSysRef[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="WaterDWHR04_DWHR_Configuration" type="comp:DWHR_Configuration" minOccurs="1" maxOccurs="6">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Installation Configuration</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="WaterDWHR05_DWHR_DrainCount" type="comp:DWHR_DrainCount">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Shower Drains</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:TotResDWHRSysShowers</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="WaterDWHR06_DWHR_HERS_VerificationRequired" type="comp:DWHR_HERS_VerificationRequired">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">HERS Verification</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:NumResDWHRSysDevs = 1 then "Required" else "n/a"</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
