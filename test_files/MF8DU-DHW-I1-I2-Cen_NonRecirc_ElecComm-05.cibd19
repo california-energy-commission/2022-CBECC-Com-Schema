@@ -2,9 +2,9 @@ RulesetFilename   "T24N_2019.bin"
 
 Proj   "HRR Individual ResidentialDHWSystem"  
    BldgEngyModelVersion = 16
-   CreateDate = 1467305453
-   ModDate = 1636414076
-   RunDate = 1636414077
+   CreateDate = 1619724072
+   ModDate = 1636470655
+   RunDate = 1636470656
    GeometryInpType = "Simplified"
    CliZn = "ClimateZone12"
    ZipCode = 91711
@@ -19,10 +19,12 @@ Proj   "HRR Individual ResidentialDHWSystem"
    CompOptExist = 1
    CompOptAlt = 1
    CompOptAdd = 1
+   CompOptEnve = 0
+   CompOptLtg = 0
    CompOptMech = 0
    CompOptDHW = 1
    SoftwareVersion = "CBECC-Com 2019.2.0 SP1 (1209)"
-   CompReportPDF = 0
+   CompReportPDF = 1
    ..
 
 Bldg   "Building"  
@@ -31,6 +33,7 @@ Bldg   "Building"
    ..
 
 Story   "Story 1"  
+   TreeState = 254
    Mult = 2
    Z = 0
    FlrToFlrHgt = 10
@@ -135,11 +138,9 @@ UndgrFlr   "Slab-on-Grade20"
    ..
 
 ResSpcDHWFeatures   "MF Unit 1 rsd1"  
-   SpecFxtrDistances = 1
    ..
 
 ResSpcDHWFeatures   "MF Unit 1 rsd2"  
-   SpecFxtrDistances = 1
    ..
 
 ThrmlZn   "MF Unit 1 Zone"  
@@ -289,19 +290,28 @@ ConsAssm   "Slab On Grade21"
 
 ResDHWSys   "ResidentialHeaterSys"  
    Status = "New"
-   CompactDist = "Expanded Credit (HERS req'd)"
    Type = "Standard"
+   CentralRecircType = "Central, no Recirculation"
    SysStoryCnt = 4
    ..
 
-ResWtrHtr   "Generic WtrHtr"  
-   ElementType = "Gas"
-   IsUEFRtd = 1
-   InpRating = 40000
-   UEF = 0.24
-   TankVol = 50
-   FirstHrRating = 0
-   RcvryEff = 78
+ResWtrHtr   "Generic WtrHtr CommStor"  
+   ElementType = "Electric Resistance"
+   TankCat = "Commercial Storage (TE & SBL)"
+   TankZn = "Conditioned"
+   InpRatingElec = 15000
+   TankVol = 80
+   StdbyLossFrac = 0.05
+   ThrmlEff = 0.93
+   Cnt = 1
+   ..
+
+ResWtrHtr   "Generic WtrHtr CommInstant"  
+   ElementType = "Electric Resistance"
+   TankCat = "Commercial Instantaneous (TE)"
+   InpRatingElec = 36000
+   TankVol = 0
+   ThrmlEff = 0.99
    Cnt = 1
    ..
 
@@ -417,21 +427,20 @@ EUseSummary   "SummaryResults"
    Enduse5[10] = "--"
    Enduse5[23] = "0.00"
    Enduse6[1] = "Domestic Hot Water"
-   Enduse6[2] = "--"
-   Enduse6[3] = "131.4"
-   Enduse6[4] = "34.40"
-   Enduse6[5] = "0.6"
-   Enduse6[6] = "71.1"
-   Enduse6[7] = "20.91"
-   Enduse6[8] = "-13.49"
-   Enduse6[9] = "--"
-   Enduse6[10] = "0.1"
-   Enduse6[18] = "6.97"
-   Enduse6[19] = "6.97"
-   Enduse6[20] = "0.12"
-   Enduse6[21] = "3.77"
-   Enduse6[22] = "3.89"
-   Enduse6[23] = "-3.08"
+   Enduse6[2] = "28.5"
+   Enduse6[3] = "--"
+   Enduse6[4] = "111.04"
+   Enduse6[5] = "8.0"
+   Enduse6[6] = "--"
+   Enduse6[7] = "28.12"
+   Enduse6[8] = "-82.92"
+   Enduse6[9] = "2.8"
+   Enduse6[10] = "0.0"
+   Enduse6[17] = "6.03"
+   Enduse6[19] = "6.03"
+   Enduse6[20] = "1.71"
+   Enduse6[22] = "1.71"
+   Enduse6[23] = "-4.32"
    Enduse7[1] = "Indoor Lighting"
    Enduse7[2] = "--"
    Enduse7[3] = "--"
@@ -444,22 +453,22 @@ EUseSummary   "SummaryResults"
    Enduse7[10] = "--"
    Enduse7[23] = "0.00"
    Enduse8[1] = "Compliance Total"
-   Enduse8[2] = "24.1"
-   Enduse8[3] = "221.8"
-   Enduse8[4] = "215.45"
-   Enduse8[5] = "24.7"
-   Enduse8[6] = "161.5"
-   Enduse8[7] = "201.96"
-   Enduse8[8] = "-13.49"
-   Enduse8[9] = "13.1"
+   Enduse8[2] = "52.6"
+   Enduse8[3] = "90.4"
+   Enduse8[4] = "292.09"
+   Enduse8[5] = "32.1"
+   Enduse8[6] = "90.4"
+   Enduse8[7] = "209.17"
+   Enduse8[8] = "-82.92"
+   Enduse8[9] = "15.8"
    Enduse8[10] = "13.1"
-   Enduse8[17] = "5.52"
-   Enduse8[18] = "11.77"
-   Enduse8[19] = "17.29"
-   Enduse8[20] = "5.64"
-   Enduse8[21] = "8.57"
-   Enduse8[22] = "14.21"
-   Enduse8[23] = "-3.08"
+   Enduse8[17] = "11.55"
+   Enduse8[18] = "4.80"
+   Enduse8[19] = "16.35"
+   Enduse8[20] = "7.23"
+   Enduse8[21] = "4.80"
+   Enduse8[22] = "12.03"
+   Enduse8[23] = "-4.32"
    Enduse9[1] = "Receptacle"
    Enduse9[2] = "12.1"
    Enduse9[3] = "--"
@@ -539,34 +548,37 @@ EUseSummary   "SummaryResults"
    Enduse14[10] = "--"
    Enduse14[23] = "0.00"
    Enduse15[1] = "TOTAL"
-   Enduse15[2] = "51.0"
-   Enduse15[3] = "221.8"
-   Enduse15[4] = "326.33"
-   Enduse15[5] = "51.6"
-   Enduse15[6] = "161.5"
-   Enduse15[7] = "312.84"
-   Enduse15[8] = "-13.49"
-   Enduse15[9] = "17.4"
-   Enduse15[10] = "17.5"
-   Enduse15[17] = "11.21"
-   Enduse15[18] = "11.77"
-   Enduse15[19] = "22.98"
-   Enduse15[20] = "11.33"
-   Enduse15[21] = "8.57"
-   Enduse15[22] = "19.90"
-   Enduse15[23] = "-3.08"
+   Enduse15[2] = "79.5"
+   Enduse15[3] = "90.4"
+   Enduse15[4] = "402.97"
+   Enduse15[5] = "59.0"
+   Enduse15[6] = "90.4"
+   Enduse15[7] = "320.05"
+   Enduse15[8] = "-82.92"
+   Enduse15[9] = "20.1"
+   Enduse15[10] = "17.4"
+   Enduse15[17] = "17.24"
+   Enduse15[18] = "4.80"
+   Enduse15[19] = "22.04"
+   Enduse15[20] = "12.92"
+   Enduse15[21] = "4.80"
+   Enduse15[22] = "17.72"
+   Enduse15[23] = "-4.32"
    ZoneUMLHsLoaded = ( 0, 1 )
    ZoneUMLHs = ( "clg: 0  htg: 19  'MF Unit 1 Zone'", 
                  "clg: 0  htg: 19  'MF Unit 1 Zone'" )
    SimSummary[1] = "Successful (83 warnings)"
    SimSummary[3] = "Successful (83 warnings)"
    PassFail = "FAIL"
-   PctSavingsTDV = -4.31211
-   PctSavingsCmpTDV = -6.67954
-   PctSavTDVLbl = "-4.3"
-   PctSavCmpTDVLbl = "-6.7"
-   MarginkW = 0.1
+   PctSavingsTDV = -25.9085
+   PctSavingsCmpTDV = -39.6424
+   PctSavTDVLbl = "-25.9"
+   PctSavCmpTDVLbl = "-39.6"
+   MarginkW = -2.7
    PVBattResultsValid = 0
+   StdDHW_SSF = 0.347
+   DHW_SSF_Summary[1] = "DHW SSF:"
+   DHW_SSF_Summary[2] = "0.35 Std"
    PropPV_Total = 0
    PropPV_Export = 0
    PropPV_PctExport = 0
