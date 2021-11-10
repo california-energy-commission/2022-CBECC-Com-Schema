@@ -4367,6 +4367,7 @@
             <dtyp:displayterm value="DCV">DCV Controls</dtyp:displayterm>
             <dtyp:displayterm value="DDC">DDC Controls</dtyp:displayterm>
             <dtyp:displayterm value="DualMaxReheat">Dual Maximum Reheat Controls</dtyp:displayterm>
+            <dtyp:displayterm value="FID">Fault Indicator Display</dtyp:displayterm>
             <dtyp:displayterm value="Fixed2SetpointTempControl">Fixed Dual SetpointTemperature Control</dtyp:displayterm>
             <dtyp:displayterm value="FixedSupplyAirTemp">Fixed Supply Air Temp.</dtyp:displayterm>
             <dtyp:displayterm value="FixedTempControl">Fixed Temperature Control</dtyp:displayterm>
@@ -4378,6 +4379,7 @@
             <dtyp:displayterm value="SupplyAirTempResetOA">Supply Air Temp. Reset on Outside Air Temp.</dtyp:displayterm>
             <dtyp:displayterm value="SupplyAirTempScheduled">Scheduled Supply Air Temp.</dtyp:displayterm>
             <dtyp:displayterm value="TempResetWB">Wet Bulb Reset Temperature Control</dtyp:displayterm>
+            <dtyp:displayterm value="VentEquipAccessible">Supply inlet, filter, and H/ERV core accessible per RACM Reference Manual</dtyp:displayterm>
             <dtyp:displayterm value="WarmestZoneReset">Warmest Zone Supply Air Temp. Reset</dtyp:displayterm>
             <dtyp:displayterm value="WarmestZoneResetFlow">Warmest Zone Supply Air Temp. Reset - Flow First</dtyp:displayterm>
             <dtyp:displayterm value="WarmestZoneResetTemp">Warmest Zone Supply Air Temp. Reset - Temp. First</dtyp:displayterm>
@@ -4388,6 +4390,7 @@
          <xsd:enumeration value="DCV"/>
          <xsd:enumeration value="DDC"/>
          <xsd:enumeration value="DualMaxReheat"/>
+         <xsd:enumeration value="FID"/>
          <xsd:enumeration value="Fixed2SetpointTempControl"/>
          <xsd:enumeration value="FixedSupplyAirTemp"/>
          <xsd:enumeration value="FixedTempControl"/>
@@ -4399,6 +4402,7 @@
          <xsd:enumeration value="SupplyAirTempResetOA"/>
          <xsd:enumeration value="SupplyAirTempScheduled"/>
          <xsd:enumeration value="TempResetWB"/>
+         <xsd:enumeration value="VentEquipAccessible"/>
          <xsd:enumeration value="WarmestZoneReset"/>
          <xsd:enumeration value="WarmestZoneResetFlow"/>
          <xsd:enumeration value="WarmestZoneResetTemp"/>
@@ -4780,6 +4784,7 @@
             <dtyp:displayterm value="HTP">HTP, Inc.</dtyp:displayterm>
             <dtyp:displayterm value="HUCU">HUCU Solar Espana SL</dtyp:displayterm>
             <dtyp:displayterm value="InnosolarEnergy">Innosolar Energy Co., Ltd.</dtyp:displayterm>
+            <dtyp:displayterm value="IntegratedSolar">Integrated Solar LLC</dtyp:displayterm>
             <dtyp:displayterm value="IREX">IREX Energy Stock Joint Company</dtyp:displayterm>
             <dtyp:displayterm value="JiangsuMicoeSolar">Jiangsu Micoe Solar Energy Co., Ltd.</dtyp:displayterm>
             <dtyp:displayterm value="JiangsuSunpowerSolar">Jiangsu Sunpower Solar Technology Co., Ltd</dtyp:displayterm>
@@ -4908,6 +4913,7 @@
          <xsd:enumeration value="HTP"/>
          <xsd:enumeration value="HUCU"/>
          <xsd:enumeration value="InnosolarEnergy"/>
+         <xsd:enumeration value="IntegratedSolar"/>
          <xsd:enumeration value="IREX"/>
          <xsd:enumeration value="JiangsuMicoeSolar"/>
          <xsd:enumeration value="JiangsuSunpowerSolar"/>
@@ -7401,6 +7407,45 @@
          <xsd:enumeration value="TemperatureModulationNR"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ResidentialWaterHeaterType">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>ResidentialWaterHeaterType</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="BoilerWaterHeater">Boiler</dtyp:displayterm>
+            <dtyp:displayterm value="HeatPumpWaterHeater">Heat Pump Water Heater</dtyp:displayterm>
+            <dtyp:displayterm value="IndirectWaterHeating">Indirect</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousCommercial">Commercial Instantaneous</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousConsumer">Consumer Instantaneous</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousLarge">Large Instantaneous</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousResDutyCommercial">Residential-Duty Commercial Instantaneous</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousSmall">Small Instantaneous</dtyp:displayterm>
+            <dtyp:displayterm value="NEEA_Tier3HP">NEEA Tier 3 heat pump water heater</dtyp:displayterm>
+            <dtyp:displayterm value="StorageCommercial">Commercial Storage</dtyp:displayterm>
+            <dtyp:displayterm value="StorageConsumer">Consumer Storage</dtyp:displayterm>
+            <dtyp:displayterm value="StorageLarge">Large Storage</dtyp:displayterm>
+            <dtyp:displayterm value="StorageResDutyCommercial">Residential-Duty Commercial Storage</dtyp:displayterm>
+            <dtyp:displayterm value="StorageSmall">Small Storage</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="BoilerWaterHeater"/>
+         <xsd:enumeration value="HeatPumpWaterHeater"/>
+         <xsd:enumeration value="IndirectWaterHeating"/>
+         <xsd:enumeration value="InstantaneousCommercial"/>
+         <xsd:enumeration value="InstantaneousConsumer"/>
+         <xsd:enumeration value="InstantaneousLarge"/>
+         <xsd:enumeration value="InstantaneousResDutyCommercial"/>
+         <xsd:enumeration value="InstantaneousSmall"/>
+         <xsd:enumeration value="NEEA_Tier3HP"/>
+         <xsd:enumeration value="StorageCommercial"/>
+         <xsd:enumeration value="StorageConsumer"/>
+         <xsd:enumeration value="StorageLarge"/>
+         <xsd:enumeration value="StorageResDutyCommercial"/>
+         <xsd:enumeration value="StorageSmall"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ResidentialWaterHeatingSystemCount">
       <xsd:annotation>
          <xsd:documentation>  Units: none</xsd:documentation>
@@ -8535,11 +8580,13 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="Continuous">Continuous</dtyp:displayterm>
             <dtyp:displayterm value="Intermittent">Intermittent</dtyp:displayterm>
+            <dtyp:displayterm value="ShortTermAverage">Short Term Average</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="Continuous"/>
          <xsd:enumeration value="Intermittent"/>
+         <xsd:enumeration value="ShortTermAverage"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="VentilationRateCalculationMethod">
@@ -8777,12 +8824,18 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="Electricity">Electricity</dtyp:displayterm>
             <dtyp:displayterm value="GasWaterHeater">Gas</dtyp:displayterm>
+            <dtyp:displayterm value="NaturalGas">Natural Gas</dtyp:displayterm>
+            <dtyp:displayterm value="Oil">Oil</dtyp:displayterm>
+            <dtyp:displayterm value="PropaneGas">Propane gas</dtyp:displayterm>
             <dtyp:displayterm value="WaterHeatingHP">Heat Pump</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="Electricity"/>
          <xsd:enumeration value="GasWaterHeater"/>
+         <xsd:enumeration value="NaturalGas"/>
+         <xsd:enumeration value="Oil"/>
+         <xsd:enumeration value="PropaneGas"/>
          <xsd:enumeration value="WaterHeatingHP"/>
       </xsd:restriction>
    </xsd:simpleType>
