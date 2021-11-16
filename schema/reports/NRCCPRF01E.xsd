@@ -3449,41 +3449,233 @@ End If</dtyp:termConditions>
                                                    </xsd:sequence>
                                                 </xsd:complexType>
                                              </xsd:element>
-                                             <xsd:sequence maxOccurs="1">
+                                             <xsd:element name="Opaq09Layers" >
                                                 <xsd:annotation>
-                                                   
+                                                   <xsd:documentation source="FieldText"></xsd:documentation>
                                                 </xsd:annotation>
-                                                <xsd:element name="Opaq09layer" minOccurs="0">
-                                                   <xsd:annotation>
-                                                      <xsd:documentation source="FieldText">Description of Assembly Layers</xsd:documentation>
-                                                   </xsd:annotation>
-                                                </xsd:element>
-                                                
-                                                <xsd:element name="Opaq09layer_CodeItem" type="env:CodeItem"  maxOccurs="unbounded">
-                                                   <xsd:annotation>
-                                                      <xsd:documentation source="FieldText"></xsd:documentation>
-                                                   </xsd:annotation>
-                                                </xsd:element>
-                                                <xsd:element name="Opaq09layer_CodeItemGlazing" type="env:CodeItemGlazing"  maxOccurs="unbounded">
-                                                   <xsd:annotation>
-                                                      <xsd:documentation source="FieldText"></xsd:documentation>
-                                                      <xsd:appinfo source="CBECCnrXML">
-                                                         <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                         <dtyp:termConditions>Proj:ConsAssm:MatRef index = 0
-Proj:ConsAssm:MatRef index = 1
-Proj:ConsAssm:MatRef index = 2
-Proj:ConsAssm:MatRef index = 3
-Proj:ConsAssm:MatRef index = 4
-Proj:ConsAssm:MatRef index = 5
-Proj:ConsAssm:MatRef index = 6
-Proj:ConsAssm:MatRef index = 7
-Proj:ConsAssm:MatRef index = 8
-Proj:ConsAssm:MatRef index = 9
-Proj:ConsAssm:MatRef index = 10</dtyp:termConditions>
-                                                      </xsd:appinfo>
-                                                   </xsd:annotation>
-                                                </xsd:element>
-                                             </xsd:sequence>
+                                                <xsd:complexType>
+                                                   <xsd:sequence>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer1_CodeItem" type="env:CodeItem" >
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 0</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer1_CodeItemGlazing" type="env:CodeItemGlazing" >
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 0</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer2_CodeItem" type="env:CodeItem"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 1
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer2_CodeItemGlazing" type="env:CodeItemGlazing"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 1
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer3_CodeItem" type="env:CodeItem"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 2
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer3_CodeItemGlazing" type="env:CodeItemGlazing"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 2
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer4_CodeItem" type="env:CodeItem"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 3
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer4_CodeItemGlazing" type="env:CodeItemGlazing"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 3
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer5_CodeItem" type="env:CodeItem"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 4
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer5_CodeItemGlazing" type="env:CodeItemGlazing"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 4
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer6_CodeItem" type="env:CodeItem"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 5
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer6_CodeItemGlazing" type="env:CodeItemGlazing"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 5
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer7_CodeItem" type="env:CodeItem"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 6
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer7_CodeItemGlazing" type="env:CodeItemGlazing"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 6
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer8_CodeItem" type="env:CodeItem"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 7
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer8_CodeItemGlazing" type="env:CodeItemGlazing"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 7
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer9_CodeItem" type="env:CodeItem"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 8
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer9_CodeItemGlazing" type="env:CodeItemGlazing"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 8
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Opaq09layer10_CodeItem" type="env:CodeItem"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 9
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer10_CodeItemGlazing" type="env:CodeItemGlazing"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 9
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                   </xsd:sequence>
+                                                </xsd:complexType>
+                                             </xsd:element>
                                           </xsd:choice>
                                        </xsd:complexType>
                                     </xsd:element>
@@ -6383,14 +6575,28 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:element name="WaterMF07_WaterHeaterName" type="hvac:WaterHeaterName"  maxOccurs="10">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Water Heater Name</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:Name</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterMF07_WaterHeaterName" type="hvac:WaterHeaterName"  maxOccurs="10">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Water Heater Name</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:Name</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>if ResDHWSys:CentralSys=1 AND ResDHWSys:CentralSysType="HPWH" then ResDHWSys:Name+" - heater"
+Else result is one or more ResDHWSys:ResWtrHtr:Name</dtyp:termConditions>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterMF07_WaterHeatingSystemName" type="hvac:WaterHeatingSystemName"  maxOccurs="1">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Water Heater Name</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>ResDHWSys:Name+" - heater"</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>if ResDHWSys:CentralSys=1 AND ResDHWSys:CentralSysType="HPWH" then ResDHWSys:Name+" - heater"
+</dtyp:termConditions>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="WaterMF08_DHWSolarSystemName" type="hvac:DHWSolarSystemName" >
                                           <xsd:annotation>
@@ -6469,15 +6675,26 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                                    <xsd:documentation source="FieldText">Brand/Model</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">If Water13_WaterHeaterTypeNR != HeatPumpPackaged this single field is the choice to provide</xsd:documentation>
                                                    <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHCprsr   If ResDHWSys:CentralHTypePWHSysDesc != "Small, Integrated, Packaged System" Then result = ResDHWSys:CentralHPWHCprsr</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHCprsr</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:termConditions>If ResDHWSys:CentralHTypePWHSysDesc != "Integrated, Packaged System" Then result = ResDHWSys:CentralHPWHCprsr</dtyp:termConditions>
+                                                   </xsd:appinfo>
+                                                </xsd:annotation>
+                                             </xsd:element>
+                                             <xsd:element name="WaterCHPWH02_HeatPumpWaterHeaterModel" type="hvac:HeatPumpWaterHeaterModel" >
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Brand/Model</xsd:documentation>
+                                                   <xsd:documentation source="CalculationsAndRules">If Water13_WaterHeaterTypeNR == HeatPumpPackaged this field is provided for a commercial product</xsd:documentation>
+                                                   <xsd:appinfo source="CBECCnrXML">
+                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHCommModel</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:termConditions>If ResDHWSys:CentralHTypePWHSysDesc == "Integrated, Packaged System" And ResDHWSys:CentralHPWHIntegratedPackageType == "Commercial Product" Then result = ResDHWSys:CentralHPWHCommModel</dtyp:termConditions>
                                                    </xsd:appinfo>
                                                 </xsd:annotation>
                                              </xsd:element>
                                              <xsd:sequence maxOccurs="1">
                                                 <xsd:annotation>
-                                                   <xsd:documentation source="CalculationsAndRules">If Water13_WaterHeaterTypeNR == HeatPumpPackaged this field is provided</xsd:documentation>
                                                    <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHBrand;  If ResDHWSys:CentralHTypePWHSysDesc == "Small, Integrated, Packaged System" Then result = ResDHWSys:CentralHPWHBrand</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHBrand;</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:termConditions>If ResDHWSys:CentralHTypePWHSysDesc == "Integrated, Packaged System" And ResDHWSys:CentralHPWHIntegratedPackageType == "Residential (NEEA rated) Product" Then result = ResDHWSys:CentralHPWHBrand / ResDHWSys:CentralHPWHModel</dtyp:termConditions>
                                                    </xsd:appinfo>
                                                 </xsd:annotation>
                                                 <xsd:element name="WaterCHPWH02_HeatPumpWaterHeaterBrand" type="hvac:HeatPumpWaterHeaterBrand" >
@@ -6488,9 +6705,9 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                                 <xsd:element name="WaterCHPWH02_HeatPumpWaterHeaterModel" type="hvac:HeatPumpWaterHeaterModel"  maxOccurs="1">
                                                    <xsd:annotation>
                                                       <xsd:documentation source="FieldText">Brand/Model</xsd:documentation>
-                                                      <xsd:documentation source="CalculationsAndRules">If Water13_WaterHeaterTypeNR == HeatPumpPackaged  this field is provided</xsd:documentation>
                                                       <xsd:appinfo source="CBECCnrXML">
-                                                         <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHModel;  If ResDHWSys:CentralHTypePWHSysDesc == "Small, Integrated, Packaged System" Then result = ResDHWSys:CentralHPWHModel</dtyp:CBECCnrXMLterm>
+                                                         <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHModel;</dtyp:CBECCnrXMLterm>
+                                                         <dtyp:termConditions>If ResDHWSys:CentralHTypePWHSysDesc == "Integrated, Packaged System"  And ResDHWSys:CentralHPWHIntegratedPackageType == "Residential (NEEA rated) Product" Then result =  ResDHWSys:CentralHPWHBrand / ResDHWSys:CentralHPWHModel</dtyp:termConditions>
                                                       </xsd:appinfo>
                                                    </xsd:annotation>
                                                 </xsd:element>
@@ -6519,7 +6736,8 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Tank Count</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHPriTankCnt;  If ResDHWSys:CentralHTypePWHSysDesc != "Small, Integrated, Packaged System"</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHPriTankCnt</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If ResDHWSys:CentralHTypePWHSysDesc != "Integrated, Packaged System" result = ResDHWSys:CentralHPWHPriTankCnt</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -6527,6 +6745,10 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Tank Count</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">If Water13_WaterHeaterTypeNR == HeatPumpPackaged result = NotApplicable</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>NotApplicable</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If ResDHWSys:CentralHTypePWHSysDesc == "Integrated, Packaged System" result = NA</dtyp:termConditions>
+                                             </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -6535,7 +6757,8 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Tank R-value</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHTankRVal; If ResDHWSys:CentralHTypePWHSysDesc != "Small, Integrated, Packaged System"</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHTankRVal</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If ResDHWSys:CentralHTypePWHSysDesc != "Integrated, Packaged System" result = ResDHWSys:CentralHPWHTankRVal</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -6543,6 +6766,10 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Tank R-value</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">If Water13_WaterHeaterTypeNR == HeatPumpPackaged result = NotApplicable</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>NotApplicable</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If ResDHWSys:CentralHTypePWHSysDesc == "Integrated, Packaged System" result = NA</dtyp:termConditions>
+                                             </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -6606,7 +6833,18 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                                    <xsd:documentation source="FieldText">Brand/Model</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType == LargeCompressor use this choice</xsd:documentation>
                                                    <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankCprsrType  If ResDHWSys:CentralHPWHLpTankType == Large HPWH/Compressor</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankCprsrType</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType == Large HPWH/Compressor result = ResDHWSys:CentralHPWHLpTankCprsrType</dtyp:termConditions>
+                                                   </xsd:appinfo>
+                                                </xsd:annotation>
+                                             </xsd:element>
+                                             <xsd:element name="LpTank02_HeatPumpWaterHeaterModel" type="hvac:HeatPumpWaterHeaterModel" >
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Brand/Model</xsd:documentation>
+                                                   <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType == CommercialHPWH use this choice</xsd:documentation>
+                                                   <xsd:appinfo source="CBECCnrXML">
+                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankCommModel</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType == "Commercial HPWH"  result = ResDHWSys:CentralHPWHLpTankCommModel</dtyp:termConditions>
                                                    </xsd:appinfo>
                                                 </xsd:annotation>
                                              </xsd:element>
@@ -6614,7 +6852,8 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                                 <xsd:annotation>
                                                    <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType == NEEA use this choice</xsd:documentation>
                                                    <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankBrand  If ResDHWSys:CentralHPWHLpTankType == NEEA HPWH</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankBrand</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType == NEEA HPWH  result = ResDHWSys:CentralHPWHLpTankBrand / ResDHWSys:CentralHPWHLpTankModel</dtyp:termConditions>
                                                    </xsd:appinfo>
                                                 </xsd:annotation>
                                                 <xsd:element name="LpTank02_HeatPumpWaterHeaterBrand" type="hvac:HeatPumpWaterHeaterBrand" >
@@ -6627,7 +6866,8 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                                       <xsd:documentation source="FieldText">Brand/Model</xsd:documentation>
                                                       <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType == NEEA use this choice</xsd:documentation>
                                                       <xsd:appinfo source="CBECCnrXML">
-                                                         <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankModel  If ResDHWSys:CentralHPWHLpTankType == NEEA HPWH</dtyp:CBECCnrXMLterm>
+                                                         <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankModel</dtyp:CBECCnrXMLterm>
+                                                         <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType == NEEA HPWH result = ResDHWSys:CentralHPWHLpTankBrand / ResDHWSys:CentralHPWHLpTankModel</dtyp:termConditions>
                                                       </xsd:appinfo>
                                                    </xsd:annotation>
                                                 </xsd:element>
@@ -6635,9 +6875,10 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                              <xsd:element name="LpTank02_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                                 <xsd:annotation>
                                                    <xsd:documentation source="FieldText">Brand/Model</xsd:documentation>
-                                                   <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType != LargeCompressor Or NEEA result = NotApplicable</xsd:documentation>
+                                                   <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType != LargeCompressor And LpTank01_LoopTankType != NEEA result = NotApplicable</xsd:documentation>
                                                    <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>NotApplicable  If ResDHWSys:CentralHPWHLpTankType != Large HPWH/Compressor Or  NEEA HPWH</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:CBECCnrXMLterm>NotApplicable</dtyp:CBECCnrXMLterm>
+                                                      <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType != Large HPWH/Compressor And ResDHWSys:CentralHPWHLpTankType != NEEA HPWH result = NA</dtyp:termConditions>
                                                    </xsd:appinfo>
                                                 </xsd:annotation>
                                              </xsd:element>
@@ -6666,7 +6907,8 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                              <xsd:documentation source="FieldText">Tank Count</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType !=  NEEA use this choice</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankCnt  If ResDHWSys:CentralHPWHLpTankType != NEEA HPWH</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankCnt</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType != NEEA HPWH And  ResDHWSys:CentralHPWHLpTankType != Commercial HPWH result = ResDHWSys:CentralHPWHLpTankCnt</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -6675,7 +6917,8 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                              <xsd:documentation source="FieldText">Tank Count</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType == NEEA result = NotApplicable</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>NotApplicable If ResDHWSys:CentralHPWHLpTankType == NEEA HPWH</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>NotApplicable</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType == NEEA HPWH Or Commercial HPWH result = NA</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -6686,7 +6929,8 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                              <xsd:documentation source="FieldText">Tank R-value</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType !=  NEEA use this choice</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankRVal  If ResDHWSys:CentralHPWHLpTankType != NEEA HPWH</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankRVal</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType != NEEA HPWH And  ResDHWSys:CentralHPWHLpTankType != Commercial HPWH result = ResDHWSys:CentralHPWHLpTankRVal</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -6717,7 +6961,6 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                                 <dtyp:CBECCnrXMLterm>ResDHWSys:CentralHPWHLpTankAirSrc  If ResDHWSys:CentralHPWHLpTankType != Electric Resistance</dtyp:CBECCnrXMLterm>
                                                 <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType != Electric Resistance Then 
 result =ResDHWSys:CentralHPWHLpTankAirSrc
-Else result = NA
 End If</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
@@ -6727,7 +6970,8 @@ End If</dtyp:termConditions>
                                              <xsd:documentation source="FieldText">Air Source</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">If LpTank01_LoopTankType == ElectricResistance result = NotApplicable</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>NotApplicable If ResDHWSys:CentralHPWHLpTankType == Electric Resistance</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>NotApplicable</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If ResDHWSys:CentralHPWHLpTankType == Electric Resistance result = NA</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
