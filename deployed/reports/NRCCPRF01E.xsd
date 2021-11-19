@@ -6563,14 +6563,6 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                              </xsd:restriction>
                                           </xsd:simpleType>
                                        </xsd:element>
-                                       <xsd:element name="Water13_HeatPumpWaterHeaterModel" type="hvac:HeatPumpWaterHeaterModel">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Heat Pump Type</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ResDHWSys:MakeAndModel</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
                                        <xsd:element name="Water13_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Heat Pump Type</xsd:documentation>
@@ -7462,53 +7454,67 @@ End If</dtyp:termConditions>
                                     <xsd:element name="WaterDWHR01_SpaceName" type="com:SpaceName">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Name</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">For display space name should be concatenated with  dwelling unit type that defines bedroom count like this: 
+WaterDWHR01_SpaceName + " - " + WaterDWHR01a_DwellingUnitType
+
+This string is displayed on each row that has a different DWHR for this space</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:Name</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:ParentSpcNameRp</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="WaterDWHR02_DwellingUnitType" type="com:DwellingUnitType">
+                                    <xsd:element name="WaterDWHR01a_DwellingUnitType" type="com:DwellingUnitType">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Dwelling Unit Type</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">For display space name should be concatenated with  dwelling unit type that defines bedroom count like this: 
+WaterDWHR01_SpaceName + " - " + WaterDWHR01a_DwellingUnitType</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>DwellingUnitBedroomCnt</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:DwellingUnitBedroomCnt</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="WaterDWHR03a_WaterHeatingSystemName" type="hvac:WaterHeatingSystemName">
+                                    <xsd:element name="WaterDWHR02_WaterHeatingSystemName" type="hvac:WaterHeatingSystemName">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">DHW System and DWHR Names</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">For display the DHW system name should be concatenated with a DWHR name  like this: 
+WaterDWHR02_WaterHeatingSystemName + " - " + WaterDWHR02a_DWHR_Name</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:ResDHWSysRef</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:ParentResDHWSysRefRpt</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="WaterDWHR03b_DWHR_Name" type="comp:DWHR_Name" minOccurs="1" maxOccurs="6">
+                                    <xsd:element name="WaterDWHR02a_DWHR_Name" type="comp:DWHR_Name">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">DHW System and DWHR Names</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">For display the DHW system name should be concatenated with a DWHR name  like this: 
+WaterDWHR02_WaterHeatingSystemName + " - " + WaterDWHR02a_DWHR_Name</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:ResDWHRSysRef[]</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:ResDWHRSysRef[]</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="WaterDWHR04_DWHR_Configuration" type="comp:DWHR_Configuration" minOccurs="0" maxOccurs="6">
+                                    <xsd:element name="WaterDWHR03_DWHR_Configuration" type="comp:DWHR_Configuration">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Installation Configuration</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:ResDWHRSysConfig[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="WaterDWHR05_DWHR_DrainCount" type="comp:DWHR_DrainCount">
+                                    <xsd:element name="WaterDWHR04_DWHR_DrainCount" type="comp:DWHR_DrainCount">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Shower Drains</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:TotResDWHRSysShowers</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:ResDWHRSysShowers[]</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="WaterDWHR06_DWHR_HERS_VerificationRequired" type="comp:DWHR_HERS_VerificationRequired">
+                                    <xsd:element name="WaterDWHR05_DWHR_HERS_VerificationRequired" type="comp:DWHR_HERS_VerificationRequired">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">HERS Verification</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:NumResDWHRSysDevs = 1 then "Required" else "n/a"</dtyp:CBECCnrXMLterm>
+                                             <dtyp:CBECCnrXMLterm>"Required" else "n/a"</dtyp:CBECCnrXMLterm>
+                                             <dtyp:termConditions>If Spc:ResSpcDHWFeatures:NumResDWHRSysDevs = 1 then "Required" else "n/a"</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
