@@ -34,15 +34,16 @@
             <xsd:element name="DocumentData">
                <xsd:complexType>
                   <xsd:sequence>
-                     <xsd:element name="Header" type="comp:HeaderNRCC" />
+                     <xsd:element name="Header" type="comp:HeaderNRCCPRF" />
                      <xsd:element ref="nRCCPRF" />
-                     <xsd:element name="DeclarationsBlock" type="comp:DeclarationsNRCC" maxOccurs="unbounded" />
-                     <xsd:element name="Footer" type="comp:FooterNRCC" />
+                     <xsd:element name="DeclarationsBlock" type="comp:DeclarationsNRCCPRF" maxOccurs="unbounded" />
+                     <xsd:element name="Footer" type="comp:FooterNRCCPRF" />
                   </xsd:sequence>
                </xsd:complexType>
             </xsd:element>
-            <xsd:element name="Report" type="xsd:base64Binary" minOccurs="0"/>
-            <xsd:element name="ReportMMB" type="xsd:base64Binary" minOccurs="0"/>
+            <xsd:element name="Report" type="xsd:base64Binary" id="Sign2"/>
+            <xsd:element name="Report2" type="xsd:base64Binary" id="Sign3"/>
+            <xsd:element name="Input" type="xsd:base64Binary" id="Sign4"/>
          </xsd:sequence>
          <xsd:attribute name="revision" use="required" type="xsd:string" fixed="rev 20201101"/>
          <xsd:attribute name="doc" use="required" type="comp:ComplianceDocumentTagNR" fixed="NRCCPRFE"/>
@@ -3021,10 +3022,10 @@ p:ExcptCondHERSEnvAirLkge == Yes
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_Env" minOccurs="1">
+         <xsd:element name="Section_Env" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">[d:b]G1. ENVELOPE GENERAL INFORMATION (conditioned spaces only) [/d:b]</xsd:documentation>
-               <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
@@ -3474,6 +3475,15 @@ End If</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Opaq09layer1_MaterialName" type="env:MaterialName" >
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 0  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
                                                          <xsd:element name="Opaq09layer2_CodeItem" type="env:CodeItem"  minOccurs="0">
@@ -3492,6 +3502,17 @@ End If</dtyp:termConditions>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
                                                                   <dtyp:termConditions>Proj:ConsAssm:MatRef index = 1
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer2_MaterialName" type="env:MaterialName"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 1  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value 
+
 </dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
@@ -3518,6 +3539,17 @@ End If</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Opaq09layer3_MaterialName" type="env:MaterialName"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 2  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value 
+
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
                                                          <xsd:element name="Opaq09layer4_CodeItem" type="env:CodeItem"  minOccurs="0">
@@ -3536,6 +3568,17 @@ End If</dtyp:termConditions>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
                                                                   <dtyp:termConditions>Proj:ConsAssm:MatRef index = 3
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer4_MaterialName" type="env:MaterialName"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 3  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value 
+
 </dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
@@ -3562,6 +3605,17 @@ End If</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Opaq09layer5_MaterialName" type="env:MaterialName"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 4  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value 
+
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
                                                          <xsd:element name="Opaq09layer6_CodeItem" type="env:CodeItem"  minOccurs="0">
@@ -3580,6 +3634,17 @@ End If</dtyp:termConditions>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
                                                                   <dtyp:termConditions>Proj:ConsAssm:MatRef index = 5
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer6_MaterialName" type="env:MaterialName"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 5  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value 
+
 </dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
@@ -3606,6 +3671,17 @@ End If</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Opaq09layer7_MaterialName" type="env:MaterialName"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 6  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value 
+
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
                                                          <xsd:element name="Opaq09layer8_CodeItem" type="env:CodeItem"  minOccurs="0">
@@ -3624,6 +3700,17 @@ End If</dtyp:termConditions>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
                                                                   <dtyp:termConditions>Proj:ConsAssm:MatRef index = 7
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer8_MaterialName" type="env:MaterialName"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 7  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value 
+
 </dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
@@ -3650,6 +3737,17 @@ End If</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Opaq09layer9_MaterialName" type="env:MaterialName"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 8  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value 
+
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
                                                          <xsd:element name="Opaq09layer10_CodeItem" type="env:CodeItem"  minOccurs="0">
@@ -3668,6 +3766,17 @@ End If</dtyp:termConditions>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
                                                                   <dtyp:termConditions>Proj:ConsAssm:MatRef index = 9
+</dtyp:termConditions>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Opaq09layer10_MaterialName" type="env:MaterialName"  minOccurs="0">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText"></xsd:documentation>
+                                                               <xsd:appinfo source="CBECCnrXML">
+                                                                  <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 9  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value 
+
 </dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
@@ -4119,7 +4228,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:documentation source="FieldText">Left Fin</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Fins02_FinDepth" type="env:FinDepth" >
+                                    <xsd:element name="Fins02_FinDepth" type="env:FinDepth"  minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Depth (ft)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -4127,7 +4236,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Fins03_FinDistanceLeft" type="env:FinDistanceLeft" >
+                                    <xsd:element name="Fins03_FinDistanceLeft" type="env:FinDistanceLeft"  minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Distance from Window (ft)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -4140,7 +4249,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:documentation source="FieldText">Right Fin</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Fins04_FinDepth" type="env:FinDepth" >
+                                    <xsd:element name="Fins04_FinDepth" type="env:FinDepth"  minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Depth (ft)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -4148,7 +4257,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Fins05_FinDistanceRight" type="env:FinDistanceRight" >
+                                    <xsd:element name="Fins05_FinDistanceRight" type="env:FinDistanceRight"  minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Distance from Window (ft)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -4306,6 +4415,14 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="HvacDry06b_EfficiencyHSPF" type="hvac:EfficiencyHSPF" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="HvacDry06b_ThermalEfficiency" type="hvac:ThermalEfficiency" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
@@ -5925,14 +6042,25 @@ result = ZnSys:Fan:PwrUnitRpt</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Evap05_PumpPower" type="hvac:PumpPower" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Pump Power (Watts)</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:PumpPwr</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Evap05_PumpPower" type="hvac:PumpPower" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Pump Power (Watts)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:PumpPwr</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Evap05_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Pump Power (Watts)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:PumpPwr</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>If AirSys:AirSeg:EvapClr:PumpPwr has no value result is NA</dtyp:termConditions>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Evap06_SecondaryFanFlowCapacity" type="hvac:SecondaryFanFlowCapacity" >
                                           <xsd:annotation>
@@ -7565,9 +7693,18 @@ WaterDWHR02_WaterHeatingSystemName + " - " + WaterDWHR02a_DWHR_Name</xsd:documen
                                           <xsd:documentation source="FieldText">Cooling Capacity (tons)</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="ProcComp03_EconomizerControlMethod" type="hvac:EconomizerControlMethod" >
+                                    <xsd:element name="ProcComp03_ProjectHasAirEconomizer" type="comp:ProjectHasAirEconomizer" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Economizer Type</xsd:documentation>
+                                          <xsd:appinfo source="displayterm">
+                                             <dtyp:displayterm value="true">Air</dtyp:displayterm>
+                                             <dtyp:displayterm value="false">None</dtyp:displayterm>
+                                          </xsd:appinfo>
+                                          
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>P:Proj:Bldg:AirSys:EconoTypeRpt</dtyp:CBECCnrXMLterm>
+                                             <dtyp:termConditions>Air = true result, None= false result</dtyp:termConditions>
+                                          </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="ProcComp04_FanPowerModeled" type="hvac:FanPowerModeled" >
@@ -7820,7 +7957,7 @@ WaterDWHR02_WaterHeatingSystemName + " - " + WaterDWHR02a_DWHR_Name</xsd:documen
                                           <xsd:documentation source="FieldText">Name or Item Tag</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="LtgSched02_LuminaireDescription" type="lit:LuminaireDescription" >
+                                    <xsd:element name="LtgSched02_LuminaireDescription" type="lit:LuminaireDescription"  minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Complete Luminaire Description (i.e. 3-lamp fluorescent troffer, F32T8, one dimmable electronic ballast)</xsd:documentation>
                                        </xsd:annotation>
@@ -7913,7 +8050,7 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="LtgCredits03_PAFCreditType" type="comp:PAFCreditType"  maxOccurs="unbounded">
+                                    <xsd:element name="LtgCredits03_PAFCreditType" type="comp:PAFCreditType"  minOccurs="0" maxOccurs="unbounded">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Type of Lighting Control</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -8244,7 +8381,7 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="TableTailoredRC" >
+                  <xsd:element name="TableTailoredRCR" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
                      </xsd:annotation>

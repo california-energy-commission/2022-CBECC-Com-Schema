@@ -3351,7 +3351,7 @@ Used by the compliance software user interface to narrow list of material select
             <dtyp:displayterm>Material Name</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:ObjectNamePermissive">
+      <xsd:restriction base="xsd:string">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="MetalBldgInsulation">

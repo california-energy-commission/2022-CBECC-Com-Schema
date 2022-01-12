@@ -1650,7 +1650,7 @@
             <dtyp:displayterm value="CERTIFICATE OF ACCEPTANCE NR">CERTIFICATE OF ACCEPTANCE</dtyp:displayterm>
             <dtyp:displayterm value="CERTIFICATE OF COMPLIANCE NR">CERTIFICATE OF COMPLIANCE</dtyp:displayterm>
             <dtyp:displayterm value="CERTIFICATE OF VERIFICATION">CERTIFICATE OF VERIFICATION</dtyp:displayterm>
-            <dtyp:displayterm value="CERTIFICATE OF VERIFICATION NR">CERTIFICATE OF VERIFICATION</dtyp:displayterm>
+            <dtyp:displayterm value="CERTIFICATE OF VERIFICATION">CERTIFICATE OF VERIFICATION</dtyp:displayterm>
             <dtyp:displayterm value="CertificateComplianceNonResPerformance">CERTIFICATE OF COMPLIANCE -  NONRESIDENTIAL PERFORMANCE COMPLIANCE METHOD</dtyp:displayterm>
             <dtyp:displayterm value="CertificateInstallationNR">CERTIFICATE OF INSTALLATION</dtyp:displayterm>
             <dtyp:displayterm value="ProjectReportNR">PROJECT REPORT</dtyp:displayterm>
@@ -1660,7 +1660,7 @@
          <xsd:enumeration value="CERTIFICATE OF ACCEPTANCE NR"/>
          <xsd:enumeration value="CERTIFICATE OF COMPLIANCE NR"/>
          <xsd:enumeration value="CERTIFICATE OF VERIFICATION"/>
-         <xsd:enumeration value="CERTIFICATE OF VERIFICATION NR"/>
+         <xsd:enumeration value="CERTIFICATE OF VERIFICATION"/>
          <xsd:enumeration value="CertificateComplianceNonResPerformance"/>
          <xsd:enumeration value="CertificateInstallationNR"/>
          <xsd:enumeration value="ProjectReportNR"/>
@@ -2441,7 +2441,7 @@
             <dtyp:displayterm value="DataReceptacleNA">NA: Data Equipment Receptacle</dtyp:displayterm>
             <dtyp:displayterm value="HealthNA">NA: Healthcare Facility</dtyp:displayterm>
             <dtyp:displayterm value="RefrigWaterNA">NA: Refrigerator/Water Dispenser Receptacle</dtyp:displayterm>
-            <dtyp:displayterm value="UninteruptibleNA">NA: Uninteruptible Power Supply Receptacle</dtyp:displayterm>
+            <dtyp:displayterm value="UninterruptibleNA">NA: Uninterruptible Power Supply Receptacle</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -2450,7 +2450,7 @@
          <xsd:enumeration value="DataReceptacleNA"/>
          <xsd:enumeration value="HealthNA"/>
          <xsd:enumeration value="RefrigWaterNA"/>
-         <xsd:enumeration value="UninteruptibleNA"/>
+         <xsd:enumeration value="UninterruptibleNA"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ControlledReceptacleShutOffControl">
@@ -4902,7 +4902,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCCXRE">
+   <xsd:simpleType name="ExceptionalConditionMessageCCCXRE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>NRCC-CXR-E Exceptional Condition Message</dtyp:displayterm>
@@ -4923,7 +4923,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="DocumentWithPermitAppInJ"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCELCE">
+   <xsd:simpleType name="ExceptionalConditionMessageCCELCE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>NRCC-ELC-E Exceptional Condition Message</dtyp:displayterm>
@@ -4949,7 +4949,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="UserChangedSelectionInJ"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCENVE">
+   <xsd:simpleType name="ExceptionalConditionMessageCCENVE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>NRCC-ENC-E Exceptional Condition Message</dtyp:displayterm>
@@ -4981,7 +4981,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="WallAreaWeightedAveInH"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCLTIE">
+   <xsd:simpleType name="ExceptionalConditionMessageCCLTIE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>NRCC-LTI-E Exceptional Condition Message</dtyp:displayterm>
@@ -5020,7 +5020,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="UserInputMissingInG"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCLTOE">
+   <xsd:simpleType name="ExceptionalConditionMessageCCLTOE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>NRCC-LTO-E Exceptional Condition Message</dtyp:displayterm>
@@ -5047,7 +5047,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="UserChangedSelectionInP"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCLTSE">
+   <xsd:simpleType name="ExceptionalConditionMessageCCLTSE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>NRCC-LTS-E Exceptional Condition Message</dtyp:displayterm>
@@ -5066,7 +5066,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="UserChangedSelectionInI"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCMCHE">
+   <xsd:simpleType name="ExceptionalConditionMessageCCMCHE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>NRCC-MCH-E Exceptional Condition Message</dtyp:displayterm>
@@ -5104,7 +5104,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="UserChangedSelectionInP"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCPLBE">
+   <xsd:simpleType name="ExceptionalConditionMessageCCPLBE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>NRCC-PLB-E Exceptional Condition Message</dtyp:displayterm>
@@ -5131,7 +5131,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="UserChangedSelectionInK"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCPRCE">
+   <xsd:simpleType name="ExceptionalConditionMessageCCPRCE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>NRCC-PRC-E Exceptional Condition Message</dtyp:displayterm>
@@ -5151,6 +5151,23 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="ElevVentPowerExceedsMaxInK"/>
          <xsd:enumeration value="UserChangedSelectionInP"/>
          <xsd:enumeration value="UserChangedSelectionInQ"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ExceptionalConditionMessageCCSRAE">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>NRCC-SRA-E Exceptional Condition Message</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="CalculatorOutputAttachedForH">Table H column 03 does not indicate the output from CEC's Solar Water Heating Calculator has been attached.  Please attach the output and indicate this in Table H.</dtyp:displayterm>
+            <dtyp:displayterm value="SubAreaComplianceInF">Table F indicates a subarea that is not in compliance with the requirements.  Please revisit Table F</dtyp:displayterm>
+            <dtyp:displayterm value="UserChangedSelectionInJ">Selections made in Table J have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="CalculatorOutputAttachedForH"/>
+         <xsd:enumeration value="SubAreaComplianceInF"/>
+         <xsd:enumeration value="UserChangedSelectionInJ"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ExceptionalConditionMessageNRCCPRFE">
@@ -5181,6 +5198,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="SpacesWithNoLighting">Verify that the space(s) defined with no lighting installed are either unconditioned spaces, or that the project has partial lighting compliance.</dtyp:displayterm>
             <dtyp:displayterm value="UnknownHvacSystem">The proposed building includes space(s) that are modeled with unknown HVAC system(s).  Verify that the spaces modeled with unknown HVAC system(s) are either part of core and shell analysis which will be permitted for mechanical compliance in the future, or the spaces have an existing HVAC system not modeled for compliance, or the compliance scope does not include mechanical.</dtyp:displayterm>
             <dtyp:displayterm value="UsingPropane">The proposed building is using Propane despite Natural Gas being available on site.</dtyp:displayterm>
+            <dtyp:displayterm value="VentStdOther">The project has spaces with higher ventilation rates that required because of other codes or accreditation standards being applied.</dtyp:displayterm>
             <dtyp:displayterm value="ZoneOpeningsInterlock">The project has thermal zones with operable openings modeled without mechanical compliance selected.  Compliance with Section 140.4(n) Mechanical System Shutoff should be considered.</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -5207,24 +5225,8 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="SpacesWithNoLighting"/>
          <xsd:enumeration value="UnknownHvacSystem"/>
          <xsd:enumeration value="UsingPropane"/>
+         <xsd:enumeration value="VentStdOther"/>
          <xsd:enumeration value="ZoneOpeningsInterlock"/>
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCSRAE">
-      <xsd:annotation>
-         <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>NRCC-SRA-E Exceptional Condition Message</dtyp:displayterm>
-         </xsd:appinfo>
-         <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="CalculatorOutputAttachedForH">Table H column 03 does not indicate the output from CEC's Solar Water Heating Calculator has been attached.  Please attach the output and indicate this in Table H.</dtyp:displayterm>
-            <dtyp:displayterm value="SubAreaComplianceInF">Table F indicates a subarea that is not in compliance with the requirements.  Please revisit Table F</dtyp:displayterm>
-            <dtyp:displayterm value="UserChangedSelectionInJ">Selections made in Table J have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="CalculatorOutputAttachedForH"/>
-         <xsd:enumeration value="SubAreaComplianceInF"/>
-         <xsd:enumeration value="UserChangedSelectionInJ"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ExceptionalConditionMessageNRCIELCE">
@@ -5256,11 +5258,23 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm>NRCI-ENV-E Exceptional Condition Message</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="DoorNotInScope">A Door assembly was selected as Not in Scope in the Exterior Doors Table.  Please ensure that this Door assembly  was claimed as in scope in this table on another NRCI-ENV form</dtyp:displayterm>
+            <dtyp:displayterm value="FenNotInScope">A Fenestration assembly was selected as Not in Scope in the Vertical Fenestration, Skylights, and Glazed Doors Table.  Please ensure that this Fenestration assembly  was claimed as in scope in this table on another NRCI-ENV form</dtyp:displayterm>
+            <dtyp:displayterm value="FloorNotInScope">A Floor assembly was selected as Not in Scope in the Floors Table.  Please ensure that this Floor assembly  was claimed as in scope in this table on another NRCI-ENV form</dtyp:displayterm>
             <dtyp:displayterm value="NoExceptionNote">No exceptional condition notes for this NRCI</dtyp:displayterm>
+            <dtyp:displayterm value="RoofInsNotInScope">A Roof assembly was selected as Not in Scope in the Roof Insulation Table.  Please ensure that this Roof assembly  was claimed as in scope in this table on another NRCI-ENV form</dtyp:displayterm>
+            <dtyp:displayterm value="RoofMatNotInScope">A Roof assembly was selected as Not in Scope in the Roof Surface Material Table.  Please ensure that this Roof assembly  was claimed as in scope in this table on another NRCI-ENV form</dtyp:displayterm>
+            <dtyp:displayterm value="WallNotInScope">A Wall assembly was selected as Not in Scope in the Walls Table.  Please ensure that this Wall assembly  was claimed as in scope in this table on another NRCI-ENV form</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="DoorNotInScope"/>
+         <xsd:enumeration value="FenNotInScope"/>
+         <xsd:enumeration value="FloorNotInScope"/>
          <xsd:enumeration value="NoExceptionNote"/>
+         <xsd:enumeration value="RoofInsNotInScope"/>
+         <xsd:enumeration value="RoofMatNotInScope"/>
+         <xsd:enumeration value="WallNotInScope"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ExceptionalConditionMessageNRCILTIE">
@@ -5326,25 +5340,45 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm>NRCI-MCH-E Exceptional Condition Message</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="BlrNotInScope">A Boiler was selected as Not in Scope in the Boiler Table.  Please ensure that this Boiler  was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
             <dtyp:displayterm value="BoilerNoMatch">Control requirements on the Boiler Efficiency and Controls subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets controls requirements.</dtyp:displayterm>
             <dtyp:displayterm value="ChillerNoMatch">Control requirements on the Chililer Efficiency and Controls subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets controls requirements.</dtyp:displayterm>
+            <dtyp:displayterm value="ChlrNotInScope">A Chiller was selected as Not in Scope in the Chiller Table.  Please ensure that this Chiller  was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="CtrlNotInScope">A Control was selected as Not in Scope in the System Controls Table.  Please ensure that this Control was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="DryNotInScope">A Dry System was selected as Not in Scope in the Dry System Table.  Please ensure that this Dry System  was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="EHeatNotInScope">An Electric Resistance Heating equipment was selected as Not in Scope in the Electric Resistance Heating Table.  Please ensure that this equipment  was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
             <dtyp:displayterm value="FanEconNoMatch">Fan economizer requirements on the Fans and Air Economizer  subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets economizer requirements.</dtyp:displayterm>
+            <dtyp:displayterm value="FanNotInScope">A Fan was selected as Not in Scope in the Fan Table.  Please ensure that this Fan  was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
             <dtyp:displayterm value="HeatRejNoMatch">Control requirements on the Heat Rejection subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets controls requirements.</dtyp:displayterm>
+            <dtyp:displayterm value="HrejNotInScope">A Heat Rejection equipment was selected as Not in Scope in the Heat Rejection Table.  Please ensure that this Heat Rejection equipment  was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
             <dtyp:displayterm value="NoExceptionNote">No exceptional condition notes for this NRCI</dtyp:displayterm>
             <dtyp:displayterm value="PumpsNoMatch">Control requirements on the Pumps subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets controls requirements.</dtyp:displayterm>
             <dtyp:displayterm value="SysControlsNoMatch">Control requirements on the System Controls subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets controls requirements.</dtyp:displayterm>
             <dtyp:displayterm value="VentNoMatch">Control requirements on the Ventilation subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets controls requirements.</dtyp:displayterm>
+            <dtyp:displayterm value="VentnrNotInScope">A Ventilation System was selected as Not in Scope in the Nonresidential and Hotel/ Motel Ventilation SystemsTable.  Please ensure that this Ventilation System  was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="VentresNotInScope">A Ventilation System was selected as Not in Scope in the High-rise Residential Dwelling Unit Ventilation SystemsTable.  Please ensure that this Ventilation System  was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="ZoneNotInScope">A Zone/System/VAV Box was selected as Not in Scope in the Terminal Box Controls Table.  Please ensure that this Zone/System/VAV Box  was claimed as in scope in this table on another NRCI-MCH Mechanical Systems form</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="BlrNotInScope"/>
          <xsd:enumeration value="BoilerNoMatch"/>
          <xsd:enumeration value="ChillerNoMatch"/>
+         <xsd:enumeration value="ChlrNotInScope"/>
+         <xsd:enumeration value="CtrlNotInScope"/>
+         <xsd:enumeration value="DryNotInScope"/>
+         <xsd:enumeration value="EHeatNotInScope"/>
          <xsd:enumeration value="FanEconNoMatch"/>
+         <xsd:enumeration value="FanNotInScope"/>
          <xsd:enumeration value="HeatRejNoMatch"/>
+         <xsd:enumeration value="HrejNotInScope"/>
          <xsd:enumeration value="NoExceptionNote"/>
          <xsd:enumeration value="PumpsNoMatch"/>
          <xsd:enumeration value="SysControlsNoMatch"/>
          <xsd:enumeration value="VentNoMatch"/>
+         <xsd:enumeration value="VentnrNotInScope"/>
+         <xsd:enumeration value="VentresNotInScope"/>
+         <xsd:enumeration value="ZoneNotInScope"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ExceptionalConditionMessageNRCIPLBE">
@@ -5353,10 +5387,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm>NRCI-PLB-E Exceptional Condition Message</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="DHWNotInScope">A DHW equipment was selected as Not in Scope in the Domestic Hot Water Equipment Efficiency Table.  Please ensure that this DHW equipment  was claimed as in scope in this table on another NRCI-PLB Domestic Water Heating System form</dtyp:displayterm>
             <dtyp:displayterm value="NoExceptionNote">No exceptional condition notes for this NRCI</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="DHWNotInScope"/>
          <xsd:enumeration value="NoExceptionNote"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -5366,11 +5402,45 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm>NRCI-PLB-E Exceptional Condition Message</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="BoilerNotInScope">A Boiler was selected as Not in Scope in the Process Boilers Table.  Please ensure that this Boiler was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="CairNotInScope">A Compressed Air System was selected as Not in Scope in the Compressed Air Systems Table.  Please ensure that this Compressed Air System was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="CompNotInScope">A Space was selected as Not in Scope in the Computer Room Systems Table.  Please ensure that this Space was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="CRcaseNotInScope">A Lighting Control was selected as Not in Scope in the Refrigerated Display Cases Table.  Please ensure that this Lighting Control was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="CRcomNotInScope">A Component was selected as Not in Scope in the Compressors and Condensing Units Serving Commercial Refrigeration System Table.  Please ensure that this Component was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="CRconNotInScope">A Condenser was selected as Not in Scope in the Condensers Serving Commercial Refrigeration System Table.  Please ensure that this Condenser was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="CRheatNotInScope">Heat Recovery was selected as Not in Scope in the Heat Recovery of Refrigeration System Table.  Please ensure that this Heat Recovery was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="ElevLtiNotInScope">A Lighting Fixture was selected as Not in Scope in the Elevator Lighting Table.  Please ensure that this Lighting Fixture was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="ElevLtiNotInScope">A Elevator Ventilation was selected as Not in Scope in the Elevator Ventilation Table.  Please ensure that this Elevator Ventilation was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="HoodsNotInScope">A Kitchen Hood was selected as Not in Scope in the Kitchen Hood Table.  Please ensure that this Kitchen Hood was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="LabNotInScope">A  Zone/System was selected as Not in Scope in the Laboratory And Factory Exhaust And Fume Hoods Table.  Please ensure that this Zone/System was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
             <dtyp:displayterm value="NoExceptionNote">No exceptional condition notes for this NRCI</dtyp:displayterm>
+            <dtyp:displayterm value="ParkNotInScope">An Exhaust Fan was selected as Not in Scope in the Enclosed Parking Garage Exhaust Table.  Please ensure that this Exhaust Fan was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="RbarNotInScope">A Space was selected as Not in Scope in the Refrigerated Warehouse/Space Infiltration Barriers Table.  Please ensure that this Space  was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="RcomNotInScope">A Compressor was selected as Not in Scope in the Refrigerated Warehouse/Space Compressors Table.  Please ensure that this Compressor  was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="RconNotInScope">A Condenser was selected as Not in Scope in the Refrigerated Warehouse/Space Condensers Table.  Please ensure that this Condenser was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="RfanNotInScope">A Fan was selected as Not in Scope in the Refrigerated Warehouse/Space Fan Powered Evaporators Table.  Please ensure that this Fan  was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="RslabNotInScope">A Space was selected as Not in Scope in the Refrigerated Warehouse/Space Underslab Heating Table.  Please ensure that this Space was claimed as in scope in this table on another NRCI-PRC Process Systems form</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="BoilerNotInScope"/>
+         <xsd:enumeration value="CairNotInScope"/>
+         <xsd:enumeration value="CompNotInScope"/>
+         <xsd:enumeration value="CRcaseNotInScope"/>
+         <xsd:enumeration value="CRcomNotInScope"/>
+         <xsd:enumeration value="CRconNotInScope"/>
+         <xsd:enumeration value="CRheatNotInScope"/>
+         <xsd:enumeration value="ElevLtiNotInScope"/>
+         <xsd:enumeration value="ElevLtiNotInScope"/>
+         <xsd:enumeration value="HoodsNotInScope"/>
+         <xsd:enumeration value="LabNotInScope"/>
          <xsd:enumeration value="NoExceptionNote"/>
+         <xsd:enumeration value="ParkNotInScope"/>
+         <xsd:enumeration value="RbarNotInScope"/>
+         <xsd:enumeration value="RcomNotInScope"/>
+         <xsd:enumeration value="RconNotInScope"/>
+         <xsd:enumeration value="RfanNotInScope"/>
+         <xsd:enumeration value="RslabNotInScope"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ExceptionalConditionMessageNRCISRAE">
@@ -5380,10 +5450,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="NoExceptionNote">No exceptional condition notes for this NRCI</dtyp:displayterm>
+            <dtyp:displayterm value="SolarZoneNotInScope">A SolarZone was selected as Not in Scope in the Allocated Solar Zone on Roof for Future Use  Table.  Please ensure that this SolarZone was claimed as in scope in this table on another NRCI-SRA Process Systems form</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="NoExceptionNote"/>
+         <xsd:enumeration value="SolarZoneNotInScope"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ExceptionalConditionNote">
@@ -5562,14 +5634,14 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:complexType>
    <xsd:complexType name="FooterNRCC">
       <xsd:sequence>
-         <xsd:element name="footer01_RevisionDateNRCC" type="comp:Revision"/>
+         <xsd:element name="footer01_RevisionDateNRCC" type="comp:Revision" minOccurs="0"/>
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="FooterNRCCPRF">
       <xsd:sequence>
-         <xsd:element name="complianceDocumentStandardsTitle" type="comp:ComplianceDocumentStandardsTitle"/>
-         <xsd:element name="performanceReportVersion" type="comp:PerformanceReportVersion"/>
-         <xsd:element name="reportGenerationDateTime" type="comp:ReportGenerationDateTime"/>
+         <xsd:element name="complianceDocumentStandardsTitle" type="comp:ComplianceDocumentStandardsTitle" minOccurs="0"/>
+         <xsd:element name="performanceReportVersion" type="comp:PerformanceReportVersion" minOccurs="0"/>
+         <xsd:element name="reportGenerationDateTime" type="comp:ReportGenerationDateTime" minOccurs="0"/>
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="FooterNRPSR">
@@ -5889,7 +5961,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:complexType>
    <xsd:complexType name="HeaderNRCC">
       <xsd:sequence>
-         <xsd:element name="header00_T24P6Coverage" type="comp:ComplianceDocumentT24P6Coverage"/>
+         <xsd:element name="header00_T24P6Coverage" type="comp:ComplianceDocumentT24P6Coverage" minOccurs="0"/>
          <xsd:element name="header01_ProjectName" type="comp:ProjectName"/>
          <xsd:element name="header04_ProjectAddressNRPresc" type="comp:ProjectStreetAddress"/>
          <xsd:element name="header05_ProjectCity" type="comp:ProjectCity"/>
@@ -5907,7 +5979,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:complexType>
    <xsd:complexType name="HeaderNRCI">
       <xsd:sequence>
-         <xsd:element name="header00_T24P6Coverage" type="comp:ComplianceDocumentT24P6Coverage"/>
+         <xsd:element name="header00_T24P6Coverage" type="comp:ComplianceDocumentT24P6Coverage" minOccurs="0"/>
          <xsd:element name="header01_ProjectName" type="comp:ProjectName"/>
          <xsd:element name="header04_ProjectAddressNRPresc" type="comp:ProjectStreetAddress"/>
          <xsd:element name="header05_ProjectCity" type="comp:ProjectCity"/>
@@ -9489,8 +9561,10 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="AdditionComplete">Complete Addition</dtyp:displayterm>
             <dtyp:displayterm value="AdditionEnvelope">Envelope Addition</dtyp:displayterm>
             <dtyp:displayterm value="AdditionEnvelopeAndLighting">Envelope and Lighting Addition</dtyp:displayterm>
+            <dtyp:displayterm value="AdditionEnvelopeAndLightingAndPartialMechanical">Envelope Lighting Partial Mechanical Addition</dtyp:displayterm>
             <dtyp:displayterm value="AdditionEnvelopeAndMechanical">Envelope and Mechanical  Addition</dtyp:displayterm>
             <dtyp:displayterm value="AdditionEnvelopeAndPartialLighting">Envelope and Partial Lighting Addition</dtyp:displayterm>
+            <dtyp:displayterm value="AdditionEnvelopeAndPartialLightingAndPartialMechanical"/>
             <dtyp:displayterm value="AdditionMechanical">Mechanical  Addition</dtyp:displayterm>
             <dtyp:displayterm value="AdditionMechanicalAndLighting">Mechanical and Lighting Addition</dtyp:displayterm>
             <dtyp:displayterm value="AdditionMechanicalAndPartialLighting">Mechanical and Partial Lighting Addition</dtyp:displayterm>
@@ -9500,8 +9574,10 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="NewComplete">New complete scope</dtyp:displayterm>
             <dtyp:displayterm value="NewEnvelope">New envelope</dtyp:displayterm>
             <dtyp:displayterm value="NewEnvelopeAndLighting">New envelope and lighting</dtyp:displayterm>
+            <dtyp:displayterm value="NewEnvelopeAndLightingAndPartialMechanical">New envelope and lighting and partial mechanical</dtyp:displayterm>
             <dtyp:displayterm value="NewEnvelopeAndMechanical">New envelope and mechanical</dtyp:displayterm>
             <dtyp:displayterm value="NewEnvelopeAndPartialLighting">New envelope and partial lighting</dtyp:displayterm>
+            <dtyp:displayterm value="NewEnvelopeAndPartialLightingAndPartialMechanical">New envelope and partial lighting and partial mechanical</dtyp:displayterm>
             <dtyp:displayterm value="NewMechanical">New mechanical</dtyp:displayterm>
             <dtyp:displayterm value="NewMechanicalAndLighting">New mechanical and lighting</dtyp:displayterm>
             <dtyp:displayterm value="NewMechanicalAndPartialLighting">New mechanical and  partial lighting</dtyp:displayterm>
@@ -9511,8 +9587,10 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="AdditionComplete"/>
          <xsd:enumeration value="AdditionEnvelope"/>
          <xsd:enumeration value="AdditionEnvelopeAndLighting"/>
+         <xsd:enumeration value="AdditionEnvelopeAndLightingAndPartialMechanical"/>
          <xsd:enumeration value="AdditionEnvelopeAndMechanical"/>
          <xsd:enumeration value="AdditionEnvelopeAndPartialLighting"/>
+         <xsd:enumeration value="AdditionEnvelopeAndPartialLightingAndPartialMechanical"/>
          <xsd:enumeration value="AdditionMechanical"/>
          <xsd:enumeration value="AdditionMechanicalAndLighting"/>
          <xsd:enumeration value="AdditionMechanicalAndPartialLighting"/>
@@ -9522,8 +9600,10 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="NewComplete"/>
          <xsd:enumeration value="NewEnvelope"/>
          <xsd:enumeration value="NewEnvelopeAndLighting"/>
+         <xsd:enumeration value="NewEnvelopeAndLightingAndPartialMechanical"/>
          <xsd:enumeration value="NewEnvelopeAndMechanical"/>
          <xsd:enumeration value="NewEnvelopeAndPartialLighting"/>
+         <xsd:enumeration value="NewEnvelopeAndPartialLightingAndPartialMechanical"/>
          <xsd:enumeration value="NewMechanical"/>
          <xsd:enumeration value="NewMechanicalAndLighting"/>
          <xsd:enumeration value="NewMechanicalAndPartialLighting"/>
@@ -9568,6 +9648,15 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:documentation>Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:dateTime"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RatedPowerReductionException6AppliesSome">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="RatedPowerReductionException6AppliesToAll">
       <xsd:annotation>
@@ -10756,7 +10845,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm>Are Secondary Zone  Daylighting Controls Exempt?</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="DaylitAppZoneNA">NA:  Daylight Application Zone</dtyp:displayterm>
             <dtyp:displayterm value="Exempt">Exempt</dtyp:displayterm>
             <dtyp:displayterm value="GarageGlazingLT36Ft2NA">NA:Garage  
                <d:lt/> 36 ft2 Glazing</dtyp:displayterm>
@@ -10777,7 +10865,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="DaylitAppZoneNA"/>
          <xsd:enumeration value="Exempt"/>
          <xsd:enumeration value="GarageGlazingLT36Ft2NA"/>
          <xsd:enumeration value="GaragePrimDayLitNA"/>
