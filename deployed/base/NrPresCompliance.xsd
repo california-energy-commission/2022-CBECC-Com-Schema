@@ -7926,6 +7926,33 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="NoRequiredNRCA">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">There are no Certificates of Acceptance applicable to this project</dtyp:displayterm>
+            <dtyp:displayterm value="false">Certificate required</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="NoRequiredNRCI">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">There are no Certificates of Installation applicable to this project</dtyp:displayterm>
+            <dtyp:displayterm value="false">Certificate required</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="NoRequiredNRCV">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">There are no Certificates of Verification applicable to this project</dtyp:displayterm>
+            <dtyp:displayterm value="false">Certificate required</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="NominalCFM50">
       <xsd:annotation>
          <xsd:documentation>This is the fan flow if building pressure was induced to exactly 50Pa  Units: ft3 per min</xsd:documentation>
@@ -10564,6 +10591,51 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:complexType name="ResponsiblePersonEnvelopeDesigner">
+      <xsd:sequence>
+         <xsd:element name="responsibleEnvelopeDesigner01_Name" type="comp:PersonFullName" minOccurs="0"/>
+         <xsd:element name="responsibleEnvelopeDesigner02_SignatureNRCC" type="comp:ElectronicSignature" minOccurs="0"/>
+         <xsd:element name="responsiblePerson03_Company" type="comp:Company" minOccurs="0"/>
+         <xsd:element name="responsiblePerson04_Address" type="comp:StreetAddress" minOccurs="0"/>
+         <xsd:element name="responsiblePerson05_DateSigned" type="comp:SignatureDate" minOccurs="0"/>
+         <xsd:element name="responsiblePerson06_City" type="comp:City" minOccurs="0"/>
+         <xsd:element name="responsiblePerson07_State" type="comp:State" minOccurs="0"/>
+         <xsd:element name="responsiblePerson08_Zipcode" type="comp:Zipcode" minOccurs="0"/>
+         <xsd:element name="responsiblePerson09_Phone" type="comp:PhoneNumber" minOccurs="0"/>
+         <xsd:element name="responsiblePerson10_JobTitle" type="comp:JobTitle" minOccurs="0"/>
+         <xsd:element name="responsiblePerson11_License" type="comp:LicenseNumber" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="ResponsiblePersonLightingDesigner">
+      <xsd:sequence>
+         <xsd:element name="responsibleLightingDesigner01_Name" type="comp:PersonFullName" minOccurs="0"/>
+         <xsd:element name="responsibleLightingDesigner02_SignatureNRCC" type="comp:ElectronicSignature" minOccurs="0"/>
+         <xsd:element name="responsiblePerson03_Company" type="comp:Company" minOccurs="0"/>
+         <xsd:element name="responsiblePerson04_Address" type="comp:StreetAddress" minOccurs="0"/>
+         <xsd:element name="responsiblePerson05_DateSigned" type="comp:SignatureDate" minOccurs="0"/>
+         <xsd:element name="responsiblePerson06_City" type="comp:City" minOccurs="0"/>
+         <xsd:element name="responsiblePerson07_State" type="comp:State" minOccurs="0"/>
+         <xsd:element name="responsiblePerson08_Zipcode" type="comp:Zipcode" minOccurs="0"/>
+         <xsd:element name="responsiblePerson09_Phone" type="comp:PhoneNumber" minOccurs="0"/>
+         <xsd:element name="responsiblePerson10_JobTitle" type="comp:JobTitle" minOccurs="0"/>
+         <xsd:element name="responsiblePerson11_License" type="comp:LicenseNumber" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="ResponsiblePersonMechanicalDesigner">
+      <xsd:sequence>
+         <xsd:element name="responsibleMechanicalDesigner01_Name" type="comp:PersonFullName" minOccurs="0"/>
+         <xsd:element name="responsibleMechanicalDesigner02_SignatureNRCC" type="comp:ElectronicSignature" minOccurs="0"/>
+         <xsd:element name="responsiblePerson03_Company" type="comp:Company" minOccurs="0"/>
+         <xsd:element name="responsiblePerson04_Address" type="comp:StreetAddress" minOccurs="0"/>
+         <xsd:element name="responsiblePerson05_DateSigned" type="comp:SignatureDate" minOccurs="0"/>
+         <xsd:element name="responsiblePerson06_City" type="comp:City" minOccurs="0"/>
+         <xsd:element name="responsiblePerson07_State" type="comp:State" minOccurs="0"/>
+         <xsd:element name="responsiblePerson08_Zipcode" type="comp:Zipcode" minOccurs="0"/>
+         <xsd:element name="responsiblePerson09_Phone" type="comp:PhoneNumber" minOccurs="0"/>
+         <xsd:element name="responsiblePerson10_JobTitle" type="comp:JobTitle" minOccurs="0"/>
+         <xsd:element name="responsiblePerson11_License" type="comp:LicenseNumber" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
    <xsd:complexType name="ResponsiblePersonNRCA">
       <xsd:sequence>
          <xsd:element name="responsibleAcceptancePerson01_NameNRCA" type="comp:PersonFullName" minOccurs="0"/>
@@ -10595,22 +10667,9 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:complexType>
    <xsd:complexType name="ResponsiblePersonNRCCPRF">
       <xsd:sequence>
-         <xsd:element name="responsibleDesigner01_NameNRCC" type="comp:PersonFullName" minOccurs="0"/>
-         <xsd:element name="responsibleDesigner02_SignatureNRCC" type="comp:ElectronicSignature" minOccurs="0"/>
-         <xsd:element name="responsiblePerson03_Company" type="comp:Company" minOccurs="0"/>
-         <xsd:element name="responsiblePerson04_DateSigned" type="comp:SignatureDate" minOccurs="0"/>
-         <xsd:element name="responsiblePerson06_Address" type="comp:StreetAddress" minOccurs="0"/>
-         <xsd:element name="responsiblePerson07_License" type="comp:LicenseNumber" minOccurs="0"/>
-         <xsd:element name="responsiblePerson08_City" type="comp:City" minOccurs="0"/>
-         <xsd:element name="responsiblePerson09_State" type="comp:State" minOccurs="0"/>
-         <xsd:element name="responsiblePerson10_Zipcode" type="comp:Zipcode" minOccurs="0"/>
-         <xsd:element name="responsiblePerson11_Phone" type="comp:PhoneNumber" minOccurs="0"/>
-         <xsd:element name="responsiblePersonEnvelopeDesigner_Name" type="comp:PersonFullName" minOccurs="0"/>
-         <xsd:element name="responsiblePersonEnvelopeDesignerCompany" type="comp:Company" minOccurs="0"/>
-         <xsd:element name="responsiblePersonLightingDesigner_Name" type="comp:PersonFullName" minOccurs="0"/>
-         <xsd:element name="responsiblePersonLightingDesignerCompany" type="comp:Company" minOccurs="0"/>
-         <xsd:element name="responsiblePersonMechanicalDesigner_Name" type="comp:PersonFullName" minOccurs="0"/>
-         <xsd:element name="responsiblePersonMechanicalDesignerCompany" type="comp:Company" minOccurs="0"/>
+         <xsd:element name="ResponsiblePersonEnvelopeDesigner" type="comp:ResponsiblePersonEnvelopeDesigner" minOccurs="0"/>
+         <xsd:element name="ResponsiblePersonLightingDesigner" type="comp:ResponsiblePersonLightingDesigner" minOccurs="0"/>
+         <xsd:element name="ResponsiblePersonMechanicalDesigner" type="comp:ResponsiblePersonMechanicalDesigner" minOccurs="0"/>
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="ResponsiblePersonNRCI">

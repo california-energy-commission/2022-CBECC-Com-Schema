@@ -3586,7 +3586,7 @@ End If</dtyp:termConditions>
                                                                <xsd:documentation source="FieldText"/>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 1  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 1  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -3615,7 +3615,7 @@ End If</dtyp:termConditions>
                                                                <xsd:documentation source="FieldText"/>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 2  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 2  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -3644,7 +3644,7 @@ End If</dtyp:termConditions>
                                                                <xsd:documentation source="FieldText"/>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 3  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 3  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -3673,7 +3673,7 @@ End If</dtyp:termConditions>
                                                                <xsd:documentation source="FieldText"/>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 4  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 4  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -3702,7 +3702,7 @@ End If</dtyp:termConditions>
                                                                <xsd:documentation source="FieldText"/>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 5  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 5  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -3731,7 +3731,7 @@ End If</dtyp:termConditions>
                                                                <xsd:documentation source="FieldText"/>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 6  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 6  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -3760,7 +3760,7 @@ End If</dtyp:termConditions>
                                                                <xsd:documentation source="FieldText"/>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 7  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 7  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -3789,7 +3789,7 @@ End If</dtyp:termConditions>
                                                                <xsd:documentation source="FieldText"/>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 8  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 8  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -3818,7 +3818,7 @@ End If</dtyp:termConditions>
                                                                <xsd:documentation source="FieldText"/>
                                                                <xsd:appinfo source="CBECCnrXML">
                                                                   <dtyp:CBECCnrXMLterm>Proj:ConsAssm:MatRef</dtyp:CBECCnrXMLterm>
-                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 9  f value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
+                                                                  <dtyp:termConditions>Proj:ConsAssm:MatRef index = 9  If value does not match enums in CodeItem choice Or CodeItemGlazing choice, use this choice for string value</dtyp:termConditions>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -9274,6 +9274,12 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
+                  <xsd:element name="Nrci00_NoRequiredNRCI" type="comp:NoRequiredNRCI" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no NRCI's for this project</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="NrciBeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
@@ -9499,6 +9505,12 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
+                  <xsd:element name="Nrca00_NoRequiredNRCA" type="comp:NoRequiredNRCA" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no NRCA's for this project</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="NrcaBeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
@@ -9925,6 +9937,12 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
+                  <xsd:element name="Nrcv00_NoRequiredNRCV" type="comp:NoRequiredNRCV" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no NRCV's for this project</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="NrcvBeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
