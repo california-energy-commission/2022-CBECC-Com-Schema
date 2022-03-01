@@ -5868,7 +5868,7 @@ else ThrmlZn:ExhFlow</dtyp:termConditions>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:element name="Zone02_ThermalZoneName" type="hvac:ThermalZoneName">
+                                    <xsd:element name="Zone02_ThermalZoneName" type="hvac:ThermalZoneName" minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Zone Name</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -7402,7 +7402,7 @@ End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="WaterSolar13_SolarWaterHeatingPerformanceSoftwareVersion" type="hvac:SolarWaterHeatingPerformanceSoftwareVersion">
+                                    <xsd:element name="WaterSolar13_SolarWaterHeatingPerformanceSoftwareVersion" type="hvac:SolarWaterHeatingPerformanceSoftwareVersion" minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Program Version</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -8192,7 +8192,7 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="LtgCredits04_LightingPAF" type="lit:LightingPAF">
+                                    <xsd:element name="LtgCredits04_LightingPAF" type="lit:LightingPAF" minOccurs="0" maxOccurs="unbounded">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Power Adjustment Factor (PAF)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
