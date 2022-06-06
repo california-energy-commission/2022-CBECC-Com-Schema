@@ -6,7 +6,7 @@
    xmlns:com="http://www.lmonte.com/besm/com"
    xmlns:dtyp="http://www.lmonte.com/besm/dtyp"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2019.1.003">
+   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2022.0.000">
    <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="NrPresCommon.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/dtyp" schemaLocation="DataTypes.xsd"/>
    <xsd:simpleType name="AboveGradeStoryCount">
@@ -17,6 +17,10 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="Adding16SkyMF">
+      <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="AirInfiltrationRate">
@@ -280,9 +284,7 @@
             <dtyp:displayterm value="Ash1In">Ash1In</dtyp:displayterm>
             <dtyp:displayterm value="AsphaltBitumenInertFill100LbPerFt3Thickness0_75In">Asphalt - bitumen with inert fill - 100 lb/ft3 - 3/4 in.</dtyp:displayterm>
             <dtyp:displayterm value="AsphaltBitumenInertFill144LbPerFt3Thickness0_75In">Asphalt - bitumen with inert fill - 144 lb/ft3 - 3/4 in.</dtyp:displayterm>
-            <dtyp:displayterm value="AsphaltRollRoofing0_25In">Asphalt roll roofing - 1/4 in.</dtyp:displayterm>
             <dtyp:displayterm value="AsphaltShingles">Asphalt shingles</dtyp:displayterm>
-            <dtyp:displayterm value="AsphaltShingles0_25In">Asphalt shingles - 1/4 in.</dtyp:displayterm>
             <dtyp:displayterm value="Birch1In">Birch1In</dtyp:displayterm>
             <dtyp:displayterm value="Brick48LbPerFt3Thickness3_625In">Brick - 48 lb/ft3 - 3 5/8 in.</dtyp:displayterm>
             <dtyp:displayterm value="BrickFiredClay140LbPerFt3Thickness3_625In">Brick - fired clay -  140 lb/ft3 - 3 5/8 in.</dtyp:displayterm>
@@ -321,7 +323,6 @@
             <dtyp:displayterm value="ClayTilePaver">Clay Tile - Paver</dtyp:displayterm>
             <dtyp:displayterm value="ComplianceInsulationR0_01">Compliance Insulation R0.01</dtyp:displayterm>
             <dtyp:displayterm value="ComplianceInsulationR0_02">Compliance Insulation R0.02</dtyp:displayterm>
-            <dtyp:displayterm value="ComplianceInsulationR0_05">Compliance Insulation R0.05</dtyp:displayterm>
             <dtyp:displayterm value="ComplianceInsulationR0_10">Compliance Insulation R0.10</dtyp:displayterm>
             <dtyp:displayterm value="ComplianceInsulationR0_20">Compliance Insulation R0.20</dtyp:displayterm>
             <dtyp:displayterm value="ComplianceInsulationR0_50">Compliance Insulation R0.50</dtyp:displayterm>
@@ -502,6 +503,30 @@
             <dtyp:displayterm value="ConcreteSolidGrout125LbPerFt3Thickness12In">Concrete - Solid Grout - 125 lb/ft3 - 12 in.</dtyp:displayterm>
             <dtyp:displayterm value="ConcreteSolidGrout125LbPerFt3Thickness6In">Concrete - Solid Grout - 125 lb/ft3 - 6 in.</dtyp:displayterm>
             <dtyp:displayterm value="ConcreteSolidGrout125LbPerFt3Thickness8In">Concrete - Solid Grout - 125 lb/ft3 - 8 in.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_NoInsulation">Continuous Ins. - Double glass with no low e coatings - No Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R10Insulation">Continuous Ins. - Double glass with no low e coatings - R10 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R15Insulation">Continuous Ins. - Double glass with no low e coatings - R15 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R20Insulation">Continuous Ins. - Double glass with no low e coatings - R20 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R25Insulation">Continuous Ins. - Double glass with no low e coatings - R25 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R30Insulation">Continuous Ins. - Double glass with no low e coatings - R30 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R4Insulation">Continuous Ins. - Double glass with no low e coatings - R4 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R7Insulation">Continuous Ins. - Double glass with no low e coatings - R7 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_NoInsulation">Continuous Ins. - Single glass pane. stone. or metal pane - No Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R10Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R10 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R15Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R15 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R20Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R20 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R25Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R25 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R30Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R30 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R4Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R4 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R7Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R7 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_NoInsulation">Continuous Ins. - Triple or low e glass - No Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R10Insulation">Continuous Ins. - Triple or low e glass - R10 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R15Insulation">Continuous Ins. - Triple or low e glass - R15 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R20Insulation">Continuous Ins. - Triple or low e glass - R20 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R25Insulation">Continuous Ins. - Triple or low e glass - R25 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R30Insulation">Continuous Ins. - Triple or low e glass - R30 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R4Insulation">Continuous Ins. - Triple or low e glass - R4 Ins.</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R7Insulation">Continuous Ins. - Triple or low e glass - R7 Ins.</dtyp:displayterm>
             <dtyp:displayterm value="DouglasFirLarch1In">DouglasFirLarch1In</dtyp:displayterm>
             <dtyp:displayterm value="ExpandedPerliteOrganicBonded0_75In_R2_1">Expanded perlite - organic bonded - 3/4 in. R2.1</dtyp:displayterm>
             <dtyp:displayterm value="ExpandedPerliteOrganicBonded1_5In_R4_2">Expanded perlite - organic bonded - 1 1/2 in. R4.2</dtyp:displayterm>
@@ -634,7 +659,6 @@
             <dtyp:displayterm value="MetalInsulatedPanel4In">Metal Insulated Panels - 4 in.</dtyp:displayterm>
             <dtyp:displayterm value="MetalInsulatedPanel5In">Metal Insulated Panels - 5 in.</dtyp:displayterm>
             <dtyp:displayterm value="MetalInsulatedPanel6In">Metal Insulated Panels - 6 in.</dtyp:displayterm>
-            <dtyp:displayterm value="MetalInsulatedPanelWall">Metal Insulated Panel Wall</dtyp:displayterm>
             <dtyp:displayterm value="MetalSiding0_0625In">Metal Siding - 1/16 in.</dtyp:displayterm>
             <dtyp:displayterm value="MetalStandingSeam0_0625In">Metal Standing Seam - 1/16 in.</dtyp:displayterm>
             <dtyp:displayterm value="MortarCementThickness1_75In">Mortar - Cement - 1 3/4 in.</dtyp:displayterm>
@@ -721,7 +745,6 @@
             <dtyp:displayterm value="SIPS_R22Double2xSpline6_5In">SIPS - R22 - Double 2x Spline - 6 1/2 in.</dtyp:displayterm>
             <dtyp:displayterm value="SIPS_R22I_JoistSpline6_5In">SIPS - R22 - I joist Spline - 6 1/2 in.</dtyp:displayterm>
             <dtyp:displayterm value="SIPS_R22MetalSpline48In">SIPS - R22 - Metal Spline - 48 in.</dtyp:displayterm>
-            <dtyp:displayterm value="SIPS_R22OSB_Spline6_5In">SIPS - R22 - OSB Spline - 6 1/2 in.</dtyp:displayterm>
             <dtyp:displayterm value="SIPS_R22OSB_Spline6_5In">SIPS - R22 - OSB Spline - 6 1/2 in.</dtyp:displayterm>
             <dtyp:displayterm value="SIPS_R22Single2xSpline6_5In">SIPS - R22 - Single 2x Spline - 6 1/2 in.</dtyp:displayterm>
             <dtyp:displayterm value="SIPS_R28Double2xSpline8_25In">SIPS - R28 - Double 2x Spline - 8 1/4 in.</dtyp:displayterm>
@@ -842,9 +865,7 @@
          <xsd:enumeration value="Ash1In"/>
          <xsd:enumeration value="AsphaltBitumenInertFill100LbPerFt3Thickness0_75In"/>
          <xsd:enumeration value="AsphaltBitumenInertFill144LbPerFt3Thickness0_75In"/>
-         <xsd:enumeration value="AsphaltRollRoofing0_25In"/>
          <xsd:enumeration value="AsphaltShingles"/>
-         <xsd:enumeration value="AsphaltShingles0_25In"/>
          <xsd:enumeration value="Birch1In"/>
          <xsd:enumeration value="Brick48LbPerFt3Thickness3_625In"/>
          <xsd:enumeration value="BrickFiredClay140LbPerFt3Thickness3_625In"/>
@@ -883,7 +904,6 @@
          <xsd:enumeration value="ClayTilePaver"/>
          <xsd:enumeration value="ComplianceInsulationR0_01"/>
          <xsd:enumeration value="ComplianceInsulationR0_02"/>
-         <xsd:enumeration value="ComplianceInsulationR0_05"/>
          <xsd:enumeration value="ComplianceInsulationR0_10"/>
          <xsd:enumeration value="ComplianceInsulationR0_20"/>
          <xsd:enumeration value="ComplianceInsulationR0_50"/>
@@ -1064,6 +1084,30 @@
          <xsd:enumeration value="ConcreteSolidGrout125LbPerFt3Thickness12In"/>
          <xsd:enumeration value="ConcreteSolidGrout125LbPerFt3Thickness6In"/>
          <xsd:enumeration value="ConcreteSolidGrout125LbPerFt3Thickness8In"/>
+         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_NoInsulation"/>
+         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R10Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R15Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R20Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R25Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R30Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R4Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R7Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_NoInsulation"/>
+         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R10Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R15Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R20Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R25Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R30Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R4Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R7Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_NoInsulation"/>
+         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R10Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R15Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R20Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R25Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R30Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R4Insulation"/>
+         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R7Insulation"/>
          <xsd:enumeration value="DouglasFirLarch1In"/>
          <xsd:enumeration value="ExpandedPerliteOrganicBonded0_75In_R2_1"/>
          <xsd:enumeration value="ExpandedPerliteOrganicBonded1_5In_R4_2"/>
@@ -1196,7 +1240,6 @@
          <xsd:enumeration value="MetalInsulatedPanel4In"/>
          <xsd:enumeration value="MetalInsulatedPanel5In"/>
          <xsd:enumeration value="MetalInsulatedPanel6In"/>
-         <xsd:enumeration value="MetalInsulatedPanelWall"/>
          <xsd:enumeration value="MetalSiding0_0625In"/>
          <xsd:enumeration value="MetalStandingSeam0_0625In"/>
          <xsd:enumeration value="MortarCementThickness1_75In"/>
@@ -1283,7 +1326,6 @@
          <xsd:enumeration value="SIPS_R22Double2xSpline6_5In"/>
          <xsd:enumeration value="SIPS_R22I_JoistSpline6_5In"/>
          <xsd:enumeration value="SIPS_R22MetalSpline48In"/>
-         <xsd:enumeration value="SIPS_R22OSB_Spline6_5In"/>
          <xsd:enumeration value="SIPS_R22OSB_Spline6_5In"/>
          <xsd:enumeration value="SIPS_R22Single2xSpline6_5In"/>
          <xsd:enumeration value="SIPS_R28Double2xSpline8_25In"/>
@@ -1469,54 +1511,6 @@
             <dtyp:displayterm value="AluminumThermalBreakTripleOrLowE_R4InsulationCW">Aluminum w/ Thrml Break - Triple or low e glass - R4 Ins. - CW</dtyp:displayterm>
             <dtyp:displayterm value="AluminumThermalBreakTripleOrLowE_R7Insulation">Aluminum w/ Thrml Break - Triple or low e glass - R7 Ins.</dtyp:displayterm>
             <dtyp:displayterm value="AluminumThermalBreakTripleOrLowE_R7InsulationCW">Aluminum w/ Thrml Break - Triple or low e glass - R7 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_NoInsulation">Continuous Ins. - Double glass with no low e coatings - No Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_NoInsulationCW">Continuous Ins. - Double glass with no low e coatings - No Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R10Insulation">Continuous Ins. - Double glass with no low e coatings - R10 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R10InsulationCW">Continuous Ins. - Double glass with no low e coatings - R10 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R15Insulation">Continuous Ins. - Double glass with no low e coatings - R15 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R15InsulationCW">Continuous Ins. - Double glass with no low e coatings - R15 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R20Insulation">Continuous Ins. - Double glass with no low e coatings - R20 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R20InsulationCW">Continuous Ins. - Double glass with no low e coatings - R20 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R25Insulation">Continuous Ins. - Double glass with no low e coatings - R25 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R25InsulationCW">Continuous Ins. - Double glass with no low e coatings - R25 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R30Insulation">Continuous Ins. - Double glass with no low e coatings - R30 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R30InsulationCW">Continuous Ins. - Double glass with no low e coatings - R30 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R4Insulation">Continuous Ins. - Double glass with no low e coatings - R4 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R4InsulationCW">Continuous Ins. - Double glass with no low e coatings - R4 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R7Insulation">Continuous Ins. - Double glass with no low e coatings - R7 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationDoubleNoLowE_R7InsulationCW">Continuous Ins. - Double glass with no low e coatings - R7 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_NoInsulation">Continuous Ins. - Single glass pane. stone. or metal pane - No Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_NoInsulationCW">Continuous Ins. - Single glass pane. stone. or metal pane - No Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R10Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R10 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R10InsulationCW">Continuous Ins. - Single glass pane. stone. or metal pane - R10 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R15Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R15 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R15InsulationCW">Continuous Ins. - Single glass pane. stone. or metal pane - R15 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R20Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R20 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R20InsulationCW">Continuous Ins. - Single glass pane. stone. or metal pane - R20 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R25Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R25 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R25InsulationCW">Continuous Ins. - Single glass pane. stone. or metal pane - R25 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R30Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R30 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R30InsulationCW">Continuous Ins. - Single glass pane. stone. or metal pane - R30 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R4Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R4 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R4InsulationCW">Continuous Ins. - Single glass pane. stone. or metal pane - R4 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R7Insulation">Continuous Ins. - Single glass pane. stone. or metal pane - R7 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationSingleGlassStoneMetal_R7InsulationCW">Continuous Ins. - Single glass pane. stone. or metal pane - R7 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_NoInsulation">Continuous Ins. - Triple or low e glass - No Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_NoInsulationCW">Continuous Ins. - Triple or low e glass - No Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R10Insulation">Continuous Ins. - Triple or low e glass - R10 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R10InsulationCW">Continuous Ins. - Triple or low e glass - R10 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R15Insulation">Continuous Ins. - Triple or low e glass - R15 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R15InsulationCW">Continuous Ins. - Triple or low e glass - R15 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R20Insulation">Continuous Ins. - Triple or low e glass - R20 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R20InsulationCW">Continuous Ins. - Triple or low e glass - R20 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R25Insulation">Continuous Ins. - Triple or low e glass - R25 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R25InsulationCW">Continuous Ins. - Triple or low e glass - R25 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R30Insulation">Continuous Ins. - Triple or low e glass - R30 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R30InsulationCW">Continuous Ins. - Triple or low e glass - R30 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R4Insulation">Continuous Ins. - Triple or low e glass - R4 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R4InsulationCW">Continuous Ins. - Triple or low e glass - R4 Ins. - CW</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R7Insulation">Continuous Ins. - Triple or low e glass - R7 Ins.</dtyp:displayterm>
-            <dtyp:displayterm value="ContinuousInsulationTripleOrLowE_R7InsulationCW">Continuous Ins. - Triple or low e glass - R7 Ins. - CW</dtyp:displayterm>
             <dtyp:displayterm value="StructuralGlazingDoubleNoLowE_NoInsulation">Structural Glazing - Double glass with no low e coatings - No Ins.</dtyp:displayterm>
             <dtyp:displayterm value="StructuralGlazingDoubleNoLowE_NoInsulationCW">Structural Glazing - Double glass with no low e coatings - No Ins. - CW</dtyp:displayterm>
             <dtyp:displayterm value="StructuralGlazingDoubleNoLowE_R10Insulation">Structural Glazing - Double glass with no low e coatings - R10 Ins.</dtyp:displayterm>
@@ -1664,54 +1658,6 @@
          <xsd:enumeration value="AluminumThermalBreakTripleOrLowE_R4InsulationCW"/>
          <xsd:enumeration value="AluminumThermalBreakTripleOrLowE_R7Insulation"/>
          <xsd:enumeration value="AluminumThermalBreakTripleOrLowE_R7InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_NoInsulation"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_NoInsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R10Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R10InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R15Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R15InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R20Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R20InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R25Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R25InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R30Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R30InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R4Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R4InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R7Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationDoubleNoLowE_R7InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_NoInsulation"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_NoInsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R10Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R10InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R15Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R15InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R20Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R20InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R25Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R25InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R30Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R30InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R4Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R4InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R7Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationSingleGlassStoneMetal_R7InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_NoInsulation"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_NoInsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R10Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R10InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R15Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R15InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R20Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R20InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R25Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R25InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R30Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R30InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R4Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R4InsulationCW"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R7Insulation"/>
-         <xsd:enumeration value="ContinuousInsulationTripleOrLowE_R7InsulationCW"/>
          <xsd:enumeration value="StructuralGlazingDoubleNoLowE_NoInsulation"/>
          <xsd:enumeration value="StructuralGlazingDoubleNoLowE_NoInsulationCW"/>
          <xsd:enumeration value="StructuralGlazingDoubleNoLowE_R10Insulation"/>
@@ -1861,17 +1807,21 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="10000To49999Ft2">10,000 - 49,999 ft[d:sup]2[/d:sup]</dtyp:displayterm>
             <dtyp:displayterm value="GT25000Ft2">[d:gt/] 25,000 ft[d:sup]2[/d:sup]</dtyp:displayterm>
+            <dtyp:displayterm value="GT700Ft2">[d:gt/] 700 ft[d:sup]2[/d:sup]</dtyp:displayterm>
             <dtyp:displayterm value="GTE50000Ft2">50,000 ft[d:sup]2[/d:sup] or greater</dtyp:displayterm>
             <dtyp:displayterm value="LT10000Ft2">[d:lt/] 10,000 ft[d:sup]2[/d:sup]</dtyp:displayterm>
             <dtyp:displayterm value="LTE25000Ft2">[d:lte/] 25,000 ft[d:sup]2[/d:sup]</dtyp:displayterm>
+            <dtyp:displayterm value="LTE700Ft2">[d:lte/] 700 ft[d:sup]2[/d:sup]</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="10000To49999Ft2"/>
          <xsd:enumeration value="GT25000Ft2"/>
+         <xsd:enumeration value="GT700Ft2"/>
          <xsd:enumeration value="GTE50000Ft2"/>
          <xsd:enumeration value="LT10000Ft2"/>
          <xsd:enumeration value="LTE25000Ft2"/>
+         <xsd:enumeration value="LTE700Ft2"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ConstructedShadingType">
@@ -1880,13 +1830,13 @@
             <dtyp:displayterm>Shading Type</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="HorizontalSlats">Exterior Horizontal Slats</dtyp:displayterm>
             <dtyp:displayterm value="Overhang">Overhang</dtyp:displayterm>
-            <dtyp:displayterm value="VerticalFin">Vertical fin</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="HorizontalSlats"/>
          <xsd:enumeration value="Overhang"/>
-         <xsd:enumeration value="VerticalFin"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ConstructionAssemblyName">
@@ -1906,6 +1856,7 @@
             <dtyp:displayterm value="MetalBuildingWalls">Metal building walls</dtyp:displayterm>
             <dtyp:displayterm value="MetalFramedAttic">Attic- Metal</dtyp:displayterm>
             <dtyp:displayterm value="MetalFramedRafter">Rafter- Metal</dtyp:displayterm>
+            <dtyp:displayterm value="MetalFramedRoof">Metal</dtyp:displayterm>
             <dtyp:displayterm value="MetalFramedWallsNonResidential">Metal framed walls non-residential</dtyp:displayterm>
             <dtyp:displayterm value="SolidUnitMasonrySolidConcreteWalls">Solid unit masonry solid concrete walls</dtyp:displayterm>
             <dtyp:displayterm value="SpanDeckAndConcreteRoofs">Span deck and concrete roofs</dtyp:displayterm>
@@ -1916,6 +1867,7 @@
             <dtyp:displayterm value="WoodFramedCeilings">Wood Framed Ceiling</dtyp:displayterm>
             <dtyp:displayterm value="WoodFramedFloor">Wood Framed Floor</dtyp:displayterm>
             <dtyp:displayterm value="WoodFramedRafter">Rafter- Wood</dtyp:displayterm>
+            <dtyp:displayterm value="WoodFramedRoof">Wood</dtyp:displayterm>
             <dtyp:displayterm value="WoodFramedWall">Wood Framed Wall</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -1930,6 +1882,7 @@
          <xsd:enumeration value="MetalBuildingWalls"/>
          <xsd:enumeration value="MetalFramedAttic"/>
          <xsd:enumeration value="MetalFramedRafter"/>
+         <xsd:enumeration value="MetalFramedRoof"/>
          <xsd:enumeration value="MetalFramedWallsNonResidential"/>
          <xsd:enumeration value="SolidUnitMasonrySolidConcreteWalls"/>
          <xsd:enumeration value="SpanDeckAndConcreteRoofs"/>
@@ -1940,6 +1893,7 @@
          <xsd:enumeration value="WoodFramedCeilings"/>
          <xsd:enumeration value="WoodFramedFloor"/>
          <xsd:enumeration value="WoodFramedRafter"/>
+         <xsd:enumeration value="WoodFramedRoof"/>
          <xsd:enumeration value="WoodFramedWall"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -1996,9 +1950,11 @@
             <dtyp:displayterm value="R13ci">R-13</dtyp:displayterm>
             <dtyp:displayterm value="R14ci">R-14</dtyp:displayterm>
             <dtyp:displayterm value="R15ci">R-15</dtyp:displayterm>
+            <dtyp:displayterm value="R17ci">R-17</dtyp:displayterm>
             <dtyp:displayterm value="R19ci">R-19</dtyp:displayterm>
             <dtyp:displayterm value="R20ci">R-20</dtyp:displayterm>
             <dtyp:displayterm value="R22ci">R-22</dtyp:displayterm>
+            <dtyp:displayterm value="R23ci">R-23</dtyp:displayterm>
             <dtyp:displayterm value="R25ci">R-25</dtyp:displayterm>
             <dtyp:displayterm value="R2ci">R-2</dtyp:displayterm>
             <dtyp:displayterm value="R30ci">R-30</dtyp:displayterm>
@@ -2019,9 +1975,11 @@
          <xsd:enumeration value="R13ci"/>
          <xsd:enumeration value="R14ci"/>
          <xsd:enumeration value="R15ci"/>
+         <xsd:enumeration value="R17ci"/>
          <xsd:enumeration value="R19ci"/>
          <xsd:enumeration value="R20ci"/>
          <xsd:enumeration value="R22ci"/>
+         <xsd:enumeration value="R23ci"/>
          <xsd:enumeration value="R25ci"/>
          <xsd:enumeration value="R2ci"/>
          <xsd:enumeration value="R30ci"/>
@@ -2251,13 +2209,34 @@
             <dtyp:displayterm>Door Type</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="DoorOther">Other</dtyp:displayterm>
             <dtyp:displayterm value="NonSwinging">Non-swinging</dtyp:displayterm>
             <dtyp:displayterm value="Swinging">Swinging</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="DoorOther"/>
          <xsd:enumeration value="NonSwinging"/>
          <xsd:enumeration value="Swinging"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DoorTypeMF">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Multifamily Door Type</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="CommonAreaEntry">MF Common Use Area Entry Swinging</dtyp:displayterm>
+            <dtyp:displayterm value="CommonAreaEntryNonswinging">MF Common Use Area Entry Non-swinging</dtyp:displayterm>
+            <dtyp:displayterm value="DwellingUnitEntry">MF Dwelling Unit Entry</dtyp:displayterm>
+            <dtyp:displayterm value="FireRated">Multifamily Fire Rated Swinging</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="CommonAreaEntry"/>
+         <xsd:enumeration value="CommonAreaEntryNonswinging"/>
+         <xsd:enumeration value="DwellingUnitEntry"/>
+         <xsd:enumeration value="FireRated"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DynamicGlazing">
@@ -2401,7 +2380,7 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="CECDefaultPerformance">Default 110.6</dtyp:displayterm>
             <dtyp:displayterm value="COGEquations">COG Equations</dtyp:displayterm>
-            <dtyp:displayterm value="NA6Equations">Equatio NA 6-1 and NA 6 -2</dtyp:displayterm>
+            <dtyp:displayterm value="NA6Equations">Equations NA 6-1 and NA 6 -2</dtyp:displayterm>
             <dtyp:displayterm value="NFRCRated">NFRC</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -2446,17 +2425,23 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AddGT50ft2">Alt. (Adding New [d:gt/] 50ft[d:sup]2[/d:sup])</dtyp:displayterm>
             <dtyp:displayterm value="AddLTE50ft2">Alt. (Adding New [d:lte/] 50ft[d:sup]2[/d:sup])</dtyp:displayterm>
+            <dtyp:displayterm value="AddSky16PlusMF">Alt. (Adding [d:gt/] 16 ft[d:sup]2[/d:sup])</dtyp:displayterm>
             <dtyp:displayterm value="AllNew">New</dtyp:displayterm>
+            <dtyp:displayterm value="NewSky16MF">[d:lte/] 16 ft[d:sup]2[/d:sup] new skylight per dwelling unit</dtyp:displayterm>
             <dtyp:displayterm value="ReplaceGT150ft2">Alt. (Replacement [d:gt/] 150ft[d:sup]2[/d:sup])</dtyp:displayterm>
             <dtyp:displayterm value="ReplaceLTE150ft2">Alt. (Replacement [d:lte/] 150ft[d:sup]2[/d:sup])</dtyp:displayterm>
+            <dtyp:displayterm value="ReplaceSkyMF">Alt. (Replacement)</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AddGT50ft2"/>
          <xsd:enumeration value="AddLTE50ft2"/>
+         <xsd:enumeration value="AddSky16PlusMF"/>
          <xsd:enumeration value="AllNew"/>
+         <xsd:enumeration value="NewSky16MF"/>
          <xsd:enumeration value="ReplaceGT150ft2"/>
          <xsd:enumeration value="ReplaceLTE150ft2"/>
+         <xsd:enumeration value="ReplaceSkyMF"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="FenestrationName">
@@ -2526,9 +2511,12 @@
             <dtyp:displayterm value="DemisingWallFen">Fenestration in Demising Wall</dtyp:displayterm>
             <dtyp:displayterm value="FixedSkylight">Fixed</dtyp:displayterm>
             <dtyp:displayterm value="FixedWindow">Fixed window</dtyp:displayterm>
+            <dtyp:displayterm value="FixedWindowMF">Architectural Window - Fixed (Multifamily only)</dtyp:displayterm>
             <dtyp:displayterm value="GlazedDoor">Glazed door</dtyp:displayterm>
+            <dtyp:displayterm value="GlazedDoorMF">[d:lte/] 3ft[d:sup]2[/d:sup] glass in dwelling unit door</dtyp:displayterm>
             <dtyp:displayterm value="OperableSkylight">Operable</dtyp:displayterm>
             <dtyp:displayterm value="OperableWindow">Operable window</dtyp:displayterm>
+            <dtyp:displayterm value="OperableWindowMF">Architectural Window - Operable (Multifamily only)</dtyp:displayterm>
             <dtyp:displayterm value="Skylight">Operable or fixed skylight</dtyp:displayterm>
             <dtyp:displayterm value="SkylightGlassCurb">Glass, curb mounted</dtyp:displayterm>
             <dtyp:displayterm value="SkylightGlassDeck">Glass, deck mounted</dtyp:displayterm>
@@ -2543,9 +2531,12 @@
          <xsd:enumeration value="DemisingWallFen"/>
          <xsd:enumeration value="FixedSkylight"/>
          <xsd:enumeration value="FixedWindow"/>
+         <xsd:enumeration value="FixedWindowMF"/>
          <xsd:enumeration value="GlazedDoor"/>
+         <xsd:enumeration value="GlazedDoorMF"/>
          <xsd:enumeration value="OperableSkylight"/>
          <xsd:enumeration value="OperableWindow"/>
+         <xsd:enumeration value="OperableWindowMF"/>
          <xsd:enumeration value="Skylight"/>
          <xsd:enumeration value="SkylightGlassCurb"/>
          <xsd:enumeration value="SkylightGlassDeck"/>
@@ -2731,7 +2722,7 @@
             <dtyp:displayterm value="2x4">2x4</dtyp:displayterm>
             <dtyp:displayterm value="2x6">2x6</dtyp:displayterm>
             <dtyp:displayterm value="2x8">2x8</dtyp:displayterm>
-            <dtyp:displayterm value="AnySize"></dtyp:displayterm>
+            <dtyp:displayterm value="AnySize">Any Size</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -2861,6 +2852,20 @@
          <xsd:enumeration value="TintedGlazing"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="GreenhouseAssembly">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="NonOpaqueEnvelope">Non-opaque envelope</dtyp:displayterm>
+            <dtyp:displayterm value="OpaqueRoof">Opaque Roof</dtyp:displayterm>
+            <dtyp:displayterm value="OpaqueWall">Opaque Wall</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="NonOpaqueEnvelope"/>
+         <xsd:enumeration value="OpaqueRoof"/>
+         <xsd:enumeration value="OpaqueWall"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="GreenhouseGardenWindow">
       <xsd:annotation>
          <xsd:documentation>Used in selection of default properties</xsd:documentation>
@@ -2870,6 +2875,16 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="GreenhouseNonOpaqueReq">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="GlazingCompliance">Has [d:gte/]2 glazings separated by air or gas</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="GlazingCompliance"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="HasCrawlspace">
@@ -3027,6 +3042,7 @@
             <dtyp:displayterm value="OverSuspendedCeiling">Over suspended ceiling</dtyp:displayterm>
             <dtyp:displayterm value="SlabFullyInsulated">Slab fully insulated</dtyp:displayterm>
             <dtyp:displayterm value="SlabHorizontal">Slab horizontal</dtyp:displayterm>
+            <dtyp:displayterm value="SlabPerimeter">Slab floor perimeter</dtyp:displayterm>
             <dtyp:displayterm value="SlabVertical">Slab vertical</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -3043,6 +3059,7 @@
          <xsd:enumeration value="OverSuspendedCeiling"/>
          <xsd:enumeration value="SlabFullyInsulated"/>
          <xsd:enumeration value="SlabHorizontal"/>
+         <xsd:enumeration value="SlabPerimeter"/>
          <xsd:enumeration value="SlabVertical"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -3063,6 +3080,8 @@
             <dtyp:displayterm value="R11">R-11</dtyp:displayterm>
             <dtyp:displayterm value="R13">R-13</dtyp:displayterm>
             <dtyp:displayterm value="R14">R-14</dtyp:displayterm>
+            <dtyp:displayterm value="R17">R-17</dtyp:displayterm>
+            <dtyp:displayterm value="R23">R-23</dtyp:displayterm>
             <dtyp:displayterm value="R4">R-4</dtyp:displayterm>
             <dtyp:displayterm value="R6">R-6</dtyp:displayterm>
             <dtyp:displayterm value="R8">R-8</dtyp:displayterm>
@@ -3072,6 +3091,8 @@
          <xsd:enumeration value="R11"/>
          <xsd:enumeration value="R13"/>
          <xsd:enumeration value="R14"/>
+         <xsd:enumeration value="R17"/>
+         <xsd:enumeration value="R23"/>
          <xsd:enumeration value="R4"/>
          <xsd:enumeration value="R6"/>
          <xsd:enumeration value="R8"/>
@@ -3351,7 +3372,7 @@ Used by the compliance software user interface to narrow list of material select
             <dtyp:displayterm>Material Name</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="xsd:string">
+      <xsd:restriction base="dtyp:ObjectNamePermissive">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="MetalBldgInsulation">
@@ -3485,9 +3506,23 @@ Used by the compliance software user interface to narrow list of material select
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="OverhangProjection">
+      <xsd:annotation>
+         <xsd:documentation>  Units: ft</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="OverhangRightExtent">
       <xsd:annotation>
          <xsd:documentation>The horizontal distance in feet from the right side of the window to the right side of the overhang  Units: ft</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="OverhangSpacing">
+      <xsd:annotation>
+         <xsd:documentation>  Units: ft</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
@@ -3638,6 +3673,42 @@ Used by the compliance software user interface to narrow list of material select
       <xsd:restriction base="xsd:string">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="RoofAtCeilingInsulation">
+      <xsd:annotation>
+         <xsd:documentation>  Units: h ft2 F per Btu</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Proposed Below Roof Deck Insulation</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RoofBelowDeckInsulation">
+      <xsd:annotation>
+         <xsd:documentation>  Units: h ft2 F per Btu</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Proposed Below Roof Deck Insulation</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RoofConstRangeSolar">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AddAltRoofLTE2000ft2">Alteration/ Addition increases roof area [d:lte/]2,000 ft[d:sup]2[/d:sup]</dtyp:displayterm>
+            <dtyp:displayterm value="AddRoofGT2000ft2">Addition increases roof area [d:gt/]2,000 ft[d:sup]2[/d:sup]</dtyp:displayterm>
+            <dtyp:displayterm value="NewRoofGT533ft2">New construction</dtyp:displayterm>
+            <dtyp:displayterm value="NewRoofLTE533ft2">New construction w/ roof [d:lte/]533 ft[d:sup]2[/d:sup]</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AddAltRoofLTE2000ft2"/>
+         <xsd:enumeration value="AddRoofGT2000ft2"/>
+         <xsd:enumeration value="NewRoofGT533ft2"/>
+         <xsd:enumeration value="NewRoofLTE533ft2"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="RoofDescription">
       <xsd:restriction base="xsd:string">
       </xsd:restriction>
@@ -3748,13 +3819,53 @@ Used by the compliance software user interface to narrow list of material select
             <dtyp:displayterm>Roof Construction Type</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AtticOptionB">Attic-Opt. B</dtyp:displayterm>
+            <dtyp:displayterm value="AtticOptionC">Attic-Opt. C</dtyp:displayterm>
             <dtyp:displayterm value="AtticRoof">Attic</dtyp:displayterm>
+            <dtyp:displayterm value="NonAtticOptionD">Non-attic-Opt. D</dtyp:displayterm>
+            <dtyp:displayterm value="NotVentedAttic">Other than Vented Attic</dtyp:displayterm>
             <dtyp:displayterm value="RafterRoof">Rafter</dtyp:displayterm>
+            <dtyp:displayterm value="RoofTypeOther">Other roof type</dtyp:displayterm>
+            <dtyp:displayterm value="VentedAttic">Vented Attic</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AtticOptionB"/>
+         <xsd:enumeration value="AtticOptionC"/>
          <xsd:enumeration value="AtticRoof"/>
+         <xsd:enumeration value="NonAtticOptionD"/>
+         <xsd:enumeration value="NotVentedAttic"/>
          <xsd:enumeration value="RafterRoof"/>
+         <xsd:enumeration value="RoofTypeOther"/>
+         <xsd:enumeration value="VentedAttic"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RvalueTradeOffRange">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="16To17_99">16-17.99</dtyp:displayterm>
+            <dtyp:displayterm value="18To19_99">18-19.99</dtyp:displayterm>
+            <dtyp:displayterm value="20To21_99">20-21.99</dtyp:displayterm>
+            <dtyp:displayterm value="22To23_99">22-23.99</dtyp:displayterm>
+            <dtyp:displayterm value="2To3_99">2-3.99</dtyp:displayterm>
+            <dtyp:displayterm value="4To5_99">4-5.99</dtyp:displayterm>
+            <dtyp:displayterm value="6To7_99">6-7.99</dtyp:displayterm>
+            <dtyp:displayterm value="8To9_99">8-9.99</dtyp:displayterm>
+            <dtyp:displayterm value="GTE10">[d:gte/]10</dtyp:displayterm>
+            <dtyp:displayterm value="GTE24">[d:gte/]24</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="16To17_99"/>
+         <xsd:enumeration value="18To19_99"/>
+         <xsd:enumeration value="20To21_99"/>
+         <xsd:enumeration value="22To23_99"/>
+         <xsd:enumeration value="2To3_99"/>
+         <xsd:enumeration value="4To5_99"/>
+         <xsd:enumeration value="6To7_99"/>
+         <xsd:enumeration value="8To9_99"/>
+         <xsd:enumeration value="GTE10"/>
+         <xsd:enumeration value="GTE24"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="SkylightArea">
@@ -4094,6 +4205,23 @@ For selection of NA-6 properties</xsd:documentation>
          <xsd:enumeration value="R30straw"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="StructureFireRating">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Fire Rating</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="GT1hr">[d:gt/]1 hr fire rating</dtyp:displayterm>
+            <dtyp:displayterm value="LTE1hr">[d:lte/]1 hr fire rating</dtyp:displayterm>
+            <dtyp:displayterm value="RatingNA">NA</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="GT1hr"/>
+         <xsd:enumeration value="LTE1hr"/>
+         <xsd:enumeration value="RatingNA"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="TotalFenestrationVerticalArea">
       <xsd:annotation>
          <xsd:documentation>  Units: ft2</xsd:documentation>
@@ -4177,18 +4305,28 @@ For selection of NA-6 properties</xsd:documentation>
    <xsd:simpleType name="UfactorTradeOffRange">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="0_0241To0_025">0.0241-0.025</dtyp:displayterm>
+            <dtyp:displayterm value="0_0251To0_026">0.0251-0.026</dtyp:displayterm>
+            <dtyp:displayterm value="0_0251To0_026">0.0261-0.028</dtyp:displayterm>
             <dtyp:displayterm value="0_0281To0_029">0.0281-0.029</dtyp:displayterm>
             <dtyp:displayterm value="0_0291To0_030">0.0291-0.030</dtyp:displayterm>
+            <dtyp:displayterm value="0_0291To0_031">0.0291-0.031</dtyp:displayterm>
+            <dtyp:displayterm value="0_0291To0_032">0.0291-0.032</dtyp:displayterm>
             <dtyp:displayterm value="0_0301To0_032">0.0301-0.032</dtyp:displayterm>
             <dtyp:displayterm value="0_0311To0_033">0.0311-0.033</dtyp:displayterm>
+            <dtyp:displayterm value="0_0311To0_034">0.0311-0.034</dtyp:displayterm>
+            <dtyp:displayterm value="0_0321To0_034">0.0321-0.034</dtyp:displayterm>
             <dtyp:displayterm value="0_0331To0_035">0.0331-0.035</dtyp:displayterm>
             <dtyp:displayterm value="0_0341To0_035">0.0341-0.035</dtyp:displayterm>
+            <dtyp:displayterm value="0_0341To0_038">0.0341-0.038</dtyp:displayterm>
             <dtyp:displayterm value="0_0351To0_037">0.0351-0.037</dtyp:displayterm>
             <dtyp:displayterm value="0_0351To0_038">0.0351-0.038</dtyp:displayterm>
             <dtyp:displayterm value="0_0371To0_039">0.0371-0.039</dtyp:displayterm>
             <dtyp:displayterm value="0_0371To0_039">0.0371-0.039</dtyp:displayterm>
+            <dtyp:displayterm value="0_0381To0_041">0.0381-0.041</dtyp:displayterm>
             <dtyp:displayterm value="0_0391To0_041">0.0391-0.041</dtyp:displayterm>
             <dtyp:displayterm value="0_0391To0_042">0.0391-0.042</dtyp:displayterm>
+            <dtyp:displayterm value="0_0411To0_043">0.0411-0.043</dtyp:displayterm>
             <dtyp:displayterm value="0_0411To0_044">0.0411-0.044</dtyp:displayterm>
             <dtyp:displayterm value="0_0421To0_044">0.0421-0.044</dtyp:displayterm>
             <dtyp:displayterm value="0_0421To0_045">0.0421-0.045</dtyp:displayterm>
@@ -4200,6 +4338,8 @@ For selection of NA-6 properties</xsd:documentation>
             <dtyp:displayterm value="0_0551To0_060">0.0551-0.060</dtyp:displayterm>
             <dtyp:displayterm value="0_0601To0_066">0.0601-0.066</dtyp:displayterm>
             <dtyp:displayterm value="0_0661To0_075">0.0661-0.075</dtyp:displayterm>
+            <dtyp:displayterm value="LTE0_024">[d:lte/]0.024</dtyp:displayterm>
+            <dtyp:displayterm value="LTE0_026">[d:lte/]0.026</dtyp:displayterm>
             <dtyp:displayterm value="LTE0_028">[d:lte/]0.028</dtyp:displayterm>
             <dtyp:displayterm value="LTE0_031">[d:lte/]0.031</dtyp:displayterm>
             <dtyp:displayterm value="LTE0_034">[d:lte/]0.034</dtyp:displayterm>
@@ -4208,18 +4348,28 @@ For selection of NA-6 properties</xsd:documentation>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="0_0241To0_025"/>
+         <xsd:enumeration value="0_0251To0_026"/>
+         <xsd:enumeration value="0_0251To0_026"/>
          <xsd:enumeration value="0_0281To0_029"/>
          <xsd:enumeration value="0_0291To0_030"/>
+         <xsd:enumeration value="0_0291To0_031"/>
+         <xsd:enumeration value="0_0291To0_032"/>
          <xsd:enumeration value="0_0301To0_032"/>
          <xsd:enumeration value="0_0311To0_033"/>
+         <xsd:enumeration value="0_0311To0_034"/>
+         <xsd:enumeration value="0_0321To0_034"/>
          <xsd:enumeration value="0_0331To0_035"/>
          <xsd:enumeration value="0_0341To0_035"/>
+         <xsd:enumeration value="0_0341To0_038"/>
          <xsd:enumeration value="0_0351To0_037"/>
          <xsd:enumeration value="0_0351To0_038"/>
          <xsd:enumeration value="0_0371To0_039"/>
          <xsd:enumeration value="0_0371To0_039"/>
+         <xsd:enumeration value="0_0381To0_041"/>
          <xsd:enumeration value="0_0391To0_041"/>
          <xsd:enumeration value="0_0391To0_042"/>
+         <xsd:enumeration value="0_0411To0_043"/>
          <xsd:enumeration value="0_0411To0_044"/>
          <xsd:enumeration value="0_0421To0_044"/>
          <xsd:enumeration value="0_0421To0_045"/>
@@ -4231,6 +4381,8 @@ For selection of NA-6 properties</xsd:documentation>
          <xsd:enumeration value="0_0551To0_060"/>
          <xsd:enumeration value="0_0601To0_066"/>
          <xsd:enumeration value="0_0661To0_075"/>
+         <xsd:enumeration value="LTE0_024"/>
+         <xsd:enumeration value="LTE0_026"/>
          <xsd:enumeration value="LTE0_028"/>
          <xsd:enumeration value="LTE0_031"/>
          <xsd:enumeration value="LTE0_034"/>
@@ -4287,6 +4439,7 @@ For selection of NA-6 properties</xsd:documentation>
             <dtyp:displayterm value="ExteriorWall">Exterior wall</dtyp:displayterm>
             <dtyp:displayterm value="InteriorWall">Interior wall</dtyp:displayterm>
             <dtyp:displayterm value="UndergroundWall">Underground wall</dtyp:displayterm>
+            <dtyp:displayterm value="WallTypeOther">Other wall type</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -4294,6 +4447,7 @@ For selection of NA-6 properties</xsd:documentation>
          <xsd:enumeration value="ExteriorWall"/>
          <xsd:enumeration value="InteriorWall"/>
          <xsd:enumeration value="UndergroundWall"/>
+         <xsd:enumeration value="WallTypeOther"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="WindowProjecting">
