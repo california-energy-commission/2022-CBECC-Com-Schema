@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/NRCCPRF01E" version="2022.0.000" xmlns="http://www.lmonte.com/besm/NRCCPRF01E" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:env="http://www.lmonte.com/besm/env" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:lit="http://www.lmonte.com/besm/lit" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <xsd:import namespace="http://www.lmonte.com/besm/bld" schemaLocation="../base/NrPresBuilding.xsd"/>
-   <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="../base/NrPresCommon.xsd"/>
-   <xsd:import namespace="http://www.lmonte.com/besm/comp" schemaLocation="../base/NrPresCompliance.xsd"/>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/LMCCPRF01E" version="2022.0.000" xmlns="http://www.lmonte.com/besm/LMCCPRF01E" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:env="http://www.lmonte.com/besm/env" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:lit="http://www.lmonte.com/besm/lit" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:import namespace="http://www.lmonte.com/besm/bld" schemaLocation="../base/ResBuilding.xsd"/>
+   <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="../base/ResCommon.xsd"/>
+   <xsd:import namespace="http://www.lmonte.com/besm/comp" schemaLocation="../base/ResCompliance.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/dtyp" schemaLocation="../base/DataTypes.xsd"/>
-   <xsd:import namespace="http://www.lmonte.com/besm/env" schemaLocation="../base/NrPresEnvelope.xsd"/>
-   <xsd:import namespace="http://www.lmonte.com/besm/hvac" schemaLocation="../base/NrPresHvac.xsd"/>
-   <xsd:import namespace="http://www.lmonte.com/besm/lit" schemaLocation="../base/NrPresLighting.xsd"/>
+   <xsd:import namespace="http://www.lmonte.com/besm/env" schemaLocation="../base/ResEnvelope.xsd"/>
+   <xsd:import namespace="http://www.lmonte.com/besm/hvac" schemaLocation="../base/ResHvac.xsd"/>
+   <xsd:import namespace="http://www.lmonte.com/besm/lit" schemaLocation="../base/ResLighting.xsd"/>
    <xsd:element name="ComplianceDocumentPackage">
       <xsd:complexType>
          <xsd:sequence>
             <xsd:element name="DocID" minOccurs="0">
                <xsd:complexType>
-                  <xsd:attribute name="doc" type="comp:ComplianceDocumentTagNR" fixed="NRCCPRFE"/>
-                  <xsd:attribute name="docType" type="comp:ComplianceDocumentTypeNR" fixed="CertificateComplianceNonResPerformance"/>
-                  <xsd:attribute name="docTitle" type="comp:ComplianceDocumentTitleNR" fixed="NonResidentialPerformanceCompliance"/>
+                  <xsd:attribute name="doc" type="comp:ComplianceDocumentTag" fixed="LMCCPRF01E"/>
+                  <xsd:attribute name="docType" type="comp:ComplianceDocumentType" fixed="CERTIFICATE OF COMPLIANCE -  LOWRISE MULTIFAMILY MIXED USE PERFORMANCE COMPLIANCE METHOD"/>
+                  <xsd:attribute name="docTitle" type="comp:ComplianceDocumentTitleRes" fixed="LMCC Performance Compliance"/>
                </xsd:complexType>
             </xsd:element>
             <xsd:element name="Payload" type="comp:Payload"/>
             <xsd:element name="DocumentData">
                <xsd:complexType>
                   <xsd:sequence>
-                     <xsd:element name="Header" type="comp:HeaderNRCCPRF"/>
-                     <xsd:element ref="nRCCPRF"/>
-                     <xsd:element name="DeclarationsBlock" type="comp:DeclarationsNRCCPRF" maxOccurs="unbounded"/>
-                     <xsd:element name="Footer" type="comp:FooterNRCCPRF"/>
+                     <xsd:element name="Header" type="comp:HeaderCF1RPerf"/>
+                     <xsd:element ref="lMCCPRF01E"/>
+                     <xsd:element name="DocAuthor" type="comp:DocumentAuthor"/>
+                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R"/>
+                     <xsd:element name="Footer" type="comp:FooterLMCC"/>
                   </xsd:sequence>
                </xsd:complexType>
             </xsd:element>
-            <xsd:element name="Report" type="xsd:base64Binary" id="Sign2"/>
-            <xsd:element name="Report2" type="xsd:base64Binary" id="Sign3"/>
-            <xsd:element name="Input" type="xsd:base64Binary" id="Sign4"/>
+            <xsd:element name="Report" type="xsd:base64Binary"/>
+            <xsd:element name="ReportMMB" type="xsd:base64Binary" minOccurs="0"/>
          </xsd:sequence>
          <xsd:attribute name="revision" use="required" type="xsd:string" fixed="rev 20220601"/>
-         <xsd:attribute name="doc" use="required" type="comp:ComplianceDocumentTagNR" fixed="NRCCPRFE"/>
+         <xsd:attribute name="doc" use="required" type="comp:ComplianceDocumentTag" fixed="LMCCPRF01E"/>
       </xsd:complexType>
    </xsd:element>
-   <xsd:complexType name="NRCCPRF">
+   <xsd:complexType name="LMCCPRF01E">
       <xsd:annotation>
-         <xsd:documentation>NonResidentialPerformanceCompliance</xsd:documentation>
+         <xsd:documentation>LMCC Performance Compliance</xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="Section_Info" minOccurs="1">
@@ -129,8 +129,8 @@
                         <xsd:restriction base="com:TopLevelOccupancy">
                            <xsd:enumeration value="AlteredOccupancy"/>
                            <xsd:enumeration value="Healthcare"/>
-                           <xsd:enumeration value="HighRiseResidential"/>
                            <xsd:enumeration value="HotelMotel"/>
+                           <xsd:enumeration value="LowRiseResidential"/>
                            <xsd:enumeration value="MixedOccupancy"/>
                            <xsd:enumeration value="Nonresidential"/>
                            <xsd:enumeration value="OtherOccupancy"/>
@@ -301,7 +301,7 @@
                   <xsd:element name="ProjPresc01b" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">
-                           <d:i>NRCC-LTI-E is required</d:i>
+                           <d:i>LMCC-LTI-01E is required</d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -314,7 +314,7 @@
                   <xsd:element name="ProjPresc02b" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">
-                           <d:i>NRCC-LTO-E is required</d:i>
+                           <d:i>LMCC-LTO-01E is required</d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -327,7 +327,7 @@
                   <xsd:element name="ProjPresc03b" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">
-                           <d:i>NRCC-LTS-E is required</d:i>
+                           <d:i>LMCC-LTS-01E is required</d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -353,7 +353,7 @@
                   <xsd:element name="ProjMM01b" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">
-                           <d:i>NRCC-ELC-E is required</d:i>
+                           <d:i>LMCC-ELC-01E is required</d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -366,7 +366,7 @@
                   <xsd:element name="ProjMM02b" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">
-                           <d:i>NRCC-CXR-E is required</d:i>
+                           <d:i>LMCC-CXR-01E is required</d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -379,7 +379,7 @@
                   <xsd:element name="ProjMM03b" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">
-                           <d:i>NRCC-SAB-E is required</d:i>
+                           <d:i>LMCC-SAB-01E is required</d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -4599,6 +4599,167 @@ sum (p:Proj:Bldg:ThrmlZn:HasNoClg) GT 0</dtyp:termConditions>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
+         <xsd:element name="Section_HersSum" minOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">E1. HERS VERIFICATION SUMMARY</xsd:documentation>
+               <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="Hers_beginNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Begin Note 1</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">The following is a summary of the  features that must be field-verified by a certified HERS Rater as a condition for meeting the modeled energy performance for this computer analysis.  Additional detail is provided in the buildng tables below.  Registered CF2Rs and CF3Rs are required to be completed in the HERS Registry.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="HersBuildingLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Building-level Verifications:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="HersCoolingLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Cooling System Verifications:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="HersHeatingLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Heating System Verifications:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="HersHvacLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">HVAC Distribution System Verifications:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="HersDhwLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Domestic Hot Water  System Verifications:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="BuildingHERS" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Hers01_BuildingFeatureHERS" type="comp:BuildingFeatureHERS">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers01a_BuildingFeatureHERS_String" type="comp:BuildingFeatureHERS_String">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers01b_BuildingFeatureHERS_Data" type="comp:BuildingFeatureHERS_Data" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="CoolingHERS" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Hers02_CoolingSystemFeatureHERS" type="comp:CoolingSystemFeatureHERS">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers02a_CoolingSystemFeatureHERS_String" type="comp:CoolingSystemFeatureHERS_String">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers02b_CoolingSystemFeatureHERS_Data" type="comp:CoolingSystemFeatureHERS_Data" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HeatingHERS" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Hers03_HeatingSystemFeatureHERS" type="comp:HeatingSystemFeatureHERS">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers03a_HeatingSystemFeatureHERS_String" type="comp:HeatingSystemFeatureHERS_String">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers03b_HeatingSystemFeatureHERS_Data" type="comp:HeatingSystemFeatureHERS_Data" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HvacHERS" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Hers04_HvacDistributionFeatureHERS" type="comp:HvacDistributionFeatureHERS">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers04a_HvacDistributionFeatureHERS_String" type="comp:HvacDistributionFeatureHERS_String">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers04b_HvacDistributionFeatureHERS_Data" type="comp:HvacDistributionFeatureHERS_Data" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="DHW_HERS" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Hers05_DomesticHotWaterFeatureHERS" type="comp:DomesticHotWaterFeatureHERS">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers05a_DomesticHotWaterFeatureHERS_String" type="comp:DomesticHotWaterFeatureHERS_String">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Hers05b_DomesticHotWaterFeatureHERS_Data" type="comp:DomesticHotWaterFeatureHERS_Data" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText"/>
+                              </xsd:annotation>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
          <xsd:element name="Section_Accept" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
@@ -4608,6 +4769,44 @@ sum (p:Proj:Bldg:ThrmlZn:HasNoClg) GT 0</dtyp:termConditions>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="Section_HersExc" minOccurs="0">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">
+                  <d:b>E3. HERS RATER VERIFICATION OF EXISTING CONDITIONS</d:b>
+               </xsd:documentation>
+               <xsd:appinfo source="CBECCnrXML">
+                  <dtyp:CBECCnrXMLterm>This section is required if any condition is true</dtyp:CBECCnrXMLterm>
+                  <dtyp:termConditions>p:ExcptCondHERSDuctReqTested == Yes
+p:ExcptCondHERSDrainWtrHtRcvrySys == Yes
+p:ExcptCondHERSResDHWSysPipeIns == Yes
+p:ExcptCondHERSResDHWSysParallelPiping == Yes
+p:ExcptCondHERSResDHWSysRecircDemCtrlPushButton == Yes
+p:ExcptCondHERSResDHWSysRecircDemCtrlOccSensor == Yes
+p:ExcptCondHERSResDHWSysCompactDistSys == Yes
+p:ExcptCondHERSVent == Yes
+p:ExcptCondHERSKitHood == Yes
+p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
+               </xsd:appinfo>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="HersExc_BeginNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">
+                           <d:i>The following is a summary of the features that must be field-verified by a certified HERS Rater as a condition for meeting the modeled energy performance for this computer analysis. Additional detail is provided in the building tables below.</d:i>
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="HersExc_01_HERS_VerificationMeasure" type="comp:HERS_VerificationMeasure" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                  </xsd:element>
+               </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
          <xsd:element name="Section_Remarks" minOccurs="0">
@@ -5382,7 +5581,7 @@ p:ConsAssm:HasCRRCProdID == 1</dtyp:termConditions>
          <xsd:element name="Section_AirBar" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">G4. NONRESIDENTIAL AIR BARRIER</xsd:documentation>
-               <xsd:documentation source="CalculationsAndRules">If Info10_TopLevelOccupancy only contains HighRiseResidential this section is not requird</xsd:documentation>
+               <xsd:documentation source="CalculationsAndRules">If Info10_TopLevelOccupancy only contains LowRiseResidential this section is not requird</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -6882,7 +7081,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                            <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="HvacDry01_HvacSystemName" type="hvac:HvacSystemName">
+                                    <xsd:element name="HvacDry01_HvacSystemName" type="comp:HvacSystemName">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Equipment Name</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">This is a string that identifies either an  Air System, Zone System or VRF System</xsd:documentation>
@@ -7708,7 +7907,7 @@ result = NotApplicable</xsd:documentation>
                            <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="Fan01_HvacSystemName" type="hvac:HvacSystemName">
+                                    <xsd:element name="Fan01_HvacSystemName" type="comp:HvacSystemName">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Name or Item Tag</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">This is a string that identifies either an  Air System, Zone System or Terminal Unit in a VRF System</xsd:documentation>
@@ -8186,7 +8385,7 @@ result = NotApplicable</xsd:documentation>
                            <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="FanExh01_HvacSystemName" type="hvac:HvacSystemName">
+                                    <xsd:element name="FanExh01_HvacSystemName" type="comp:HvacSystemName">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">System ID</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -8821,7 +9020,7 @@ Else If result == NotContinuous display No</xsd:documentation>
                            <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="HvacSpec01_HvacSystemName" type="hvac:HvacSystemName">
+                                    <xsd:element name="HvacSpec01_HvacSystemName" type="comp:HvacSystemName">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">System Name</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -8929,7 +9128,7 @@ Else If result == NotContinuous display No</xsd:documentation>
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
-                           <d:i> Notes: This table includes controls related to the performance path only.  For projects using the prescriptive path, mandatory and prescriptive controls requirements are documented on the NRCC-MCH-E. </d:i>
+                           <d:i> Notes: This table includes controls related to the performance path only.  For projects using the prescriptive path, mandatory and prescriptive controls requirements are documented on the LMCC-MCH-E. </d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -9510,14 +9709,6 @@ result = ZnSys:Fan:PwrUnitRpt</dtyp:termConditions>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Evap05_PumpPower" type="hvac:PumpPower">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Pump Power (Watts)</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>AirSys:AirSeg:EvapClr:PumpPwr</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
                                        <xsd:element name="Evap05_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Pump Power (Watts)</xsd:documentation>
@@ -9630,7 +9821,7 @@ result = ZnSys:Fan:PwrUnitRpt</dtyp:termConditions>
                            <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="HtRecovery01_HvacSystemName" type="hvac:HvacSystemName">
+                                    <xsd:element name="HtRecovery01_HvacSystemName" type="comp:HvacSystemName">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Equipment Name</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -11378,7 +11569,7 @@ WaterDWHR02_WaterHeatingSystemName + " - " + WaterDWHR02a_DWHR_Name</xsd:documen
                   <xsd:element name="LtgInfoFootNote2" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">
-                           <d:i><d:sup>2</d:sup>See NRCC-LTI--E for unconditioned spaces</d:i>
+                           <d:i><d:sup>2</d:sup>See LMCC-LTI--E for unconditioned spaces</d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -12670,7 +12861,7 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_Nrci" minOccurs="1">
+         <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>L. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
@@ -12679,244 +12870,73 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="Nrci00_NoRequiredCI" type="comp:NoRequiredCI" minOccurs="0">
+                  <xsd:element name="Lmci00_NoRequiredCI" type="comp:NoRequiredCI" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no NRCI's for this project</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no LMCI's for this project</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrciBeginNote1" minOccurs="0">
+                  <xsd:element name="LmciBeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
-                           <d:i> Selections made by Documentation Author indicate which Certificates of Installation must be submitted for the features to be recognized for compliance.  These documents must be retained and provided to the building inspector during construction and can be found online  </d:i>
+                           <d:i> Selections made by Documentation Author indicate which Certificates of Installation must be submitted for the features to be recognized for compliance.  These documents must be retained and provided to the building inspector during construction and can be found online </d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrciLabel01" minOccurs="0">
+                  <xsd:element name="LmciLabel01" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Building Component</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrciLabel02" minOccurs="0">
+                  <xsd:element name="LmciLabel02" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrciEnvLabel" minOccurs="0">
+                  <xsd:element name="LmciEnvLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Envelope</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci01_RequiredNRCIEnv01E IsPresent and == true 
-Display this label
-Else do not display this label
-End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Nrci01_RequireNRCIEnv01E" type="comp:RequireNRCIEnv01E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-ENV-01-E - Must be submitted for all buildings</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci01_RequiredNRCIEnv01E IsPresent and == true 
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="NrciMchLabel" minOccurs="0">
+                  <xsd:element name="LmciMchLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Mechanical</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci02_RequiredNRCIMch01E IsPresent and == true 
-Display this label
-Else do not display this label
-End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Nrci02_RequireNRCIMch01E" type="comp:RequireNRCIMch01E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-MCH-01-E - Must be submitted for all buildings</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci02_RequiredNRCIMch01E IsPresent and == true 
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="NrciPlbLabel" minOccurs="0">
+                  <xsd:element name="LmciPlbLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Plumbing</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci03_RequiredNRCIPlb01E IsPresent and == true Or
-Nrci04_RequiredNRCIPlb02E IsPresent and == true Or 
-Nrci05_RequiredNRCIPlb03E IsPresent and == true  Or 
-Nrci06_RequiredNRCIPlb21E IsPresent and == true Or 
-Nrci07_RequiredNRCIPlb22E IsPresent and == true Or
-Nrci08_RequiredNRCISth01E IsPresent and == true
-
-Display this label
-Else do not display this label
-End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Nrci03_RequireNRCIPlb01E" type="comp:RequireNRCIPlb01E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-PLB-01-E - Must be submitted for all buildings</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci03_RequiredNRCIPlb01E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci04_RequireNRCIPlb02E" type="comp:RequireNRCIPlb02E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-PLB-02-E - Must be submitted for high-rise residential and hotel/motel central hot water distribution systems to be recognized for compliance.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci04_RequiredNRCIPlb02E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci05_RequireNRCIPlb03E" type="comp:RequireNRCIPlb03E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-PLB-03-E - Must be submitted for high-rise residential and hotel/motel single dwelling unit hot water distribution systems to be recognized for compliance.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci05_RequiredNRCIPlb03E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci06_RequireNRCIPlb21E" type="comp:RequireNRCIPlb21E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-PLB-21-E - Must be HERS verified for central systems in high-rise residential, hotel/motel application</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci06_RequiredNRCIPlb21E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci07_RequireNRCIPlb22E" type="comp:RequireNRCIPlb22E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-PLB-22-E - Must be HERS verified for single dwelling unit  systems in high-rise residential, hotel/motel application</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci07_RequiredNRCIPlb22E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci08_RequireNRCISth01E" type="comp:RequireNRCISth01E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-STH-01-E - Must be submitted for solar water heating systems</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci08_RequiredNRCISth01E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="NrciLtiLabel" minOccurs="0">
+                  <xsd:element name="LmciLtiLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Indoor Lighting</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci09_RequiredNRCILti01E IsPresent and == true Or 
-Nrci10_RequiredNRCILti02E IsPresent and == true Or
-Nrci11_RequiredNRCILti04E IsPresent and == true Or
-Nrci12_RequiredNRCILti05E IsPresent and == true Or
-Nrci13_RequiredNRCILti06E IsPresent and == true Or
-Display this label
-Else do not display this label
-End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Nrci09_RequireNRCILti01E" type="comp:RequireNRCILti01E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-LTI-01-E - Must be submitted for all buildings</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci09_RequiredNRCILti01E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci10_RequireNRCILti02E" type="comp:RequireNRCILti02E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-LTI-02-E- Must be submitted for a lighting control system, or for an Energy Management Control System (EMCS), to be recognized for compliance.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci10_RequiredNRCILti02E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci11_RequireNRCILti04E" type="comp:RequireNRCILti04E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-LTI-04-E - Must be submitted for two interlocked systems serving an auditorium, a convention center, a conference room, a multipurpose room or a theater to be recognized for compliance.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci11_RequiredNRCILti04E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci12_RequireNRCILti05E" type="comp:RequireNRCILti05E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-LTI-05-E- Must be submitted for a Power Adjustment Factor (PAF) to be recognized for compliance.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci12_RequiredNRCILti05E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci13_RequireNRCILti06E" type="comp:RequireNRCILti06E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-LTI-06-E- Must be submitted for additional wattage installed in a video conferencing studio to be recognized for compliance.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci13_RequiredNRCILti06E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="NrciPrcLabel" minOccurs="0">
+                  <xsd:element name="LmciPrcLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Covered Process</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci14_RequiredNRCIPrc01E IsPresent and == true 
-Display this label
-Else do not display this label
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrci14_RequireNRCIPrc01E" type="comp:RequireNRCIPrc01E" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-PRC-01-E - Must be submitted for all Covered Processes</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci14_RequiredNRCIPrc01E IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_Nrca" minOccurs="1">
+         <xsd:element name="Section_Lmca" minOccurs="1">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
-                  <d:b>M. DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE </d:b>
+                  <d:b>L. DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
                </xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="Nrca00_NoRequiredCA" type="comp:NoRequiredCA" minOccurs="0">
+                  <xsd:element name="Lmca00_NoRequiredCA" type="comp:NoRequiredCA" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no NRCA's for this project</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrcaBeginNote1" minOccurs="0">
+                  <xsd:element name="LmcaBeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
@@ -12924,812 +12944,40 @@ End If</xsd:documentation>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrcaLabel01" minOccurs="0">
+                  <xsd:element name="LmcaLabel01" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Building Component</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrcaLabel02" minOccurs="0">
+                  <xsd:element name="LmcaLabel02" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrcaEnvLabel" minOccurs="0">
+                  <xsd:element name="LmcaEnvLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Envelope</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca01_RequiredNRCAEnv02F IsPresent and == true Or
-Nrca02_RequiredNRCAEnv03F IsPresent and == true 
-Display this label
-Else do not display this label
-End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Nrca01_RequireNRCAEnv02F" type="comp:RequireNRCAEnv02F" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-ENV-02-F - NRFC label verification for fenestration</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca01_RequiredNRCAEnv02F IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca01_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca01_RequireNRCAEnv02F == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca01_RequireNRCAEnv02F == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca01_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca02_RequireNRCAEnv03F" type="comp:RequireNRCAEnv03F" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-ENV-03-F. - Daylighting Design PAFs</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca02_RequiredNRCAEnv03F IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca02_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca02_RequireNRCAEnv03F == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca02_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca02_RequireNRCAEnv03F == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca02_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="NrcaLtiLabel" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Indoor Lighting</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca03_RequiredNRCALti02A IsPresent and == true Or
-Nrca04_RequiredNRCALti03A IsPresent and == true Or
-Nrca05_RequiredNRCALti04A IsPresent  and == true Or 
-Nrca06_RequiredNRCALti05A IsPresent and == true
-Display this label
-Else do not display this label
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca03_RequireNRCALti02A" type="comp:RequireNRCALti02A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-02-A - Occupancy Sensors and Automatic Time Switch Controls.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca03_RequiredNRCALti02A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca03_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca03_RequiredNRCALti02A  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca03_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca03_RequiredNRCALti02A == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca03_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca04_RequireNRCALti03A" type="comp:RequireNRCALti03A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-03-A - Automatic Daylight Controls.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca04_RequiredNRCALti03A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca04_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca04_RequiredNRCALti03A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca04_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca04_RequiredNRCALti03A == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca04_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca05_RequireNRCALti04A" type="comp:RequireNRCALti04A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-04-A - Demand Responsive Lighting Controls.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca05_RequiredNRCALti04A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca05_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca05_RequiredNRCALti04A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca05_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca05_RequiredNRCALti04A == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca05_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca06_RequireNRCALti05A" type="comp:RequireNRCALti05A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-05-A. - Institutional Tuning Power Adjustment factor (PAF)</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca06_RequiredNRCALti05A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca06_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca06_RequiredNRCALti05A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca06_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca06_RequiredNRCALti05A == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca06_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="NrcaPrcLabel" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Covered Process</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca07_RequiredNRCAPrc02F IsPresent and == true Or
-Nrca08_RequiredNRCAPrc03F IsPresent and == true Or
-Nrca09_RequiredNRCAPrc12F  IsPresent  and == true Or 
-Nrca10_RequiredNRCAPrc13F IsPresent and == true Or 
-Nrca11_RequiredNRCAPrc14F IsPresent and == true Or 
-Nrca12_RequiredNRCAPrc15F IsPresent and == true
-Display this label
-Else do not display this label
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca07_RequireNRCAPrc02F" type="comp:RequireNRCAPrc02F" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-PRC-02-F Kitchen Exhaust</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca07_RequiredNRCAPrc02F IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca07_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca07_RequiredNRCAPrc02F == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca07_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca07_RequiredNRCAPrc02F == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca07_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca08_RequireNRCAPrc03F" type="comp:RequireNRCAPrc03F" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-PRC-03-F Garage Exhaust</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca08_RequiredNRCAPrc03F IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca08_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca08_RequiredNRCAPrc03F == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca08_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca08_RequiredNRCAPrc03F == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca08_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca09_RequireNRCAPrc12F" type="comp:RequireNRCAPrc12F" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-PRC-12-F Elevator Lighting &amp;amp; Ventilation Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca09_RequiredNRCAPrc12F IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca09_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca09_RequiredNRCAPrc12F == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca09_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca09_RequiredNRCAPrc12F == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca09_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca10_RequireNRCAPrc13F" type="comp:RequireNRCAPrc13F" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-PRC-13-F Escalators &amp;amp; Moving Walkways Speed Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca10_RequiredNRCAPrc13F IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca10_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca10_RequiredNRCAPrc13F == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca10_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca10_RequiredNRCAPrc13F == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca10_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca11_RequireNRCAPrc14F" type="comp:RequireNRCAPrc14F" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-PRC-14-F Lab Exhaust Ventilation System</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca11_RequiredNRCAPrc14F IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca11_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca11_RequiredNRCAPrc14F == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca11_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca11_RequiredNRCAPrc14F == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca11_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca12_RequireNRCAPrc15F" type="comp:RequireNRCAPrc15F" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-PRC-15-F Fume Hood Automatic Sash Closure System</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca12_RequiredNRCAPrc15F IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca12_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca12_RequiredNRCAPrc15F  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca12_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca12_RequiredNRCAPrc15F  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca12_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="NrcaMchLabel" minOccurs="0">
+                  <xsd:element name="LmcaMchLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Mechanical</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca13_RequiredNRCAMch02A IsPresent and == true Or
-Nrca14_RequiredNRCAMch03A IsPresent and == true Or
-Nrca15_RequiredNRCAMch04H  IsPresent  and == true Or 
-Nrca16_RequiredNRCAMch04A IsPresent and == true Or 
-Nrca17_RequiredNRCAMch05A  IsPresent and == true Or 
-Nrca18_RequiredNRCAMch06A IsPresent and == true Or
-Nrca19_RequiredNRCAMch07A IsPresent and == true Or
-Nrca20_RequiredNRCAMch08A IsPresent and == true Or
-Nrca21_RequiredNRCAMch09A IsPresent and == true Or
-Nrca22_RequiredNRCAMch10A IsPresent and == true Or
-Nrca23_RequiredNRCAMch11A IsPresent and == true Or
-Nrca24_RequiredNRCAMch12A IsPresent and == true Or
-Nrca25_RequiredNRCAMch13A IsPresent and == true Or
-Nrca26_RequiredNRCAMch14A IsPresent and == true Or
-Nrca27_RequiredNRCAMch15A IsPresent and == true Or
-Nrca28_RequiredNRCAMch16A IsPresent and == true Or
-Nrca29_RequiredNRCAMch17A IsPresent and == true Or
-Nrca30_RequiredNRCAMch18A IsPresent and == true Or
-Nrca31_RequiredNRCAMch19A IsPresent and == true Or
-Nrca32_RequiredNRCAMch20H IsPresent and == true Or
-Nrca33_RequiredNRCAMch21H IsPresent and == true
-Display this label
-Else do not display this label
-End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Nrca13_RequireNRCAMch02A" type="comp:RequireNRCAMch02A" minOccurs="0">
+                  <xsd:element name="LmcaLtiLabel" minOccurs="0">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-02-A - Outdoor Air must be submitted for all newly installed HVAC units. Note: MCH-02-A can be performed in conjunction with MCH-07-A Supply Fan VFD Acceptance (if applicable) since testing activities overlap</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca13_RequiredNRCAMch02A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
+                        <xsd:documentation source="FieldText">Indoor Lighting</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Nrca13_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="LmcaPrcLabel" minOccurs="0">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca13_RequiredNRCAMch02A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca13_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca13_RequiredNRCAMch02A == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca13_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca14_RequireNRCAMch03A" type="comp:RequireNRCAMch03A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-03-A - Constant Volume Single Zone HVAC</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca14_RequiredNRCAMch03A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca14_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca14_RequiredNRCAMch03A  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca14_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca14_RequiredNRCAMch03A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca14_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca15_RequireNRCAMch04H" type="comp:RequireNRCAMch04H" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-04(a)-H - Air Distribution Duct Leakage - HERS Verification required</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca15_RequiredNRCAMch04H IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca15_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca15_RequiredNRCAMch04H  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca15_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca15_RequiredNRCAMch04H  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca15_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca16_RequireNRCAMch04A" type="comp:RequireNRCAMch04A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-04(b)-A - Air Distribution Duct Leakage - ATT only</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca16_RequiredNRCAMch04A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca16_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca16_RequiredNRCAMch04A  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca16_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca16_RequiredNRCAMch04A == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca16_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca17_RequireNRCAMch05A" type="comp:RequireNRCAMch05A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-05-A - Air Economizer Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca17_RequiredNRCAMch05A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca17_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca17_RequiredNRCAMch05A   == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca17_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca17_RequiredNRCAMch05A   == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca17_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca18_RequireNRCAMch06A" type="comp:RequireNRCAMch06A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-06-A  Demand Control Ventilation Systems must be submitted for all systems required to employ demand controlled ventilation (refer to 
-                           <d:t24ref h="120.1(c)3"/>) can vary outside ventilation flow rates based on maintaining interior carbon dioxide (CO2) concentration setpoints.</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca18_RequiredNRCAMch06A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca18_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca18_RequiredNRCAMch06A  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca18_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca18_RequiredNRCAMch06A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca18_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca19_RequireNRCAMch07A" type="comp:RequireNRCAMch07A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-07-A Supply Fan Variable Flow Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca19_RequiredNRCAMch07A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca19_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca19_RequiredNRCAMch07A  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca19_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca19_RequiredNRCAMch07A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca19_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca20_RequireNRCAMch08A" type="comp:RequireNRCAMch08A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-08-A Valve Leakage Test</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca20_RequiredNRCAMch08A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca20_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca20_RequiredNRCAMch08A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca20_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca20_RequiredNRCAMch08A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca20_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca21_RequireNRCAMch09A" type="comp:RequireNRCAMch09A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-09-A Supply Water Temperature Reset Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca21_RequiredNRCAMch09A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca21_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca21_RequiredNRCAMch09A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca21_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca21_RequiredNRCAMch09A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca21_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca22_RequireNRCAMch10A" type="comp:RequireNRCAMch10A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-10-A Hydronic System Variable Flow Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca22_RequiredNRCAMch10A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca22_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca22_RequiredNRCAMch10A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca22_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca22_RequiredNRCAMch10A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca22_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca23_RequireNRCAMch11A" type="comp:RequireNRCAMch11A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-11-A Automatic Demand Shed Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca23_RequiredNRCAMch11A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca23_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca23_RequiredNRCAMch11A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca23_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca23_RequiredNRCAMch11A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca23_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca24_RequireNRCAMch12A" type="comp:RequireNRCAMch12A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-12-A FDD for Packaged Direct Expansion Units</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca24_RequiredNRCAMch12A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca24_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca24_RequiredNRCAMch12A== true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca24_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca24_RequiredNRCAMch12A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca24_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca25_RequireNRCAMch13A" type="comp:RequireNRCAMch13A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-13-A Automatic FDD for Air Handling Units and Zone Terminal Units Acceptance</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca25_RequiredNRCAMch13A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca25_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca25_RequiredNRCAMch13A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca25_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca25_RequiredNRCAMch13A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca25_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca26_RequireNRCAMch14A" type="comp:RequireNRCAMch14A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-14-A Distributed Energy Storage DX AC Systems  Acceptance</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca26_RequiredNRCAMch14A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca26_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If  Nrca26_RequiredNRCAMch14A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca26_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If  Nrca26_RequiredNRCAMch14A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca26_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca27_RequireNRCAMch15A" type="comp:RequireNRCAMch15A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-15-A Thermal Energy Storage (TES) System  Acceptance</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca27_RequiredNRCAMch15A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca27_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca27_RequiredNRCAMch15A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca27_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca27_RequiredNRCAMch15A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca27_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca28_RequireNRCAMch16A" type="comp:RequireNRCAMch16A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-16-A Supply Air Temperature Reset Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca28_RequiredNRCAMch16A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca28_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca28_RequiredNRCAMch16A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca28_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca28_RequiredNRCAMch16A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca28_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca29_RequireNRCAMch17A" type="comp:RequireNRCAMch17A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-17-A Condenser Water Temperature Reset Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca29_RequiredNRCAMch17A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca29_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca29_RequiredNRCAMch17A== true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca29_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca29_RequiredNRCAMch17A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca29_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca30_RequireNRCAMch18A" type="comp:RequireNRCAMch18A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-18-A Energy Management Control Systems</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca30_RequiredNRCAMch18A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca30_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca30_RequiredNRCAMch18A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca30_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca30_RequiredNRCAMch18A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca30_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca31_RequireNRCAMch19A" type="comp:RequireNRCAMch19A" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-19-A Occupancy Sensor Controls</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca31_RequiredNRCAMch19A IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca31_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca31_RequiredNRCAMch19A == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca31_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca31_RequiredNRCAMch19A  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca31_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca32_RequireNRCAMch20H" type="comp:RequireNRCAMch20H" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-20-H Multifamily Ventilation</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca32_RequiredNRCAMch20H IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca32_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca32_RequiredNRCAMch20H  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca32_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca32_RequiredNRCAMch20H   == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca32_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca33_RequireNRCAMch21H" type="comp:RequireNRCAMch21H" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-21-H Multifamily Envelope</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca33_RequiredNRCAMch21H IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca33_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca33_RequiredNRCAMch21H == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrca33_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrca33_RequiredNRCAMch21H  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca33_SystemFieldVerified</xsd:documentation>
+                        <xsd:documentation source="FieldText">Covered Process</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_Nrcv" minOccurs="1">
+         <xsd:element name="Section_Lmcv" minOccurs="1">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>N. DECLARATION OF REQUIRED CERTIFICATES OF VERIFICATION </d:b>
@@ -13738,13 +12986,13 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="Nrcv00_NoRequiredCV" type="comp:NoRequiredCV" minOccurs="0">
+                  <xsd:element name="Lmcv00_NoRequiredCV" type="comp:NoRequiredCV" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no NRCV's for this project</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no LMCV's for this project</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrcvBeginNote1" minOccurs="0">
+                  <xsd:element name="LmcvBeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
@@ -13752,168 +13000,24 @@ End If</xsd:documentation>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrcvLabel01" minOccurs="0">
+                  <xsd:element name="LmcvLabel01" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Building Component</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrcvLabel02" minOccurs="0">
+                  <xsd:element name="LmcvLabel02" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="NrcvMchLabel" minOccurs="0">
+                  <xsd:element name="LmcvMchLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Mechanical</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv01_RequiredNRCVMch04H IsPresent and == true Or
-Nrcv02_RequiredNRCVMch24H IsPresent and == true Or
-Nrcv03_RequiredNRCVMch27H IsPresent  and == true Or 
-Nrcv04_RequiredNRCVMch32H IsPresent and == true
-Display this label
-Else do not display this label
-End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Nrcv01_RequireNRCVMch04H" type="comp:RequireNRCVMch04H" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCV-MCH-04-H Duct Leakaage Test</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv01_RequiredNRCVMch04H IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv01_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv01_RequireNRCVMch04H == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv01_RequireNRCVMch04H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv01_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv02_RequireNRCVMch24H" type="comp:RequireNRCVMch24H" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCV-MCH-24 Enclosure Air Leakaage</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv02_RequiredNRCVMch24H IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv02_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv02_RequiredNRCVMch24H  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv02_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv02_RequiredNRCVMch24H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv02_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv03_RequireNRCVMch27H" type="comp:RequireNRCVMch27H" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCV-MCH-27 Indoor Air Quality &amp;amp; Mechanical Ventilation</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv03_RequiredNRCVMch27H IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv03_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv03_RequiredNRCVMch27H == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv03_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv03_RequiredNRCVMch27H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv03_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv04_RequireNRCVMch32H" type="comp:RequireNRCVMch32H" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCV-MCH-32 Local Mechanical Exhaust</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv04_RequiredNRCVMch32H IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv04_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv04_RequiredNRCVMch32H == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv04_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv04_RequiredNRCVMch32H== true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv04_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="NrcvPlbLabel" minOccurs="0">
+                  <xsd:element name="LmcvPlbLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Plumbing</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv05_RequiredNRCVPlb21H IsPresent and == true Or
-Nrcv06_RequiredNRCVPlb22H IsPresent and == true 
-Display this label
-Else do not display this label
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv05_RequireNRCVPlb21H" type="comp:RequireNRCVPlb21H" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCV-PLB-21-H HERS verified central systems in high-rise residential, hotel/motel application</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv05_RequiredNRCVPlb21H IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv05_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv05_RequiredNRCVPlb21H== true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv05_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv05_RequiredNRCVPlb21H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv05_SystemFieldVerified</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv06_RequireNRCVPlb22H" type="comp:RequireNRCVPlb22H" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="AdditionalRequirements">NRCV-PLB-21-H HERS verified single dweliing unit systems in high-rise residential, hotel/motel application</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv06_RequiredNRCVPlb22H IsPresent and == true
-Display the AdditionalRequirements text for this element
-Else there is no display for this element
-End If</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv06_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv06_RequiredNRCVPlb22H == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Nrcv06_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrcv06_RequiredNRCVPlb22H== true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv06_SystemFieldVerified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
@@ -13921,9 +13025,9 @@ End If</xsd:documentation>
          </xsd:element>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:element name="nRCCPRF" type="NRCCPRF">
+   <xsd:element name="lMCCPRF01E" type="LMCCPRF01E">
       <xsd:annotation>
-         <xsd:documentation>This element contains all of the data and text required to generate the NRCCPRF compliance report.</xsd:documentation>
+         <xsd:documentation>This element contains all of the data and text required to generate the LMCCPRF01E compliance report.</xsd:documentation>
       </xsd:annotation>
    </xsd:element>
 </xsd:schema>
