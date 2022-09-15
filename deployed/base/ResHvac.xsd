@@ -2009,7 +2009,6 @@
                <d:lt/> 25k ft<d:sup>2</d:sup>
             </dtyp:displayterm>
             <dtyp:displayterm value="OccupancySensor">Occ. Sensor</dtyp:displayterm>
-            <dtyp:displayterm value="OtherControl">Other*</dtyp:displayterm>
             <dtyp:displayterm value="SingleZoneNA">NA: Single Zone</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -2022,7 +2021,6 @@
          <xsd:enumeration value="EMCS"/>
          <xsd:enumeration value="LT25000ft2NA"/>
          <xsd:enumeration value="OccupancySensor"/>
-         <xsd:enumeration value="OtherControl"/>
          <xsd:enumeration value="SingleZoneNA"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -9630,6 +9628,12 @@
          <xsd:enumeration value="GTE7_5LT10hp"/>
          <xsd:enumeration value="GTE75LT100hp"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RatedCapacityKBtuh">
+      <xsd:annotation>
+         <xsd:documentation>Units: kBtu per h</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="RatedFlowCapacity">
       <xsd:annotation>

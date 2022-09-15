@@ -752,20 +752,13 @@
    <xsd:simpleType name="AsBuiltSetDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date of the as-built set in format yyyy-mm-dd</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:date"/>
    </xsd:simpleType>
    <xsd:simpleType name="AsBuiltSetName">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">Name of the as-built set</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="AuthorityHavingJurisdiction">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This is a string identifying the enforcement agency for the project.</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
    <xsd:simpleType name="AutoManualControlsReq">
@@ -1120,7 +1113,6 @@
    <xsd:simpleType name="BuildingTurnoverBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Building Turnover Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -1130,7 +1122,6 @@
    <xsd:simpleType name="BuildingTurnoverEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Building Turnover End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -1577,7 +1568,6 @@
    <xsd:simpleType name="ComplianceApplicationDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Format is yyyy-mm-dd</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:dateTime"/>
    </xsd:simpleType>
@@ -1640,7 +1630,6 @@
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceDocumentTagNR">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">This value represents the compliance document alphanumeric symbol.  There are no  spaces or dashes and all letters are capitalized except the ending letter that defines a specific variation of a complliance document.  For example NRCAMCH02A</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="NRCAENV02F">NRCA-ENV-02-F</dtyp:displayterm>
             <dtyp:displayterm value="NRCAENV03F">NRCA-ENV-03-F</dtyp:displayterm>
@@ -1876,7 +1865,6 @@
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceDocumentVariantSubtitleNR">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">This value is text for the variation subtitle of a compliance document.  This field is marked optional because not all compliance documents have different variations.</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="MCH04a Completely New Duct System">MCH04a Completely New Duct System</dtyp:displayterm>
             <dtyp:displayterm value="MCH04c Low Leakage Air-Handling Unit">MCH04c Low Leakage Air-Handling Unit</dtyp:displayterm>
@@ -2665,7 +2653,6 @@
    <xsd:simpleType name="ConstructionBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Construction Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -2675,7 +2662,6 @@
    <xsd:simpleType name="ConstructionDocumentsBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Construction Documents Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -2685,7 +2671,6 @@
    <xsd:simpleType name="ConstructionDocumentsEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Construction Documents End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -2695,7 +2680,6 @@
    <xsd:simpleType name="ConstructionEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Construction End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -3033,9 +3017,6 @@
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DataRegistryProvider">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This value is a string representing the data registry provider that generated the compliance document</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
    <xsd:simpleType name="DatePreparedString">
@@ -3202,7 +3183,6 @@
    <xsd:simpleType name="DesignDevelopmentBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Design Development Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -3212,7 +3192,6 @@
    <xsd:simpleType name="DesignDevelopmentEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Design Development End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -3312,9 +3291,6 @@
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DigitalSignatureLabel">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This is a string with text indicating that the compliance document has been digitally signed by the data registry provider</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="DisplayTagNR">
@@ -5477,9 +5453,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="EnforcementAgency">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This is a string identifying the enforcement agency for the project.</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
    <xsd:simpleType name="EnvelopeDesignMeetsGoals">
@@ -8966,7 +8939,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="MeetingDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date of a project meeting in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Meeting Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -9358,6 +9330,9 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="NotApplicableExplanation">
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="NotApplicableMessage">
       <xsd:annotation>
@@ -9960,14 +9935,10 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="PermitSetDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date of the permit set in format yyyy-mm-dd</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:date"/>
    </xsd:simpleType>
    <xsd:simpleType name="PermitSetName">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">Name of the permit set</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="PermitYear">
@@ -11258,7 +11229,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="ProjectZipcode">
       <xsd:annotation>
          <xsd:documentation>This value represents the zipcode and must have 5 numbers which optionally can be followed by a dash and 4 numbers.  For example  94117 or 94117-1528 are both valid</xsd:documentation>
-         <xsd:documentation source="propertyrules">This value represents the zipcode and must have 5 numbers which optionally can be followed by a dash and 4 numbers.  For example  94117 or 94117-1528 are both valid</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Zipcode"/>
    </xsd:simpleType>
@@ -11462,7 +11432,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    <xsd:simpleType name="ReportGeneratedDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date report was generated in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Generated on:</dtyp:displayterm>
          </xsd:appinfo>
@@ -11543,7 +11512,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCISab01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11553,7 +11521,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCISth01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11599,7 +11566,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAEnv02F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11609,7 +11575,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAEnv03A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11619,7 +11584,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAEnv03F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11638,7 +11602,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCALti02A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11648,7 +11611,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCALti03A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11658,7 +11620,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCALti04A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11668,7 +11629,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCALti05A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11678,7 +11638,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCALto02A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11688,7 +11647,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch02A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11698,7 +11656,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch03A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11708,7 +11665,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch04A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11718,7 +11674,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch04H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11728,7 +11683,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch05A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11738,7 +11692,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch06A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11748,7 +11701,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch07A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11758,7 +11710,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch08A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11768,7 +11719,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch09A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11778,7 +11728,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch10A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11788,7 +11737,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch11A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11798,7 +11746,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch12A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11808,7 +11755,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch13A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11818,7 +11764,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch14A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11828,7 +11773,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch15A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11838,7 +11782,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch16A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11848,7 +11791,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch17A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11858,7 +11800,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch18A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11868,7 +11809,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch19A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11878,7 +11818,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch20">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11888,7 +11827,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch20H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11898,7 +11836,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch21">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11908,7 +11845,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch21H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11918,7 +11854,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch22A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11928,7 +11863,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAMch23A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11938,7 +11872,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11948,7 +11881,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc01F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11958,7 +11890,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc02F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11968,7 +11899,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc03F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11978,7 +11908,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc04F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11988,7 +11917,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc05F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -11998,7 +11926,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc06F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12008,7 +11935,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc07F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12018,7 +11944,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc08F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12028,7 +11953,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc09F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12038,7 +11962,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc12F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12048,7 +11971,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc13F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12058,7 +11980,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc14F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12068,7 +11989,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc15F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12078,7 +11998,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc16A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12088,7 +12007,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc16F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12098,7 +12016,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAPrc17F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12108,7 +12025,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIElc01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12118,7 +12034,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIEnv01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12128,7 +12043,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILti01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12138,7 +12052,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILti02E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12148,7 +12061,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILti03E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12158,7 +12070,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILti04E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12168,7 +12079,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILti05E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12178,7 +12088,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILti06E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12188,7 +12097,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILto01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12198,7 +12106,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILto02E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12208,7 +12115,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILts01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12218,7 +12124,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIMch01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12264,7 +12169,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIPlb01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12274,7 +12178,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIPlb02E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12284,7 +12187,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIPlb03E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12294,7 +12196,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIPlb21E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12304,7 +12205,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIPlb22E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12314,7 +12214,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIPrc01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12324,7 +12223,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCISab01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12334,7 +12232,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCISpv01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12344,7 +12241,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCISth01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12354,7 +12250,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCVMch04H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12364,7 +12259,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCVMch24H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12374,7 +12268,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCVMch27H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12384,7 +12277,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCVMch32H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12394,7 +12286,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCVPlb21H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12404,7 +12295,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCVPlb22H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12802,9 +12692,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="SampleGroupNumber">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This value is a string uniquely identifying a sample group being tested by the HERS Rater</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="SampleGroupTestStatus">
@@ -12816,7 +12703,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    <xsd:simpleType name="SchematicDesignBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Schematic Design Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -12826,7 +12712,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    <xsd:simpleType name="SchematicDesignEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Schematic Design End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -15366,7 +15251,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    <xsd:simpleType name="Zipcode">
       <xsd:annotation>
          <xsd:documentation>This value represents the zipcode and must have 5 numbers which optionally can be followed by a dash and 4 numbers.  For example  94117 or 94117-1528 are both valid</xsd:documentation>
-         <xsd:documentation source="propertyrules">This value represents the zipcode and must have 5 numbers which optionally can be followed by a dash and 4 numbers.  For example  94117 or 94117-1528 are both valid</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Zipcode"/>
    </xsd:simpleType>
@@ -15429,9 +15313,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="_DocumentationOnly">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This a property that indicates a text only entry in the XML schema generated for a compliance document</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
 </xsd:schema>

@@ -1754,7 +1754,6 @@
                <d:lt/> 25k ft<d:sup>2</d:sup>
             </dtyp:displayterm>
             <dtyp:displayterm value="OccupancySensor">Occ. Sensor</dtyp:displayterm>
-            <dtyp:displayterm value="OtherControl">Other*</dtyp:displayterm>
             <dtyp:displayterm value="SingleZoneNA">NA: Single Zone</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -1767,7 +1766,6 @@
          <xsd:enumeration value="EMCS"/>
          <xsd:enumeration value="LT25000ft2NA"/>
          <xsd:enumeration value="OccupancySensor"/>
-         <xsd:enumeration value="OtherControl"/>
          <xsd:enumeration value="SingleZoneNA"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -3968,6 +3966,9 @@
          <xsd:enumeration value="USCraftmaster"/>
          <xsd:enumeration value="Whirlpool"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="HeatPumpWaterHeaterBrandModel">
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="HeatPumpWaterHeaterModel">
       <xsd:annotation>

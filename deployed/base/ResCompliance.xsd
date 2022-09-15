@@ -1449,7 +1449,6 @@
    <xsd:simpleType name="BuildingTurnoverBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Building Turnover Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -1459,7 +1458,6 @@
    <xsd:simpleType name="BuildingTurnoverEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Building Turnover End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -2225,7 +2223,6 @@
    <xsd:simpleType name="ComplianceApplicationDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Format is yyyy-mm-dd</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:dateTime"/>
    </xsd:simpleType>
@@ -2361,8 +2358,8 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-LTI-01-E">LMCC-LTI-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-LTO-01-E">LMCC-LTO-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-LTS-01-E">LMCC-LTS-01-E</dtyp:displayterm>
-            <dtyp:displayterm value="LMCC-MCH-01E">LMCC-MCH-01E</dtyp:displayterm>
-            <dtyp:displayterm value="LMCC-PLB-01E">LMCC-PLB-01E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCC-MCH-01-E">LMCC-MCH-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCC-PLB-01-E">LMCC-PLB-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-PRC-01-E">LMCC-PRC-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-PRF-01-E">LMCC-PRF-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-SAB-01-E">LMCC-SAB-01-E</dtyp:displayterm>
@@ -2383,6 +2380,7 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-22-H">LMCI-MCH-22-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-23-H">LMCI-MCH-23-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-24-H">LMCI-MCH-24-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-25-E">LMCI-MCH-25-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-25-H">LMCI-MCH-25-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-26-H">LMCI-MCH-26-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-27-H">LMCI-MCH-27-H</dtyp:displayterm>
@@ -2522,8 +2520,8 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCC-LTI-01-E"/>
          <xsd:enumeration value="LMCC-LTO-01-E"/>
          <xsd:enumeration value="LMCC-LTS-01-E"/>
-         <xsd:enumeration value="LMCC-MCH-01E"/>
-         <xsd:enumeration value="LMCC-PLB-01E"/>
+         <xsd:enumeration value="LMCC-MCH-01-E"/>
+         <xsd:enumeration value="LMCC-PLB-01-E"/>
          <xsd:enumeration value="LMCC-PRC-01-E"/>
          <xsd:enumeration value="LMCC-PRF-01-E"/>
          <xsd:enumeration value="LMCC-SAB-01-E"/>
@@ -2544,6 +2542,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCI-MCH-22-H"/>
          <xsd:enumeration value="LMCI-MCH-23-H"/>
          <xsd:enumeration value="LMCI-MCH-24-H"/>
+         <xsd:enumeration value="LMCI-MCH-25-E"/>
          <xsd:enumeration value="LMCI-MCH-25-H"/>
          <xsd:enumeration value="LMCI-MCH-26-H"/>
          <xsd:enumeration value="LMCI-MCH-27-H"/>
@@ -2687,7 +2686,6 @@ Document Data</dtyp:displayterm>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceDocumentTag">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">This value represents the compliance document alphanumeric symbol. There are no spaces or dashes and all letters are capitalized except the ending letter that defines a specific variation of a compliance document. For example CF2RMCH20a</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="CF1RADD01E">CF1RADD01E</dtyp:displayterm>
             <dtyp:displayterm value="CF1RALT01E">CF1RALT01E</dtyp:displayterm>
@@ -2894,7 +2892,7 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH25bH">LMCIMCH25bH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH25cH">LMCIMCH25cH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH25eH">LMCIMCH25eH</dtyp:displayterm>
-            <dtyp:displayterm value="LMCIMCH25fH">LMCIMCH25fH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH25fE">LMCIMCH25fE</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH25H">LMCIMCH25H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH26H">LMCIMCH26H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH27bH">LMCIMCH27bH</dtyp:displayterm>
@@ -3166,7 +3164,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCIMCH25bH"/>
          <xsd:enumeration value="LMCIMCH25cH"/>
          <xsd:enumeration value="LMCIMCH25eH"/>
-         <xsd:enumeration value="LMCIMCH25fH"/>
+         <xsd:enumeration value="LMCIMCH25fE"/>
          <xsd:enumeration value="LMCIMCH25H"/>
          <xsd:enumeration value="LMCIMCH26H"/>
          <xsd:enumeration value="LMCIMCH27bH"/>
@@ -3445,7 +3443,6 @@ Document Data</dtyp:displayterm>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceDocumentVariantSubtitle">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">This value is text for the variation subtitle of a compliance document.  This field is marked optional because not all compliance documents have different variations.  For example MCH20a Completely New Duct system</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="ENV20a Single Point Air Tightness Test With Manual Meter">ENV20a Single Point Air Tightness Test With Manual Meter</dtyp:displayterm>
             <dtyp:displayterm value="ENV20b Single Point Air Tightness Test With Automatic Meter">ENV20b Single Point Air Tightness Test With Automatic Meter</dtyp:displayterm>
@@ -3575,56 +3572,48 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="ComplianceMarginIAQ_VentilationEast">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginIAQ_VentilationNorth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginIAQ_VentilationSouth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginIAQ_VentilationWest">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginPV_CreditEast">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginPV_CreditNorth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginPV_CreditSouth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginPV_CreditWest">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
@@ -3637,56 +3626,48 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="ComplianceMarginSpaceCoolingEast">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginSpaceCoolingNorth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginSpaceCoolingSouth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginSpaceCoolingWest">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginSpaceHeatingEast">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginSpaceHeatingNorth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginSpaceHeatingSouth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginSpaceHeatingWest">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
@@ -3699,56 +3680,48 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="ComplianceMarginTotalEast">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the total compliance margin for all end uses in this orientation.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginTotalNorth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the total compliance margin for all end uses in this orientation.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginTotalSouth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the total compliance margin for all end uses in this orientation.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginTotalWest">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the total compliance margin for all end uses in this orientation.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginWaterHeatingEast">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginWaterHeatingNorth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginWaterHeatingSouth">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceMarginWaterHeatingWest">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
-         <xsd:documentation source="propertyrules">This is the difference between the total energy uses of the  Standard Design and the Proposed Design.  If it is a negative number, the Proposed Design does not pass.</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
@@ -4276,7 +4249,6 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="ConstructionBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Construction Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -4286,7 +4258,6 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="ConstructionDocumentsBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Construction Documents Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -4296,7 +4267,6 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="ConstructionDocumentsEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Construction Documents End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -4306,7 +4276,6 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="ConstructionEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Construction End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -4719,9 +4688,6 @@ Document Data</dtyp:displayterm>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="DataRegistryProvider">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This value is a string representing the data registry provider that generated the compliance document</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
    <xsd:simpleType name="DaylightRequirementsMetForPAF">
@@ -4859,7 +4825,6 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="DesignDevelopmentBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Design Development Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -4869,7 +4834,6 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="DesignDevelopmentEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Design Development End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -4965,9 +4929,6 @@ Document Data</dtyp:displayterm>
       <xsd:restriction base="xsd:dateTime"/>
    </xsd:simpleType>
    <xsd:simpleType name="DigitalSignatureLabel">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This is a string with text indicating that the compliance document has been digitally signed by the data registry provider</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="DigitalThermocoupleCalibrationDate">
@@ -7422,9 +7383,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="EnforcementAgency">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This is a string identifying the enforcement agency for the project.</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
    <xsd:simpleType name="EnvelopeDesignMeetsGoals">
@@ -8667,7 +8625,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="Header07_PermitDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">This value is am xsd:date data type with the format yyyy-mm-dd  For example 2013-12-17</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:date"/>
    </xsd:simpleType>
@@ -11766,7 +11723,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="MeetingDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date of a project meeting in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Meeting Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -12264,6 +12220,9 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:documentation>This is a unitless value that represents the measure of tightness relative to the size of the building.  Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="NotApplicableExplanation">
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="NotApplicableLRMF">
       <xsd:annotation>
@@ -13090,7 +13049,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="PermitDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date of the permit set in format yyyy-mm-dd</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:date"/>
    </xsd:simpleType>
@@ -13881,7 +13839,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="ProjectZipcode">
       <xsd:annotation>
          <xsd:documentation>This value represents the zipcode and must have 5 numbers which optionally can be followed by a dash and 4 numbers.  For example  94117 or 94117-1528 are both valid</xsd:documentation>
-         <xsd:documentation source="propertyrules">This value represents the zipcode and must have 5 numbers which optionally can be followed by a dash and 4 numbers.  For example  94117 or 94117-1528 are both valid</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Zipcode"/>
    </xsd:simpleType>
@@ -14347,7 +14304,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCALto02A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14357,7 +14313,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCIElc01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14421,7 +14376,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCILto01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14431,7 +14385,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCILts01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14558,7 +14511,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCIPlb01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14568,7 +14520,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCIPrc01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14578,7 +14529,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCISab01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14588,7 +14538,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCISth01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14634,7 +14583,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCVMch04H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14644,7 +14592,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCVMch24H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14654,7 +14601,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCVMch27H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14664,7 +14610,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCVMch32H">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14674,7 +14619,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCAEnv03F">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14684,7 +14628,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCALti02A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14694,7 +14637,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCALti03A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14704,7 +14646,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCALti04A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14714,7 +14655,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCALti05A">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14724,7 +14664,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILti01E">
       <xsd:annotation>
-         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -15304,9 +15243,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="SampleGroupNumber">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This value is a string uniquely identifying a sample group being tested by the HERS Rater</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="SampleGroupTestStatus">
@@ -15327,7 +15263,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    <xsd:simpleType name="SchematicDesignBeginDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage begins in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Schematic Design Begin Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -15337,7 +15272,6 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    <xsd:simpleType name="SchematicDesignEndDate">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Date a construction stage ends in format yyyy-mm-dd</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Schematic Design End Date</dtyp:displayterm>
          </xsd:appinfo>
@@ -18471,7 +18405,6 @@ Time Dependent Valuation (TDV) Gas Propane energy is calculated by multiplying t
    <xsd:simpleType name="Zipcode">
       <xsd:annotation>
          <xsd:documentation>This value represents the zipcode and must have 5 numbers which optionally can be followed by a dash and 4 numbers.  For example  94117 or 94117-1528 are both valid</xsd:documentation>
-         <xsd:documentation source="propertyrules">This value represents the zipcode and must have 5 numbers which optionally can be followed by a dash and 4 numbers.  For example  94117 or 94117-1528 are both valid</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Zipcode"/>
    </xsd:simpleType>
@@ -18534,9 +18467,6 @@ Time Dependent Valuation (TDV) Gas Propane energy is calculated by multiplying t
       <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="_DocumentationOnly">
-      <xsd:annotation>
-         <xsd:documentation source="propertyrules">This a property that indicates a text only entry in the XML schema generated for a compliance document</xsd:documentation>
-      </xsd:annotation>
       <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
 </xsd:schema>
