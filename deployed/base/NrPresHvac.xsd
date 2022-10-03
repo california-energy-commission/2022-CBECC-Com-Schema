@@ -225,6 +225,15 @@
          <xsd:enumeration value="ThinFilm"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ArrayName">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ArrayPowerOutput">
+      <xsd:annotation>
+         <xsd:documentation>Units: kW</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ArrayType">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -295,6 +304,22 @@
          <xsd:enumeration value="RankedDayDR"/>
          <xsd:enumeration value="TOU"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="BatteryManufacturer">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Battery  Manufacturer</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="BatteryModelNumber">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Battery  Model #</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="BatteryPower">
       <xsd:annotation>
@@ -959,111 +984,223 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AOSmithAHPA125">AHPA-125-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA125C">AHPA-125-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA125CMP">AHPA-125-*******-***C**** (MP, 26kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA125MP">AHPA-125-*******-***N**** (MP, 26kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA185">AHPA-185-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA185C">AHPA-185-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA185CMP">AHPA-185-*******-***C**** (MP, 41kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA185MP">AHPA-185-*******-***N**** (MP, 41kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA25">AHPA-25-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA250">AHPA-250-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA250C">AHPA-250-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA250CMP">AHPA-250-*******-***C**** (MP, 46kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA250MP">AHPA-250-*******-***N**** (MP, 46kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA60">AHPA-60-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA60C">AHPA-60-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA60CMP">AHPA-60-*******-***C**** (MP, 11kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA60MP">AHPA-60-*******-***N**** (MP, 11kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA90">AHPA-90-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithAHPA90C">AHPA-90-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA90CMP">AHPA-90-*******-***C**** (MP, 20kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="AOSmithAHPA90MP">AHPA-90-*******-***N**** (MP, 20kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxA10">Cx A10</dtyp:displayterm>
+            <dtyp:displayterm value="ColmacCxA10MP">Colmac CxA-10 (MP, 21kW cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxA15">Cx A15</dtyp:displayterm>
+            <dtyp:displayterm value="ColmacCxA15MP">Colmac CxA-15 (MP, 29kW cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxA20">Cx A20</dtyp:displayterm>
+            <dtyp:displayterm value="ColmacCxA20MP">Colmac CxA-20 (MP, 41kW cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxA25">Cx A25</dtyp:displayterm>
+            <dtyp:displayterm value="ColmacCxA25MP">Colmac CxA-25 (MP, 50kW cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxA30">Cx A30</dtyp:displayterm>
+            <dtyp:displayterm value="ColmacCxA30MP">Colmac CxA-30 (MP, 58kW cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxV5">CxV-5</dtyp:displayterm>
+            <dtyp:displayterm value="ColmacCxV5MP">Colmac CxV-5 (MP, 14kW cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="Generic11kW">Generic 11kW</dtyp:displayterm>
+            <dtyp:displayterm value="Generic20kW">Generic 20kW</dtyp:displayterm>
+            <dtyp:displayterm value="Generic26kW">Generic 26kW</dtyp:displayterm>
+            <dtyp:displayterm value="Generic40kW">Generic 40kW</dtyp:displayterm>
+            <dtyp:displayterm value="Generic45kW">Generic 45kW</dtyp:displayterm>
+            <dtyp:displayterm value="Generic5kW">Generic 5kW</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP025">AHP025-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP060">AHP060-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP060C">AHP060-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP060CMP">AHP060-*******-***C**** (MP, 11kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP060MP">AHP060-*******-***N**** (MP, 11kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP090">AHP090-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP090C">AHP090-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP090CMP">AHP090-*******-***C**** (MP, 20kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP090MP">AHP090-*******-***N**** (MP, 20kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP125">AHP125-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP125C">AHP125-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP125CMP">AHP125-*******-***C**** (MP, 26kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP125MP">AHP125-*******-***N**** (MP, 26kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP185">AHP185-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP185C">AHP185-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP185CMP">AHP185-*******-***C**** (MP, 41kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP185MP">AHP185-*******-***N**** (MP, 41kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP250">AHP250-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP250C">AHP250-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP250CMP">AHP250-*******-***C**** (MP, 46kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="LochinvarAHP250MP">AHP250-*******-***N**** (MP, 46kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="NyleC125A">C125A</dtyp:displayterm>
             <dtyp:displayterm value="NyleC125A_C">C125A-C</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC125A_CMP">Nyle C125A -C (MP, 26kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC125AMP">Nyle C125A  (MP, 26kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="NyleC185A">C185A</dtyp:displayterm>
             <dtyp:displayterm value="NyleC185A_C">C185A-C</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC185A_CMP">Nyle C185A-C  (MP, 41kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC185AMP">Nyle C185A  (MP, 41kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="NyleC250A">C250A</dtyp:displayterm>
             <dtyp:displayterm value="NyleC250A_C">C250A-C</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC250A_CMP">Nyle C250A-C  (MP, 46kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC250AMP">Nyle C250A  (MP, 46kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="NyleC25A">C25A</dtyp:displayterm>
             <dtyp:displayterm value="NyleC60A">C60A</dtyp:displayterm>
             <dtyp:displayterm value="NyleC60A_C">C60A-C</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC60A_CMP">Nyle C60A-C  (MP, 11kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC60AMP">Nyle C60A  (MP, 11kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="NyleC90A">C90A</dtyp:displayterm>
             <dtyp:displayterm value="NyleC90A_C">C90A-C</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC90A_CMP">Nyle C90A-C  (MP, 20kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="NyleC90AMP">Nyle C90A  (MP, 20kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemHPLD135HNUMP">Rheem HPHD-135HNU (horiz MP, 30kW cap @ 45F)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemHPLD135VNUMP">Rheem HPHD-135VNU (vertical MP, 30kW cap @ 45F)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemHPLD60HNUMP">Rheem HPHD-60HNU (horiz MP, 12kW cap @ 45F)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemHPLD60VNUMP">Rheem HPHD-60VNU (vertical MP, 12kW cap @ 45F)</dtyp:displayterm>
             <dtyp:displayterm value="Sanden">Sanden</dtyp:displayterm>
             <dtyp:displayterm value="SandenGS345HPAUS">GS3-45HPA-US</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA125">SHPA-125-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA125C">SHPA-125-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA125CMP">State SHPA-125-*-***C****  (MP, 26kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA125MP">State SHPA-125-*-***N****  (MP, 26kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA185">SHPA-185-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA185C">SHPA-185-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA185CMP">State SHPA-185-*-***C****  (MP, 41kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA185MP">State SHPA-185-*-***N****  (MP, 41kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA25">SHPA-25-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA250">SHPA-250-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA250C">SHPA-250-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA250CMP">State SHPA-250-*-***C****  (MP, 46kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA250MP">State SHPA-250-*-***N****  (MP, 46kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA60">SHPA-60-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA60C">SHPA-60-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA60CMP">State SHPA-60-*-***C****  (MP, 11kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA60MP">State SHPA-60-*-***N****  (MP, 11kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA90">SHPA-90-*******-***N****</dtyp:displayterm>
             <dtyp:displayterm value="StateSHPA90C">SHPA-90-*******-***C****</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA90CMP">State SHPA-90-*-***C****  (MP, 20kw cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="StateSHPA90MP">State SHPA-90-*-***N****  (MP, 20kw cap @ 40F)</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AOSmithAHPA125"/>
          <xsd:enumeration value="AOSmithAHPA125C"/>
+         <xsd:enumeration value="AOSmithAHPA125CMP"/>
+         <xsd:enumeration value="AOSmithAHPA125MP"/>
          <xsd:enumeration value="AOSmithAHPA185"/>
          <xsd:enumeration value="AOSmithAHPA185C"/>
+         <xsd:enumeration value="AOSmithAHPA185CMP"/>
+         <xsd:enumeration value="AOSmithAHPA185MP"/>
          <xsd:enumeration value="AOSmithAHPA25"/>
          <xsd:enumeration value="AOSmithAHPA250"/>
          <xsd:enumeration value="AOSmithAHPA250C"/>
+         <xsd:enumeration value="AOSmithAHPA250CMP"/>
+         <xsd:enumeration value="AOSmithAHPA250MP"/>
          <xsd:enumeration value="AOSmithAHPA60"/>
          <xsd:enumeration value="AOSmithAHPA60C"/>
+         <xsd:enumeration value="AOSmithAHPA60CMP"/>
+         <xsd:enumeration value="AOSmithAHPA60MP"/>
          <xsd:enumeration value="AOSmithAHPA90"/>
          <xsd:enumeration value="AOSmithAHPA90C"/>
+         <xsd:enumeration value="AOSmithAHPA90CMP"/>
+         <xsd:enumeration value="AOSmithAHPA90MP"/>
          <xsd:enumeration value="ColmacCxA10"/>
+         <xsd:enumeration value="ColmacCxA10MP"/>
          <xsd:enumeration value="ColmacCxA15"/>
+         <xsd:enumeration value="ColmacCxA15MP"/>
          <xsd:enumeration value="ColmacCxA20"/>
+         <xsd:enumeration value="ColmacCxA20MP"/>
          <xsd:enumeration value="ColmacCxA25"/>
+         <xsd:enumeration value="ColmacCxA25MP"/>
          <xsd:enumeration value="ColmacCxA30"/>
+         <xsd:enumeration value="ColmacCxA30MP"/>
          <xsd:enumeration value="ColmacCxV5"/>
+         <xsd:enumeration value="ColmacCxV5MP"/>
+         <xsd:enumeration value="Generic11kW"/>
+         <xsd:enumeration value="Generic20kW"/>
+         <xsd:enumeration value="Generic26kW"/>
+         <xsd:enumeration value="Generic40kW"/>
+         <xsd:enumeration value="Generic45kW"/>
+         <xsd:enumeration value="Generic5kW"/>
          <xsd:enumeration value="LochinvarAHP025"/>
          <xsd:enumeration value="LochinvarAHP060"/>
          <xsd:enumeration value="LochinvarAHP060C"/>
+         <xsd:enumeration value="LochinvarAHP060CMP"/>
+         <xsd:enumeration value="LochinvarAHP060MP"/>
          <xsd:enumeration value="LochinvarAHP090"/>
          <xsd:enumeration value="LochinvarAHP090C"/>
+         <xsd:enumeration value="LochinvarAHP090CMP"/>
+         <xsd:enumeration value="LochinvarAHP090MP"/>
          <xsd:enumeration value="LochinvarAHP125"/>
          <xsd:enumeration value="LochinvarAHP125C"/>
+         <xsd:enumeration value="LochinvarAHP125CMP"/>
+         <xsd:enumeration value="LochinvarAHP125MP"/>
          <xsd:enumeration value="LochinvarAHP185"/>
          <xsd:enumeration value="LochinvarAHP185C"/>
+         <xsd:enumeration value="LochinvarAHP185CMP"/>
+         <xsd:enumeration value="LochinvarAHP185MP"/>
          <xsd:enumeration value="LochinvarAHP250"/>
          <xsd:enumeration value="LochinvarAHP250C"/>
+         <xsd:enumeration value="LochinvarAHP250CMP"/>
+         <xsd:enumeration value="LochinvarAHP250MP"/>
          <xsd:enumeration value="NyleC125A"/>
          <xsd:enumeration value="NyleC125A_C"/>
+         <xsd:enumeration value="NyleC125A_CMP"/>
+         <xsd:enumeration value="NyleC125AMP"/>
          <xsd:enumeration value="NyleC185A"/>
          <xsd:enumeration value="NyleC185A_C"/>
+         <xsd:enumeration value="NyleC185A_CMP"/>
+         <xsd:enumeration value="NyleC185AMP"/>
          <xsd:enumeration value="NyleC250A"/>
          <xsd:enumeration value="NyleC250A_C"/>
+         <xsd:enumeration value="NyleC250A_CMP"/>
+         <xsd:enumeration value="NyleC250AMP"/>
          <xsd:enumeration value="NyleC25A"/>
          <xsd:enumeration value="NyleC60A"/>
          <xsd:enumeration value="NyleC60A_C"/>
+         <xsd:enumeration value="NyleC60A_CMP"/>
+         <xsd:enumeration value="NyleC60AMP"/>
          <xsd:enumeration value="NyleC90A"/>
          <xsd:enumeration value="NyleC90A_C"/>
+         <xsd:enumeration value="NyleC90A_CMP"/>
+         <xsd:enumeration value="NyleC90AMP"/>
+         <xsd:enumeration value="RheemHPLD135HNUMP"/>
+         <xsd:enumeration value="RheemHPLD135VNUMP"/>
+         <xsd:enumeration value="RheemHPLD60HNUMP"/>
+         <xsd:enumeration value="RheemHPLD60VNUMP"/>
          <xsd:enumeration value="Sanden"/>
          <xsd:enumeration value="SandenGS345HPAUS"/>
          <xsd:enumeration value="StateSHPA125"/>
          <xsd:enumeration value="StateSHPA125C"/>
+         <xsd:enumeration value="StateSHPA125CMP"/>
+         <xsd:enumeration value="StateSHPA125MP"/>
          <xsd:enumeration value="StateSHPA185"/>
          <xsd:enumeration value="StateSHPA185C"/>
+         <xsd:enumeration value="StateSHPA185CMP"/>
+         <xsd:enumeration value="StateSHPA185MP"/>
          <xsd:enumeration value="StateSHPA25"/>
          <xsd:enumeration value="StateSHPA250"/>
          <xsd:enumeration value="StateSHPA250C"/>
+         <xsd:enumeration value="StateSHPA250CMP"/>
+         <xsd:enumeration value="StateSHPA250MP"/>
          <xsd:enumeration value="StateSHPA60"/>
          <xsd:enumeration value="StateSHPA60C"/>
+         <xsd:enumeration value="StateSHPA60CMP"/>
+         <xsd:enumeration value="StateSHPA60MP"/>
          <xsd:enumeration value="StateSHPA90"/>
          <xsd:enumeration value="StateSHPA90C"/>
+         <xsd:enumeration value="StateSHPA90CMP"/>
+         <xsd:enumeration value="StateSHPA90MP"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="CentralSystem">
@@ -7240,6 +7377,12 @@
          <xsd:enumeration value="ReplacementsPTHP"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="PV_SystemPowerOutput">
+      <xsd:annotation>
+         <xsd:documentation>Units: kW</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="PV_SystemTotalRatedPowerDC">
       <xsd:annotation>
          <xsd:documentation>Units: kW</xsd:documentation>
@@ -9992,12 +10135,15 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="BoilerCommercialGTE1MMBtu">Commercial Package Gas Hot Water Supply Boilers (
                <d:gte/> 1MM Btu/h)</dtyp:displayterm>
+            <dtyp:displayterm value="BoilerCommercialLT1MMBtu">Commercial Package Gas Hot Water Supply Boilers (300k - 
+               <d:lt/>1MMBtu/h)</dtyp:displayterm>
+            <dtyp:displayterm value="BoilerDHW">Boiler</dtyp:displayterm>
             <dtyp:displayterm value="BoilerResDutyCommercial">Residential-duty Gas Hot Water Supply Boilers (
                <d:lt/>300k Btu/h)</dtyp:displayterm>
             <dtyp:displayterm value="BoilerWaterHeater">Commercial Gas Hot Water Supply Boilers</dtyp:displayterm>
             <dtyp:displayterm value="CentralHeatPumpWH">Central Heat Pump Water Heater</dtyp:displayterm>
-            <dtyp:displayterm value="BoilerCommercialLT1MMBtu">Commercial Package Gas Hot Water Supply Boilers (300k - 
-               <d:lt/>1MMBtu/h)</dtyp:displayterm>
+            <dtyp:displayterm value="CommercialPkgBoiler">Commercial Packaged  Boiler</dtyp:displayterm>
+            <dtyp:displayterm value="IndirectDHW">Indirect</dtyp:displayterm>
             <dtyp:displayterm value="InstantaneousCommercial">Commercial Gas Instantaneous Water Heater</dtyp:displayterm>
             <dtyp:displayterm value="InstantaneousConsumer">Consumer Rated Gas-Fired Instantaneous (50,000-200,000 BTUH)</dtyp:displayterm>
             <dtyp:displayterm value="InstantaneousConsumerElectric">Consumer Rated Electric Instantaneous (
@@ -10014,10 +10160,13 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="BoilerCommercialGTE1MMBtu"/>
+         <xsd:enumeration value="BoilerCommercialLT1MMBtu"/>
+         <xsd:enumeration value="BoilerDHW"/>
          <xsd:enumeration value="BoilerResDutyCommercial"/>
          <xsd:enumeration value="BoilerWaterHeater"/>
          <xsd:enumeration value="CentralHeatPumpWH"/>
-         <xsd:enumeration value="BoilerCommercialLT1MMBtu"/>
+         <xsd:enumeration value="CommercialPkgBoiler"/>
+         <xsd:enumeration value="IndirectDHW"/>
          <xsd:enumeration value="InstantaneousCommercial"/>
          <xsd:enumeration value="InstantaneousConsumer"/>
          <xsd:enumeration value="InstantaneousConsumerElectric"/>
