@@ -2912,7 +2912,6 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH29H">LMCIMCH29H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH32H">LMCIMCH32H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH33H">LMCIMCH33H</dtyp:displayterm>
-            <dtyp:displayterm value="LMCIPLB01">LMCIPLB01</dtyp:displayterm>
             <dtyp:displayterm value="LMCIPLB01E">LMCIPLB01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCIPLB02E">LMCIPLB02E</dtyp:displayterm>
             <dtyp:displayterm value="LMCIPLB21H">LMCIPLB21H</dtyp:displayterm>
@@ -3184,7 +3183,6 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCIMCH29H"/>
          <xsd:enumeration value="LMCIMCH32H"/>
          <xsd:enumeration value="LMCIMCH33H"/>
-         <xsd:enumeration value="LMCIPLB01"/>
          <xsd:enumeration value="LMCIPLB01E"/>
          <xsd:enumeration value="LMCIPLB02E"/>
          <xsd:enumeration value="LMCIPLB21H"/>
@@ -13777,6 +13775,15 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasBatteryStorage">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasBoilers">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -16554,6 +16561,10 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          <xsd:documentation>This is a list of special features used in a residential building that are non standard</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AdvancedWallFraming">Advanced wall framing included (see opaque surface constructions)</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingClimateZones678or15">Electric resistance space heating system replacement in CZs 6, 7, 8 or 15</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingClimateZones7or15">Electric resistance space heating system replacement in CZs 7 or 15</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingNoDuctedCooling">Ducted electric resistance space heating system replacement with no ducts replaced or altered</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingNonDucted">Non-ducted electric resistance space heating system replacement</dtyp:displayterm>
             <dtyp:displayterm value="AtticReliefVentFreeArea">Attic Relief Vent Free Area</dtyp:displayterm>
             <dtyp:displayterm value="BalancedIAQVentilation">Indoor air quality, balanced fan</dtyp:displayterm>
             <dtyp:displayterm value="BatterySystem">Battery System</dtyp:displayterm>
@@ -16627,6 +16638,10 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AdvancedWallFraming"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingClimateZones678or15"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingClimateZones7or15"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingNoDuctedCooling"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingNonDucted"/>
          <xsd:enumeration value="AtticReliefVentFreeArea"/>
          <xsd:enumeration value="BalancedIAQVentilation"/>
          <xsd:enumeration value="BatterySystem"/>

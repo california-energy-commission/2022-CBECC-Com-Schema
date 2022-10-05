@@ -1776,7 +1776,7 @@
             <dtyp:displayterm value="NRCIMCH01E">NRCI-MCH-01-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCIPLB01E">NRCI-PLB-01-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCIPRC01E">NRCI-PRC-01-E</dtyp:displayterm>
-            <dtyp:displayterm value="NRCISRA01E">NRCI-SRA-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCISAB01E">NRCI-SAB-01-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCVMCH04H">NRCV-MCH-04-H</dtyp:displayterm>
             <dtyp:displayterm value="NRCVMCH24H">NRCV-MCH-24-H</dtyp:displayterm>
             <dtyp:displayterm value="NRCVMCH27H">NRCV-MCH-27-H</dtyp:displayterm>
@@ -1844,7 +1844,7 @@
          <xsd:enumeration value="NRCIMCH01E"/>
          <xsd:enumeration value="NRCIPLB01E"/>
          <xsd:enumeration value="NRCIPRC01E"/>
-         <xsd:enumeration value="NRCISRA01E"/>
+         <xsd:enumeration value="NRCISAB01E"/>
          <xsd:enumeration value="NRCVMCH04H"/>
          <xsd:enumeration value="NRCVMCH24H"/>
          <xsd:enumeration value="NRCVMCH27H"/>
@@ -3356,7 +3356,7 @@
             <dtyp:displayterm value="NRCCPLBE">NRCC-PLB-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCCPRCE">NRCC-PRC-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCCPRFE">NRCC-PRF-E</dtyp:displayterm>
-            <dtyp:displayterm value="NRCCSRAE">NRCC-SRA-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCCSABE">NRCC-SAB-E</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstantPermissive">
@@ -3370,7 +3370,7 @@
          <xsd:enumeration value="NRCCPLBE"/>
          <xsd:enumeration value="NRCCPRCE"/>
          <xsd:enumeration value="NRCCPRFE"/>
-         <xsd:enumeration value="NRCCSRAE"/>
+         <xsd:enumeration value="NRCCSABE"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DisplayTagNRCI">
@@ -3392,7 +3392,7 @@
             <dtyp:displayterm value="NRCIPLB03E">NRCI-PLB-03-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCIPRC01E">NRCI-PRC-01-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCISPV01E">NRCI-SPV-01-E</dtyp:displayterm>
-            <dtyp:displayterm value="NRCISRA01E">NRCI-SRA-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="NRCISAB01E">NRCI-SAB-01-E</dtyp:displayterm>
             <dtyp:displayterm value="NRCISTH01E">NRCI-STH-01-E</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -3413,7 +3413,7 @@
          <xsd:enumeration value="NRCIPLB03E"/>
          <xsd:enumeration value="NRCIPRC01E"/>
          <xsd:enumeration value="NRCISPV01E"/>
-         <xsd:enumeration value="NRCISRA01E"/>
+         <xsd:enumeration value="NRCISAB01E"/>
          <xsd:enumeration value="NRCISTH01E"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -7887,6 +7887,16 @@
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="IsBatterySystemCertified">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="IsDHW_Central">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -10528,6 +10538,16 @@
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ProjectHasAreaControl">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasBatteryStorage">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -13816,6 +13836,10 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          <xsd:documentation>This is a list of special features used in a residential building that are non standard</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AdvancedWallFraming">Advanced wall framing included (see opaque surface constructions)</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingClimateZones678or15">Electric resistance space heating system replacement in CZs 6, 7, 8 or 15</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingClimateZones7or15">Electric resistance space heating system replacement in CZs 7 or 15</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingNoDuctedCooling">Ducted electric resistance space heating system replacement with no ducts replaced or altered</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingNonDucted">Non-ducted electric resistance space heating system replacement</dtyp:displayterm>
             <dtyp:displayterm value="AtticReliefVentFreeArea">Attic Relief Vent Free Area</dtyp:displayterm>
             <dtyp:displayterm value="BalancedIAQVentilation">Indoor air quality, balanced fan</dtyp:displayterm>
             <dtyp:displayterm value="BatterySystem">Battery System</dtyp:displayterm>
@@ -13890,6 +13914,10 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AdvancedWallFraming"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingClimateZones678or15"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingClimateZones7or15"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingNoDuctedCooling"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingNonDucted"/>
          <xsd:enumeration value="AtticReliefVentFreeArea"/>
          <xsd:enumeration value="BalancedIAQVentilation"/>
          <xsd:enumeration value="BatterySystem"/>
