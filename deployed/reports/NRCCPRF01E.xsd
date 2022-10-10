@@ -4671,7 +4671,7 @@ sum (p:Proj:Bldg:ThrmlZn:HasNoClg) GT 0</dtyp:termConditions>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="Except01_ExceptionalConditionMessageNRCCPRFE" type="comp:ExceptionalConditionMessageNRCCPRFE" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="Except01_ExceptionalConditionMessageCCPRFE" type="comp:ExceptionalConditionMessageCCPRFE" minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                      </xsd:annotation>
@@ -7554,10 +7554,372 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="Section_Hvacdwell" minOccurs="0">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">
+                  <d:b>H2. DWELLING UNIT HVAC HEATING SYSTEMS </d:b>
+               </xsd:documentation>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="TableHvacdwell">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="Hvacdwell01_DwellingUnitName" type="com:DwellingUnitName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Dwelling Unit Type Name</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="Hvacdwell02_HvacEquipmentName" type="hvac:HvacEquipmentName" maxOccurs="unbounded">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Equipment Name</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell03_AirSystemType" type="hvac:AirSystemType" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell03_ZoneSystemType" type="hvac:ZoneSystemType" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell03_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell03_ResidentialHeatingSystemType" type="hvac:ResidentialHeatingSystemType" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell03_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell03_ResidentialCoolingSystemType" type="hvac:ResidentialCoolingSystemType" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell03_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell03a_AirSubType" type="hvac:AirSubType" minOccurs="0">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText"/>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell03a_ZoneSubType" type="hvac:ZoneSubType" minOccurs="0">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText"/>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell03_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="Hvacdwell04_HvacEquipmentCount" type="hvac:HvacEquipmentCount">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Quantity</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell05_SpaceConditioningDistributionSystemName" type="hvac:SpaceConditioningDistributionSystemName">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Air Distribution System Name</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell05_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Air Distribution System Name</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell06_FanSystemName" type="hvac:FanSystemName">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Fan System name</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell06_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Fan System name</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="Hvacdwell07to13Label" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Heating</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell07_HeatPumpHeatCapacity47F" type="comp:HeatPumpHeatCapacity47F">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Heat Output at 47</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell07_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Heat Output at 47F</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Hvacdwell02 is not a type of heat pump equipment 
+result = NotApplicable</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell08_HeatPumpHeatCapacity17F" type="comp:HeatPumpHeatCapacity17F">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Heat Output at  17</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell08_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Heat Output at  17</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Hvacdwell02 is not a type of heat pump equipment 
+result = NotApplicable</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell09_EfficiencyType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:EfficiencyType">
+                                                <xsd:enumeration value="AFUE"/>
+                                                <xsd:enumeration value="COP"/>
+                                                <xsd:enumeration value="HSPF"/>
+                                                <xsd:enumeration value="HSPF2"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell09_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell10_EfficiencyCOP" type="hvac:EfficiencyCOP">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell10_EfficiencyHSPF" type="hvac:EfficiencyHSPF">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell10_EfficiencyHSPF2" type="hvac:EfficiencyHSPF2">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell10_EfficiencyAFUE" type="hvac:EfficiencyAFUE">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell10_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="Hvacdwell11to13SubLabel" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Supplemental Heating</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell11_HeatingSupplementalCapacity" type="hvac:HeatingSupplementalCapacity">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Output (kBtuh)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell11_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Output (kBtuh)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell12_EfficiencyType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:EfficiencyType">
+                                                <xsd:enumeration value="AFUE"/>
+                                                <xsd:enumeration value="COP"/>
+                                                <xsd:enumeration value="HSPF"/>
+                                                <xsd:enumeration value="HSPF2"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell12_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell13_EfficiencyCOP" type="hvac:EfficiencyCOP">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell13_EfficiencyHSPF" type="hvac:EfficiencyHSPF">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell13_EfficiencyHSPF2" type="hvac:EfficiencyHSPF2">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell13_EfficiencyAFUE" type="hvac:EfficiencyAFUE">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell13_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="Hvacdwell14to16Label" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Cooling</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell14_CoolingTotalOutput" type="hvac:CoolingTotalOutput">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Total Cooling Output</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell14_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Total Cooling Output</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell15_EfficiencyType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:EfficiencyType">
+                                                <xsd:enumeration value="CEER"/>
+                                                <xsd:enumeration value="EER"/>
+                                                <xsd:enumeration value="EER2"/>
+                                                <xsd:enumeration value="SEER"/>
+                                                <xsd:enumeration value="SEER2"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell15_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell16_EfficiencySEER" type="hvac:EfficiencySEER">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell16_EfficiencySEER2" type="hvac:EfficiencySEER2">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell16_EfficiencyEER" type="hvac:EfficiencyEER">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell16_EfficiencyEER2" type="hvac:EfficiencyEER2">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell16_EfficiencyCEER" type="hvac:EfficiencyCEER">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell16_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell17_Status">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Status</xsd:documentation>
+                                             <xsd:appinfo source="displayterm">
+                                                <dtyp:displayterm value="ExistingAlteration">A</dtyp:displayterm>
+                                                <dtyp:displayterm value="ExistingUnchanged">E</dtyp:displayterm>
+                                                <dtyp:displayterm value="New">N</dtyp:displayterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="com:Status">
+                                                <xsd:enumeration value="ExistingAlteration"/>
+                                                <xsd:enumeration value="ExistingUnchanged"/>
+                                                <xsd:enumeration value="New"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell17_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Status</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
                   <xsd:element name="TableDFHP" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">
-                           <d:b>H1a. Nonresidential Dual Fuel Heat Pump </d:b>
+                           <d:b>H2a. Dual Fuel Heat Pump </d:b>
                         </xsd:documentation>
                      </xsd:annotation>
                      <xsd:complexType>
@@ -7729,7 +8091,10 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                                          <xsd:simpleType>
                                                             <xsd:restriction base="hvac:EfficiencyType">
                                                                <xsd:enumeration value="EER"/>
+                                                               <xsd:enumeration value="EER2"/>
                                                                <xsd:enumeration value="IEER"/>
+                                                               <xsd:enumeration value="SEER"/>
+                                                               <xsd:enumeration value="SEER2"/>
                                                             </xsd:restriction>
                                                          </xsd:simpleType>
                                                       </xsd:element>
@@ -7738,11 +8103,18 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
                                                          </xsd:annotation>
                                                       </xsd:element>
-                                                      <xsd:element name="Dfhp07a_EfficiencyEER_IEER" type="hvac:EfficiencyEER_IEER" minOccurs="2" maxOccurs="2">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
-                                                         </xsd:annotation>
-                                                      </xsd:element>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Dfhp07a_EfficiencyEER_IEER" type="hvac:EfficiencyEER_IEER" minOccurs="2" maxOccurs="2">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Dfhp07a_EfficiencySEER_EER" type="hvac:EfficiencySEER_EER" minOccurs="2" maxOccurs="2">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
                                                       <xsd:element name="Dfhp07b_NotApplicableMessage" type="comp:NotApplicableMessage">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
@@ -7753,332 +8125,6 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                              </xsd:element>
                                           </xsd:choice>
                                        </xsd:complexType>
-                                    </xsd:element>
-                                 </xsd:sequence>
-                              </xsd:complexType>
-                           </xsd:element>
-                        </xsd:sequence>
-                     </xsd:complexType>
-                  </xsd:element>
-               </xsd:sequence>
-            </xsd:complexType>
-         </xsd:element>
-         <xsd:element name="Section_Hvacdwell" minOccurs="0">
-            <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>H2. DWELLING UNIT HVAC HEATING SYSTEMS </d:b>
-               </xsd:documentation>
-               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-               <xsd:sequence>
-                  <xsd:element name="TableHvacdwell">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                     </xsd:annotation>
-                     <xsd:complexType>
-                        <xsd:sequence>
-                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
-                              <xsd:complexType>
-                                 <xsd:sequence>
-                                    <xsd:element name="Hvacdwell01_HvacEquipmentName" type="hvac:HvacEquipmentName">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Equipment Name</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell02_AirSystemType" type="hvac:AirSystemType">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell02_ZoneSystemType" type="hvac:ZoneSystemType">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell02_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell02_ResidentialHeatingSystemType" type="hvac:ResidentialHeatingSystemType">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell02_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell02_ResidentialCoolingSystemType" type="hvac:ResidentialCoolingSystemType">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell02_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell02a_AirSubType" type="hvac:AirSubType" minOccurs="0">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText"/>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell02a_ZoneSubType" type="hvac:ZoneSubType" minOccurs="0">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText"/>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell02_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:element name="Hvacdwell03_HvacEquipmentCount" type="hvac:HvacEquipmentCount">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Quantity</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="Hvacdwell04to10Label" minOccurs="0">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Heating</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell04_HeatPumpHeatCapacity47F" type="comp:HeatPumpHeatCapacity47F">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Heat Output at 47</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell04_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Heat Output at 47F</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If Hvacdwell02 is not a type of heat pump equipment 
-result = NotApplicable</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell05_HeatPumpHeatCapacity17F" type="comp:HeatPumpHeatCapacity17F">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Heat Output at  17</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell05_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Heat Output at  17</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If Hvacdwell02 is not a type of heat pump equipment 
-result = NotApplicable</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell06_EfficiencyType">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                          </xsd:annotation>
-                                          <xsd:simpleType>
-                                             <xsd:restriction base="hvac:EfficiencyType">
-                                                <xsd:enumeration value="AFUE"/>
-                                                <xsd:enumeration value="COP"/>
-                                                <xsd:enumeration value="HSPF"/>
-                                                <xsd:enumeration value="HSPF2"/>
-                                             </xsd:restriction>
-                                          </xsd:simpleType>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell06_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell07_EfficiencyCOP" type="hvac:EfficiencyCOP">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell07_EfficiencyHSPF" type="hvac:EfficiencyHSPF">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell07_EfficiencyHSPF2" type="hvac:EfficiencyHSPF2">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell07_EfficiencyAFUE" type="hvac:EfficiencyAFUE">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell07_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:element name="Hvacdwell08to10SubLabel" minOccurs="0">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Supplemental Heating</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell08_HeatingSupplementalCapacity" type="hvac:HeatingSupplementalCapacity">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Output (kBtuh)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell08_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Output (kBtuh)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell09_EfficiencyType">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                          </xsd:annotation>
-                                          <xsd:simpleType>
-                                             <xsd:restriction base="hvac:EfficiencyType">
-                                                <xsd:enumeration value="AFUE"/>
-                                                <xsd:enumeration value="COP"/>
-                                                <xsd:enumeration value="HSPF"/>
-                                                <xsd:enumeration value="HSPF2"/>
-                                             </xsd:restriction>
-                                          </xsd:simpleType>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell09_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell10_EfficiencyCOP" type="hvac:EfficiencyCOP">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell10_EfficiencyHSPF" type="hvac:EfficiencyHSPF">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell10_EfficiencyHSPF2" type="hvac:EfficiencyHSPF2">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell10_EfficiencyAFUE" type="hvac:EfficiencyAFUE">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell10_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:element name="Hvacdwell11to13Label" minOccurs="0">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Cooling</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell11_CoolingTotalOutput" type="hvac:CoolingTotalOutput">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Total Cooling Output</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell11_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Total Cooling Output</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell12_EfficiencyType">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                          </xsd:annotation>
-                                          <xsd:simpleType>
-                                             <xsd:restriction base="hvac:EfficiencyType">
-                                                <xsd:enumeration value="CEER"/>
-                                                <xsd:enumeration value="EER"/>
-                                                <xsd:enumeration value="EER2"/>
-                                                <xsd:enumeration value="SEER"/>
-                                                <xsd:enumeration value="SEER2"/>
-                                             </xsd:restriction>
-                                          </xsd:simpleType>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell12_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Hvacdwell13_EfficiencySEER" type="hvac:EfficiencySEER">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell13_EfficiencySEER2" type="hvac:EfficiencySEER2">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell13_EfficiencyEER" type="hvac:EfficiencyEER">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell13_EfficiencyEER2" type="hvac:EfficiencyEER2">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell13_EfficiencyCEER" type="hvac:EfficiencyCEER">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Hvacdwell13_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:element name="Hvacdwell14_Status">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Status</xsd:documentation>
-                                          <xsd:appinfo source="displayterm">
-                                             <dtyp:displayterm value="ExistingAlteration">A</dtyp:displayterm>
-                                             <dtyp:displayterm value="ExistingUnchanged">E</dtyp:displayterm>
-                                             <dtyp:displayterm value="New">N</dtyp:displayterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                       <xsd:simpleType>
-                                          <xsd:restriction base="com:Status">
-                                             <xsd:enumeration value="ExistingAlteration"/>
-                                             <xsd:enumeration value="ExistingUnchanged"/>
-                                             <xsd:enumeration value="New"/>
-                                          </xsd:restriction>
-                                       </xsd:simpleType>
                                     </xsd:element>
                                  </xsd:sequence>
                               </xsd:complexType>
@@ -8378,6 +8424,109 @@ result = NotApplicable</xsd:documentation>
                            <d:i><d:sup>1</d:sup> Status: N - New, A - Altered, E - Existing</d:i>
                         </xsd:documentation>
                      </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="TableMFFan" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">
+                           <d:b>H3a. MULTIFAMILY / COMMON USE AREA FAN SYSTEMS SUMMARY </d:b>
+                        </xsd:documentation>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="MFFan01_FanName" type="hvac:FanName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Name</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="MFFan02_ResidentialFanType" type="hvac:ResidentialFanType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Type</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="MFFan03_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="MFFan04_FanPowerUnits" type="hvac:FanPowerUnits">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Power Units</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="MFFan05_Status" type="com:Status">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Status</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="MFFan05_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Status</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="TableFanIAQ" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">
+                           <d:b>H3b. MULTIFAMILY / COMMON USE AREA IAQ FAN SYSTEMS SUMMARY </d:b>
+                        </xsd:documentation>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="FanIAQ01_FanName" type="hvac:FanName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Name</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="FanIAQ02_VentilationSystemType" type="hvac:VentilationSystemType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Type</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="FanIAQ03_FanFlowCapacity" type="hvac:FanFlowCapacity">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Airflow (CFM)</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="FanIAQ04_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Power</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="FanIAQ05_FanPowerUnits" type="hvac:FanPowerUnits">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Power Units</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="FanIAQ06_Status" type="com:Status">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Status</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="FanIAQ06_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Status</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
@@ -9358,7 +9507,7 @@ Else If result == NotContinuous display No</xsd:documentation>
          <xsd:element name="Section_VentRes" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
-                  <d:b>H10. MULTIFAMILY DWELLING UNIT VENTILATION </d:b>
+                  <d:b>H10. MULTIFAMILY DWELLING UNIT TYPE VENTILATION </d:b>
                </xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If project includes ventilation, this table is required If Info13_TopLevelOccupancy == HighRiseResidential Or HotelMotel Or ResidentialNR</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
@@ -9374,16 +9523,16 @@ Else If result == NotContinuous display No</xsd:documentation>
                            <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="VentRes01_ThermalZoneName" type="hvac:ThermalZoneName">
+                                    <xsd:element name="VentRes01_ResidentialDwellingUnitName" type="com:ResidentialDwellingUnitName">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Zone Name</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Dwelling Unit Type Name</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
                                              <dtyp:CBECCnrXMLterm>ThrmlZn:Name Or ThrmlZone:Name ThrmlZn:VentStdDesc + "ventilation"</dtyp:CBECCnrXMLterm>
                                              <dtyp:termConditions>If ThrmlZn:Type == Conditioned AND ThrmlZn:VentStd == Other result = ThrmlZone:Name ThrmlZn:VentStdDesc + "ventilation"  Else result = ThrmlZone:Name</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="VentRes02_ThermalZoneFloorArea" type="hvac:ThermalZoneFloorArea">
+                                    <xsd:element name="VentRes02_DwellingUnitConditionedFloorArea" type="com:DwellingUnitConditionedFloorArea">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Conditioned Area (sf)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -10356,6 +10505,14 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
+                                       <xsd:element name="Water14_TankLocationString" type="hvac:TankLocationString">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Tank Location or Ambient Condition</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:TankZn</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
                                        <xsd:element name="Water14_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Tank Location or Ambient Condition</xsd:documentation>
@@ -10597,6 +10754,11 @@ Else result is one or more ResDHWSys:ResWtrHtr:Name</dtyp:termConditions>
                                              </xsd:sequence>
                                           </xsd:choice>
                                        </xsd:complexType>
+                                    </xsd:element>
+                                    <xsd:element name="WaterCHPWH02a_HeatPumpWaterHeaterSimulationGroup" type="hvac:HeatPumpWaterHeaterSimulationGroup" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                       </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="WaterCHPWH03_CompressorCountCHPWH" type="hvac:CompressorCountCHPWH">
                                        <xsd:annotation>
@@ -11246,6 +11408,32 @@ End If</dtyp:termConditions>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterCompact07_WaterHeaterWeightedDistance" type="comp:WaterHeaterWeightedDistance">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Weighted Distance</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterCompact07_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterCompact07_WaterHeaterQualificationDistance" type="comp:WaterHeaterQualificationDistance">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Qualification Distance</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterCompact07_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                  </xsd:sequence>
                               </xsd:complexType>
                            </xsd:element>
@@ -11290,18 +11478,10 @@ End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="WaterDWHR02_WaterHeatingSystemName" type="hvac:WaterHeatingSystemName">
+                                    <xsd:element name="WaterDWHR02_DWHR_Name" type="comp:DWHR_Name">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">DHW System and DWHR Names</xsd:documentation>
-                                          <xsd:documentation source="CalculationsAndRules">For display the DHW system name should be concatenated with a DWHR name  like this:  WaterDWHR02_WaterHeatingSystemName + " - " + WaterDWHR02a_DWHR_Name</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:ParentResDHWSysRefRpt</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="WaterDWHR02a_DWHR_Name" type="comp:DWHR_Name">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">DHW System and DWHR Names</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">This is concatenation of the DWHR system and DWHR name</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
                                              <dtyp:CBECCnrXMLterm>Spc:ResSpcDHWFeatures:ResDWHRSysRef[]</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
@@ -11336,6 +11516,34 @@ End If</dtyp:termConditions>
                                        <xsd:element name="WaterDWHR05_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">HERS Verification</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterDWHR06_DWHR_RatedEffectiveness" type="comp:DWHR_RatedEffectiveness">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">CSA Rated Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterDWHR06_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">CSA Rated Efficiency</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterDWHR07_DWHR_PercentShowerServed" type="comp:DWHR_PercentShowerServed">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Percent of showers served by DWHR device</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterDWHR07_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Percent of showers served by DWHR device</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
