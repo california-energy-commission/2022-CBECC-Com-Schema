@@ -695,12 +695,14 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AdvancedDR">Advanced DR</dtyp:displayterm>
             <dtyp:displayterm value="Basic">Basic</dtyp:displayterm>
+            <dtyp:displayterm value="RankedDayDR">Ranked Day DR Control</dtyp:displayterm>
             <dtyp:displayterm value="TOU">TOU</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AdvancedDR"/>
          <xsd:enumeration value="Basic"/>
+         <xsd:enumeration value="RankedDayDR"/>
          <xsd:enumeration value="TOU"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -3781,7 +3783,6 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="Exhaust">Exhaust</dtyp:displayterm>
-            <dtyp:displayterm value="OtherFanFunction">Other (VAV box)</dtyp:displayterm>
             <dtyp:displayterm value="Relief">Relief</dtyp:displayterm>
             <dtyp:displayterm value="Return">Return</dtyp:displayterm>
             <dtyp:displayterm value="Supply">Supply</dtyp:displayterm>
@@ -3790,7 +3791,6 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="Exhaust"/>
-         <xsd:enumeration value="OtherFanFunction"/>
          <xsd:enumeration value="Relief"/>
          <xsd:enumeration value="Return"/>
          <xsd:enumeration value="Supply"/>
@@ -3847,12 +3847,14 @@
             <dtyp:displayterm value="BHP">BHP</dtyp:displayterm>
             <dtyp:displayterm value="InH2O">Inches water column</dtyp:displayterm>
             <dtyp:displayterm value="Watts">W/cfm</dtyp:displayterm>
+            <dtyp:displayterm value="WattsPerCFM">W/cfm</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="BHP"/>
          <xsd:enumeration value="InH2O"/>
          <xsd:enumeration value="Watts"/>
+         <xsd:enumeration value="WattsPerCFM"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="FanPowerVerified">
@@ -8792,6 +8794,9 @@
          <xsd:enumeration value="YN58_30"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ModelNumber">
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
    <xsd:simpleType name="MotorBHP">
       <xsd:annotation>
          <xsd:documentation>Units: hp</xsd:documentation>
@@ -12979,6 +12984,7 @@
             <dtyp:displayterm value="BoilerWaterHeater">Commercial Gas Hot Water Supply Boilers</dtyp:displayterm>
             <dtyp:displayterm value="CentralHeatPumpWH">Central Heat Pump Water Heater</dtyp:displayterm>
             <dtyp:displayterm value="CommercialPkgBoiler">Commercial Packaged  Boiler</dtyp:displayterm>
+            <dtyp:displayterm value="HeatPumpWaterHeater">Heat Pump Water Heater</dtyp:displayterm>
             <dtyp:displayterm value="IndirectDHW">Indirect</dtyp:displayterm>
             <dtyp:displayterm value="InstantaneousCommercial">Commercial Gas Instantaneous Water Heater</dtyp:displayterm>
             <dtyp:displayterm value="InstantaneousConsumer">Consumer Rated Gas-Fired Instantaneous (50,000-200,000 BTUH)</dtyp:displayterm>
@@ -13002,6 +13008,7 @@
          <xsd:enumeration value="BoilerWaterHeater"/>
          <xsd:enumeration value="CentralHeatPumpWH"/>
          <xsd:enumeration value="CommercialPkgBoiler"/>
+         <xsd:enumeration value="HeatPumpWaterHeater"/>
          <xsd:enumeration value="IndirectDHW"/>
          <xsd:enumeration value="InstantaneousCommercial"/>
          <xsd:enumeration value="InstantaneousConsumer"/>
