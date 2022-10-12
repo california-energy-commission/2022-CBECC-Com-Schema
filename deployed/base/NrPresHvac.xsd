@@ -2968,6 +2968,14 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="EfficiencySEER2_EER2">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Efficiency SEER2 and EER2</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="EfficiencySEER_EER">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -8518,6 +8526,34 @@
          <xsd:enumeration value="VCHP_IndoorUnitDuctedAndDuctless"/>
          <xsd:enumeration value="VCHP_IndoorUnitDuctless"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResidentialDHWCentralDistributionType">
+      <xsd:annotation>
+         <xsd:documentation>This describes the type of mechanism is used to distribute hot water in low-rise residential buildings</xsd:documentation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="NoRecirculationMF">Multi-family: No recirculation</dtyp:displayterm>
+            <dtyp:displayterm value="NoRecirculationPumpNoLoopsMF">Multi-family: No loops or recirc. pump</dtyp:displayterm>
+            <dtyp:displayterm value="Other">Other</dtyp:displayterm>
+            <dtyp:displayterm value="RecirculatingContinuousTemperatureModulationMonitoringMF">Multi-family: Recirculating with temperature modulation and monitoring</dtyp:displayterm>
+            <dtyp:displayterm value="RecirculatingDemandControlMF">Multi-family: Recirculating demand control</dtyp:displayterm>
+            <dtyp:displayterm value="RecirculatingNonDemandContinuousPumpingMF">Multi-family: Recirculating with no control (continuous pumping)</dtyp:displayterm>
+            <dtyp:displayterm value="RecirculatingTemperatureModulationMF">Multi-family: Recirculating with temperature modulation</dtyp:displayterm>
+            <dtyp:displayterm value="RecirculationMF">Multi-family: Recirculation</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="NoRecirculationMF"/>
+         <xsd:enumeration value="NoRecirculationPumpNoLoopsMF"/>
+         <xsd:enumeration value="Other"/>
+         <xsd:enumeration value="RecirculatingContinuousTemperatureModulationMonitoringMF"/>
+         <xsd:enumeration value="RecirculatingDemandControlMF"/>
+         <xsd:enumeration value="RecirculatingNonDemandContinuousPumpingMF"/>
+         <xsd:enumeration value="RecirculatingTemperatureModulationMF"/>
+         <xsd:enumeration value="RecirculationMF"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResidentialDHWCentralDistributionTypeOther">
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="ResidentialDHWDwellingUnitDistributionType">
       <xsd:annotation>
