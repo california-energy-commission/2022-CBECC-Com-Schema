@@ -6258,27 +6258,34 @@ End If</dtyp:termConditions>
                                           </xsd:choice>
                                        </xsd:complexType>
                                     </xsd:element>
-                                    <xsd:element name="Opaq10_Status" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Status[d:sup]1[/d:sup]</xsd:documentation>
-                                          <xsd:appinfo source="displayterm">
-                                             <dtyp:displayterm value="ExistingAlteration">A</dtyp:displayterm>
-                                             <dtyp:displayterm value="ExistingUnchanged">E</dtyp:displayterm>
-                                             <dtyp:displayterm value="New">N</dtyp:displayterm>
-                                          </xsd:appinfo>
-                                          
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Proj:ConsAssm:Status</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                       <xsd:simpleType>
-                                          <xsd:restriction base="com:Status">
-                                             <xsd:enumeration value="ExistingAlteration"/>
-                                             <xsd:enumeration value="ExistingUnchanged"/>
-                                             <xsd:enumeration value="New"/>
-                                          </xsd:restriction>
-                                       </xsd:simpleType>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Opaq10_Status" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Status[d:sup]1[/d:sup]</xsd:documentation>
+                                             <xsd:appinfo source="displayterm">
+                                                <dtyp:displayterm value="ExistingAlteration">A</dtyp:displayterm>
+                                                <dtyp:displayterm value="ExistingUnchanged">E</dtyp:displayterm>
+                                                <dtyp:displayterm value="New">N</dtyp:displayterm>
+                                             </xsd:appinfo>
+                                             
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Proj:ConsAssm:Status</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="com:Status">
+                                                <xsd:enumeration value="ExistingAlteration"/>
+                                                <xsd:enumeration value="ExistingUnchanged"/>
+                                                <xsd:enumeration value="New"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="Opaq10_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Status[d:sup]1[/d:sup]</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                  </xsd:sequence>
                               </xsd:complexType>
                            </xsd:element>
@@ -7906,16 +7913,35 @@ result = NotApplicable</xsd:documentation>
                                           <xsd:documentation source="FieldText">System Type</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Dfhp03a_SizeRangeUnitaryHeatPumps" type="hvac:SizeRangeUnitaryHeatPumps" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Size (Btu/h)</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="Dfhp03b_SizeRangeFurnaceUnitHeater" type="hvac:SizeRangeFurnaceUnitHeater" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Size (Btu/h)</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Dfhp03a_SizeRangeUnitaryHeatPumps" type="hvac:SizeRangeUnitaryHeatPumps" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Size (Btu/h)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Dfhp03a_HeatPumpCapacity" type="hvac:HeatPumpCapacity" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Size (Btu/h)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Dfhp03a_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Size (Btu/h)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Dfhp03b_SizeRangeFurnaceUnitHeater" type="hvac:SizeRangeFurnaceUnitHeater" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Size (Btu/h)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Dfhp03b_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Size (Btu/h)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="Dfhp04to05Label" minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Heating Mode</xsd:documentation>
@@ -9425,7 +9451,7 @@ Else If result == NotContinuous display No</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_VentRes" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H10. MULTIFAMILY DWELLING UNIT TYPE VENTILATION [/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]H10. MULTIFAMILY DWELLING UNIT TYPE CENTRAL / INDIVIDUAL VENTILATION [/d:b]</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If project includes ventilation, this table is required If Info13_TopLevelOccupancy == HighRiseResidential Or HotelMotel Or ResidentialNR</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -9449,7 +9475,7 @@ Else If result == NotContinuous display No</xsd:documentation>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="VentRes02_DwellingUnitConditionedFloorArea" type="com:DwellingUnitConditionedFloorArea" >
+                                    <xsd:element name="VentRes01a_DwellingUnitConditionedFloorArea" type="com:DwellingUnitConditionedFloorArea"  minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Conditioned Area (sf)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
@@ -9457,32 +9483,53 @@ Else If result == NotContinuous display No</xsd:documentation>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="VentRes02to07Subheading" minOccurs="0">
+                                    <xsd:element name="VentRes02to06Subheading" minOccurs="0">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Mechanical Ventilation</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Central Fan (If applicable)</xsd:documentation>
                                        </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="VentRes03_VentilationSystemType" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Type</xsd:documentation>
-                                       </xsd:annotation>
-                                       <xsd:simpleType>
-                                          <xsd:restriction base="hvac:VentilationSystemType">
-                                             <xsd:enumeration value="Balanced"/>
-                                             <xsd:enumeration value="ExhaustVent"/>
-                                             <xsd:enumeration value="SupplyVent"/>
-                                          </xsd:restriction>
-                                       </xsd:simpleType>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes04_VentSystemOA" type="hvac:VentSystemOA" >
+                                       <xsd:element name="VentRes02_VentilationSystemType" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Supply OA CFM</xsd:documentation>
+                                             <xsd:documentation source="FieldText">IAQ Fan Type Type</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:VentilationSystemType">
+                                                <xsd:enumeration value="ExhaustCentralIndSupply"/>
+                                                <xsd:enumeration value="ExhaustCentralVent"/>
+                                                <xsd:enumeration value="SupplyAndExhaustCentral"/>
+                                                <xsd:enumeration value="SupplyCentralIndExhaust"/>
+                                                <xsd:enumeration value="SupplyCentralVent"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes02_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">IAQ Fan Type Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes03_FanFlowCapacity" type="hvac:FanFlowCapacity" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Supply Airflow CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes03_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Supply Airflow CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes04_FanPowerPerFlow" type="hvac:FanPowerPerFlow" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Supply Fan Efficacy W/CFM</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="VentRes04_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Supply OA CFM</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Supply Fan Efficacy W/CFM</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -9498,37 +9545,101 @@ Else If result == NotContinuous display No</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:element name="VentRes06_FanPowerPerFlow" type="hvac:FanPowerPerFlow" >
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes06_FanPowerPerFlow" type="hvac:FanPowerPerFlow" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Exhust Fan Efficacy W/CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes06_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Exhust Fan Efficacy W/CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="VentRes0712Label" minOccurs="0">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Total Watts/CFM</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="VentRes0708Label" minOccurs="0">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Recovery Efficiency</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Individual Fan (if applicable)</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes07_SensibleRecoveryEfficiency" type="hvac:SensibleRecoveryEfficiency" >
+                                       <xsd:element name="VentRes07_VentilationSystemType" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">SRE</xsd:documentation>
+                                             <xsd:documentation source="FieldText">IAQ Fan Type Type</xsd:documentation>
                                           </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:VentilationSystemType">
+                                                <xsd:enumeration value="Balanced"/>
+                                                <xsd:enumeration value="BalancedERV"/>
+                                                <xsd:enumeration value="BalancedHRV"/>
+                                                <xsd:enumeration value="ExhaustVent"/>
+                                                <xsd:enumeration value="SupplyVent"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
                                        </xsd:element>
                                        <xsd:element name="VentRes07_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">SRE</xsd:documentation>
+                                             <xsd:documentation source="FieldText">IAQ Fan Type Type</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes08_AdjustedSensibleRecoveryEfficiency" type="hvac:AdjustedSensibleRecoveryEfficiency" >
+                                       <xsd:element name="VentRes08_FanCount" type="hvac:FanCount" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">ASRE</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Count</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="VentRes08_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">ASRE</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Count</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes09_FanFlowCapacity" type="hvac:FanFlowCapacity" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Airflow CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes09_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Airflow CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes10_FanPowerPerFlow" type="hvac:FanPowerPerFlow" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Fan Efficacy W/CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes10_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Fan Efficacy W/CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes11_SensibleRecoveryEfficiency" type="hvac:SensibleRecoveryEfficiency" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Recovery Efficiency SRE</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes11_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Recovery Efficiency SRE</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes12_AdjustedSensibleRecoveryEfficiency" type="hvac:AdjustedSensibleRecoveryEfficiency" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Recovery Efficiency ASRE</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes12_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Recovery Efficiency ASRE</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -10398,6 +10509,22 @@ FluidSys:WtrHtr:StdbyLossFrac</dtyp:termConditions>
                                                 <xsd:enumeration value="Conventional"/>
                                                 <xsd:enumeration value="HeatPumpPackaged"/>
                                                 <xsd:enumeration value="HeatPumpSplit"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="Water13_ResHPWHCategory" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Heat Pump Type</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>FluidSys:WtrHtr:Type</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:ResHPWHCategory">
+                                                <xsd:enumeration value="CommercialResHPWH"/>
+                                                <xsd:enumeration value="NEEAResHPWH"/>
+                                                <xsd:enumeration value="NonUEFResHPWH"/>
+                                                <xsd:enumeration value="UEFResHPWH"/>
                                              </xsd:restriction>
                                           </xsd:simpleType>
                                        </xsd:element>
@@ -14166,6 +14293,38 @@ End If</xsd:documentation>
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If Nrca33_RequiredNRCAMch21H  == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrca33_SystemFieldVerified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Nrca34_RequireNRCAMch22A" type="comp:RequireNRCAMch22A"  minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-22-A Must be submitted for Multifamily Duct Leakage</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Nrca34_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Nrca34_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Nrca35_RequireNRCAMch23A" type="comp:RequireNRCAMch23A"  minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-23-A Must be submitted for Multifamily HRV/ERV Verification</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Nrca35_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Nrca35_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems To Be Field Verified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>

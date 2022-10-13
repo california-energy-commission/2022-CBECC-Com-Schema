@@ -2072,11 +2072,13 @@
    <xsd:simpleType name="ControlSystemDDC">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="MultifamilyNA">NA: Multifamily</dtyp:displayterm>
             <dtyp:displayterm value="ProvidesDDC">Provided</dtyp:displayterm>
             <dtyp:displayterm value="SingleZoneNA">NA: Single Zone</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="MultifamilyNA"/>
          <xsd:enumeration value="ProvidesDDC"/>
          <xsd:enumeration value="SingleZoneNA"/>
       </xsd:restriction>
@@ -4774,6 +4776,13 @@
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AirCooledUnitaryACHP_Pkg"/>
          <xsd:enumeration value="AirCooledUnitaryACHP_Split"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="HeatPumpCapacity">
+      <xsd:annotation>
+         <xsd:documentation>The cooling or heating capacity of HVAC equipment at prescribed rating conditions.  Units: Btu per h</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="HeatPumpCount">
@@ -10146,6 +10155,22 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ResHPWHCategory">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="CommercialResHPWH">Commercial Product</dtyp:displayterm>
+            <dtyp:displayterm value="NEEAResHPWH">Residential (NEEA RATED) pRODUCT</dtyp:displayterm>
+            <dtyp:displayterm value="NonUEFResHPWH">Non-UEF Rated</dtyp:displayterm>
+            <dtyp:displayterm value="UEFResHPWH">UEF Rated</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="CommercialResHPWH"/>
+         <xsd:enumeration value="NEEAResHPWH"/>
+         <xsd:enumeration value="NonUEFResHPWH"/>
+         <xsd:enumeration value="UEFResHPWH"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ResidentialCoolingSystemCount">
       <xsd:annotation>
          <xsd:documentation>  Units: none</xsd:documentation>
@@ -12951,8 +12976,11 @@
             <dtyp:displayterm value="BalancedERV">Balanced ERV</dtyp:displayterm>
             <dtyp:displayterm value="BalancedHRV">Balanced HRV</dtyp:displayterm>
             <dtyp:displayterm value="CentralFanIntegrated">Central Fan Integrated (CFI)</dtyp:displayterm>
+            <dtyp:displayterm value="ExhaustCentralIndSupply">Exhaust Central / Individual Supply</dtyp:displayterm>
             <dtyp:displayterm value="ExhaustCentralVent">Central Ventilation System - Exhaust</dtyp:displayterm>
             <dtyp:displayterm value="ExhaustVent">Exhaust</dtyp:displayterm>
+            <dtyp:displayterm value="SupplyAndExhaustCentral">Supply Central / Exhaust Central</dtyp:displayterm>
+            <dtyp:displayterm value="SupplyCentralIndExhaust">Supply Central / Individual Exhaust</dtyp:displayterm>
             <dtyp:displayterm value="SupplyCentralVent">Central Ventilation System - Supply</dtyp:displayterm>
             <dtyp:displayterm value="SupplyVent">Supply</dtyp:displayterm>
          </xsd:appinfo>
@@ -12963,8 +12991,11 @@
          <xsd:enumeration value="BalancedERV"/>
          <xsd:enumeration value="BalancedHRV"/>
          <xsd:enumeration value="CentralFanIntegrated"/>
+         <xsd:enumeration value="ExhaustCentralIndSupply"/>
          <xsd:enumeration value="ExhaustCentralVent"/>
          <xsd:enumeration value="ExhaustVent"/>
+         <xsd:enumeration value="SupplyAndExhaustCentral"/>
+         <xsd:enumeration value="SupplyCentralIndExhaust"/>
          <xsd:enumeration value="SupplyCentralVent"/>
          <xsd:enumeration value="SupplyVent"/>
       </xsd:restriction>
