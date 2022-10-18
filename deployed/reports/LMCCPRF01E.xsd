@@ -25,7 +25,7 @@
                      <xsd:element ref="lMCCPRF01E"/>
                      <xsd:element name="ProjectNotes" type="comp:ProjectNotes" minOccurs="0"/>
                      <xsd:element name="DocAuthor" type="comp:DocumentAuthor"/>
-                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R"/>
+                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R" maxOccurs="unbounded"/>
                      <xsd:element name="Footer" type="comp:Footer"/>
                   </xsd:sequence>
                </xsd:complexType>
@@ -5889,14 +5889,21 @@ p:ConsAssm:HasCRRCProdID == 1</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Opaq02_CompatibleSurfaceType" type="env:CompatibleSurfaceType">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Construction Type</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Proj:ConsAssm:CompatibleSurfType</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Opaq02_CompatibleSurfaceType" type="env:CompatibleSurfaceType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Construction Type</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Proj:ConsAssm:CompatibleSurfType</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Opaq02_OpaqueSurfaceType" type="env:OpaqueSurfaceType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Construction Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="Opaq03_SurfaceArea" type="dtyp:SurfaceArea">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Area (ft<d:sup>2</d:sup>)</xsd:documentation>
@@ -5913,6 +5920,11 @@ p:ConsAssm:HasCRRCProdID == 1</dtyp:termConditions>
                                              <xsd:appinfo source="CBECCnrXML">
                                                 <dtyp:CBECCnrXMLterm>Proj:ConsAssm:FrmMat</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Opaq04_ConstructionAssemblyType" type="comp:ConstructionAssemblyType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Framing Type</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Opaq04_NotApplicableMessage" type="comp:NotApplicableMessage">
@@ -7411,6 +7423,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                                 <xsd:enumeration value="CombustionEfficiency"/>
                                                 <xsd:enumeration value="COP"/>
                                                 <xsd:enumeration value="HSPF"/>
+                                                <xsd:enumeration value="HSPF2"/>
                                                 <xsd:enumeration value="ThermalEfficiency"/>
                                              </xsd:restriction>
                                           </xsd:simpleType>
@@ -7487,7 +7500,9 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:simpleType>
                                              <xsd:restriction base="hvac:EfficiencyType">
                                                 <xsd:enumeration value="EER"/>
+                                                <xsd:enumeration value="EER2"/>
                                                 <xsd:enumeration value="SEER"/>
+                                                <xsd:enumeration value="SEER2"/>
                                              </xsd:restriction>
                                           </xsd:simpleType>
                                        </xsd:element>
@@ -7948,21 +7963,42 @@ result = NotApplicable</xsd:documentation>
                                                 </xsd:annotation>
                                                 <xsd:complexType>
                                                    <xsd:sequence>
-                                                      <xsd:element name="Hvacdwell15_EfficiencyType" minOccurs="2" maxOccurs="2">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                                         </xsd:annotation>
-                                                         <xsd:simpleType>
-                                                            <xsd:restriction base="hvac:EfficiencyType">
-                                                               <xsd:enumeration value="EER"/>
-                                                               <xsd:enumeration value="EER2"/>
-                                                               <xsd:enumeration value="IEER"/>
-                                                               <xsd:enumeration value="SEER"/>
-                                                               <xsd:enumeration value="SEER2"/>
-                                                            </xsd:restriction>
-                                                         </xsd:simpleType>
-                                                      </xsd:element>
                                                       <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Hvacdwell15_EfficiencyType" minOccurs="2" maxOccurs="2">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="hvac:EfficiencyType">
+                                                                  <xsd:enumeration value="EER"/>
+                                                                  <xsd:enumeration value="EER2"/>
+                                                                  <xsd:enumeration value="EER2a"/>
+                                                                  <xsd:enumeration value="EER2b"/>
+                                                                  <xsd:enumeration value="EERa"/>
+                                                                  <xsd:enumeration value="EERb"/>
+                                                                  <xsd:enumeration value="IEER"/>
+                                                                  <xsd:enumeration value="SEER"/>
+                                                                  <xsd:enumeration value="SEER2"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
+                                                         <xsd:element name="Hvacdwell15_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Hvacdwell16_EfficiencyEERa_EERb" type="hvac:EfficiencyEERa_EERb" minOccurs="2" maxOccurs="2">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Hvacdwell16_EfficiencyEER2a_EER2b" type="hvac:EfficiencyEER2a_EER2b" minOccurs="2" maxOccurs="2">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
                                                          <xsd:element name="Hvacdwell16_EfficiencySEER_EER" type="hvac:EfficiencySEER_EER" minOccurs="2" maxOccurs="2">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
@@ -8149,12 +8185,24 @@ result = NotApplicable</xsd:documentation>
                                           <xsd:documentation source="FieldText">Name or Item Tag</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Dfhp02a_UnitaryHeatPumps" type="hvac:UnitaryHeatPumps" minOccurs="0">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">System Type</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="Dfhp02b_FurnaceUnitHeater" type="hvac:FurnaceUnitHeater" minOccurs="0">
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Dfhp02a_UnitaryHeatPumps" type="hvac:UnitaryHeatPumps">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">System Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Dfhp02a_ResidentialHeatingSystemType" type="hvac:ResidentialHeatingSystemType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">System Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Dfhp02a_ResidentialCoolingSystemType" type="hvac:ResidentialCoolingSystemType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">System Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="Dfhp02b_FurnaceUnitHeater" type="hvac:FurnaceUnitHeater">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">System Type</xsd:documentation>
                                        </xsd:annotation>
@@ -8201,6 +8249,7 @@ result = NotApplicable</xsd:documentation>
                                           <xsd:restriction base="hvac:EfficiencyType">
                                              <xsd:enumeration value="COP"/>
                                              <xsd:enumeration value="HSPF"/>
+                                             <xsd:enumeration value="HSPF2"/>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
@@ -8278,9 +8327,11 @@ result = NotApplicable</xsd:documentation>
                                                          </xsd:annotation>
                                                          <xsd:simpleType>
                                                             <xsd:restriction base="hvac:EfficiencyType">
-                                                               <xsd:enumeration value="COP"/>
+                                                               <xsd:enumeration value="CEER"/>
                                                                <xsd:enumeration value="EER"/>
+                                                               <xsd:enumeration value="EER2"/>
                                                                <xsd:enumeration value="SEER"/>
+                                                               <xsd:enumeration value="SEER2"/>
                                                             </xsd:restriction>
                                                          </xsd:simpleType>
                                                       </xsd:element>
@@ -8300,7 +8351,22 @@ result = NotApplicable</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Dfhp07a_EfficiencyEER2" type="hvac:EfficiencyEER2">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
                                                          <xsd:element name="Dfhp07a_EfficiencySEER" type="hvac:EfficiencySEER">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Dfhp07a_EfficiencySEER2" type="hvac:EfficiencySEER2">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Dfhp07a_EfficiencyCEER" type="hvac:EfficiencyCEER">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
                                                             </xsd:annotation>
@@ -8346,6 +8412,11 @@ result = NotApplicable</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
                                                          <xsd:element name="Dfhp07a_EfficiencySEER_EER" type="hvac:EfficiencySEER_EER" minOccurs="2" maxOccurs="2">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Dfhp07a_EfficiencySEER2_EER2" type="hvac:EfficiencySEER2_EER2" minOccurs="2" maxOccurs="2">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
                                                             </xsd:annotation>
@@ -8731,12 +8802,12 @@ result = NotApplicable</xsd:documentation>
                                           <xsd:documentation source="FieldText">Type</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="FanIAQ03_FanFlowCapacity" type="hvac:FanFlowCapacity">
+                                    <xsd:element name="FanIAQ03_FanFlowCapacity" type="hvac:FanFlowCapacity" maxOccurs="unbounded">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Airflow (CFM)</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="FanIAQ04_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
+                                    <xsd:element name="FanIAQ04_FanPowerPerFlow" type="hvac:FanPowerPerFlow" maxOccurs="unbounded">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Power</xsd:documentation>
                                        </xsd:annotation>
@@ -10058,20 +10129,18 @@ Else If result == NotContinuous display No</xsd:documentation>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="VentRes02to06Subheading" minOccurs="0">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Central Fan (If applicable)</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="VentRes02_VentilationSystemType">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">IAQ Fan Type Type</xsd:documentation>
+                                             <xsd:documentation source="FieldText">IAQ Option</xsd:documentation>
                                           </xsd:annotation>
                                           <xsd:simpleType>
                                              <xsd:restriction base="hvac:VentilationSystemType">
+                                                <xsd:enumeration value="DefaultMinIAQ"/>
                                                 <xsd:enumeration value="ExhaustCentralIndSupply"/>
                                                 <xsd:enumeration value="ExhaustCentralVent"/>
+                                                <xsd:enumeration value="ExhaustMinIAQ"/>
+                                                <xsd:enumeration value="IndividualIAQ"/>
                                                 <xsd:enumeration value="SupplyAndExhaustCentral"/>
                                                 <xsd:enumeration value="SupplyCentralIndExhaust"/>
                                                 <xsd:enumeration value="SupplyCentralVent"/>
@@ -10080,65 +10149,17 @@ Else If result == NotContinuous display No</xsd:documentation>
                                        </xsd:element>
                                        <xsd:element name="VentRes02_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">IAQ Fan Type Type</xsd:documentation>
+                                             <xsd:documentation source="FieldText">IAQ Option</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes03_FanFlowCapacity" type="hvac:FanFlowCapacity">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Supply Airflow CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="VentRes03_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Supply Airflow CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes04_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Supply Fan Efficacy W/CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="VentRes04_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Supply Fan Efficacy W/CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes05_ExhaustFlowRate" type="hvac:ExhaustFlowRate">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="VentRes05_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhaust CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes06_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhust Fan Efficacy W/CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="VentRes06_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhust Fan Efficacy W/CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:element name="VentRes0712Label" minOccurs="0">
+                                    <xsd:element name="VentRes02to06Subheading" minOccurs="0">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Individual Fan (if applicable)</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Central Fan (If applicable)</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes07_VentilationSystemType">
+                                       <xsd:element name="VentRes03_VentilationSystemType">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">IAQ Fan Type Type</xsd:documentation>
                                           </xsd:annotation>
@@ -10152,67 +10173,141 @@ Else If result == NotContinuous display No</xsd:documentation>
                                              </xsd:restriction>
                                           </xsd:simpleType>
                                        </xsd:element>
-                                       <xsd:element name="VentRes07_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                       <xsd:element name="VentRes03_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">IAQ Fan Type Type</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes08_FanCount" type="hvac:FanCount">
+                                       <xsd:element name="VentRes04_FanFlowCapacity" type="hvac:FanFlowCapacity">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Count</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Supply Airflow CFM</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="VentRes08_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                       <xsd:element name="VentRes04_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Count</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Supply Airflow CFM</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes09_FanFlowCapacity" type="hvac:FanFlowCapacity">
+                                       <xsd:element name="VentRes05_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Airflow CFM</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Supply Fan Efficacy W/CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes05_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Supply Fan Efficacy W/CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes06_ExhaustFlowRate" type="hvac:ExhaustFlowRate">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Exhaust CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes06_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Exhaust CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes07_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Exhust Fan Efficacy W/CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes07_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Exhust Fan Efficacy W/CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="VentRes0813Label" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Individual Fan (if applicable)</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes08_VentilationSystemType" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">IAQ Fan Type</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:VentilationSystemType">
+                                                <xsd:enumeration value="Balanced"/>
+                                                <xsd:enumeration value="BalancedERV"/>
+                                                <xsd:enumeration value="BalancedHRV"/>
+                                                <xsd:enumeration value="ExhaustVent"/>
+                                                <xsd:enumeration value="SupplyVent"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes08_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">IAQ Fan Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes09_FanCount" type="hvac:FanCount" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Count</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="VentRes09_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Count</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes10_FanFlowCapacity" type="hvac:FanFlowCapacity" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Airflow CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes10_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
                                              <xsd:documentation source="FieldText">Airflow CFM</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes10_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
+                                       <xsd:element name="VentRes11_FanPowerPerFlow" type="hvac:FanPowerPerFlow" maxOccurs="unbounded">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Fan Efficacy W/CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="VentRes10_NotApplicableMessage" type="comp:NotApplicableMessage">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Fan Efficacy W/CFM</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes11_SensibleRecoveryEfficiency" type="hvac:SensibleRecoveryEfficiency">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Recovery Efficiency SRE</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="VentRes11_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Fan Efficacy W/CFM</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="VentRes12_SensibleRecoveryEfficiency" type="hvac:SensibleRecoveryEfficiency" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Recovery Efficiency SRE</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="VentRes12_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
                                              <xsd:documentation source="FieldText">Recovery Efficiency SRE</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="VentRes12_AdjustedSensibleRecoveryEfficiency" type="hvac:AdjustedSensibleRecoveryEfficiency">
+                                       <xsd:element name="VentRes13_AdjustedSensibleRecoveryEfficiency" type="hvac:AdjustedSensibleRecoveryEfficiency" maxOccurs="unbounded">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Recovery Efficiency ASRE</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="VentRes12_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                       <xsd:element name="VentRes13_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Recovery Efficiency ASRE</xsd:documentation>
                                           </xsd:annotation>
@@ -13948,6 +14043,1011 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                            </xsd:element>
                         </xsd:sequence>
                      </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="Section_Lmci" minOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">
+                  <d:b>L. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
+               </xsd:documentation>
+               <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="Lmci00_NoRequiredCI" type="comp:NoRequiredCI" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no LMCI's for this project</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmciBeginNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">
+                           <d:i> Selections made by Documentation Author indicate which Certificates of Installation must be submitted for the features to be recognized for compliance.  These documents must be retained and provided to the building inspector during construction and can be found online </d:i>
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmciLabel01" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Building Component</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmciLabel02" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmciEnvLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Envelope</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci01_RequireLMCIEnv01E" type="comp:RequireLMCIEnv01E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-ENV-01-E - Must be submitted for all buildings</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci01_RequiredNRCIEnv01E IsPresent and == true 
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci01a_RequireLMCIEnvE" type="comp:RequireLMCIEnvE" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-ENV-E - Envelope (for all buildings)</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci01_RequiredNRCIEnv01E IsPresent and == true 
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmciMchLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Mechanical</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci02_RequiredNRCIMch01E IsPresent and == true 
+Display this label
+Else do not display this label
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci02_RequireLMCIMch01E" type="comp:RequireLMCIMch01E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-MCH-01-E - Must be submitted for all buildings</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci02_RequiredNRCIMch01E IsPresent and == true 
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci02a_RequireLMCIMchE" type="comp:RequireLMCIMchE" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-MCH-E - For all buildings with Mechanical Systems</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci02_RequiredNRCIMch01E IsPresent and == true 
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmciPlbLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Plumbing</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci03_RequiredNRCIPlb01E IsPresent and == true Or
+Nrci04_RequiredNRCIPlb02E IsPresent and == true Or 
+Nrci05_RequiredNRCIPlb03E IsPresent and == true  Or 
+Nrci06_RequiredNRCIPlb21E IsPresent and == true Or 
+Nrci07_RequiredNRCIPlb22E IsPresent and == true Or
+Nrci08_RequiredNRCISth01E IsPresent and == true
+
+Display this label
+Else do not display this label
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci03_RequireLMCIPlb01E" type="comp:RequireLMCIPlb01E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-PLB-01-E - Must be submitted for all buildings</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci03_RequiredNRCIPlb01E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci03a_RequireLMCIPlbE" type="comp:RequireLMCIPlbE" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-PLB-E - For all buildings with Plumbing Systems</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci03_RequiredNRCIPlb01E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci08_RequireLMCISth01E" type="comp:RequireLMCISth01E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-STH-01-E - Must be submitted for solar water heating systems</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci08_RequiredNRCISth01E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci08a_RequireLMCISabE" type="comp:RequireLMCISabE" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-SAB-E - Solar Water Heating, PV and Battery Storage Systems</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci08_RequiredNRCISth01E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmciLtiLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Indoor Lighting</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci09_RequiredNRCILti01E IsPresent and == true Or 
+Nrci10_RequiredNRCILti02E IsPresent and == true Or
+Nrci11_RequiredNRCILti04E IsPresent and == true Or
+Nrci12_RequiredNRCILti05E IsPresent and == true Or
+Nrci13_RequiredNRCILti06E IsPresent and == true Or
+Display this label
+Else do not display this label
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci09_RequireLMCILti01E" type="comp:RequireLMCILti01E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-LTI-01-E - Must be submitted for all buildings</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci09_RequiredNRCILti01E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci09a_RequireLMCILtiE" type="comp:RequireLMCILtiE" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-LTI-E - Indoor Lighting (for all buildings)</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci09_RequiredNRCILti01E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci10_RequireLMCILti02E" type="comp:RequireLMCILti02E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-LTI-02-E- Must be submitted for a lighting control system, or for an Energy Management Control System (EMCS), to be recognized for compliance.</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci10_RequiredNRCILti02E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci11_RequireLMCILti04E" type="comp:RequireLMCILti04E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-LTI-04-E - Must be submitted for two interlocked systems serving an auditorium, a convention center, a conference room, a multipurpose room or a theater to be recognized for compliance.</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci11_RequiredNRCILti04E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci12_RequireLMCILti05E" type="comp:RequireLMCILti05E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-LTI-05-E- Must be submitted for a Power Adjustment Factor (PAF) to be recognized for compliance.</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci12_RequiredNRCILti05E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci13_RequireLMCILti06E" type="comp:RequireLMCILti06E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-LTI-06-E- Must be submitted for additional wattage installed in a video conferencing studio to be recognized for compliance.</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci13_RequiredNRCILti06E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmciPrcLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Covered Process</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci14_RequiredNRCIPrc01E IsPresent and == true 
+Display this label
+Else do not display this label
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci14_RequireLMCIPrc01E" type="comp:RequireLMCIPrc01E" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-PRC-01-E - Must be submitted for all Covered Processes</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci14_RequiredNRCIPrc01E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmci14a_RequireLMCIPrcE" type="comp:RequireLMCIPrcE" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-PRC-E - Covered Processes</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci14_RequiredNRCIPrc01E IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="Section_Lmca" minOccurs="1">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">
+                  <d:b>M. DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
+               </xsd:documentation>
+               <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="Lmca00_NoRequiredCA" type="comp:NoRequiredCA" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcaBeginNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">
+                           <d:i> Selections made by Documentation Author indicate which Certificates of Acceptance must be submitted for the features to be recognized for compliance.  These documents must be provided to the building inspector during construction and must be completed through an Acceptance Test Technician Certificaiton Provider (ATTCP).  For more information visit: https://www.energy.ca.gov/title24/2019standards/2019_compliance_documents/Nonresidential_Documents/NRCA/  </d:i>
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcaLabel01" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Building Component</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcaLabel02" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcaEnvLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Envelope</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca01_RequireLMCAEnv02F" type="comp:RequireLMCAEnv02F" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-ENV-02-F - NRFC label verification for fenestration</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca01_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca02_RequireLMCAEnv03F" type="comp:RequireLMCAEnv03F" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-ENV-03-F. - Daylighting Design PAFs</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca02_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca02_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcaLtiLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Indoor Lighting</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca03_RequireLMCALti02A" type="comp:RequireLMCALti02A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-02-A - Occupancy Sensors and Automatic Time Switch Controls.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca03_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca03_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca04_RequireLMCALti03A" type="comp:RequireLMCALti03A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-03-A - Automatic Daylight Controls.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca04_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca04_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca05_RequireLMCALti04A" type="comp:RequireLMCALti04A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-04-A - Demand Responsive Lighting Controls.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca05_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca05_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca06_RequireLMCALti05A" type="comp:RequireLMCALti05A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-05-A. - Institutional Tuning Power Adjustment factor (PAF)</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca06_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca06_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcaPrcLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Covered Process</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca07_RequireLMCAPrc02F" type="comp:RequireLMCAPrc02F" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-PRC-02-F Kitchen Exhaust</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca07_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca07_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca08_RequireLMCAPrc03F" type="comp:RequireLMCAPrc03F" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-PRC-03-F Garage Exhaust</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca08_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca08_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca09_RequireLMCAPrc12F" type="comp:RequireLMCAPrc12F" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-PRC-12-F Elevator Lighting &amp;amp; Ventilation Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca09_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca09_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcaMchLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Mechanical</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca13_RequireLMCAMch02A" type="comp:RequireLMCAMch02A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-02-A - Outdoor Air must be submitted for all newly installed HVAC units. Note: MCH-02-A can be performed in conjunction with MCH-07-A Supply Fan VFD Acceptance (if applicable) since testing activities overlap</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca13_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca13_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca14_RequireLMCAMch03A" type="comp:RequireLMCAMch03A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-03-A - Constant Volume Single Zone HVAC</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca14_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca14_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca15_RequireLMCAMch04H" type="comp:RequireLMCAMch04H" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-04(a)-H - Air Distribution Duct Leakage - HERS Verification required</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca15_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca15_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca16_RequireLMCAMch04A" type="comp:RequireLMCAMch04A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-04(b)-A - Air Distribution Duct Leakage - ATT only</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca16_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca16_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca17_RequireLMCAMch05A" type="comp:RequireLMCAMch05A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-05-A - Air Economizer Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca17_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca17_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca18_RequireLMCAMch06A" type="comp:RequireLMCAMch06A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-06-A  Demand Control Ventilation Systems must be submitted for all systems required to employ demand controlled ventilation (refer to 
+                           <d:t24ref h="120.1(c)3"/>) can vary outside ventilation flow rates based on maintaining interior carbon dioxide (CO2) concentration setpoints.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca18_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca18_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca19_RequireLMCAMch07A" type="comp:RequireLMCAMch07A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-07-A Supply Fan Variable Flow Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca19_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca19_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca20_RequireLMCAMch08A" type="comp:RequireLMCAMch08A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-08-A Valve Leakage Test</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca20_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca20_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca21_RequireLMCAMch09A" type="comp:RequireLMCAMch09A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-09-A Supply Water Temperature Reset Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca21_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca21_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca22_RequireLMCAMch10A" type="comp:RequireLMCAMch10A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-10-A Hydronic System Variable Flow Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca22_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca22_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca23_RequireLMCAMch11A" type="comp:RequireLMCAMch11A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-11-A Automatic Demand Shed Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca23_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca23_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca24_RequireLMCAMch12A" type="comp:RequireLMCAMch12A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-12-A FDD for Pakaged Direct Expansion Units</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca24_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca24_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca25_RequireLMCAMch13A" type="comp:RequireLMCAMch13A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-13-A Automatic FDD for Air Handling Units and Zone Terminal Units Acceptance</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca25_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca25_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca26_RequireLMCAMch14A" type="comp:RequireLMCAMch14A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-14-A Distributed Energy Storage DX AC Systems  Acceptance</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca26_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca26_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca27_RequireLMCAMch15A" type="comp:RequireLMCAMch15A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-15-A Thermal Energy Storage (TES) System  Acceptance</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca27_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca27_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca28_RequireLMCAMch16A" type="comp:RequireLMCAMch16A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-16-A Supply Air Temperature Reset Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca28_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca28_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca29_RequireLMCAMch17A" type="comp:RequireLMCAMch17A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-17-A Condenser Water Temperature Reset Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca29_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca29_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca30_RequireLMCAMch18A" type="comp:RequireLMCAMch18A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-18-A Energy Management Control Systems</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca30_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca30_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca31_RequireLMCAMch19A" type="comp:RequireLMCAMch19A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-19-A Occupancy Sensor Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca31_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca31_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca32_RequireLMCAMch20H" type="comp:RequireLMCAMch20H" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-20-H Multifamily Ventilation</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca32_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca32_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca33_RequireLMCAMch21H" type="comp:RequireLMCAMch21H" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-21-H Multifamily Envelope</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca33_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca33_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca34_RequireLMCAMch22A" type="comp:RequireLMCAMch22A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-22-A Must be submitted for Multifamily Duct Leakage</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca34_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca34_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca35_RequireLMCAMch23A" type="comp:RequireLMCAMch23A" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-23-A Must be submitted for Multifamily HRV/ERV Verification</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca35_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmca35_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems To Be Field Verified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="Section_Lmcv" minOccurs="0">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">
+                  <d:b>N. DECLARATION OF REQUIRED CERTIFICATES OF VERIFICATION </d:b>
+               </xsd:documentation>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="Lmcv00_NoRequiredCV" type="comp:NoRequiredCV" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="CalculationsAndRules">This is only required if result = true and there are no LMCV's for this project</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcvBeginNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">
+                           <d:i> Selections made by Documentation Author indicate which Certificates of Verification must be submitted for the features to be recognized for compliance.  These documents must be retained and provided to the building inspector during construction and can be found online  </d:i>
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcvLabel01" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Building Component</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcvLabel02" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcvMchLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Mechanical</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv01_RequiredNRCVMch04H IsPresent and == true Or
+Nrcv02_RequiredNRCVMch24H IsPresent and == true Or
+Nrcv03_RequiredNRCVMch27H IsPresent  and == true Or 
+Nrcv04_RequiredNRCVMch32H IsPresent and == true
+Display this label
+Else do not display this label
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv01_RequireLMCVMch04H" type="comp:RequireLMCVMch04H" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCV-MCH-04-H Duct Leakaage Test</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv01_RequiredNRCVMch04H IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv01_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv01_RequireNRCVMch04H == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv01_RequireNRCVMch04H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv01_SystemFieldVerified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv02_RequireLMCVMch24H" type="comp:RequireLMCVMch24H" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCV-MCH-24 Enclosure Air Leakaage</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv02_RequiredNRCVMch24H IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv02_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv02_RequiredNRCVMch24H  == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv02_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv02_RequiredNRCVMch24H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv02_SystemFieldVerified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv03_RequireLMCVMch27H" type="comp:RequireLMCVMch27H" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCV-MCH-27 Indoor Air Quality &amp;amp; Mechanical Ventilation</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv03_RequiredNRCVMch27H IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv03_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv03_RequiredNRCVMch27H == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv03_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv03_RequiredNRCVMch27H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv03_SystemFieldVerified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv04_RequireLMCVMch32H" type="comp:RequireLMCVMch32H" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCV-MCH-32 Local Mechanical Exhaust</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv04_RequiredNRCVMch32H IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv04_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv04_RequiredNRCVMch32H == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv04_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv04_RequiredNRCVMch32H== true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv04_SystemFieldVerified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmcvPlbLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Plumbing</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv05_RequiredNRCVPlb21H IsPresent and == true Or
+Nrcv06_RequiredNRCVPlb22H IsPresent and == true 
+Display this label
+Else do not display this label
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv05_RequireLMCVPlb21H" type="comp:RequireLMCVPlb21H" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCV-PLB-21-H HERS verified central systems in high-rise residential, hotel/motel application</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv05_RequiredNRCVPlb21H IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv05_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv05_RequiredNRCVPlb21H== true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv05_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv05_RequiredNRCVPlb21H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv05_SystemFieldVerified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv06_RequireLMCVPlb22H" type="comp:RequireLMCVPlb22H" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                        <xsd:documentation source="AdditionalRequirements">LMCV-PLB-22-H HERS verified single dweliing unit systems in high-rise residential, hotel/motel application</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv06_RequiredNRCVPlb22H IsPresent and == true
+Display the AdditionalRequirements text for this element
+Else there is no display for this element
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv06_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv06_RequiredNRCVPlb22H == true; this field is loaded with systems/spaces that satisfy this condition:</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv06_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrcv06_RequiredNRCVPlb22H== true; this field is displayed and loaded with a string that concatenates systems/spaces from Nrcv06_SystemFieldVerified</xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>

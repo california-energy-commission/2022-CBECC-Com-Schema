@@ -3102,6 +3102,9 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="EfficiencyEER2a_EER2b">
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="EfficiencyEER_IEER">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -3117,6 +3120,9 @@
             <dtyp:displayterm>Efficiency EER IPLV</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EfficiencyEERa_EERb">
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="EfficiencyExistingValueAFUE">
@@ -3429,7 +3435,11 @@
             <dtyp:displayterm value="EER">EER</dtyp:displayterm>
             <dtyp:displayterm value="EER_IPLV">IPLV</dtyp:displayterm>
             <dtyp:displayterm value="EER2">EER2</dtyp:displayterm>
+            <dtyp:displayterm value="EER2a">EER2a</dtyp:displayterm>
+            <dtyp:displayterm value="EER2b">EER2b</dtyp:displayterm>
             <dtyp:displayterm value="EER2SEER2">EER2/SEER2</dtyp:displayterm>
+            <dtyp:displayterm value="EERa">EERa</dtyp:displayterm>
+            <dtyp:displayterm value="EERb">EERb</dtyp:displayterm>
             <dtyp:displayterm value="EERSEER">EER/SEER</dtyp:displayterm>
             <dtyp:displayterm value="EnergyFactor">EF</dtyp:displayterm>
             <dtyp:displayterm value="GalPerMinHp">GPM/Hp</dtyp:displayterm>
@@ -3460,7 +3470,11 @@
          <xsd:enumeration value="EER"/>
          <xsd:enumeration value="EER_IPLV"/>
          <xsd:enumeration value="EER2"/>
+         <xsd:enumeration value="EER2a"/>
+         <xsd:enumeration value="EER2b"/>
          <xsd:enumeration value="EER2SEER2"/>
+         <xsd:enumeration value="EERa"/>
+         <xsd:enumeration value="EERb"/>
          <xsd:enumeration value="EERSEER"/>
          <xsd:enumeration value="EnergyFactor"/>
          <xsd:enumeration value="GalPerMinHp"/>
@@ -9992,6 +10006,7 @@
             <dtyp:displayterm value="VCHP_IndoorUnitDucted">VCHP-ducted</dtyp:displayterm>
             <dtyp:displayterm value="VCHP_IndoorUnitDuctedAndDuctless">VCHP-ducted+ductless</dtyp:displayterm>
             <dtyp:displayterm value="VCHP_IndoorUnitDuctless">VCHP-ductless</dtyp:displayterm>
+            <dtyp:displayterm value="VCHP2">VCHP2</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="CBECCresXML">
             <dtyp:CBECCresXMLterm value="AirToWaterHeatPump">AirToWaterHeatPump - Air to water heat pump (able to heat DHW)</dtyp:CBECCresXMLterm>
@@ -10038,6 +10053,7 @@
             <dtyp:CBECCresXMLterm value="VCHP_IndoorUnitDucted"/>
             <dtyp:CBECCresXMLterm value="VCHP_IndoorUnitDuctedAndDuctless"/>
             <dtyp:CBECCresXMLterm value="VCHP_IndoorUnitDuctless"/>
+            <dtyp:CBECCresXMLterm value="VCHP2"/>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -10085,6 +10101,7 @@
          <xsd:enumeration value="VCHP_IndoorUnitDucted"/>
          <xsd:enumeration value="VCHP_IndoorUnitDuctedAndDuctless"/>
          <xsd:enumeration value="VCHP_IndoorUnitDuctless"/>
+         <xsd:enumeration value="VCHP2"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ResidentialCoolingZoneType">
@@ -10292,6 +10309,7 @@
             <dtyp:displayterm value="VCHP_IndoorUnitDucted">VCHP-ducted</dtyp:displayterm>
             <dtyp:displayterm value="VCHP_IndoorUnitDuctedAndDuctless">VCHP-ducted+ductless</dtyp:displayterm>
             <dtyp:displayterm value="VCHP_IndoorUnitDuctless">VCHP-ductless</dtyp:displayterm>
+            <dtyp:displayterm value="VCHP2">VCHP2</dtyp:displayterm>
             <dtyp:displayterm value="WoodHeat">Wood Heat</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="CBECCresXML">
@@ -10331,6 +10349,7 @@
             <dtyp:CBECCresXMLterm value="VCHP_IndoorUnitDucted"/>
             <dtyp:CBECCresXMLterm value="VCHP_IndoorUnitDuctedAndDuctless"/>
             <dtyp:CBECCresXMLterm value="VCHP_IndoorUnitDuctless"/>
+            <dtyp:CBECCresXMLterm value="VCHP2"/>
             <dtyp:CBECCresXMLterm value="WoodHeat"/>
          </xsd:appinfo>
       </xsd:annotation>
@@ -10371,6 +10390,7 @@
          <xsd:enumeration value="VCHP_IndoorUnitDucted"/>
          <xsd:enumeration value="VCHP_IndoorUnitDuctedAndDuctless"/>
          <xsd:enumeration value="VCHP_IndoorUnitDuctless"/>
+         <xsd:enumeration value="VCHP2"/>
          <xsd:enumeration value="WoodHeat"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -12764,9 +12784,12 @@
             <dtyp:displayterm value="BalancedERV">Balanced ERV</dtyp:displayterm>
             <dtyp:displayterm value="BalancedHRV">Balanced HRV</dtyp:displayterm>
             <dtyp:displayterm value="CentralFanIntegrated">Central Fan Integrated (CFI)</dtyp:displayterm>
+            <dtyp:displayterm value="DefaultMinIAQ">Default Minimum Balanced IAQ Fan</dtyp:displayterm>
             <dtyp:displayterm value="ExhaustCentralIndSupply">Exhaust Central / Individual Supply</dtyp:displayterm>
             <dtyp:displayterm value="ExhaustCentralVent">Central Ventilation System - Exhaust</dtyp:displayterm>
+            <dtyp:displayterm value="ExhaustMinIAQ">Minimum Exhaust IAQ Fan</dtyp:displayterm>
             <dtyp:displayterm value="ExhaustVent">Exhaust</dtyp:displayterm>
+            <dtyp:displayterm value="IndividualIAQ">Individual IAQ Fan</dtyp:displayterm>
             <dtyp:displayterm value="SupplyAndExhaustCentral">Supply Central / Exhaust Central</dtyp:displayterm>
             <dtyp:displayterm value="SupplyCentralIndExhaust">Supply Central / Individual Exhaust</dtyp:displayterm>
             <dtyp:displayterm value="SupplyCentralVent">Central Ventilation System - Supply</dtyp:displayterm>
@@ -12779,9 +12802,12 @@
          <xsd:enumeration value="BalancedERV"/>
          <xsd:enumeration value="BalancedHRV"/>
          <xsd:enumeration value="CentralFanIntegrated"/>
+         <xsd:enumeration value="DefaultMinIAQ"/>
          <xsd:enumeration value="ExhaustCentralIndSupply"/>
          <xsd:enumeration value="ExhaustCentralVent"/>
+         <xsd:enumeration value="ExhaustMinIAQ"/>
          <xsd:enumeration value="ExhaustVent"/>
+         <xsd:enumeration value="IndividualIAQ"/>
          <xsd:enumeration value="SupplyAndExhaustCentral"/>
          <xsd:enumeration value="SupplyCentralIndExhaust"/>
          <xsd:enumeration value="SupplyCentralVent"/>

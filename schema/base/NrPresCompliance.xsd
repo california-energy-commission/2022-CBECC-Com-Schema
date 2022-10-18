@@ -2659,6 +2659,49 @@
       <xsd:restriction base="xsd:token">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ConstructionAssemblyType">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Construction Assembly Type</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AdobeStrawbaleLog">Adobe / Strawbale / Log</dtyp:displayterm>
+            <dtyp:displayterm value="UndergroundFloor">Basement (underground) Floor</dtyp:displayterm>
+            <dtyp:displayterm value="BuiltupRoof">Built-up Roof</dtyp:displayterm>
+            <dtyp:displayterm value="ConcreteBrickICF">Concrete / ICF / Brick</dtyp:displayterm>
+            <dtyp:displayterm value="FloorSlab">Floor Slab</dtyp:displayterm>
+            <dtyp:displayterm value="HollowUnitMasonry">Hollow Unit Masonry</dtyp:displayterm>
+            <dtyp:displayterm value="NoFrameConcreteCMU">No Frame (concrete/CMU)</dtyp:displayterm>
+            <dtyp:displayterm value="SIPS_Ceiling">SIPS Ceiling</dtyp:displayterm>
+            <dtyp:displayterm value="SIPS_Floor">SIPS Floor</dtyp:displayterm>
+            <dtyp:displayterm value="SIPS_Wall">SIPS Wall</dtyp:displayterm>
+            <dtyp:displayterm value="SteelFramedCeiling">Steel Framed Ceiling</dtyp:displayterm>
+            <dtyp:displayterm value="SteelFramedFloor">Steel Framed Floor</dtyp:displayterm>
+            <dtyp:displayterm value="SteelFramedWall">Steel Framed Wall</dtyp:displayterm>
+            <dtyp:displayterm value="WoodFramedCeiling">Wood Framed Ceiling</dtyp:displayterm>
+            <dtyp:displayterm value="WoodFramedFloor">Wood Framed Floor</dtyp:displayterm>
+            <dtyp:displayterm value="WoodFramedWall">Wood Framed Wall</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AdobeStrawbaleLog"/>
+         <xsd:enumeration value="UndergroundFloor"/>
+         <xsd:enumeration value="BuiltupRoof"/>
+         <xsd:enumeration value="ConcreteBrickICF"/>
+         <xsd:enumeration value="FloorSlab"/>
+         <xsd:enumeration value="HollowUnitMasonry"/>
+         <xsd:enumeration value="NoFrameConcreteCMU"/>
+         <xsd:enumeration value="SIPS_Ceiling"/>
+         <xsd:enumeration value="SIPS_Floor"/>
+         <xsd:enumeration value="SIPS_Wall"/>
+         <xsd:enumeration value="SteelFramedCeiling"/>
+         <xsd:enumeration value="SteelFramedFloor"/>
+         <xsd:enumeration value="SteelFramedWall"/>
+         <xsd:enumeration value="WoodFramedCeiling"/>
+         <xsd:enumeration value="WoodFramedFloor"/>
+         <xsd:enumeration value="WoodFramedWall"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ConstructionBeginDate">
       <xsd:annotation>
          <xsd:documentation>  Units: none</xsd:documentation>
@@ -11142,6 +11185,16 @@
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasRefrigGasCooler">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasRefrigInfiltBarrier">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -12611,7 +12664,27 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireNRCIElcE">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIEnv01E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireNRCIEnvE">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -12672,6 +12745,16 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="RequireNRCILti06E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireNRCILtiE">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -12761,6 +12844,16 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireNRCIMchE">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIPlb01E">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -12811,6 +12904,16 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireNRCIPlbE">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireNRCIPrc01E">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -12821,7 +12924,27 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireNRCIPrcE">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireNRCISab01E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireNRCISabE">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -12909,6 +13032,10 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResponsibleDesigner01_ScopeCC">
+      <xsd:restriction base="xsd:string">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ReusedEquipment">
@@ -16042,7 +16169,7 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    <xsd:complexType name="DeclarationsNRCCPRF">
       <xsd:sequence>
          <xsd:element name="DocumentAuthorNRCC" type="comp:DocumentAuthorNRCC" ></xsd:element>
-         <xsd:element name="ResponsiblePersonNRCCPRF" type="comp:ResponsiblePersonNRCCPRF" minOccurs="1" maxOccurs="unbounded" ></xsd:element>
+         <xsd:element name="ResponsiblePersonNRCCPRF" type="comp:ResponsiblePersonNRCCPRF" maxOccurs="unbounded" minOccurs="1" ></xsd:element>
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="DocumentAuthor">
@@ -16082,7 +16209,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:complexType>
    <xsd:complexType name="ComplianceDocumentDataSchema">
       <xsd:sequence>
-         <xsd:element name="DeclarationsNRCCPRF" type="comp:DeclarationsNRCCPRF" minOccurs="1" maxOccurs="unbounded" ></xsd:element>
+         <xsd:element name="DeclarationsNRCCPRF" type="comp:DeclarationsNRCCPRF" maxOccurs="unbounded" minOccurs="1" ></xsd:element>
          <xsd:element name="DocumentAuthor" type="comp:DocumentAuthor" ></xsd:element>
          <xsd:element name="FieldTechnicianNRCA" type="comp:FieldTechnicianNRCA" ></xsd:element>
          <xsd:element name="Footer" type="comp:Footer" ></xsd:element>
@@ -16198,7 +16325,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:complexType>
    <xsd:complexType name="MandatoryMeasureBlockNRCC">
       <xsd:sequence>
-         <xsd:element name="MandatoryMeasure" type="comp:MandatoryMeasure" minOccurs="1" maxOccurs="unbounded" ></xsd:element>
+         <xsd:element name="MandatoryMeasure" type="comp:MandatoryMeasure" maxOccurs="unbounded" minOccurs="1" ></xsd:element>
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="Payload">
@@ -16215,6 +16342,22 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:attribute name="reportRequestorIP_Address" type="comp:ReportRequestorIP_Address" use="required"></xsd:attribute>
       <xsd:attribute name="revision" type="comp:Revision" use="required"></xsd:attribute>
       <xsd:attribute name="validates" type="comp:Validates" use="required"></xsd:attribute>
+   </xsd:complexType>
+   <xsd:complexType name="ResponsiblePersonDesigner">
+      <xsd:sequence>
+         <xsd:element name="responsibleDesigner01_NameNRCC" type="comp:PersonFullName" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsibleDesigner01_ScopeCC" type="comp:ResponsibleDesigner01_ScopeCC" ></xsd:element>
+         <xsd:element name="responsibleDesigner02_SignatureNRCC" type="comp:ElectronicSignature" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsiblePerson03_Company" type="comp:Company" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsiblePerson04_Address" type="comp:StreetAddress" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsiblePerson05_DateSigned" type="comp:SignatureDate" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsiblePerson06_City" type="comp:City" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsiblePerson07_State" type="comp:State" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsiblePerson08_Zipcode" type="comp:Zipcode" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsiblePerson09_Phone" type="comp:PhoneNumber" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsiblePerson10_JobTitle" type="comp:JobTitle" minOccurs="0" ></xsd:element>
+         <xsd:element name="responsiblePerson11_License" type="comp:LicenseNumber" minOccurs="0" ></xsd:element>
+      </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="ResponsiblePersonEnvelopeDesigner">
       <xsd:sequence>
@@ -16292,6 +16435,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:complexType>
    <xsd:complexType name="ResponsiblePersonNRCCPRF">
       <xsd:sequence>
+         <xsd:element name="ResponsiblePersonDesigner" type="comp:ResponsiblePersonDesigner" maxOccurs="unbounded" minOccurs="0" ></xsd:element>
          <xsd:element name="ResponsiblePersonEnvelopeDesigner" type="comp:ResponsiblePersonEnvelopeDesigner" minOccurs="0" ></xsd:element>
          <xsd:element name="ResponsiblePersonLightingDesigner" type="comp:ResponsiblePersonLightingDesigner" minOccurs="0" ></xsd:element>
          <xsd:element name="ResponsiblePersonMechanicalDesigner" type="comp:ResponsiblePersonMechanicalDesigner" minOccurs="0" ></xsd:element>

@@ -1446,8 +1446,8 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative">
-         <xsd:maxInclusive value="12"/>
          <xsd:minInclusive value="1"/>
+         <xsd:maxInclusive value="12"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="MonthDay">
@@ -1458,8 +1458,8 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative">
-         <xsd:maxInclusive value="31"/>
          <xsd:minInclusive value="1"/>
+         <xsd:maxInclusive value="31"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="NaturalGasOnSite">
