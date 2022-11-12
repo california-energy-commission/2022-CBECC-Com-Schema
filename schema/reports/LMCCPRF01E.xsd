@@ -37,8 +37,10 @@
                      <xsd:element name="Header" type="comp:HeaderCF1RPerf" />
                      <xsd:element ref="lMCCPRF01E" />
                      <xsd:element name="ProjectNotes" type="comp:ProjectNotes"  minOccurs="0"/>
-                     <xsd:element name="DocAuthor" type="comp:DocumentAuthor" />
-                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R" maxOccurs="unbounded" />
+                     <xsd:element name="DeclarationsBlock" type="comp:DeclarationsNRCCPRF" maxOccurs="unbounded"/>
+                     <!-- Disabled for consistency with NRCC - RScott - 11-11-2022 -->
+                     <!--<xsd:element name="DocAuthor" type="comp:DocumentAuthor" />
+                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R" maxOccurs="unbounded" />-->
                      <xsd:element name="Footer" type="comp:Footer" />
                   </xsd:sequence>
                </xsd:complexType>
