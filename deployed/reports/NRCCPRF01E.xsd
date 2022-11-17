@@ -135,7 +135,7 @@
                   </xsd:element>
                   <xsd:element name="Info14_TotalConditionedFloorArea" type="com:TotalConditionedFloorArea">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Total Conditioned Floor Area in Scope</xsd:documentation>
+                        <xsd:documentation source="FieldText">Total Conditioned Floor Area in Scope (ft<d:sup>2</d:sup>)</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Info15_HotelMotelGuestRoomCount" type="com:HotelMotelGuestRoomCount">
@@ -145,7 +145,7 @@
                   </xsd:element>
                   <xsd:element name="Info16_TotalUnconditionedFloorArea" type="com:TotalUnconditionedFloorArea">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Total Unconditioned Floor Area</xsd:documentation>
+                        <xsd:documentation source="FieldText">Total Unconditioned Floor Area (ft<d:sup>2</d:sup>)</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Info17_SiteFuelType" type="com:SiteFuelType">
@@ -425,7 +425,7 @@
          <xsd:element name="Section_DwellInfo" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
-                  <d:b>B2. DWELLING UNIT INFORMATION</d:b>
+                  <d:b>F3. DWELLING UNIT INFORMATION</d:b>
                </xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -474,7 +474,7 @@
          <xsd:element name="Section_DwellType" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
-                  <d:b>B3. DWELLING UNIT TYPES </d:b>
+                  <d:b>F4. DWELLING UNIT TYPES </d:b>
                </xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -10612,7 +10612,7 @@ result =  ZnSys:ClgTotEff100</dtyp:termConditions>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Water06_WaterHeaterElectricFiredRatedInput" type="hvac:WaterHeaterElectricFiredRatedInput">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Rated Input (kW)</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Rated Input</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
                                                 <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:InpRatingElec Or FluidSys:WtrHtr:CapRtd</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
@@ -10620,7 +10620,7 @@ result =  ZnSys:ClgTotEff100</dtyp:termConditions>
                                        </xsd:element>
                                        <xsd:element name="Water06_WaterHeaterGasRatedInput" type="hvac:WaterHeaterGasRatedInput">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Rated Input (kBtu/h)</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Rated Input</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
                                                 <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:InpRating Or FluidSys:WtrHtr:InputPower</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
@@ -12186,7 +12186,7 @@ End If</dtyp:termConditions>
                                     </xsd:element>
                                     <xsd:element name="LtgInfo02_SpaceFloorArea" type="com:SpaceFloorArea">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Conditioned Floor Area<d:sup>2</d:sup> (ft2)</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Conditioned Floor Area<d:sup>2</d:sup> (ft<d:sup>2</d:sup>)</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
                                              <dtyp:CBECCnrXMLterm>Spc:CondFlrAreaWithMult</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
@@ -12443,22 +12443,36 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="LtgCredits03_PAFCreditType" type="comp:PAFCreditType" minOccurs="0" maxOccurs="unbounded">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Type of Lighting Control</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:IntLtgSys:PAFCredType</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="LtgCredits04_LightingPAF" type="lit:LightingPAF" minOccurs="0" maxOccurs="unbounded">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Power Adjustment Factor (PAF)</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:IntLtgSys:PAF</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="LtgCredits03_PAFCreditType" type="comp:PAFCreditType" minOccurs="0" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Type of Lighting Control</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:IntLtgSys:PAFCredType</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="LtgCredits03_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Type of Lighting Control</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="LtgCredits04_LightingPAF" type="lit:LightingPAF" minOccurs="0" maxOccurs="unbounded">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power Adjustment Factor (PAF)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:IntLtgSys:PAF</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="LtgCredits04_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Power Adjustment Factor (PAF)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="TableLuminairesCredits">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText"/>
@@ -12537,7 +12551,30 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
-               <xsd:choice>
+               <xsd:sequence>
+                  <xsd:element name="LtgControlsCol0102Label" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Building Level Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LtgControls01_MandatoryBuildingDemandResponseControlRequired" type="comp:MandatoryBuildingDemandResponseControlRequired" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Mandatory Demand Response 
+                           <d:t24refnolink/>110.12(c)</xsd:documentation>
+                        <xsd:appinfo source="CBECCnrXML">
+                           <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlDescRpt[]</dtyp:CBECCnrXMLterm>
+                        </xsd:appinfo>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LtgControls02_MandatoryBuildingShutOffControlRequired" type="comp:MandatoryBuildingShutOffControlRequired" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Shut-Off Controls 
+                           <d:t24refnolink/>130.1(c) &amp;amp; 160.5(b)4C</xsd:documentation>
+                        <xsd:appinfo source="CBECCnrXML">
+                           <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsBldgShutOffCtrlRpt</dtyp:CBECCnrXMLterm>
+                        </xsd:appinfo>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="LtgControlsNA" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">See NRCC-LTI-E for mandatory controls</xsd:documentation>
@@ -12545,110 +12582,78 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                         <xsd:documentation source="CalculationsAndRules">If no data for this section display this message</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="LtgControlsReq">
+                  <xsd:element name="LtgControlsCol0409Label" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Area Level Controls 
+                           <d:i>(includes all lighting controls installed in conditioned space to meet mandatory requirements per 
+                              <d:t24refnolink/>130.1)</d:i>
+                        </xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="TableLtgControls" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                      </xsd:annotation>
                      <xsd:complexType>
                         <xsd:sequence>
-                           <xsd:element name="LtgControlsCol0102Label" minOccurs="0">
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText">Building Level Controls</xsd:documentation>
-                              </xsd:annotation>
-                           </xsd:element>
-                           <xsd:element name="LtgControls01_MandatoryBuildingDemandResponseControlRequired" type="comp:MandatoryBuildingDemandResponseControlRequired">
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText">Mandatory Demand Response 
-                                    <d:t24refnolink/>110.12(c)</xsd:documentation>
-                                 <xsd:appinfo source="CBECCnrXML">
-                                    <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlDescRpt[]</dtyp:CBECCnrXMLterm>
-                                 </xsd:appinfo>
-                              </xsd:annotation>
-                           </xsd:element>
-                           <xsd:element name="LtgControls02_MandatoryBuildingShutOffControlRequired" type="comp:MandatoryBuildingShutOffControlRequired">
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText">Shut-Off Controls 
-                                    <d:t24refnolink/>130.1(c) &amp;amp; 160.5(b)4C</xsd:documentation>
-                                 <xsd:appinfo source="CBECCnrXML">
-                                    <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsBldgShutOffCtrlRpt</dtyp:CBECCnrXMLterm>
-                                 </xsd:appinfo>
-                              </xsd:annotation>
-                           </xsd:element>
-                           <xsd:element name="LtgControlsCol0409Label" minOccurs="0">
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText">Area Level Controls 
-                                    <d:i>(includes all lighting controls installed in conditioned space to meet mandatory requirements per 
-                                       <d:t24refnolink/>130.1)</d:i>
-                                 </xsd:documentation>
-                              </xsd:annotation>
-                           </xsd:element>
-                           <xsd:element name="TableLtgControls">
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText"/>
-                              </xsd:annotation>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
-                                       <xsd:complexType>
-                                          <xsd:sequence>
-                                             <xsd:element name="LtgControls03_SpaceDescription" type="com:SpaceDescription">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Area Description</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlDescRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls04_SpaceFunction" type="com:SpaceFunction">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Area Category Primary Function Area</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlSpcFuncRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls05_MandatoryAreaControlsRequired" type="comp:MandatoryAreaControlsRequired">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Area Controls 130.1(a) &amp;amp; 160.5(b)4A</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsAreaCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls06_MandatoryMultiLevelControlRequired" type="comp:MandatoryMultiLevelControlRequired">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Multi-Level Controls 130.1(b) &amp;amp; 160.5(b)4B</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsMultiLvlCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls07_MandatoryShutOffControlRequired" type="comp:MandatoryShutOffControlRequired">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Shut-Off Controls 130.1(c) &amp;amp; 160.5(b)4C</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsShutOffCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls08_MandatoryPrimaryDaylightingControlRequired" type="comp:MandatoryPrimaryDaylightingControlRequired">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Primary Daylighting 130.1(d) &amp;amp; 160.5(b)4D</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsPriDayltgCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls09_MandatorySecondaryDaylightingControlRequired" type="comp:MandatorySecondaryDaylightingControlRequired">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Secondary Daylighting 140.5(d) &amp;amp; 160.5(b)4D</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsSecDayltgCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                          </xsd:sequence>
-                                       </xsd:complexType>
+                                    <xsd:element name="LtgControls03_SpaceDescription" type="com:SpaceDescription">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Area Description</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlDescRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls04_SpaceFunction" type="com:SpaceFunction">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Area Category Primary Function Area</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlSpcFuncRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls05_MandatoryAreaControlsRequired" type="comp:MandatoryAreaControlsRequired">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Area Controls 130.1(a) &amp;amp; 160.5(b)4A</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsAreaCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls06_MandatoryMultiLevelControlRequired" type="comp:MandatoryMultiLevelControlRequired">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Multi-Level Controls 130.1(b) &amp;amp; 160.5(b)4B</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsMultiLvlCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls07_MandatoryShutOffControlRequired" type="comp:MandatoryShutOffControlRequired">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Shut-Off Controls 130.1(c) &amp;amp; 160.5(b)4C</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsShutOffCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls08_MandatoryPrimaryDaylightingControlRequired" type="comp:MandatoryPrimaryDaylightingControlRequired">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Primary Daylighting 130.1(d) &amp;amp; 160.5(b)4D</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsPriDayltgCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls09_MandatorySecondaryDaylightingControlRequired" type="comp:MandatorySecondaryDaylightingControlRequired">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Secondary Daylighting 140.5(d) &amp;amp; 160.5(b)4D</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsSecDayltgCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
                                     </xsd:element>
                                  </xsd:sequence>
                               </xsd:complexType>
@@ -12656,7 +12661,7 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
-               </xsd:choice>
+               </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
          <xsd:element name="Section_TailoredSum" minOccurs="0">

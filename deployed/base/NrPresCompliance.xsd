@@ -4424,6 +4424,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="ChillerNA">NA - See Chiller</dtyp:displayterm>
             <dtyp:displayterm value="CoolingTowerNA">NA - See Cooling Tower</dtyp:displayterm>
             <dtyp:displayterm value="EfficiencyNA">NA</dtyp:displayterm>
+            <dtyp:displayterm value="ElectricResistanceNA">NA - Electric Resistance</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -8675,7 +8676,9 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="JA8Lamp">JA8 Lamp</dtyp:displayterm>
             <dtyp:displayterm value="ManufacturerSpec">Mfr. Spec</dtyp:displayterm>
             <dtyp:displayterm value="Other">Other</dtyp:displayterm>
-            <dtyp:displayterm value="SeeOtherSection">See Other Section</dtyp:displayterm>
+            <dtyp:displayterm value="SeeOtherSection">According to 
+               <d:t24ref h="130.0(c)"/>
+            </dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">

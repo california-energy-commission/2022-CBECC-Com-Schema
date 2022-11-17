@@ -150,7 +150,7 @@
                   </xsd:element>
                   <xsd:element name="Info14_TotalConditionedFloorArea" type="com:TotalConditionedFloorArea" >
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Total Conditioned Floor Area in Scope</xsd:documentation>
+                        <xsd:documentation source="FieldText">Total Conditioned Floor Area in Scope (ft[d:sup]2[/d:sup])</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Info15_HotelMotelGuestRoomCount" type="com:HotelMotelGuestRoomCount" >
@@ -160,7 +160,7 @@
                   </xsd:element>
                   <xsd:element name="Info16_TotalUnconditionedFloorArea" type="com:TotalUnconditionedFloorArea" >
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Total Unconditioned Floor Area</xsd:documentation>
+                        <xsd:documentation source="FieldText">Total Unconditioned Floor Area (ft[d:sup]2[/d:sup])</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Info17_SiteFuelType" type="com:SiteFuelType" >
@@ -406,7 +406,7 @@
          </xsd:element>
          <xsd:element name="Section_DwellInfo" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]B2. DWELLING UNIT INFORMATION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]F3. DWELLING UNIT INFORMATION[/d:b]</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -453,7 +453,7 @@
          </xsd:element>
          <xsd:element name="Section_DwellType" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]B3. DWELLING UNIT TYPES [/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">[d:b]F4. DWELLING UNIT TYPES [/d:b]</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -8817,155 +8817,14 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf09_AirSegmentName" type="hvac:AirSegmentName" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Duct Segment Identification</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">Fields Distmf09 - 19 come from CF1RPRF schema Section_Ii  HVAC DISTRIBUTION - VERIFIED DUCT DESIGN</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf09_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Duct Segment Identification</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf10_AirSegmentType" type="hvac:AirSegmentType" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Suppy/ Return</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf10_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Suppy/ Return</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf11_DuctNominalDiameter" type="hvac:DuctNominalDiameter" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Nominal Diam. (in)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf11_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Nominal Diam. (in)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf12_DuctLength" type="hvac:DuctLength" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Length (ft)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf12_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Length (ft)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf13_DuctRValue" type="hvac:DuctRValue" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Duct R-value</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf13_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Duct R-value</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf15_InsulationRValue" type="env:InsulationRValue" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. R-value</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf15_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. R-value</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf16_InsulationThickness" type="env:InsulationThickness" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. Depth (in)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf16_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. Depth (in)</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf17_InsulationType" type="env:InsulationType" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf17_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. Type</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf18_DuctBuriedLevel" type="hvac:DuctBuriedLevel" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Duct Burial Level</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf18_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Duct Burial Level</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf19_BuriedDuctInsulationDevice" type="hvac:BuriedDuctInsulationDevice" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Containment System</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Distmf19_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="AdditionalRequirements">Containment System</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf20_DuctLeakageTestRequired" type="comp:DuctLeakageTestRequired" >
+                                       <xsd:element name="Distmf09_DuctLeakageTestRequired" type="comp:DuctLeakageTestRequired" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Duct Leakage Verification</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Fields Distmf20 - 29 come from CF1RPRF schema Setion_Bb HVAC DISTRIBUTION - HERS VERIFICATION</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf20_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf09_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Duct Leakage Verification</xsd:documentation>
@@ -8973,13 +8832,13 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf21_DuctSystemLeakageTarget" type="comp:DuctSystemLeakageTarget" >
+                                       <xsd:element name="Distmf10_DuctSystemLeakageTarget" type="comp:DuctSystemLeakageTarget" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Duct Leakage Target (%)</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf21_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf10_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Duct Leakage Target (%)</xsd:documentation>
@@ -8987,13 +8846,13 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf22_DuctSystemLeakageTargetMessage" type="comp:DuctSystemLeakageTargetMessage" >
+                                       <xsd:element name="Distmf11_DuctSystemLeakageTargetMessage" type="comp:DuctSystemLeakageTargetMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Duct Leakage Target Message</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf22_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf11_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Duct Leakage Target Message</xsd:documentation>
@@ -9001,13 +8860,13 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf23_IsDuctLocationVerificationRequired" type="comp:IsDuctLocationVerificationRequired" >
+                                       <xsd:element name="Distmf12_IsDuctLocationVerificationRequired" type="comp:IsDuctLocationVerificationRequired" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Verified Duct Location</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf23_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf12_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Verified Duct Location</xsd:documentation>
@@ -9015,13 +8874,13 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf24_DuctsInCondExcept12CreditTaken" type="comp:DuctsInCondExcept12CreditTaken" >
+                                       <xsd:element name="Distmf13_DuctsInCondExcept12CreditTaken" type="comp:DuctsInCondExcept12CreditTaken" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">NOT REPORTED IN PDF</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf24_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf13_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">NOT REPORTED IN PDF</xsd:documentation>
@@ -9029,13 +8888,13 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf25_DuctDesignVerificationRequired" type="comp:DuctDesignVerificationRequired" >
+                                       <xsd:element name="Distmf14_DuctDesignVerificationRequired" type="comp:DuctDesignVerificationRequired" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Verified Duct Design</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf25_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf14_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Verified Duct Design</xsd:documentation>
@@ -9043,13 +8902,13 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf26_DuctsBuriedVerificationRequired" type="comp:DuctsBuriedVerificationRequired" >
+                                       <xsd:element name="Distmf15_DuctsBuriedVerificationRequired" type="comp:DuctsBuriedVerificationRequired" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Buried Ducts</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf26_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf15_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Buried Ducts</xsd:documentation>
@@ -9057,13 +8916,13 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf27_DuctsDeeplyBuriedComplianceCreditTaken" type="comp:DuctsDeeplyBuriedComplianceCreditTaken" >
+                                       <xsd:element name="Distmf16_DuctsDeeplyBuriedComplianceCreditTaken" type="comp:DuctsDeeplyBuriedComplianceCreditTaken" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Deeply Buried Ducts</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf27_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf16_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Deeply Buried Ducts</xsd:documentation>
@@ -9071,13 +8930,13 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf28_LowLeakageAirHandlingUnitVerificationRequired" type="comp:LowLeakageAirHandlingUnitVerificationRequired" >
+                                       <xsd:element name="Distmf17_LowLeakageAirHandlingUnitVerificationRequired" type="comp:LowLeakageAirHandlingUnitVerificationRequired" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Low-leakage Air Handler</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf28_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf17_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Low-leakage Air Handler</xsd:documentation>
@@ -9085,16 +8944,200 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf29_LowLeakDuctsConditionedVerificationRequired" type="comp:LowLeakDuctsConditionedVerificationRequired" >
+                                       <xsd:element name="Distmf18_LowLeakDuctsConditionedVerificationRequired" type="comp:LowLeakDuctsConditionedVerificationRequired" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Verified Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Distmf18_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Verified Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Distmf19_DuctsInCondSpc" type="comp:LowLeakDuctsConditionedVerificationRequired" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="Distmf29_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                       <xsd:element name="Distmf19_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="TableDuctMF" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">[d:b]H4a. MULTIFAMILY / DUCT SYSTEM DESIGN DETAILS [/d:b]</xsd:documentation>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf01_SpaceConditioningDistributionSystemName" type="hvac:SpaceConditioningDistributionSystemName" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Duct Segment Parent Identification</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf01_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Duct Segment Parent Identification</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf02_AirSegmentName" type="hvac:AirSegmentName" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Duct Segment Identification</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Fields Ductmf02 - 19 come from CF1RPRF schema Section_Ii  HVAC DISTRIBUTION - VERIFIED DUCT DESIGN</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf02_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Duct Segment Identification</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf03_AirSegmentType" type="hvac:AirSegmentType" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Suppy/ Return</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf03_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Suppy/ Return</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf04_DuctNominalDiameter" type="hvac:DuctNominalDiameter" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Nominal Diam. (in)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf04_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Nominal Diam. (in)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf05_DuctRValue" type="hvac:DuctRValue" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Duct R-value</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf05_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Duct R-value</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf06_DuctLength" type="hvac:DuctLength" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Length (ft)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf06_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Length (ft)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf07_AtticInsulationRValue" type="env:InsulationRValue" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. R-value</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf07_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. R-value</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf08_AtticInsulationThickness" type="env:InsulationThickness" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. Depth (in)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf08_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. Depth (in)</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf09_AtticInsulationType" type="env:InsulationType" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf09_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Attic Insul. Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf10_DuctBuriedLevel" type="hvac:DuctBuriedLevel" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Duct Burial Level</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf10_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Duct Burial Level</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Ductmf11_BuriedDuctInsulationDevice" type="hvac:BuriedDuctInsulationDevice" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Containment System</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Ductmf11_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Containment System</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -11275,6 +11318,49 @@ Else result is one or more ResDHWSys:ResWtrHtr:Name</dtyp:termConditions>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterMF10_PipeInsulationVerificationRequired" type="comp:PipeInsulationVerificationRequired" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Pipe Insulation Verification Required</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Fields WaterMF10 - 12 come from CF1RPRF schema Section_U WATER HEATING - HERS VERIFICATION table</xsd:documentation>
+                                         </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterMF10_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Pipe Insulation Verification Required</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterMF11_ParallelPipingVerificationRequired" type="comp:ParallelPipingVerificationRequired" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Parallel Piping Verification Required</xsd:documentation>
+                                         </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterMF11_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Parallel Piping Verification Required</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterMF12_RecirculationControlVerificationRequired" type="comp:RecirculationControlVerificationRequired" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Recirculation Control Verification Required</xsd:documentation>
+                                         </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterMF12_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Recirculation Control Verification Required</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                  </xsd:sequence>
                               </xsd:complexType>
                            </xsd:element>
@@ -12014,6 +12100,20 @@ End If</dtyp:termConditions>
                                        <xsd:element name="WaterCompact08_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">HERS Verification</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="WaterCompact08a_CompactDistributionType" type="hvac:CompactDistributionType" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Compact Distribution</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="WaterCompact08a_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Compact Distribution</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -12777,7 +12877,28 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                <xsd:documentation source="FieldText">[d:b]K4. INDOOR CONDITIONED LIGHTING MANDATORY LIGHTING CONTROL [/d:b]</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
-               <xsd:choice >
+               <xsd:sequence>
+                  <xsd:element name="LtgControlsCol0102Label" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Building Level Controls</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LtgControls01_MandatoryBuildingDemandResponseControlRequired" type="comp:MandatoryBuildingDemandResponseControlRequired" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Mandatory Demand Response [d:t24refnolink/]110.12(c)</xsd:documentation>
+                        <xsd:appinfo source="CBECCnrXML">
+                           <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlDescRpt[]</dtyp:CBECCnrXMLterm>
+                        </xsd:appinfo>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LtgControls02_MandatoryBuildingShutOffControlRequired" type="comp:MandatoryBuildingShutOffControlRequired" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Shut-Off Controls [d:t24refnolink/]130.1(c) &amp; 160.5(b)4C</xsd:documentation>
+                        <xsd:appinfo source="CBECCnrXML">
+                           <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsBldgShutOffCtrlRpt</dtyp:CBECCnrXMLterm>
+                        </xsd:appinfo>
+                     </xsd:annotation>
+                  </xsd:element>                          
                   <xsd:element name="LtgControlsNA" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">See LMCC-LTI01-E for mandatory controls</xsd:documentation>
@@ -12785,105 +12906,75 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                         <xsd:documentation source="CalculationsAndRules">If no data for this section display this message</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="LtgControlsReq" >
+                  <xsd:element name="LtgControlsCol0409Label" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Area Level Controls [d:i](includes all lighting controls installed in conditioned space to meet mandatory requirements per [d:t24refnolink/]130.1)[/d:i]</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="TableLtgControls" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
                      </xsd:annotation>
                      <xsd:complexType>
                         <xsd:sequence>
-                           <xsd:element name="LtgControlsCol0102Label" minOccurs="0">
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText">Building Level Controls</xsd:documentation>
-                              </xsd:annotation>
-                           </xsd:element>
-                           <xsd:element name="LtgControls01_MandatoryBuildingDemandResponseControlRequired" type="comp:MandatoryBuildingDemandResponseControlRequired" >
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText">Mandatory Demand Response [d:t24refnolink/]110.12(c)</xsd:documentation>
-                                 <xsd:appinfo source="CBECCnrXML">
-                                    <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlDescRpt[]</dtyp:CBECCnrXMLterm>
-                                 </xsd:appinfo>
-                              </xsd:annotation>
-                           </xsd:element>
-                           <xsd:element name="LtgControls02_MandatoryBuildingShutOffControlRequired" type="comp:MandatoryBuildingShutOffControlRequired" >
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText">Shut-Off Controls [d:t24refnolink/]130.1(c) &amp; 160.5(b)4C</xsd:documentation>
-                                 <xsd:appinfo source="CBECCnrXML">
-                                    <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsBldgShutOffCtrlRpt</dtyp:CBECCnrXMLterm>
-                                 </xsd:appinfo>
-                              </xsd:annotation>
-                           </xsd:element>
-                           <xsd:element name="LtgControlsCol0409Label" minOccurs="0">
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText">Area Level Controls [d:i](includes all lighting controls installed in conditioned space to meet mandatory requirements per [d:t24refnolink/]130.1)[/d:i]</xsd:documentation>
-                              </xsd:annotation>
-                           </xsd:element>
-                           <xsd:element name="TableLtgControls" >
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText"></xsd:documentation>
-                              </xsd:annotation>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
-                                       <xsd:complexType>
-                                          <xsd:sequence>
-                                             <xsd:element name="LtgControls03_SpaceDescription" type="com:SpaceDescription" >
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Area Description</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlDescRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls04_SpaceFunction" type="com:SpaceFunction" >
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Area Category Primary Function Area</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlSpcFuncRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls05_MandatoryAreaControlsRequired" type="comp:MandatoryAreaControlsRequired" >
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Area Controls 130.1(a) &amp; 160.5(b)4A</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsAreaCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls06_MandatoryMultiLevelControlRequired" type="comp:MandatoryMultiLevelControlRequired" >
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Multi-Level Controls 130.1(b) &amp; 160.5(b)4B</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsMultiLvlCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls07_MandatoryShutOffControlRequired" type="comp:MandatoryShutOffControlRequired" >
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Shut-Off Controls 130.1(c) &amp; 160.5(b)4C</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsShutOffCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls08_MandatoryPrimaryDaylightingControlRequired" type="comp:MandatoryPrimaryDaylightingControlRequired" >
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Primary Daylighting 130.1(d) &amp; 160.5(b)4D</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsPriDayltgCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="LtgControls09_MandatorySecondaryDaylightingControlRequired" type="comp:MandatorySecondaryDaylightingControlRequired" >
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">Secondary Daylighting 140.5(d) &amp; 160.5(b)4D</xsd:documentation>
-                                                   <xsd:appinfo source="CBECCnrXML">
-                                                      <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsSecDayltgCtrlRpt[]</dtyp:CBECCnrXMLterm>
-                                                   </xsd:appinfo>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                          </xsd:sequence>
-                                       </xsd:complexType>
+                                    <xsd:element name="LtgControls03_SpaceDescription" type="com:SpaceDescription" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Area Description</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlDescRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls04_SpaceFunction" type="com:SpaceFunction" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Area Category Primary Function Area</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlSpcFuncRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls05_MandatoryAreaControlsRequired" type="comp:MandatoryAreaControlsRequired" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Area Controls 130.1(a) &amp; 160.5(b)4A</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsAreaCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls06_MandatoryMultiLevelControlRequired" type="comp:MandatoryMultiLevelControlRequired" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Multi-Level Controls 130.1(b) &amp; 160.5(b)4B</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsMultiLvlCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls07_MandatoryShutOffControlRequired" type="comp:MandatoryShutOffControlRequired" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Shut-Off Controls 130.1(c) &amp; 160.5(b)4C</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsShutOffCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls08_MandatoryPrimaryDaylightingControlRequired" type="comp:MandatoryPrimaryDaylightingControlRequired" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Primary Daylighting 130.1(d) &amp; 160.5(b)4D</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsPriDayltgCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="LtgControls09_MandatorySecondaryDaylightingControlRequired" type="comp:MandatorySecondaryDaylightingControlRequired" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Secondary Daylighting 140.5(d) &amp; 160.5(b)4D</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsSecDayltgCtrlRpt[]</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
                                     </xsd:element>
                                  </xsd:sequence>
                               </xsd:complexType>
@@ -12891,7 +12982,7 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
-               </xsd:choice>
+               </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
          <xsd:element name="Section_TailoredSum" minOccurs="0">
