@@ -505,18 +505,6 @@
                                           <xsd:documentation source="FieldText">IAQ Vent Fan Name</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="DwellType08_DwellUnitTotalVolume" type="com:DwellUnitTotalVolume" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Dwelling Unit total conditioned volume</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="DwellType08_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Dwelling Unit total conditioned volume</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
                                  </xsd:sequence>
                               </xsd:complexType>
                            </xsd:element>
@@ -10793,23 +10781,6 @@ Else result is one or more ResDHWSys:ResWtrHtr:Name</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Solar Heating System</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">If Proj05_PerfSolarWH == false result = NotAppliacable</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="WaterMF09_CompactDistributionType" type="hvac:CompactDistributionType" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Compact Distribution</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If Water03_CentralSystem == false use this result</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ResDHWSys:CompactDist;  If ResDHWSys:CentralSys == 0 use this choice Else If ResDHWSys:CentralSys == 1 result = NA</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="WaterMF09_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Compact Distribution</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If Water03_CentralSystem == true result = NotApplicable</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
