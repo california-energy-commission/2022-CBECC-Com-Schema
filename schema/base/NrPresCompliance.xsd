@@ -9649,7 +9649,7 @@
             <dtyp:displayterm value="BlankGrayedOut"></dtyp:displayterm>
             <dtyp:displayterm value="FramingNA">NA</dtyp:displayterm>
             <dtyp:displayterm value="Minimized"></dtyp:displayterm>
-            <dtyp:displayterm value="N/A">n/a</dtyp:displayterm>
+            <dtyp:displayterm value="N/A">N/A</dtyp:displayterm>
             <dtyp:displayterm value="NoData">---</dtyp:displayterm>
             <dtyp:displayterm value="NoDataGrayedOut">NO DATA</dtyp:displayterm>
             <dtyp:displayterm value="Not Applicable">Not applicable</dtyp:displayterm>

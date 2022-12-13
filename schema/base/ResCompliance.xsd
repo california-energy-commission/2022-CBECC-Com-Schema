@@ -13185,8 +13185,8 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="BlankGrayedOut"></dtyp:displayterm>
             <dtyp:displayterm value="FramingNA">NA</dtyp:displayterm>
-            <dtyp:displayterm value="N/A">n/a</dtyp:displayterm>
-            <dtyp:displayterm value="n/a">n/a</dtyp:displayterm>
+            <dtyp:displayterm value="N/A">N/A</dtyp:displayterm>
+            <dtyp:displayterm value="n/a">N/A</dtyp:displayterm>
             <dtyp:displayterm value="N/A - no ducts replaced">N/A - no ducts replaced</dtyp:displayterm>
             <dtyp:displayterm value="N/A - not a central DHW system">N/A - not a central DHW system</dtyp:displayterm>
             <dtyp:displayterm value="N/A.   External calculations are required.">N/A.   External calculations are required.</dtyp:displayterm>

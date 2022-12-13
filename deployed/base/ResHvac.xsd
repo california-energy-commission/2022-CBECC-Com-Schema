@@ -3869,7 +3869,7 @@
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="BHP">BHP</dtyp:displayterm>
-            <dtyp:displayterm value="InH2O">Inches water column</dtyp:displayterm>
+            <dtyp:displayterm value="InH2O">InH2O</dtyp:displayterm>
             <dtyp:displayterm value="Watts">W/cfm</dtyp:displayterm>
             <dtyp:displayterm value="WattsPerCFM">W/cfm</dtyp:displayterm>
          </xsd:appinfo>
@@ -7094,8 +7094,8 @@
    <xsd:simpleType name="IsVSD">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="true">Variable Speed</dtyp:displayterm>
-            <dtyp:displayterm value="false">Constant Speed</dtyp:displayterm>
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
