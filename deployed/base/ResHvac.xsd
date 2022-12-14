@@ -7073,6 +7073,15 @@
    <xsd:simpleType name="InverterModelName">
       <xsd:restriction base="dtyp:String50Char"/>
    </xsd:simpleType>
+   <xsd:simpleType name="IsCompactDistribution">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="IsEfficiencyCapWeightedAvg">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -7094,8 +7103,8 @@
    <xsd:simpleType name="IsVSD">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
-            <dtyp:displayterm value="false">No</dtyp:displayterm>
+            <dtyp:displayterm value="true">Variable Speed</dtyp:displayterm>
+            <dtyp:displayterm value="false">Constant Speed</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
