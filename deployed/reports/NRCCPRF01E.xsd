@@ -7883,7 +7883,7 @@ result = NotApplicable</xsd:documentation>
                                     </xsd:choice>
                                     <xsd:element name="HvacdwellCoolEffic">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText"/>
+                                          <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
                                        </xsd:annotation>
                                        <xsd:complexType>
                                           <xsd:choice>
