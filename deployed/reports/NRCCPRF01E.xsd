@@ -206,7 +206,7 @@
                   </xsd:element>
                   <xsd:element name="Proj01_PerfENV" type="comp:PerfENV">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Envelope (See Table G) Nonres</xsd:documentation>
+                        <xsd:documentation source="FieldText">Envelope (See Table G)</xsd:documentation>
                         <xsd:appinfo source="CBECCnrXML">
                            <dtyp:CBECCnrXMLterm>Proj:CompPathEnv</dtyp:CBECCnrXMLterm>
                         </xsd:appinfo>
@@ -214,7 +214,7 @@
                   </xsd:element>
                   <xsd:element name="Proj01mf_PerfENV" type="comp:PerfENV">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Envelope (See Table G) Multifam</xsd:documentation>
+                        <xsd:documentation source="FieldText">Envelope (See Table G)</xsd:documentation>
                         <xsd:appinfo source="CBECCnrXML">
                            <dtyp:CBECCnrXMLterm>Proj:ResCompPathEnv</dtyp:CBECCnrXMLterm>
                         </xsd:appinfo>
@@ -222,7 +222,7 @@
                   </xsd:element>
                   <xsd:element name="Proj02_PerfMCH" type="comp:PerfMCH">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Mechanical (See Table H)  Nonres</xsd:documentation>
+                        <xsd:documentation source="FieldText">Mechanical (See Table H)</xsd:documentation>
                         <xsd:appinfo source="CBECCnrXML">
                            <dtyp:CBECCnrXMLterm>Proj:CompPathMech</dtyp:CBECCnrXMLterm>
                         </xsd:appinfo>
@@ -230,7 +230,7 @@
                   </xsd:element>
                   <xsd:element name="Proj02mf_PerfMCH" type="comp:PerfMCH">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Mechanical (See Table H) Multifam</xsd:documentation>
+                        <xsd:documentation source="FieldText">Mechanical (See Table H)</xsd:documentation>
                         <xsd:appinfo source="CBECCnrXML">
                            <dtyp:CBECCnrXMLterm>Proj:ResCompPathMech</dtyp:CBECCnrXMLterm>
                         </xsd:appinfo>
@@ -238,7 +238,7 @@
                   </xsd:element>
                   <xsd:element name="Proj03_PerfDHW" type="comp:PerfDHW">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Domestic Hot Water (See Table I)  Nonres</xsd:documentation>
+                        <xsd:documentation source="FieldText">Domestic Hot Water (See Table I)</xsd:documentation>
                         <xsd:appinfo source="CBECCnrXML">
                            <dtyp:CBECCnrXMLterm>Proj:CompPathDHW</dtyp:CBECCnrXMLterm>
                         </xsd:appinfo>
@@ -246,7 +246,7 @@
                   </xsd:element>
                   <xsd:element name="Proj03mf_PerfDHW" type="comp:PerfDHW">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Domestic Hot Water (See Table I) Multifam</xsd:documentation>
+                        <xsd:documentation source="FieldText">Domestic Hot Water (See Table I)</xsd:documentation>
                         <xsd:appinfo source="CBECCnrXML">
                            <dtyp:CBECCnrXMLterm>Proj:ResCompPathDHW</dtyp:CBECCnrXMLterm>
                         </xsd:appinfo>
@@ -254,7 +254,7 @@
                   </xsd:element>
                   <xsd:element name="Proj04_PerfCondLTI" type="comp:PerfCondLTI">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Lighting (Indoor Conditioned, see Table K)  Nonres</xsd:documentation>
+                        <xsd:documentation source="FieldText">Lighting (Indoor Conditioned, see Table K)</xsd:documentation>
                         <xsd:appinfo source="CBECCnrXML">
                            <dtyp:CBECCnrXMLterm>Proj:CompPathLtg</dtyp:CBECCnrXMLterm>
                         </xsd:appinfo>
@@ -262,7 +262,7 @@
                   </xsd:element>
                   <xsd:element name="Proj04mf_PerfCondLTI" type="comp:PerfCondLTI">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Lighting (Indoor Conditioned, see Table K) Multifam</xsd:documentation>
+                        <xsd:documentation source="FieldText">Lighting (Indoor Conditioned, see Table K)</xsd:documentation>
                         <xsd:appinfo source="CBECCnrXML">
                            <dtyp:CBECCnrXMLterm>Proj:ResCompPathLtg</dtyp:CBECCnrXMLterm>
                         </xsd:appinfo>
@@ -408,7 +408,7 @@
                   </xsd:element>
                   <xsd:element name="ProjMM03a" minOccurs="0">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">Solarand Battery  
+                        <xsd:documentation source="FieldText">Solar and Battery  
                            <d:t24refnolink/>110.10</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
