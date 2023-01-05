@@ -5333,6 +5333,63 @@ p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
+         <xsd:element name="Section_BatExcept" minOccurs="0">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">F2b. BATTERY EXCEPTION FOR MULTITENANT BUILDING<d:sup>1</d:sup>
+               </xsd:documentation>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="TableBatExcept">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="BatExcept01_SpaceName" type="com:SpaceName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Area Description</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:Name</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="BatExcept02_SpaceFunction" type="com:SpaceFunction">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Occupancy Type</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="BatExcept03_SpaceFloorArea" type="com:SpaceFloorArea">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Conditioned Floor Area (ft<d:sup>2</d:sup>)</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>Spc:Area</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="BatExceptFootNote1" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">
+                                             <d:i><d:sup>1</d:sup>Tenant spaces greater than 5,000 ft2 requiring a battery storage system per Exception 3 to Energy Code Section 140.10(b)</d:i>
+                                          </xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
          <xsd:element name="Section_Env" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
