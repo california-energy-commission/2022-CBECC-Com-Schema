@@ -8135,7 +8135,7 @@ result = NotApplicable</xsd:documentation>
                                           <xsd:choice >
                                              <xsd:element name="CoolingSingleEfficDfhp" >
                                                 <xsd:annotation>
-                                                   <xsd:documentation source="FieldText"></xsd:documentation>
+                                                   <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
                                                 </xsd:annotation>
                                                 <xsd:complexType>
                                                    <xsd:sequence>
@@ -8200,7 +8200,7 @@ result = NotApplicable</xsd:documentation>
                                              </xsd:element>
                                              <xsd:element name="CoolingEER_IEER_Dfhp" >
                                                 <xsd:annotation>
-                                                   <xsd:documentation source="FieldText"></xsd:documentation>
+                                                   <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
                                                 </xsd:annotation>
                                                 <xsd:complexType>
                                                    <xsd:sequence>
