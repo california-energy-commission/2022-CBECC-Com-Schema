@@ -7463,12 +7463,12 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                                 </xsd:annotation>
                                                 <xsd:complexType>
                                                    <xsd:sequence>
-                                                      <xsd:element name="HvacDry08c_EfficiencySEER" type="hvac:EfficiencySEER" >
+                                                      <xsd:element name="HvacDry08c_EfficiencyEER" type="hvac:EfficiencyEER" >
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText"></xsd:documentation>
                                                          </xsd:annotation>
                                                       </xsd:element>
-                                                      <xsd:element name="HvacDry08c_EfficiencyEER" type="hvac:EfficiencyEER" >
+                                                      <xsd:element name="HvacDry08c_EfficiencySEER" type="hvac:EfficiencySEER" >
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText"></xsd:documentation>
                                                          </xsd:annotation>
