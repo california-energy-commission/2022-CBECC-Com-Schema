@@ -6421,6 +6421,11 @@ End If</dtyp:termConditions>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
+                  <xsd:element name="DoorFootNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">[d:i][d:sup]1[/d:sup] Status: N - New, A - Altered, E - Existing[/d:i]</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>               
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
@@ -6491,6 +6496,11 @@ End If</dtyp:termConditions>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
+                  <xsd:element name="DoormfFootNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">[d:i][d:sup]1[/d:sup] Status: N - New, A - Altered, E - Existing[/d:i]</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>                
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
@@ -7030,7 +7040,7 @@ result = Proj:FenCons:VTCOG</dtyp:termConditions>
                                     </xsd:choice>
                                     <xsd:element name="Fen15mf_Status" >
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Status[d:sup]2[/d:sup]</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Status[d:sup]1[/d:sup]</xsd:documentation>
                                           <xsd:appinfo source="displayterm">
                                              <dtyp:displayterm value="ExistingAlteration">A</dtyp:displayterm>
                                              <dtyp:displayterm value="ExistingUnchanged">E</dtyp:displayterm>
@@ -9284,7 +9294,7 @@ Else If result == NotContinuous display No</xsd:documentation>
                                     </xsd:element>
                                     <xsd:element name="Pump07_IsVSD" type="hvac:IsVSD" >
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">VSD (Yes/No)</xsd:documentation>
+                                          <xsd:documentation source="FieldText">VSD</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
                                              <dtyp:CBECCnrXMLterm>FluidSys:FluidSeg:Pump:SpdCtrl , FluidSys:Blr:Pump:SpdCtrl , FluidSys:Chlr:Pump:SpdCtrl , FluidSys:HtRej:Pump:SpdCtrl OR FluidSys:ThrmlEngyStor::Pump:SpdCtrl</dtyp:CBECCnrXMLterm>
                                              <dtyp:termConditions>If Pump:SpdCtrl == VariableSpeed result = true Else If Pump:SpdCtrl == ConstantSpeed result =  false</dtyp:termConditions>
