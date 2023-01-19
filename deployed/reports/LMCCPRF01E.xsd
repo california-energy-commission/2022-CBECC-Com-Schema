@@ -8012,7 +8012,7 @@ result = NotApplicable</xsd:documentation>
                                              </xsd:element>
                                              <xsd:element name="HvacdwellSEER_EER">
                                                 <xsd:annotation>
-                                                   <xsd:documentation source="FieldText"/>
+                                                   <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
                                                 </xsd:annotation>
                                                 <xsd:complexType>
                                                    <xsd:sequence>
