@@ -11750,6 +11750,33 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="PVBattSizeBldgType">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Building Occupancy Type</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Grocery">Grocery</dtyp:displayterm>
+            <dtyp:displayterm value="HighRiseMultifamily">High-Rise Multifamily</dtyp:displayterm>
+            <dtyp:displayterm value="OfficeFinancialUnleased">Office, Financial Institutions, Unleased Tenant Space</dtyp:displayterm>
+            <dtyp:displayterm value="Retail">Retail</dtyp:displayterm>
+            <dtyp:displayterm value="School">School</dtyp:displayterm>
+            <dtyp:displayterm value="Warehouse">Warehouse</dtyp:displayterm>
+            <dtyp:displayterm value="Other">Auditorium, Convention Center, Hotel/Motel, Library, Medical Office Building/Clinic, Restaurant, Theater</dtyp:displayterm>
+            <dtyp:displayterm value="None">None</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="Grocery"/>
+         <xsd:enumeration value="HighRiseMultifamily"/>
+         <xsd:enumeration value="OfficeFinancialUnleased"/>
+         <xsd:enumeration value="Retail"/>
+         <xsd:enumeration value="School"/>
+         <xsd:enumeration value="Warehouse"/>
+         <xsd:enumeration value="Other"/>
+         <xsd:enumeration value="None"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="PVExceptionString">
       <xsd:restriction base="xsd:token">
       </xsd:restriction>

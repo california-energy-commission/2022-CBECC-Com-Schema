@@ -5203,6 +5203,53 @@ p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
+         <xsd:element name="Section_PVBatBldgTypes" minOccurs="0">
+            <xsd:annotation>
+               <xsd:documentation source="FieldText">F1b. PV BATTERY BUILDING TYPE(S)</xsd:documentation>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="TablePVBatBldgTypes">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText"/>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="PVBatBldgTypes01_BldgOccType" type="comp:PVBattSizeBldgType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Building Occupancy Type<d:sup>*</d:sup> (From Table 140.10-A/B and 170.2-U/V)</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="PVBatBldgTypes02_CondFloorArea" type="com:TotalConditionedFloorArea">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Conditioned Floor Area (ft<d:sup>2</d:sup>)</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="PVBatBldgTypes02_UnCondFloorArea" type="com:TotalUnconditionedFloorArea">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Unconditioned Floor Area (ft<d:sup>2</d:sup>)</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="PVBatBldgTypesFootNote1" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">
+                                             <d:i><d:sup>*</d:sup>Building Occupancy Types are defined in Section 100.1 of the Energy Code</d:i>
+                                          </xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
          <xsd:element name="Section_Bat" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">F2. BATTERY SYSTEMS</xsd:documentation>
