@@ -4902,6 +4902,12 @@ p:ExcptCondHERSEnvAirLkge == Yes
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
+                                    <xsd:element name="Pv01b_PV_StandardDesignPowerDC" type="hvac:PV_StandardDesignPowerDC" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                          <xsd:documentation source="AdditionalRequirements">Standard Design DC System Size (kWdc)</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
                                     <xsd:element name="Pv02_PhotoVoltaicExceptionRes" type="comp:PhotoVoltaicExceptionRes" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Exception</xsd:documentation>
