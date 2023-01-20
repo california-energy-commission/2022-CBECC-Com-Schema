@@ -4503,6 +4503,11 @@
                         <xsd:documentation source="CalculationsAndRules">result = ((C22Result8NEui1_StandardDesignNetEUI - C22Result8NEui2_ProposedDesignNetEUI) / C22Result8NEui1_StandardDesignNetEUI) x 100</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="C22Result8Footnote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">[d:i][d:sup]1[/d:sup] Notes: Gross EUI is Energy Use Total (not including PV)/Total Building Area. Net EUI is Energy Use Total (including PV)/Total Building Area.[/d:i]</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
@@ -5133,17 +5138,17 @@ p:ExcptCondHERSEnvAirLkge == Yes
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Unconditioned Floor Area (ft[d:sup]2[/d:sup])</xsd:documentation>
                                        </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="PVBatBldgTypesFootNote1" minOccurs="0">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">[d:i][d:sup]*[/d:sup]Building Occupancy Types are defined in Section 100.1 of the Energy Code[/d:i]</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    </xsd:element>                                   
                                  </xsd:sequence>
                               </xsd:complexType>
                            </xsd:element>
                         </xsd:sequence>
                      </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="PVBatBldgTypesFootNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">[d:i][d:sup]*[/d:sup]Building Occupancy Types are defined in Section 100.1 of the Energy Code[/d:i]</xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
@@ -5319,17 +5324,17 @@ p:ExcptCondHERSEnvAirLkge == Yes
                                              <dtyp:CBECCnrXMLterm>Spc:Area</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="BatExceptFootNote1" minOccurs="0">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">[d:i][d:sup]1[/d:sup]Tenant spaces greater than 5,000 ft2 requiring a battery storage system per Exception 3 to Energy Code Section 140.10(b)[/d:i]</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    </xsd:element>                                    
                                  </xsd:sequence>
                               </xsd:complexType>
                            </xsd:element>
                         </xsd:sequence>
                      </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="BatExceptFootNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">[d:i][d:sup]1[/d:sup]Tenant spaces greater than 5,000 ft2 requiring a battery storage system per Exception 3 to Energy Code Section 140.10(b)[/d:i]</xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
