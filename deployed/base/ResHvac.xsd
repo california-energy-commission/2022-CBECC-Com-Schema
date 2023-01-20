@@ -3436,10 +3436,13 @@
             <dtyp:displayterm value="EER_IPLV">IPLV</dtyp:displayterm>
             <dtyp:displayterm value="EER2">EER2</dtyp:displayterm>
             <dtyp:displayterm value="EER2a">EER2a</dtyp:displayterm>
+            <dtyp:displayterm value="EER2aEER2b">EER2a/EER2b</dtyp:displayterm>
             <dtyp:displayterm value="EER2b">EER2b</dtyp:displayterm>
             <dtyp:displayterm value="EER2SEER2">EER2/SEER2</dtyp:displayterm>
             <dtyp:displayterm value="EERa">EERa</dtyp:displayterm>
+            <dtyp:displayterm value="EERaEERb">EERa/EERb</dtyp:displayterm>
             <dtyp:displayterm value="EERb">EERb</dtyp:displayterm>
+            <dtyp:displayterm value="EERIEER">EER/IEER</dtyp:displayterm>
             <dtyp:displayterm value="EERSEER">EER/SEER</dtyp:displayterm>
             <dtyp:displayterm value="EnergyFactor">EF</dtyp:displayterm>
             <dtyp:displayterm value="GalPerMinHp">GPM/Hp</dtyp:displayterm>
@@ -3471,10 +3474,13 @@
          <xsd:enumeration value="EER_IPLV"/>
          <xsd:enumeration value="EER2"/>
          <xsd:enumeration value="EER2a"/>
+         <xsd:enumeration value="EER2aEER2b"/>
          <xsd:enumeration value="EER2b"/>
          <xsd:enumeration value="EER2SEER2"/>
          <xsd:enumeration value="EERa"/>
+         <xsd:enumeration value="EERaEERb"/>
          <xsd:enumeration value="EERb"/>
+         <xsd:enumeration value="EERIEER"/>
          <xsd:enumeration value="EERSEER"/>
          <xsd:enumeration value="EnergyFactor"/>
          <xsd:enumeration value="GalPerMinHp"/>
