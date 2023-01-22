@@ -5236,7 +5236,7 @@ p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
                                           <xsd:documentation source="FieldText">Conditioned Floor Area (ft<d:sup>2</d:sup>)</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="PVBatBldgTypes02_UnCondFloorArea" type="com:TotalUnconditionedFloorArea">
+                                    <xsd:element name="PVBatBldgTypes03_UnCondFloorArea" type="com:TotalUnconditionedFloorArea">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Unconditioned Floor Area (ft<d:sup>2</d:sup>)</xsd:documentation>
                                        </xsd:annotation>
