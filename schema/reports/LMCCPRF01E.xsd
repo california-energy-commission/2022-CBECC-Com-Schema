@@ -6482,6 +6482,11 @@ End If</dtyp:termConditions>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
+                  <xsd:element name="DoorFootNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">[d:i][d:sup]1[/d:sup] Status: N - New, A - Altered, E - Existing[/d:i]</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element> 
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>

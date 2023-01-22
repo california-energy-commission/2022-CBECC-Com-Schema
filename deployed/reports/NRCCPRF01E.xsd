@@ -14196,7 +14196,7 @@ End If</xsd:documentation>
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
-                           <d:i> Selections made by Documentation Author indicate which Certificates of Acceptance must be submitted for the features to be recognized for compliance.  These documents must be provided to the building inspector during construction and must be completed through an Acceptance Test Technician Certificaiton Provider (ATTCP).  For more information visit: https://www.energy.ca.gov/title24/2019standards/2019_compliance_documents/Nonresidential_Documents/NRCA/  </d:i>
+                           <d:i> Selections made by Documentation Author indicate which Certificates of Acceptance must be submitted for the features to be recognized for compliance.  These documents must be provided to the building inspector during construction and must be completed through an Acceptance Test Technician Certificaiton Provider (ATTCP). </d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
