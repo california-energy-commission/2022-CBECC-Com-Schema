@@ -9663,7 +9663,7 @@
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="NoRequiredCV">
+   <xsd:simpleType name="NoRequiredNRCV">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">There are no Certificates of Verification applicable to this project</dtyp:displayterm>
