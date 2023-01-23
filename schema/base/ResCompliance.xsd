@@ -8184,6 +8184,7 @@
             <dtyp:displayterm value="Excpt3ReducedBattReq">Project is claiming Exception 3 to Section 140.10(b): No battery storage system required for tenant spaces less than or equal to 5,000 ft2.</dtyp:displayterm>
             <dtyp:displayterm value="Excpt4ReducedBattReq">Project is claiming Exception 4 to Section 140.10(b): In Climate Zone 1, no battery storage system is required for offices, schools and warehouses.</dtyp:displayterm>
             <dtyp:displayterm value="ExcptCondPVBldgType">PV/Battery Building Type has been modified from software defaults for one or more spaces. Review project’s PV/Battery Building Type(s) with documentation author. Refer to Energy Code section 140.10 for Nonresidential or 170.2(g) for more information.</dtyp:displayterm>
+            <dtyp:displayterm value="ExcptCondVentStdOther">This project has spaces with higher ventilation rates than required because of other codes or accreditation standards being applied.</dtyp:displayterm>
             <dtyp:displayterm value="FacadeDisplayPerimeter">Verify that the display perimeter for any facades where it is used matches the display perimeter as indicated on the building plans.</dtyp:displayterm>
             <dtyp:displayterm value="FanPressureDropCredit">Review and verify the fan pressure drop credits taken for HVAC systems included in the project.</dtyp:displayterm>
             <dtyp:displayterm value="FixedSeatingUsedForCalculatingVentilation">This project includes spaces that use an expected number of occupants or fixed seating criteria for calculating ventilation. Review space uses and verify that the applicable spaces meet the qualifications of Exception 1 to Section 120.1(c)3.</dtyp:displayterm>
@@ -8228,6 +8229,7 @@
          <xsd:enumeration value="Excpt3ReducedBattReq"/>
          <xsd:enumeration value="Excpt4ReducedBattReq"/>
          <xsd:enumeration value="ExcptCondPVBldgType"/>
+         <xsd:enumeration value="ExcptCondVentStdOther"/>
          <xsd:enumeration value="FacadeDisplayPerimeter"/>
          <xsd:enumeration value="FanPressureDropCredit"/>
          <xsd:enumeration value="FixedSeatingUsedForCalculatingVentilation"/>

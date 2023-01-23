@@ -5017,7 +5017,8 @@ p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
                                     </xsd:element>
                                     <xsd:element name="Pv02_PhotoVoltaicExceptionRes" type="comp:PhotoVoltaicExceptionRes">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Exception</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Exception<d:sup>1</d:sup>
+                                          </xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
                                              <dtyp:CBECCnrXMLterm>Proj:ReducedPVReqExcpt</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
@@ -5202,9 +5203,11 @@ p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
-                  <xsd:element name="Pv11After_SectionComments" type="comp:SectionComments" minOccurs="0">
+                  <xsd:element name="PVExceptFootNote1" minOccurs="0">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">NOTES</xsd:documentation>
+                        <xsd:documentation source="FieldText">
+                           <d:i><d:sup>1</d:sup>See Table D1 for any PV exceptions used.</d:i>
+                        </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
@@ -5259,7 +5262,8 @@ p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
          </xsd:element>
          <xsd:element name="Section_Bat" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">F2. BATTERY SYSTEMS</xsd:documentation>
+               <xsd:documentation source="FieldText">F2. BATTERY SYSTEMS<d:sup>1</d:sup>
+               </xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -5385,6 +5389,13 @@ p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
                            </xsd:element>
                         </xsd:sequence>
                      </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="BatExceptFootNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">
+                           <d:i><d:sup>1</d:sup>See Table D1 for any Battery exceptions used.</d:i>
+                        </xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
