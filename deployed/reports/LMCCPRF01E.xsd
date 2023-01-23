@@ -13113,7 +13113,7 @@ End If</dtyp:termConditions>
                                  <xsd:sequence>
                                     <xsd:element name="LtgInfo01_SpaceFunction" type="com:SpaceFunction">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Occupancy Type<d:sup>1</d:sup>
+                                          <xsd:documentation source="FieldText">Occupancy Type<d:sup>1,3</d:sup>
                                           </xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
                                              <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
@@ -14649,6 +14649,14 @@ Else there is no display for this element
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="LmciSthLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Solar Water Heating</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmci08_RequireLMCISth01E IsPresent and == true Display this label
+                           Else do not display this label
+                           End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="Lmci08_RequireLMCISth01E" type="comp:RequireLMCISth01E" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
@@ -14657,6 +14665,14 @@ End If</xsd:documentation>
 Display the AdditionalRequirements text for this element
 Else there is no display for this element
 End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="LmciSabLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Solar and Battery</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmci08a_RequireLMCISabE IsPresent and == true Display this label
+                           Else do not display this label
+                           End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Lmci08a_RequireLMCISabE" type="comp:RequireLMCISabE" minOccurs="0">
@@ -14672,7 +14688,7 @@ End If</xsd:documentation>
                   <xsd:element name="LmciLtiLabel" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Indoor Lighting</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Nrci09_RequiredNRCILti01E IsPresent and == true Or 
+                        <xsd:documentation source="CalculationsAndRules">If Lmci09_RequiredLMCILti01E IsPresent and == true Or 
 Nrci10_RequiredNRCILti02E IsPresent and == true Or
 Nrci11_RequiredNRCILti04E IsPresent and == true Or
 Nrci12_RequiredNRCILti05E IsPresent and == true Or

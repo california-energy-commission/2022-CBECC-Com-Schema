@@ -13791,6 +13791,14 @@ Else there is no display for this element
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="NrciSthLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Solar Water Heating</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci08_RequireNRCISth01E IsPresent and == true Display this label
+                           Else do not display this label
+                           End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="Nrci08_RequireNRCISth01E" type="comp:RequireNRCISth01E"  minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
@@ -13799,6 +13807,14 @@ End If</xsd:documentation>
 Display the AdditionalRequirements text for this element
 Else there is no display for this element
 End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="NrtiSabLabel" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Solar and Battery</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Nrci08a_RequireNRCISabE IsPresent and == true Display this label
+                           Else do not display this label
+                           End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Nrci08a_RequireNRCISabE" type="comp:RequireNRCISabE"  minOccurs="0">
