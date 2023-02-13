@@ -4661,7 +4661,7 @@ sum (p:Proj:Bldg:ThrmlZn:HasNoClg) GT 0
                   <xsd:element name="Hers_beginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Begin Note 1</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">The following is a summary of the  features that must be field-verified by a certified HERS Rater as a condition for meeting the modeled energy performance for this computer analysis.  Additional detail is provided in the buildng tables below.  Registered CF2Rs and CF3Rs are required to be completed in the HERS Registry.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">The following is a summary of the  features that must be field-verified by a certified HERS Rater as a condition for meeting the modeled energy performance for this computer analysis.  Additional detail is provided in the building tables below.  Registered CF2Rs and CF3Rs are required to be completed in the HERS Registry.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="HersBuildingLabel" minOccurs="0">
@@ -9920,12 +9920,12 @@ Else If result == NotContinuous display No</xsd:documentation>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="VentRes07_FanPowerPerFlow" type="hvac:FanPowerPerFlow" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhust Fan Efficacy W/CFM</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Exhaust Fan Efficacy W/CFM</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="VentRes07_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Exhust Fan Efficacy W/CFM</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Exhaust Fan Efficacy W/CFM</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -13953,7 +13953,7 @@ End If</xsd:documentation>
                   <xsd:element name="NrcaBeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">[d:i] Selections made by Documentation Author indicate which Certificates of Acceptance must be submitted for the features to be recognized for compliance.  These documents must be provided to the building inspector during construction and must be completed through an Acceptance Test Technician Certificaiton Provider (ATTCP). [/d:i]</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">[d:i] Selections made by Documentation Author indicate which Certificates of Acceptance must be submitted for the features to be recognized for compliance.  These documents must be provided to the building inspector during construction and must be completed through an Acceptance Test Technician Certification Provider (ATTCP). [/d:i]</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="NrcaLabel01" minOccurs="0">
@@ -14836,7 +14836,7 @@ End If</xsd:documentation>
                   <xsd:element name="Nrcv01_RequireNRCVMch04H" type="comp:RequireNRCVMch04H"  minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCV-MCH-04-H Duct Leakaage Test</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCV-MCH-04-H Duct Leakage Test</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If Nrcv01_RequiredNRCVMch04H IsPresent and == true
 Display the AdditionalRequirements text for this element
 Else there is no display for this element
@@ -14858,7 +14858,7 @@ End If</xsd:documentation>
                   <xsd:element name="Nrcv02_RequireNRCVMch24H" type="comp:RequireNRCVMch24H"  minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCV-MCH-24 Enclosure Air Leakaage</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCV-MCH-24 Enclosure Air Leakage</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If Nrcv02_RequiredNRCVMch24H IsPresent and == true
 Display the AdditionalRequirements text for this element
 Else there is no display for this element

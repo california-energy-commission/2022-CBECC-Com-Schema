@@ -2055,7 +2055,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="CorridorArea">Corridor</dtyp:displayterm>
             <dtyp:displayterm value="CorridorRestroomStairsSupportArea">Corridor, Restroom, Stairs or Support Area</dtyp:displayterm>
             <dtyp:displayterm value="DiningArea">Dining Area</dtyp:displayterm>
-            <dtyp:displayterm value="ElectricalMechancialTelephoneRoom">Electrical Mechancial Telephone Room</dtyp:displayterm>
+            <dtyp:displayterm value="ElectricalMechancialTelephoneRoom">Electrical Mechanical Telephone Room</dtyp:displayterm>
             <dtyp:displayterm value="ExerciseCenterGymnasiumArea">Exercise Center Gymnasium</dtyp:displayterm>
             <dtyp:displayterm value="ExhibitMuseumArea">Exhibit, Museum</dtyp:displayterm>
             <dtyp:displayterm value="FamilyDiningArea">Dining - Family</dtyp:displayterm>

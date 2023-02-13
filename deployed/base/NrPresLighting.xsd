@@ -588,7 +588,7 @@
       <xsd:annotation>
          <xsd:documentation>Units: ft</xsd:documentation>
          <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>Track Lighting Lenght</dtyp:displayterm>
+            <dtyp:displayterm>Track Lighting Length</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
