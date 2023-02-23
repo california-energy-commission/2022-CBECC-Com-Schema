@@ -11521,6 +11521,14 @@ Else result is one or more ResDHWSys:ResWtrHtr:Name</dtyp:termConditions>
                                           <xsd:documentation source="FieldText">Tank Configuration</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
+                                    <xsd:element name="LpTank01b_WaterHeatingSystemName" type="hvac:WaterHeatingSystemName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>ResDHWSys:Name</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
                                     <xsd:element name="LpTank02">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText"/>
