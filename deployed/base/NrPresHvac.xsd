@@ -8874,6 +8874,25 @@
          <xsd:enumeration value="WoodHeat"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ResidentialSpaceConditioningSystemType">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="HeatingCoolingSystemOther">Heating and cooling system other</dtyp:displayterm>
+            <dtyp:displayterm value="HeatPumpHeatingCooling">Heat pump heating cooling</dtyp:displayterm>
+            <dtyp:displayterm value="VariableOA_VentilationCentralHeatingCooling">Central heating and cooling, variable OA  ventilation</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="CBECCresXML">
+            <dtyp:CBECCresXMLterm value="HeatingCoolingSystemOther"/>
+            <dtyp:CBECCresXMLterm value="HeatPumpHeatingCooling">Heat Pump Heating and Cooling</dtyp:CBECCresXMLterm>
+            <dtyp:CBECCresXMLterm value="VariableOA_VentilationCentralHeatingCooling"/>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="HeatingCoolingSystemOther"/>
+         <xsd:enumeration value="HeatPumpHeatingCooling"/>
+         <xsd:enumeration value="VariableOA_VentilationCentralHeatingCooling"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ResidentialWaterHeaterType">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">

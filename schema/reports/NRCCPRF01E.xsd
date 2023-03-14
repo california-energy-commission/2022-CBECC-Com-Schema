@@ -7668,6 +7668,20 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Hvacdwell03d_ResidentialSpaceConditioningSystemType" type="hvac:ResidentialSpaceConditioningSystemType"  minOccurs="0">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Residential Space Conditioning System Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Hvacdwell03d_NotApplicableMessage" type="comp:NotApplicableMessage"  minOccurs="0">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Residential Space Conditioning System Type</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
                                        <xsd:element name="Hvacdwell03a_AirSubType" type="hvac:AirSubType"  minOccurs="0">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText"></xsd:documentation>
