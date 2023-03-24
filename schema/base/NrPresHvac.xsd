@@ -4658,18 +4658,18 @@
             <dtyp:displayterm value="RheemCanCPROPH80T2RH37515">Rheem Canada CPROPH80 T2 RH375-15</dtyp:displayterm>
             <dtyp:displayterm value="RheemCanCPROPH80T2RH37530">Rheem Canada CPROPH80 T2 RH375-30</dtyp:displayterm>
             <dtyp:displayterm value="RheemCanCPROPH80T2RH375SO">Rheem Canada CPROPH80 T2 RH375-SO</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE40T10H22U0">Rheem Canada CXE40T10H22UO (40 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE40T10H45U0">Rheem Canada CXE40T10H45UO (40 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE40T10HS45U0">Rheem Canada CXE40T10HS45UO (40 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE50T10H22U0">Rheem Canada CXE50T10H22UO (50 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE50T10H45U0">Rheem Canada CXE50T10H45UO (50 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE50T10HS45U0">Rheem Canada CXE50T10HS45UO (50 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE65T10H22U0">Rheem Canada CXE65T10H22UO (65 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE65T10H45U0">Rheem Canada CXE65T10H45UO (65 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE65T10HS45U0">Rheem Canada CXE65T10HS45UO (65 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE80T10H22U0">Rheem Canada CXE80T10H22UO (80 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE80T10H45U0">Rheem Canada CXE80T10H45UO (80 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemCanCXE80T10HS45U0">Rheem Canada CXE80T10HS45UO (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE40T10H22UO">Rheem Canada CXE40T10H22UO (40 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE40T10H45UO">Rheem Canada CXE40T10H45UO (40 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE40T10HS45UO">Rheem Canada CXE40T10HS45UO (40 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE50T10H22UO">Rheem Canada CXE50T10H22UO (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE50T10H45UO">Rheem Canada CXE50T10H45UO (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE50T10HS45UO">Rheem Canada CXE50T10HS45UO (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE65T10H22UO">Rheem Canada CXE65T10H22UO (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE65T10H45UO">Rheem Canada CXE65T10H45UO (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE65T10HS45UO">Rheem Canada CXE65T10HS45UO (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE80T10H22UO">Rheem Canada CXE80T10H22UO (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE80T10H45UO">Rheem Canada CXE80T10H45UO (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemCanCXE80T10HS45UO">Rheem Canada CXE80T10HS45UO (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemHB50RH">HB50RH  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemHPLD401RH">Rheem HPLD40-1RH</dtyp:displayterm>
             <dtyp:displayterm value="RheemHPLD50">HPLD50  (50 gal)</dtyp:displayterm>
@@ -5049,18 +5049,18 @@
          <xsd:enumeration value="RheemCanCPROPH80T2RH37515"/>
          <xsd:enumeration value="RheemCanCPROPH80T2RH37530"/>
          <xsd:enumeration value="RheemCanCPROPH80T2RH375SO"/>
-         <xsd:enumeration value="RheemCanCXE40T10H22U0"/>
-         <xsd:enumeration value="RheemCanCXE40T10H45U0"/>
-         <xsd:enumeration value="RheemCanCXE40T10HS45U0"/>
-         <xsd:enumeration value="RheemCanCXE50T10H22U0"/>
-         <xsd:enumeration value="RheemCanCXE50T10H45U0"/>
-         <xsd:enumeration value="RheemCanCXE50T10HS45U0"/>
-         <xsd:enumeration value="RheemCanCXE65T10H22U0"/>
-         <xsd:enumeration value="RheemCanCXE65T10H45U0"/>
-         <xsd:enumeration value="RheemCanCXE65T10HS45U0"/>
-         <xsd:enumeration value="RheemCanCXE80T10H22U0"/>
-         <xsd:enumeration value="RheemCanCXE80T10H45U0"/>
-         <xsd:enumeration value="RheemCanCXE80T10HS45U0"/>
+         <xsd:enumeration value="RheemCanCXE40T10H22UO"/>
+         <xsd:enumeration value="RheemCanCXE40T10H45UO"/>
+         <xsd:enumeration value="RheemCanCXE40T10HS45UO"/>
+         <xsd:enumeration value="RheemCanCXE50T10H22UO"/>
+         <xsd:enumeration value="RheemCanCXE50T10H45UO"/>
+         <xsd:enumeration value="RheemCanCXE50T10HS45UO"/>
+         <xsd:enumeration value="RheemCanCXE65T10H22UO"/>
+         <xsd:enumeration value="RheemCanCXE65T10H45UO"/>
+         <xsd:enumeration value="RheemCanCXE65T10HS45UO"/>
+         <xsd:enumeration value="RheemCanCXE80T10H22UO"/>
+         <xsd:enumeration value="RheemCanCXE80T10H45UO"/>
+         <xsd:enumeration value="RheemCanCXE80T10HS45UO"/>
          <xsd:enumeration value="RheemHB50RH"/>
          <xsd:enumeration value="RheemHPLD401RH"/>
          <xsd:enumeration value="RheemHPLD50"/>
@@ -9203,25 +9203,6 @@
          <xsd:enumeration value="PkgHeatPump"/>
          <xsd:enumeration value="LrgPkgHeatPump"/>
          <xsd:enumeration value="RoomHeatPump"/>
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="ResidentialSpaceConditioningSystemType">
-      <xsd:annotation>
-         <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="HeatingCoolingSystemOther">Heating and cooling system other</dtyp:displayterm>
-            <dtyp:displayterm value="HeatPumpHeatingCooling">Heat pump heating cooling</dtyp:displayterm>
-            <dtyp:displayterm value="VariableOA_VentilationCentralHeatingCooling">Central heating and cooling, variable OA  ventilation</dtyp:displayterm>
-         </xsd:appinfo>
-         <xsd:appinfo source="CBECCresXML">
-            <dtyp:CBECCresXMLterm value="HeatingCoolingSystemOther"></dtyp:CBECCresXMLterm>
-            <dtyp:CBECCresXMLterm value="HeatPumpHeatingCooling">Heat Pump Heating and Cooling</dtyp:CBECCresXMLterm>
-            <dtyp:CBECCresXMLterm value="VariableOA_VentilationCentralHeatingCooling"></dtyp:CBECCresXMLterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="HeatingCoolingSystemOther"/>
-         <xsd:enumeration value="HeatPumpHeatingCooling"/>
-         <xsd:enumeration value="VariableOA_VentilationCentralHeatingCooling"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ResidentialSpaceConditioningSystemType">

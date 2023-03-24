@@ -10814,29 +10814,27 @@ result =  ZnSys:ClgTotEff100
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Water10_TankInteriorInsulationRValue" type="hvac:TankInteriorInsulationRValue" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Tank Insulation R-value Int/Ext</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:TankIntInsR</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Water10_TankExteriorInsulationRValue" type="hvac:TankExteriorInsulationRValue" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Tank Insulation R-value Int/Ext</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:TankExtInsR</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="Water10_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Tank Insulation R-value Int/Ext</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
+                                    <xsd:element name="Water10_TankInteriorInsulationRValue" type="hvac:TankInteriorInsulationRValue"  minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Tank Insulation R-value Int/Ext</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:TankIntInsR</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="Water10_TankExteriorInsulationRValue" type="hvac:TankExteriorInsulationRValue"  minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Tank Insulation R-value Int/Ext</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:TankExtInsR</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="Water10_NotApplicableMessage" type="comp:NotApplicableMessage"  minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Tank Insulation R-value Int/Ext</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Water11_WaterHeaterStandbyLossFraction" type="hvac:WaterHeaterStandbyLossFraction" >
                                           <xsd:annotation>
