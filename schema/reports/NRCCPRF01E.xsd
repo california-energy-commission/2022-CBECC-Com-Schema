@@ -11189,6 +11189,15 @@ Else result is one or more ResDHWSys:ResWtrHtr:Name</dtyp:termConditions>
                                           <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
+                                    <xsd:element name="WaterCHPWH02b_WaterHeaterFuelSource" type="hvac:WaterHeaterFuelSource"  minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                          <xsd:documentation source="AdditionalRequirements">Heater Element Type</xsd:documentation>
+                                          <xsd:appinfo source="CBECCnrXML">
+                                             <dtyp:CBECCnrXMLterm>ResDHWSys:ResWtrHtr:ElementType Or  FluidSys:WtrHtr:FuelSrc</dtyp:CBECCnrXMLterm>
+                                          </xsd:appinfo>
+                                       </xsd:annotation>
+                                    </xsd:element>
                                     <xsd:element name="WaterCHPWH03_CompressorCountCHPWH" type="hvac:CompressorCountCHPWH" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Number of Compressors</xsd:documentation>
