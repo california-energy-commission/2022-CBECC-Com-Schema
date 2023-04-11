@@ -8799,7 +8799,7 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="CommercialResHPWH">Commercial Product</dtyp:displayterm>
-            <dtyp:displayterm value="NEEAResHPWH">Residential (NEEA RATED) pRODUCT</dtyp:displayterm>
+            <dtyp:displayterm value="NEEAResHPWH">Residential (NEEA RATED) PRODUCT</dtyp:displayterm>
             <dtyp:displayterm value="NonUEFResHPWH">Non-UEF Rated</dtyp:displayterm>
             <dtyp:displayterm value="UEFResHPWH">UEF Rated</dtyp:displayterm>
          </xsd:appinfo>
@@ -11247,7 +11247,7 @@
             <dtyp:displayterm value="GasWaterHeater">Gas</dtyp:displayterm>
             <dtyp:displayterm value="NaturalGas">Natural Gas</dtyp:displayterm>
             <dtyp:displayterm value="Oil">Oil</dtyp:displayterm>
-            <dtyp:displayterm value="PropaneGas">Propane gas</dtyp:displayterm>
+            <dtyp:displayterm value="PropaneGas">Propane Gas</dtyp:displayterm>
             <dtyp:displayterm value="WaterHeatingHP">Heat Pump</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
