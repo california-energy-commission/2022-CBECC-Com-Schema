@@ -566,6 +566,16 @@
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="C22Result1_PerformanceComplianceValidity" type="comp:PerformanceComplianceValidity">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:appinfo source="displayterm">
+                           <dtyp:displayterm value="PerfComplies">COMPLIES</dtyp:displayterm>
+                           <dtyp:displayterm value="PerfFails">DOES NOT COMPLY</dtyp:displayterm>
+                           <dtyp:displayterm value="PerfInvalid">INVALID ANALYSIS</dtyp:displayterm>
+                        </xsd:appinfo>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="C22Result1Col1to2Heading" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Time Dependent Valuation (TDV)</xsd:documentation>

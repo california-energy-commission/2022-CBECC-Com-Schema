@@ -13961,6 +13961,20 @@
          <xsd:enumeration value="PerfFailsUMLH"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="PerformanceComplianceValidity">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="PerfComplies">COMPLIES</dtyp:displayterm>
+            <dtyp:displayterm value="PerfFails">DOES NOT COMPLY</dtyp:displayterm>
+            <dtyp:displayterm value="PerfInvalid">INVALID ANALYSIS</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="PerfComplies"/>
+         <xsd:enumeration value="PerfFails"/>
+         <xsd:enumeration value="PerfInvalid"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="PerfPV">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
