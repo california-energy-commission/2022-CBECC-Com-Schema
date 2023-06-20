@@ -7777,7 +7777,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                  <xsd:sequence>
                                     <xsd:element name="Hvacdwell01_DwellingUnitName" type="com:DwellingUnitName">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Dwelling Unit Type Name</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Dwelling Unit Type</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="Hvacdwell02_HvacEquipmentName" type="hvac:HvacEquipmentName" maxOccurs="unbounded">
@@ -10035,7 +10035,7 @@ Else If result == NotContinuous display No</xsd:documentation>
                                  <xsd:sequence>
                                     <xsd:element name="VentRes01_ResidentialDwellingUnitName" type="com:ResidentialDwellingUnitName">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Dwelling Unit Type Name</xsd:documentation>
+                                          <xsd:documentation source="FieldText">Dwelling Unit Type</xsd:documentation>
                                           <xsd:appinfo source="CBECCnrXML">
                                              <dtyp:CBECCnrXMLterm>ThrmlZn:Name Or ThrmlZone:Name ThrmlZn:VentStdDesc + "ventilation"</dtyp:CBECCnrXMLterm>
                                              <dtyp:termConditions>If ThrmlZn:Type == Conditioned AND ThrmlZn:VentStd == Other result = ThrmlZone:Name ThrmlZn:VentStdDesc + "ventilation"  Else result = ThrmlZone:Name</dtyp:termConditions>
@@ -10946,7 +10946,7 @@ result =  ZnSys:ClgTotEff100</dtyp:termConditions>
                                        </xsd:element>
                                        <xsd:element name="Water06_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Rated Input (kBtu/h)</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Rated Input</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
