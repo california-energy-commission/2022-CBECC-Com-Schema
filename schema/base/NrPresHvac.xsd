@@ -11562,6 +11562,16 @@
          <xsd:enumeration value="Unconditioned"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ZoneGroupMultiplier">
+      <xsd:annotation>
+         <xsd:documentation>  Units: none</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Zone Group Multipler</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ZoneSubType">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">

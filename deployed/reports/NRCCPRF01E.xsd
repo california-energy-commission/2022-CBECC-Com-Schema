@@ -90,6 +90,16 @@
                         <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="Info07a_Vendor" type="comp:Vendor" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Info07c_Build" type="comp:Build" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="Info08_ClimateZone" type="com:ClimateZone">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Climate Zone</xsd:documentation>
@@ -461,6 +471,22 @@
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Zone</xsd:documentation>
                                        </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="DwellInfo04_ZoneGroupMultiplier" type="hvac:ZoneGroupMultiplier">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Zone Group Multiplier</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="DwellInfo04a_ImprovementStatus">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="com:ImprovementStatus">
+                                             <xsd:enumeration value="Existing"/>
+                                             <xsd:enumeration value="New"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
                                     </xsd:element>
                                  </xsd:sequence>
                               </xsd:complexType>
@@ -10049,6 +10075,24 @@ Else If result == NotContinuous display No</xsd:documentation>
                                              <dtyp:CBECCnrXMLterm>ThrmlZn:FlrArea</dtyp:CBECCnrXMLterm>
                                           </xsd:appinfo>
                                        </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="VentRes01b_VentilationSystemType" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="hvac:VentilationSystemType">
+                                             <xsd:enumeration value="Balanced"/>
+                                             <xsd:enumeration value="BalancedCentralVent"/>
+                                             <xsd:enumeration value="BalancedERV"/>
+                                             <xsd:enumeration value="BalancedHRV"/>
+                                             <xsd:enumeration value="CentralFanIntegrated"/>
+                                             <xsd:enumeration value="ExhaustCentralVent"/>
+                                             <xsd:enumeration value="ExhaustVent"/>
+                                             <xsd:enumeration value="SupplyCentralVent"/>
+                                             <xsd:enumeration value="SupplyVent"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="VentRes02_VentilationSystemType">
