@@ -2540,7 +2540,9 @@
             <dtyp:displayterm value="ConditionedSpaceExcept12ft">Conditioned space - except 12ft</dtyp:displayterm>
             <dtyp:displayterm value="Ductless">No ducts</dtyp:displayterm>
             <dtyp:displayterm value="DuctsInMultipleLocations">Ducts located in multiple places</dtyp:displayterm>
+            <dtyp:displayterm value="Other">Other location</dtyp:displayterm>
             <dtyp:displayterm value="Outdoors">Outdoor locations</dtyp:displayterm>
+            <dtyp:displayterm value="UnconditionedSpace">Unconditioned space</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -2550,7 +2552,9 @@
          <xsd:enumeration value="ConditionedSpaceExcept12ft"/>
          <xsd:enumeration value="Ductless"/>
          <xsd:enumeration value="DuctsInMultipleLocations"/>
+         <xsd:enumeration value="Other"/>
          <xsd:enumeration value="Outdoors"/>
+         <xsd:enumeration value="UnconditionedSpace"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DuctRValue">
@@ -2645,8 +2649,10 @@
             <dtyp:displayterm value="Attic">Attic</dtyp:displayterm>
             <dtyp:displayterm value="ConditionedZone">Conditioned Zone</dtyp:displayterm>
             <dtyp:displayterm value="CrawlSpace">Crawl Space</dtyp:displayterm>
+            <dtyp:displayterm value="Ductless">No ducts</dtyp:displayterm>
             <dtyp:displayterm value="Garage">Garage</dtyp:displayterm>
             <dtyp:displayterm value="Multiple">Multiple</dtyp:displayterm>
+            <dtyp:displayterm value="Other">Other location</dtyp:displayterm>
             <dtyp:displayterm value="Outside">Outside</dtyp:displayterm>
             <dtyp:displayterm value="UnconditionedZone">Unconditioned Zone</dtyp:displayterm>
          </xsd:appinfo>
@@ -2655,8 +2661,10 @@
          <xsd:enumeration value="Attic"/>
          <xsd:enumeration value="ConditionedZone"/>
          <xsd:enumeration value="CrawlSpace"/>
+         <xsd:enumeration value="Ductless"/>
          <xsd:enumeration value="Garage"/>
          <xsd:enumeration value="Multiple"/>
+         <xsd:enumeration value="Other"/>
          <xsd:enumeration value="Outside"/>
          <xsd:enumeration value="UnconditionedZone"/>
       </xsd:restriction>

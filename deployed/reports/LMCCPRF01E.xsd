@@ -656,61 +656,117 @@
                         <xsd:documentation source="FieldText">Standard Design</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="C22Result1_StandardDesignTotal" type="comp:StandardDesignTotal">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Standard Design</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="C22Result1_StandardDesignSource" type="comp:StandardDesignSource">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Standard Design</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result1_StandardDesignTotal" type="comp:StandardDesignTotal">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Standard Design</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result1a_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Standard Design</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result1_StandardDesignSource" type="comp:StandardDesignSource">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Standard Design</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result1b_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Standard Design</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
                   <xsd:element name="C22Result1_ProposedDesignEfficiency" type="comp:ProposedDesignEfficiency">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Proposed Design</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="C22Result1_ProposedDesignTotal" type="comp:ProposedDesignTotal">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Proposed  Design</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="C22Result1_ProposedDesignSource" type="comp:ProposedDesignSource">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Proposed  Design</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result1_ProposedDesignTotal" type="comp:ProposedDesignTotal">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Proposed  Design</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result1c_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Proposed Design</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result1_ProposedDesignSource" type="comp:ProposedDesignSource">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Proposed  Design</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result1d_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Proposed Design</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
                   <xsd:element name="C22Result1_ComplianceMarginEfficiency" type="comp:ComplianceMarginEfficiency">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Compliance Margin</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="C22Result1_ComplianceMarginTotal" type="comp:ComplianceMarginTotal">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Compliance Margin</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="C22Result1_ComplianceMarginSource" type="comp:ComplianceMarginSource">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Compliance Margin</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result1_ComplianceMarginTotal" type="comp:ComplianceMarginTotal">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Compliance Margin</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result1e_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Compliance Margin</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result1_ComplianceMarginSource" type="comp:ComplianceMarginSource">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Compliance Margin</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result1f_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Compliance Margin</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
                   <xsd:element name="C22Result1_PassFailEfficiency" type="comp:PassFailEfficiency">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="C22Result1_PassFailTotal" type="comp:PassFailTotal">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="C22Result1_PassFailSource" type="comp:PassFailSource">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                     </xsd:annotation>
-                  </xsd:element>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result1_PassFailTotal" type="comp:PassFailTotal">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result1g_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result1_PassFailSource" type="comp:PassFailSource">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result1h_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
                   <xsd:element name="C22Result1EndNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
@@ -731,7 +787,8 @@
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
-                           <d:i><d:sup>3</d:sup> Building complies when efficiency and total compliance margins are greater than or equal to zero and unmet load hour limits are not exceeded</d:i>
+                           <d:i><d:sup>3</d:sup> New Construction, Complete Addition Scope: Building complies when all efficiency and total compliance margins are greater than or equal to zero and unmet load hour limits are not exceeded 
+                              <d:line1/>  Existing, Addition and Alteration Scope: Building complies when efficiency compliance margin is greater than or equal to zero and unmet load hour limits are not exceeded </d:i>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -1369,27 +1426,55 @@
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="C22Result2TotalComp1_EnergyUseStandardDesign" type="comp:EnergyUseStandardDesign">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="C22Result2TotalComp2_EnergyUseProposedDesign" type="comp:EnergyUseProposedDesign">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="C22Result2TotalComp3a_EnergyUseMargin" type="comp:EnergyUseMargin">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="C22Result2TotalComp3b_EnergyUseImprovementTotalComp" type="comp:EnergyUseImprovementTotalComp">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"/>
-                        <xsd:documentation source="CalculationsAndRules">Display term: (result %)</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result2TotalComp1_EnergyUseStandardDesign" type="comp:EnergyUseStandardDesign">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result2TotalComp1_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result2TotalComp2_EnergyUseProposedDesign" type="comp:EnergyUseProposedDesign">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result2TotalComp2_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result2TotalComp3a_EnergyUseMargin" type="comp:EnergyUseMargin">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result2TotalComp3a_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
+                  <xsd:choice maxOccurs="1">
+                     <xsd:element name="C22Result2TotalComp3b_EnergyUseImprovementTotalComp" type="comp:EnergyUseImprovementTotalComp">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                           <xsd:documentation source="CalculationsAndRules">Display term: (result %)</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="C22Result2TotalComp3b_NotApplicableMessage" type="comp:NotApplicableMessage">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText"/>
+                        </xsd:annotation>
+                     </xsd:element>
+                  </xsd:choice>
                   <xsd:element name="C22Result2Footnote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
@@ -1694,7 +1779,7 @@
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_C22Result4" minOccurs="1">
+         <xsd:element name="Section_C22Result4" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>C4. SOURCE ENERGY COMPLIANCE RESULTS FOR PERFORMANCE COMPONENTS (Annual SOURCE Energy Use,  kBtu/ft<d:sup>2</d:sup> /yr) </d:b>
@@ -7591,7 +7676,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="HvacDry06a_EfficiencyType">
+                                       <xsd:element name="HvacDry06a_EfficiencyType" maxOccurs="2">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
@@ -7615,45 +7700,71 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="HvacDry06b_EfficiencyAFUE" type="hvac:EfficiencyAFUE">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="HvacDry06b_EfficiencyCOP" type="hvac:EfficiencyCOP">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="HvacDry06b_EfficiencyHSPF" type="hvac:EfficiencyHSPF">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="HvacDry06b_ThermalEfficiency" type="hvac:ThermalEfficiency">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                             <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
-                                             </xsd:appinfo>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                       <xsd:element name="HvacDry06b_EfficiencyNA" type="comp:EfficiencyNA">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
+                                    <xsd:element name="HvacDry06b">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                       </xsd:annotation>
+                                       <xsd:complexType>
+                                          <xsd:choice maxOccurs="1">
+                                             <xsd:element name="HvacDry06b_EfficiencyAFUE" type="hvac:EfficiencyAFUE">
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                                   <xsd:appinfo source="CBECCnrXML">
+                                                      <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
+                                                   </xsd:appinfo>
+                                                </xsd:annotation>
+                                             </xsd:element>
+                                             <xsd:element name="HvacDry06b_EfficiencyCOP" type="hvac:EfficiencyCOP">
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                                   <xsd:appinfo source="CBECCnrXML">
+                                                      <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
+                                                   </xsd:appinfo>
+                                                </xsd:annotation>
+                                             </xsd:element>
+                                             <xsd:element name="HvacDry06b_EfficiencyHSPF" type="hvac:EfficiencyHSPF">
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                                   <xsd:appinfo source="CBECCnrXML">
+                                                      <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
+                                                   </xsd:appinfo>
+                                                </xsd:annotation>
+                                             </xsd:element>
+                                             <xsd:element name="HvacDry06b_ThermalEfficiency" type="hvac:ThermalEfficiency">
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                                   <xsd:appinfo source="CBECCnrXML">
+                                                      <dtyp:CBECCnrXMLterm>AirSys:HtgEffRpt Or ZnSys:HtgEffRpt Or VRFSys:HtgEffRpt</dtyp:CBECCnrXMLterm>
+                                                   </xsd:appinfo>
+                                                </xsd:annotation>
+                                             </xsd:element>
+                                             <xsd:element name="HvacDry06b_EfficiencyNA" type="comp:EfficiencyNA">
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                                </xsd:annotation>
+                                             </xsd:element>
+                                             <xsd:element name="HvacDry06c">
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Efficiency COP/HSPF</xsd:documentation>
+                                                </xsd:annotation>
+                                                <xsd:complexType>
+                                                   <xsd:sequence>
+                                                      <xsd:element name="HvacDry06c_EfficiencyCOP" type="hvac:EfficiencyCOP">
+                                                         <xsd:annotation>
+                                                            <xsd:documentation source="FieldText"/>
+                                                         </xsd:annotation>
+                                                      </xsd:element>
+                                                      <xsd:element name="HvacDry06c_EfficiencyHSPF" type="hvac:EfficiencyHSPF">
+                                                         <xsd:annotation>
+                                                            <xsd:documentation source="FieldText"/>
+                                                         </xsd:annotation>
+                                                      </xsd:element>
+                                                   </xsd:sequence>
+                                                </xsd:complexType>
+                                             </xsd:element>
+                                          </xsd:choice>
+                                       </xsd:complexType>
+                                    </xsd:element>
                                     <xsd:element name="HvacDryCol07to08Label" minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">

@@ -2796,11 +2796,13 @@
             <dtyp:displayterm value="DuctedAndDuctlessIndoorUnits">Multiple split Indoor Units combined Ducted and Ductless</dtyp:displayterm>
             <dtyp:displayterm value="Ductless">No ducts</dtyp:displayterm>
             <dtyp:displayterm value="DuctsInMultipleLocations">Ducts located in multiple places</dtyp:displayterm>
+            <dtyp:displayterm value="Other">Other location</dtyp:displayterm>
             <dtyp:displayterm value="Outdoors">Outdoor locations</dtyp:displayterm>
             <dtyp:displayterm value="UnconditionedAttic">Unconditioned attic</dtyp:displayterm>
             <dtyp:displayterm value="UnconditionedBasement">Unconditioned basement</dtyp:displayterm>
             <dtyp:displayterm value="UnconditionedCrawlSpace">Unconditioned crawl space</dtyp:displayterm>
             <dtyp:displayterm value="UnconditionedGarage">Unconditioned garage</dtyp:displayterm>
+            <dtyp:displayterm value="UnconditionedSpace">Unconditioned space</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="CBECCresXML">
             <dtyp:CBECCresXMLterm value="Buried"></dtyp:CBECCresXMLterm>
@@ -2810,11 +2812,13 @@
             <dtyp:CBECCresXMLterm value="DuctedAndDuctlessIndoorUnits"></dtyp:CBECCresXMLterm>
             <dtyp:CBECCresXMLterm value="Ductless">DuctsNone</dtyp:CBECCresXMLterm>
             <dtyp:CBECCresXMLterm value="DuctsInMultipleLocations">DuctsMult</dtyp:CBECCresXMLterm>
+            <dtyp:CBECCresXMLterm value="Other">Other</dtyp:CBECCresXMLterm>
             <dtyp:CBECCresXMLterm value="Outdoors">DuctsOutdoor</dtyp:CBECCresXMLterm>
             <dtyp:CBECCresXMLterm value="UnconditionedAttic">DuctsAttic</dtyp:CBECCresXMLterm>
             <dtyp:CBECCresXMLterm value="UnconditionedBasement"></dtyp:CBECCresXMLterm>
             <dtyp:CBECCresXMLterm value="UnconditionedCrawlSpace"></dtyp:CBECCresXMLterm>
             <dtyp:CBECCresXMLterm value="UnconditionedGarage">DuctsGarage</dtyp:CBECCresXMLterm>
+            <dtyp:CBECCresXMLterm value="UnconditionedSpace">Unconditioned</dtyp:CBECCresXMLterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -2825,11 +2829,13 @@
          <xsd:enumeration value="DuctedAndDuctlessIndoorUnits"/>
          <xsd:enumeration value="Ductless"/>
          <xsd:enumeration value="DuctsInMultipleLocations"/>
+         <xsd:enumeration value="Other"/>
          <xsd:enumeration value="Outdoors"/>
          <xsd:enumeration value="UnconditionedAttic"/>
          <xsd:enumeration value="UnconditionedBasement"/>
          <xsd:enumeration value="UnconditionedCrawlSpace"/>
          <xsd:enumeration value="UnconditionedGarage"/>
+         <xsd:enumeration value="UnconditionedSpace"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DuctNominalDiameter">
@@ -2936,8 +2942,10 @@
             <dtyp:displayterm value="Attic">Attic</dtyp:displayterm>
             <dtyp:displayterm value="ConditionedZone">Conditioned Zone</dtyp:displayterm>
             <dtyp:displayterm value="CrawlSpace">Crawl Space</dtyp:displayterm>
+            <dtyp:displayterm value="Ductless">No ducts</dtyp:displayterm>
             <dtyp:displayterm value="Garage">Garage</dtyp:displayterm>
             <dtyp:displayterm value="Multiple">Multiple</dtyp:displayterm>
+            <dtyp:displayterm value="Other">Other location</dtyp:displayterm>
             <dtyp:displayterm value="Outside">Outside</dtyp:displayterm>
             <dtyp:displayterm value="UnconditionedZone">Unconditioned Zone</dtyp:displayterm>
          </xsd:appinfo>
@@ -2946,8 +2954,10 @@
          <xsd:enumeration value="Attic"/>
          <xsd:enumeration value="ConditionedZone"/>
          <xsd:enumeration value="CrawlSpace"/>
+         <xsd:enumeration value="Ductless"/>
          <xsd:enumeration value="Garage"/>
          <xsd:enumeration value="Multiple"/>
+         <xsd:enumeration value="Other"/>
          <xsd:enumeration value="Outside"/>
          <xsd:enumeration value="UnconditionedZone"/>
       </xsd:restriction>
