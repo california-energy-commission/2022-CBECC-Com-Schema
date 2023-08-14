@@ -8064,30 +8064,11 @@ result = NotApplicable</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Hvacdwell15a_EfficiencyTypeString" >
+                                                         <xsd:element name="Hvacdwell15a_EfficiencyTypeString" type="hvac:EfficiencyTypeString" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                                                <xsd:documentation source="AdditionalRequirements">Efficiency Unit String</xsd:documentation>
                                                             </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="hvac:EfficiencyType">
-                                                                  <xsd:enumeration value="CEER"/>
-                                                                  <xsd:enumeration value="EER"/>
-                                                                  <xsd:enumeration value="EER2"/>
-                                                                  <xsd:enumeration value="EER2a"/>
-                                                                  <xsd:enumeration value="EER2aEER2b"/>
-                                                                  <xsd:enumeration value="EER2b"/>
-                                                                  <xsd:enumeration value="EER2SEER2"/>
-                                                                  <xsd:enumeration value="EERa"/>
-                                                                  <xsd:enumeration value="EERaEERb"/>
-                                                                  <xsd:enumeration value="EERb"/>
-                                                                  <xsd:enumeration value="EERIEER"/>
-                                                                  <xsd:enumeration value="EERSEER"/>
-                                                                  <xsd:enumeration value="IEER"/>
-                                                                  <xsd:enumeration value="SEER"/>
-                                                                  <xsd:enumeration value="SEER2"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Hvacdwell15a_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                                             <xsd:annotation>
@@ -8163,30 +8144,11 @@ result = NotApplicable</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Hvacdwell15a_EfficiencyTypeString" >
+                                                         <xsd:element name="Hvacdwell15a_EfficiencyTypeString" type="hvac:EfficiencyTypeString" minOccurs="1" maxOccurs="2">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                                                <xsd:documentation source="AdditionalRequirements">Efficiency Unit String</xsd:documentation>
                                                             </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="hvac:EfficiencyType">
-                                                                  <xsd:enumeration value="CEER"/>
-                                                                  <xsd:enumeration value="EER"/>
-                                                                  <xsd:enumeration value="EER2"/>
-                                                                  <xsd:enumeration value="EER2a"/>
-                                                                  <xsd:enumeration value="EER2aEER2b"/>
-                                                                  <xsd:enumeration value="EER2b"/>
-                                                                  <xsd:enumeration value="EER2SEER2"/>
-                                                                  <xsd:enumeration value="EERa"/>
-                                                                  <xsd:enumeration value="EERaEERb"/>
-                                                                  <xsd:enumeration value="EERb"/>
-                                                                  <xsd:enumeration value="EERIEER"/>
-                                                                  <xsd:enumeration value="EERSEER"/>
-                                                                  <xsd:enumeration value="IEER"/>
-                                                                  <xsd:enumeration value="SEER"/>
-                                                                  <xsd:enumeration value="SEER2"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Hvacdwell15a_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                                             <xsd:annotation>
@@ -8206,12 +8168,12 @@ result = NotApplicable</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
-                                                         <xsd:element name="Hvacdwell16_EfficiencyEER_SEER" type="hvac:EfficiencySEER_EER"  minOccurs="2" maxOccurs="2">
+                                                         <xsd:element name="Hvacdwell16_EfficiencyEER_SEER" type="hvac:EfficiencyEER_SEER"  minOccurs="2" maxOccurs="2">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
-                                                         <xsd:element name="Hvacdwell16_EfficiencyEER2_SEER2" type="hvac:EfficiencySEER2_EER2"  minOccurs="2" maxOccurs="2">
+                                                         <xsd:element name="Hvacdwell16_EfficiencyEER2_SEER2" type="hvac:EfficiencyEER2_SEER2"  minOccurs="2" maxOccurs="2">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Design Efficiency</xsd:documentation>
                                                             </xsd:annotation>

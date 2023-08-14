@@ -4477,7 +4477,7 @@
             <dtyp:displayterm value="ChillerNA">NA - See Chiller</dtyp:displayterm>
             <dtyp:displayterm value="CoolingTowerNA">NA - See Cooling Tower</dtyp:displayterm>
             <dtyp:displayterm value="EfficiencyNA">NA</dtyp:displayterm>
-            <dtyp:displayterm value="ElectricResistanceNA">NA - Electric Resistance</dtyp:displayterm>
+            <dtyp:displayterm value="ElectricResistanceNA">NA - See Electric Resistance</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -4485,6 +4485,7 @@
          <xsd:enumeration value="ChillerNA"/>
          <xsd:enumeration value="CoolingTowerNA"/>
          <xsd:enumeration value="EfficiencyNA"/>
+         <xsd:enumeration value="ElectricResistanceNA"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ElectricalLoadComplianceMethod">
