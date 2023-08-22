@@ -8903,39 +8903,6 @@
             <dtyp:displayterm value="VCHP_IndoorUnitDuctedAndDuctless">VCHP-ducted+ductless</dtyp:displayterm>
             <dtyp:displayterm value="VCHP_IndoorUnitDuctless">VCHP-ductless</dtyp:displayterm>
             <dtyp:displayterm value="VCHP2">VCHP2</dtyp:displayterm>
-            <dtyp:displayterm value="SplitAirCond">Central split AC</dtyp:displayterm>
-            <dtyp:displayterm value="PkgTermAirCond">Package Terminal Air Conditioner</dtyp:displayterm>
-            <dtyp:displayterm value="SglPkgVertAirCond">Single package vertical A/C system</dtyp:displayterm>
-            <dtyp:displayterm value="PkgAirCond">Central large packaged AC</dtyp:displayterm>
-            <dtyp:displayterm value="LrgPkgAirCond">Central large packaged AC</dtyp:displayterm>
-            <dtyp:displayterm value="SDHVSplitAirCond">Small Duct High Velocity Air Conditioner</dtyp:displayterm>
-            <dtyp:displayterm value="DuctlessMiniSplitAirCond">Ductless mini-split AC</dtyp:displayterm>
-            <dtyp:displayterm value="DuctlessMultiSplitAirCond">Multi-Split AC-ductless</dtyp:displayterm>
-            <dtyp:displayterm value="DuctlessVRFAirCond">Ductless VRF Air Conditioner</dtyp:displayterm>
-            <dtyp:displayterm value="DuctedMiniSplitAirCond">Ducted mini-split AC</dtyp:displayterm>
-            <dtyp:displayterm value="DuctedMultiSplitAirCond">Multi-Split AC-ducted</dtyp:displayterm>
-            <dtyp:displayterm value="DuctedDuctlessMultiSplitAirCond">Multi-split HP-ducted+ductless</dtyp:displayterm>
-            <dtyp:displayterm value="RoomAirCond">Room AC</dtyp:displayterm>
-            <dtyp:displayterm value="EvapCondenser">Evaporatively cooled condenser</dtyp:displayterm>
-            <dtyp:displayterm value="EvapDirect">Evaporative - direct</dtyp:displayterm>
-            <dtyp:displayterm value="EvapIndirDirect">Evaporative - indirect/direct</dtyp:displayterm>
-            <dtyp:displayterm value="EvapIndirect">Evaporative - indirect</dtyp:displayterm>
-            <dtyp:displayterm value="SplitHeatPump">Central split HP</dtyp:displayterm>
-            <dtyp:displayterm value="PkgTermHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
-            <dtyp:displayterm value="SglPkgVertHeatPump">Single package vertical heat pump</dtyp:displayterm>
-            <dtyp:displayterm value="SDHVSplitHeatPump">Small Duct High Velocity Heat Pump</dtyp:displayterm>
-            <dtyp:displayterm value="DuctlessMiniSplitHeatPump">Ductless MiniSplit HP</dtyp:displayterm>
-            <dtyp:displayterm value="DuctlessMultiSplitHeatPump">Multi-split HP-ductless</dtyp:displayterm>
-            <dtyp:displayterm value="DuctlessVRFHeatPump">Ductless VRF Heat Pump</dtyp:displayterm>
-            <dtyp:displayterm value="DuctedMiniSplitHeatPump">Ducted mini-split HP</dtyp:displayterm>
-            <dtyp:displayterm value="DuctedMultiSplitHeatPump">Multi-split HP-ducted</dtyp:displayterm>
-            <dtyp:displayterm value="DuctedDuctlessMultiSplitHeatPump">Multi-split HP-ducted+ductless</dtyp:displayterm>
-            <dtyp:displayterm value="PkgHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
-            <dtyp:displayterm value="LrgPkgHeatPump">Central large packaged HP</dtyp:displayterm>
-            <dtyp:displayterm value="RoomHeatPump">Room HP</dtyp:displayterm>
-            <dtyp:displayterm value="FourPipeFanCoil">Four-pipe fan coil</dtyp:displayterm>
-            <dtyp:displayterm value="WaterSourceHeatPump">Water source heat pump</dtyp:displayterm>
-            <dtyp:displayterm value="VRF">Variable refrigerant flow</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -8984,6 +8951,48 @@
          <xsd:enumeration value="VCHP_IndoorUnitDuctedAndDuctless"/>
          <xsd:enumeration value="VCHP_IndoorUnitDuctless"/>
          <xsd:enumeration value="VCHP2"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResidentialCoolingSystemTypeCBECC">
+      <xsd:annotation>
+         <xsd:documentation> Use only for backward compatibility as choice with ResidentialCoolingSystemType</xsd:documentation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="SplitAirCond">Central split AC</dtyp:displayterm>
+            <dtyp:displayterm value="PkgTermAirCond">Package Terminal Air Conditioner</dtyp:displayterm>
+            <dtyp:displayterm value="SglPkgVertAirCond">Single package vertical A/C system</dtyp:displayterm>
+            <dtyp:displayterm value="PkgAirCond">Central large packaged AC</dtyp:displayterm>
+            <dtyp:displayterm value="LrgPkgAirCond">Central large packaged AC</dtyp:displayterm>
+            <dtyp:displayterm value="SDHVSplitAirCond">Small Duct High Velocity Air Conditioner</dtyp:displayterm>
+            <dtyp:displayterm value="DuctlessMiniSplitAirCond">Ductless mini-split AC</dtyp:displayterm>
+            <dtyp:displayterm value="DuctlessMultiSplitAirCond">Multi-Split AC-ductless</dtyp:displayterm>
+            <dtyp:displayterm value="DuctlessVRFAirCond">Ductless VRF Air Conditioner</dtyp:displayterm>
+            <dtyp:displayterm value="DuctedMiniSplitAirCond">Ducted mini-split AC</dtyp:displayterm>
+            <dtyp:displayterm value="DuctedMultiSplitAirCond">Multi-Split AC-ducted</dtyp:displayterm>
+            <dtyp:displayterm value="DuctedDuctlessMultiSplitAirCond">Multi-split HP-ducted+ductless</dtyp:displayterm>
+            <dtyp:displayterm value="RoomAirCond">Room AC</dtyp:displayterm>
+            <dtyp:displayterm value="EvapCondenser">Evaporatively cooled condenser</dtyp:displayterm>
+            <dtyp:displayterm value="EvapDirect">Evaporative - direct</dtyp:displayterm>
+            <dtyp:displayterm value="EvapIndirDirect">Evaporative - indirect/direct</dtyp:displayterm>
+            <dtyp:displayterm value="EvapIndirect">Evaporative - indirect</dtyp:displayterm>
+            <dtyp:displayterm value="SplitHeatPump">Central split HP</dtyp:displayterm>
+            <dtyp:displayterm value="PkgTermHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
+            <dtyp:displayterm value="SglPkgVertHeatPump">Single package vertical heat pump</dtyp:displayterm>
+            <dtyp:displayterm value="SDHVSplitHeatPump">Small Duct High Velocity Heat Pump</dtyp:displayterm>
+            <dtyp:displayterm value="DuctlessMiniSplitHeatPump">Ductless MiniSplit HP</dtyp:displayterm>
+            <dtyp:displayterm value="DuctlessMultiSplitHeatPump">Multi-split HP-ductless</dtyp:displayterm>
+            <dtyp:displayterm value="DuctlessVRFHeatPump">Ductless VRF Heat Pump</dtyp:displayterm>
+            <dtyp:displayterm value="DuctedMiniSplitHeatPump">Ducted mini-split HP</dtyp:displayterm>
+            <dtyp:displayterm value="DuctedMultiSplitHeatPump">Multi-split HP-ducted</dtyp:displayterm>
+            <dtyp:displayterm value="DuctedDuctlessMultiSplitHeatPump">Multi-split HP-ducted+ductless</dtyp:displayterm>
+            <dtyp:displayterm value="PkgHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
+            <dtyp:displayterm value="LrgPkgHeatPump">Central large packaged HP</dtyp:displayterm>
+            <dtyp:displayterm value="RoomHeatPump">Room HP</dtyp:displayterm>
+            <dtyp:displayterm value="FourPipeFanCoil">Four-pipe fan coil</dtyp:displayterm>
+            <dtyp:displayterm value="WaterSourceHeatPump">Water source heat pump</dtyp:displayterm>
+            <dtyp:displayterm value="VRF">Variable refrigerant flow</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="SplitAirCond"/>
          <xsd:enumeration value="PkgTermAirCond"/>
          <xsd:enumeration value="SglPkgVertAirCond"/>
@@ -9164,27 +9173,6 @@
             <dtyp:displayterm value="VCHP_IndoorUnitDuctless">VCHP-ductless</dtyp:displayterm>
             <dtyp:displayterm value="VCHP2">VCHP2</dtyp:displayterm>
             <dtyp:displayterm value="WoodHeat">Wood Heat</dtyp:displayterm>
-            <dtyp:displayterm value="CntrlFurnace">Central gas furnace</dtyp:displayterm>
-            <dtyp:displayterm value="WallFurnaceFan">Gas wall furnace</dtyp:displayterm>
-            <dtyp:displayterm value="CombHydro">Combined hydronic</dtyp:displayterm>
-            <dtyp:displayterm value="WallFurnaceGravity">Gas wall furnace</dtyp:displayterm>
-            <dtyp:displayterm value="RoomHeater">Gas space heater</dtyp:displayterm>
-            <dtyp:displayterm value="PkgGasFurnace">Packaged Gas Furnace</dtyp:displayterm>
-            <dtyp:displayterm value="ElectricCombinedHydronic">Electric combined hydronic</dtyp:displayterm>
-            <dtyp:displayterm value="ElecCombHydro">Electric combined hydronic</dtyp:displayterm>
-            <dtyp:displayterm value="SplitHeatPump">Central split HP</dtyp:displayterm>
-            <dtyp:displayterm value="PkgTermHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
-            <dtyp:displayterm value="SglPkgVertHeatPump">Single package vertical heat pump</dtyp:displayterm>
-            <dtyp:displayterm value="SDHVSplitHeatPump">Small Duct High Velocity Heat Pump</dtyp:displayterm>
-            <dtyp:displayterm value="DuctlessMiniSplitHeatPump">Ductless MiniSplit HP</dtyp:displayterm>
-            <dtyp:displayterm value="DuctlessMultiSplitHeatPump">Multi-split HP-ductless</dtyp:displayterm>
-            <dtyp:displayterm value="DuctlessVRFHeatPump">Ductless VRF Heat Pump</dtyp:displayterm>
-            <dtyp:displayterm value="DuctedMiniSplitHeatPump">Ducted mini-split HP</dtyp:displayterm>
-            <dtyp:displayterm value="DuctedMultiSplitHeatPump">Multi-split HP-ducted</dtyp:displayterm>
-            <dtyp:displayterm value="DuctedDuctlessMultiSplitHeatPump">Multi-split HP-ducted+ductless</dtyp:displayterm>
-            <dtyp:displayterm value="PkgHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
-            <dtyp:displayterm value="LrgPkgHeatPump">Central large packaged HP</dtyp:displayterm>
-            <dtyp:displayterm value="RoomHeatPump">Room HP</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -9226,6 +9214,39 @@
          <xsd:enumeration value="VCHP_IndoorUnitDuctless"/>
          <xsd:enumeration value="VCHP2"/>
          <xsd:enumeration value="WoodHeat"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResidentialHeatingSystemTypeCBECC">
+      <xsd:annotation>
+         <xsd:documentation> Use only for backward compatibility as choice with ResidentialCoolingSystemType</xsd:documentation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="CntrlFurnace">Central gas furnace</dtyp:displayterm>
+            <dtyp:displayterm value="WallFurnaceFan">Gas wall furnace</dtyp:displayterm>
+            <dtyp:displayterm value="CombHydro">Combined hydronic</dtyp:displayterm>
+            <dtyp:displayterm value="WallFurnaceGravity">Gas wall furnace</dtyp:displayterm>
+            <dtyp:displayterm value="RoomHeater">Gas space heater</dtyp:displayterm>
+            <dtyp:displayterm value="PkgGasFurnace">Packaged Gas Furnace</dtyp:displayterm>
+            <dtyp:displayterm value="ElectricCombinedHydronic">Electric combined hydronic</dtyp:displayterm>
+            <dtyp:displayterm value="ElecCombHydro">Electric combined hydronic</dtyp:displayterm>
+            <dtyp:displayterm value="SplitHeatPump">Central split HP</dtyp:displayterm>
+            <dtyp:displayterm value="PkgTermHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
+            <dtyp:displayterm value="SglPkgVertHeatPump">Single package vertical heat pump</dtyp:displayterm>
+            <dtyp:displayterm value="SDHVSplitHeatPump">Small Duct High Velocity Heat Pump</dtyp:displayterm>
+            <dtyp:displayterm value="DuctlessMiniSplitHeatPump">Ductless MiniSplit HP</dtyp:displayterm>
+            <dtyp:displayterm value="DuctlessMultiSplitHeatPump">Multi-split HP-ductless</dtyp:displayterm>
+            <dtyp:displayterm value="DuctlessVRFHeatPump">Ductless VRF Heat Pump</dtyp:displayterm>
+            <dtyp:displayterm value="DuctedMiniSplitHeatPump">Ducted mini-split HP</dtyp:displayterm>
+            <dtyp:displayterm value="DuctedMultiSplitHeatPump">Multi-split HP-ducted</dtyp:displayterm>
+            <dtyp:displayterm value="DuctedDuctlessMultiSplitHeatPump">Multi-split HP-ducted+ductless</dtyp:displayterm>
+            <dtyp:displayterm value="PkgHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
+            <dtyp:displayterm value="LrgPkgHeatPump">Central large packaged HP</dtyp:displayterm>
+            <dtyp:displayterm value="RoomHeatPump">Room HP</dtyp:displayterm>
+            <dtyp:displayterm value="FourPipeFanCoil">Four-pipe fan coil</dtyp:displayterm>
+            <dtyp:displayterm value="WaterSourceHeatPump">Water source heat pump</dtyp:displayterm>
+            <dtyp:displayterm value="VRF">Variable refrigerant flow</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="CntrlFurnace"/>
          <xsd:enumeration value="WallFurnaceFan"/>
          <xsd:enumeration value="CombHydro"/>
@@ -9247,6 +9268,9 @@
          <xsd:enumeration value="PkgHeatPump"/>
          <xsd:enumeration value="LrgPkgHeatPump"/>
          <xsd:enumeration value="RoomHeatPump"/>
+         <xsd:enumeration value="FourPipeFanCoil"/>
+         <xsd:enumeration value="WaterSourceHeatPump"/>
+         <xsd:enumeration value="VRF"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ResidentialSpaceConditioningSystemType">
