@@ -4587,10 +4587,13 @@
             <dtyp:displayterm value="AOSmithPHPT60">PHPT 60  (60 gal)</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithPHPT80">PHPT 80  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="BradfordWhiteRE2H50">RE2H50R10B-1NCWT  (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="BradfordWhiteRE2H50S_Rheem2020Prem50">RE2H50S*-***** (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="BradfordWhiteRE2H50S61NCWT">RE2H50S6-1NCWT (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="BradfordWhiteRE2H65T_Rheem2020Prem65">RE2H65T*-***** (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="BradfordWhiteRE2H65T101NCWT">RE2H65T10-1NCWT  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="BradfordWhiteRE2H65T61NCWT">RE2H65T6-1NCWT (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="BradfordWhiteRE2H80">RE2H80R10B-1NCWT  (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="BradfordWhiteRE2H80T_Rheem2020Prem80">RE2H80T*-***** (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="BradfordWhiteRE2H80T61NCWT">RE2H80T6-1NCWT (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxA10">Cx A10</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxA15">Cx A15</dtyp:displayterm>
@@ -4985,10 +4988,13 @@
          <xsd:enumeration value="AOSmithPHPT60"/>
          <xsd:enumeration value="AOSmithPHPT80"/>
          <xsd:enumeration value="BradfordWhiteRE2H50"/>
+         <xsd:enumeration value="BradfordWhiteRE2H50S_Rheem2020Prem50"/>
          <xsd:enumeration value="BradfordWhiteRE2H50S61NCWT"/>
+         <xsd:enumeration value="BradfordWhiteRE2H65T_Rheem2020Prem65"/>
          <xsd:enumeration value="BradfordWhiteRE2H65T101NCWT"/>
          <xsd:enumeration value="BradfordWhiteRE2H65T61NCWT"/>
          <xsd:enumeration value="BradfordWhiteRE2H80"/>
+         <xsd:enumeration value="BradfordWhiteRE2H80T_Rheem2020Prem80"/>
          <xsd:enumeration value="BradfordWhiteRE2H80T61NCWT"/>
          <xsd:enumeration value="ColmacCxA10"/>
          <xsd:enumeration value="ColmacCxA15"/>
@@ -8881,6 +8887,7 @@
             <dtyp:displayterm value="EvaporativeIndirect">Evaporative - indirect</dtyp:displayterm>
             <dtyp:displayterm value="EvaporativeIndirectDirect">Evaporative - indirect/direct</dtyp:displayterm>
             <dtyp:displayterm value="EvaporativelyCooledCondenser">Evaporatively cooled condenser</dtyp:displayterm>
+            <dtyp:displayterm value="FourPipeFanCoil">Four-pipe fan coil</dtyp:displayterm>
             <dtyp:displayterm value="GasAbsorptionAC">Gas absorption AC</dtyp:displayterm>
             <dtyp:displayterm value="GroundSourceHeatPump">Ground source heat pump</dtyp:displayterm>
             <dtyp:displayterm value="Hydronic">Hydronic</dtyp:displayterm>
@@ -8903,6 +8910,8 @@
             <dtyp:displayterm value="VCHP_IndoorUnitDuctedAndDuctless">VCHP-ducted+ductless</dtyp:displayterm>
             <dtyp:displayterm value="VCHP_IndoorUnitDuctless">VCHP-ductless</dtyp:displayterm>
             <dtyp:displayterm value="VCHP2">VCHP2</dtyp:displayterm>
+            <dtyp:displayterm value="VRF">Variable refrigerant flow</dtyp:displayterm>
+            <dtyp:displayterm value="WaterSourceHeatPump">Water source heat pump</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -8929,6 +8938,7 @@
          <xsd:enumeration value="EvaporativeIndirect"/>
          <xsd:enumeration value="EvaporativeIndirectDirect"/>
          <xsd:enumeration value="EvaporativelyCooledCondenser"/>
+         <xsd:enumeration value="FourPipeFanCoil"/>
          <xsd:enumeration value="GasAbsorptionAC"/>
          <xsd:enumeration value="GroundSourceHeatPump"/>
          <xsd:enumeration value="Hydronic"/>
@@ -8951,6 +8961,8 @@
          <xsd:enumeration value="VCHP_IndoorUnitDuctedAndDuctless"/>
          <xsd:enumeration value="VCHP_IndoorUnitDuctless"/>
          <xsd:enumeration value="VCHP2"/>
+         <xsd:enumeration value="VRF"/>
+         <xsd:enumeration value="WaterSourceHeatPump"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ResidentialCoolingSystemTypeCBECC">
@@ -8987,9 +8999,6 @@
             <dtyp:displayterm value="PkgHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
             <dtyp:displayterm value="LrgPkgHeatPump">Central large packaged HP</dtyp:displayterm>
             <dtyp:displayterm value="RoomHeatPump">Room HP</dtyp:displayterm>
-            <dtyp:displayterm value="FourPipeFanCoil">Four-pipe fan coil</dtyp:displayterm>
-            <dtyp:displayterm value="WaterSourceHeatPump">Water source heat pump</dtyp:displayterm>
-            <dtyp:displayterm value="VRF">Variable refrigerant flow</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -9023,9 +9032,6 @@
          <xsd:enumeration value="PkgHeatPump"/>
          <xsd:enumeration value="LrgPkgHeatPump"/>
          <xsd:enumeration value="RoomHeatPump"/>
-         <xsd:enumeration value="FourPipeFanCoil"/>
-         <xsd:enumeration value="WaterSourceHeatPump"/>
-         <xsd:enumeration value="VRF"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ResidentialDHWCentralDistributionType">
@@ -9151,6 +9157,8 @@
             <dtyp:displayterm value="DuctlessSplitHP">Ductless mini-split HP</dtyp:displayterm>
             <dtyp:displayterm value="DuctlessVRF_HP">Ductless VRF Heat Pump</dtyp:displayterm>
             <dtyp:displayterm value="Electric">Electric</dtyp:displayterm>
+            <dtyp:displayterm value="ElectricCombinedHydronic">Electric combined hydronic</dtyp:displayterm>
+            <dtyp:displayterm value="FourPipeFanCoil">Four-pipe fan coil</dtyp:displayterm>
             <dtyp:displayterm value="FloorFurnace">Floor Furnace</dtyp:displayterm>
             <dtyp:displayterm value="GasFurnaceDualFuelHP">Dual Fuel HP + GasFurnace</dtyp:displayterm>
             <dtyp:displayterm value="GasPackagedFurnace">Packaged Gas Furnace</dtyp:displayterm>
@@ -9172,6 +9180,8 @@
             <dtyp:displayterm value="VCHP_IndoorUnitDuctedAndDuctless">VCHP-ducted+ductless</dtyp:displayterm>
             <dtyp:displayterm value="VCHP_IndoorUnitDuctless">VCHP-ductless</dtyp:displayterm>
             <dtyp:displayterm value="VCHP2">VCHP2</dtyp:displayterm>
+            <dtyp:displayterm value="VRF">Variable refrigerant flow</dtyp:displayterm>
+            <dtyp:displayterm value="WaterSourceHeatPump">Water source heat pump</dtyp:displayterm>
             <dtyp:displayterm value="WoodHeat">Wood Heat</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -9192,6 +9202,8 @@
          <xsd:enumeration value="DuctlessSplitHP"/>
          <xsd:enumeration value="DuctlessVRF_HP"/>
          <xsd:enumeration value="Electric"/>
+         <xsd:enumeration value="ElectricCombinedHydronic"/>
+         <xsd:enumeration value="FourPipeFanCoil"/>
          <xsd:enumeration value="FloorFurnace"/>
          <xsd:enumeration value="GasFurnaceDualFuelHP"/>
          <xsd:enumeration value="GasPackagedFurnace"/>
@@ -9213,6 +9225,8 @@
          <xsd:enumeration value="VCHP_IndoorUnitDuctedAndDuctless"/>
          <xsd:enumeration value="VCHP_IndoorUnitDuctless"/>
          <xsd:enumeration value="VCHP2"/>
+         <xsd:enumeration value="VRF"/>
+         <xsd:enumeration value="WaterSourceHeatPump"/>
          <xsd:enumeration value="WoodHeat"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -9226,7 +9240,6 @@
             <dtyp:displayterm value="WallFurnaceGravity">Gas wall furnace</dtyp:displayterm>
             <dtyp:displayterm value="RoomHeater">Gas space heater</dtyp:displayterm>
             <dtyp:displayterm value="PkgGasFurnace">Packaged Gas Furnace</dtyp:displayterm>
-            <dtyp:displayterm value="ElectricCombinedHydronic">Electric combined hydronic</dtyp:displayterm>
             <dtyp:displayterm value="ElecCombHydro">Electric combined hydronic</dtyp:displayterm>
             <dtyp:displayterm value="SplitHeatPump">Central split HP</dtyp:displayterm>
             <dtyp:displayterm value="PkgTermHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
@@ -9241,9 +9254,6 @@
             <dtyp:displayterm value="PkgHeatPump">Package Terminal Heat Pump</dtyp:displayterm>
             <dtyp:displayterm value="LrgPkgHeatPump">Central large packaged HP</dtyp:displayterm>
             <dtyp:displayterm value="RoomHeatPump">Room HP</dtyp:displayterm>
-            <dtyp:displayterm value="FourPipeFanCoil">Four-pipe fan coil</dtyp:displayterm>
-            <dtyp:displayterm value="WaterSourceHeatPump">Water source heat pump</dtyp:displayterm>
-            <dtyp:displayterm value="VRF">Variable refrigerant flow</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -9253,7 +9263,6 @@
          <xsd:enumeration value="WallFurnaceGravity"/>
          <xsd:enumeration value="RoomHeater"/>
          <xsd:enumeration value="PkgGasFurnace"/>
-         <xsd:enumeration value="ElectricCombinedHydronic"/>
          <xsd:enumeration value="ElecCombHydro"/>
          <xsd:enumeration value="SplitHeatPump"/>
          <xsd:enumeration value="PkgTermHeatPump"/>
@@ -9268,9 +9277,6 @@
          <xsd:enumeration value="PkgHeatPump"/>
          <xsd:enumeration value="LrgPkgHeatPump"/>
          <xsd:enumeration value="RoomHeatPump"/>
-         <xsd:enumeration value="FourPipeFanCoil"/>
-         <xsd:enumeration value="WaterSourceHeatPump"/>
-         <xsd:enumeration value="VRF"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ResidentialSpaceConditioningSystemType">
@@ -9483,6 +9489,7 @@
 </dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="BradfordWhiteRE2H50S_Rheem2020Prem50">RE2H50S*-***** (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemPROPH50T2RH37515">PROPH50 T2 RH37515  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemPROPH50T2RH37530">PROPH50 T2 RH37530  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemPROPH50T2RH375SO">PROPH50 T2 RH375SO  (50 gal)</dtyp:displayterm>
@@ -9498,6 +9505,7 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="BradfordWhiteRE2H50S_Rheem2020Prem50"/>
          <xsd:enumeration value="RheemPROPH50T2RH37515"/>
          <xsd:enumeration value="RheemPROPH50T2RH37530"/>
          <xsd:enumeration value="RheemPROPH50T2RH375SO"/>
@@ -9519,6 +9527,7 @@
 </dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="BradfordWhiteRE2H65T_Rheem2020Prem65">RE2H65T*-***** (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemPROPH65T2RH37515">PROPH65 T2 RH37515  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemPROPH65T2RH37530">PROPH65 T2 RH37530 (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemPROPH65T2RH375SO">PROPH65 T2 RH375SO (65 gal)</dtyp:displayterm>
@@ -9534,6 +9543,7 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="BradfordWhiteRE2H65T_Rheem2020Prem65"/>
          <xsd:enumeration value="RheemPROPH65T2RH37515"/>
          <xsd:enumeration value="RheemPROPH65T2RH37530"/>
          <xsd:enumeration value="RheemPROPH65T2RH375SO"/>
@@ -9555,6 +9565,7 @@
 </dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="BradfordWhiteRE2H80T_Rheem2020Prem80">RE2H80T*-***** (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemPROPH80T2RH37515">PROPH80 T2 RH37515  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemPROPH80T2RH37530">PROPH80 T2 RH37530  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemPROPH80T2RH375SO">PROPH80 T2 RH375SO (80 gal)</dtyp:displayterm>
@@ -9570,6 +9581,7 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="BradfordWhiteRE2H80T_Rheem2020Prem80"/>
          <xsd:enumeration value="RheemPROPH80T2RH37515"/>
          <xsd:enumeration value="RheemPROPH80T2RH37530"/>
          <xsd:enumeration value="RheemPROPH80T2RH375SO"/>
