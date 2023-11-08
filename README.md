@@ -20,3 +20,6 @@ To contribute a patch, the workflow is as follows:
 - Upload your files
 - Push changes to your branch (or do it directly through GitHub website)
 - Create pull request
+
+# High Priority Issues
+The HIGH PRIORITY label is ONLY for Issues in the production server that are preventing a rater from submitting a form.
