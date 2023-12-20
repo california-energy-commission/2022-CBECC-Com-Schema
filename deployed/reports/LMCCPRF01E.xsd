@@ -9329,6 +9329,18 @@ result = NotApplicable</xsd:documentation>
                                           <xsd:documentation source="FieldText">Name</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
+                                    <xsd:element name="Distmf01a_Status" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="com:Status">
+                                             <xsd:enumeration value="ExistingAlteration"/>
+                                             <xsd:enumeration value="ExistingUnchanged"/>
+                                             <xsd:enumeration value="New"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
+                                    </xsd:element>
                                     <xsd:element name="Distmf02_DuctLocation" type="hvac:DuctLocation">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Type</xsd:documentation>
@@ -9643,25 +9655,25 @@ result = NotApplicable</xsd:documentation>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Distmf10_DuctSystemLeakageTarget" type="comp:DuctSystemLeakageTarget">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Duct Leakage Target (%)</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Distmf10_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Duct Leakage Target (%)</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Distmf11_DuctSystemLeakageTargetMessage" type="comp:DuctSystemLeakageTargetMessage">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Duct Leakage Target (%)</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Duct Leakage Target Message</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Distmf11_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Duct Leakage Target (%)</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Duct Leakage Target Message</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -9743,26 +9755,26 @@ result = NotApplicable</xsd:documentation>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Distmf18_LowLeakDuctsConditionedVerificationRequired" type="comp:LowLeakDuctsConditionedVerificationRequired">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Verified Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Distmf18_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="FieldText">Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
                                              <xsd:documentation source="AdditionalRequirements">Verified Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="Distmf19_DuctsInCondSpc" type="comp:LowLeakDuctsConditionedVerificationRequired">
+                                       <xsd:element name="Distmf19_DuctsInConditionedSpaceVerification" type="comp:DuctsInConditionedSpaceVerification">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Distmf19_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Low Leakage Ducts Entirely in Conditioned Space</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
