@@ -5047,6 +5047,7 @@ p:ExcptCondHERSEnvAirLkge == Yes
                                     <xsd:element name="Pv02_PVExceptionString" type="comp:PVExceptionString"  minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Exception</xsd:documentation>
+					  <xsd:documentation source="CalculationsAndRules">If Pv02_PhotoVoltaicExceptionRes == CommunitySolar, this is the display term for it</xsd:documentation>							
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
