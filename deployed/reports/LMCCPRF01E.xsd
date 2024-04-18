@@ -16188,6 +16188,92 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">Systems To Be Field Verified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="TableCountCAMch" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Count of Systems Requiring LMCA-MCH</xsd:documentation>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="CountCAMchCol1Row2Heading" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText">Name/Count</xsd:documentation>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="CountCAMch02A_ItemCount" type="dtyp:ItemCount" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText">M02</xsd:documentation>
+                                 <xsd:documentation source="CalculationsAndRules">This is the count of all rows in the table where CountCAMch02_RequireNRCAMch02A == true; If the count == 0 this column is not displayed</xsd:documentation>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="CountCAMch03A_ItemCount" type="dtyp:ItemCount" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText">M03</xsd:documentation>
+                                 <xsd:documentation source="CalculationsAndRules">This is the count of all rows in the table where CountCAMch03_RequireLMCAMch03A == true; If the count == 0 this column is not displayed</xsd:documentation>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="CountCAMch04A_ItemCount" type="dtyp:ItemCount" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText">M04</xsd:documentation>
+                                 <xsd:documentation source="CalculationsAndRules">This is the count of all rows in the table where CountCAMch04_RequireLMCAMch04A == true; If the count == 0 this column is not displayed</xsd:documentation>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="CountCAMch04H_ItemCount" type="dtyp:ItemCount" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText">M04H</xsd:documentation>
+                                 <xsd:documentation source="CalculationsAndRules">This is the count of all rows in the table where CountCAMch04H_RequireNRCAMch04H == true; If the count == 0 this column is not displayed</xsd:documentation>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="CountCAMch05A_ItemCount" type="dtyp:ItemCount" minOccurs="0">
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText">M05A</xsd:documentation>
+                                 <xsd:documentation source="CalculationsAndRules">This is the count of all rows in the table where CountCAMch05_RequireNRCAMch05A == true; If the count == 0 this column is not displayed</xsd:documentation>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="CountCAMch01_SystemFieldVerified" type="comp:SystemFieldVerified">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText"/>
+                                          <xsd:documentation source="CalculationsAndRules">This field lists a system in the project that may need LMCA reports</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="CountCAMch02_RequireLMCAMch02A" type="comp:RequireLMCAMch02A" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText"/>
+                                          <xsd:documentation source="CalculationsAndRules">If this LMCA MCH report is required for this system result = true, display term "x"; Else leave blank</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="CountCAMch03_RequireLMCAMch03A" type="comp:RequireLMCAMch03A" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText"/>
+                                          <xsd:documentation source="CalculationsAndRules">If this LMCA MCH report is required for this system result = true, display term "x"; Else leave blank</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="CountCAMch04_RequireLMCAMch04A" type="comp:RequireLMCAMch04A" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText"/>
+                                          <xsd:documentation source="CalculationsAndRules">If this LMCA MCH report is required for this system result = true, display term "x"; Else leave blank</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="CountCAMch04H_RequireLMCAMch04H" type="comp:RequireLMCAMch04H" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText"/>
+                                          <xsd:documentation source="CalculationsAndRules">If this LMCA MCH report is required for this system result = true, display term "x"; Else leave blank</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="CountCAMch05_RequireLMCAMch05A" type="comp:RequireLMCAMch05A" minOccurs="0">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText"/>
+                                          <xsd:documentation source="CalculationsAndRules">If this LMCA MCH report is required for this system result = true, display term "x"; Else leave blank</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
