@@ -8765,9 +8765,9 @@ result = NotApplicable</xsd:documentation>
                            <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="HvacCommonMF01_DwellingUnitName" type="com:DwellingUnitName" >
+                                    <xsd:element name="HvacCommonMF01_HvacSystemName" type="comp:HvacSystemName" minOccurs="0">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Dwelling Unit Type</xsd:documentation>
+                                          <xsd:documentation source="FieldText">HVAC System Name</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="HvacCommonMF02_HvacEquipmentName" type="hvac:HvacEquipmentName"  maxOccurs="unbounded">
@@ -15848,7 +15848,7 @@ End If</xsd:documentation>
                   <xsd:element name="Lmca32_RequireLMCAMch20H" type="comp:RequireLMCAMch20H"  minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-20-H Multifamily Ventilation</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-20-A Multifamily Ventilation</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Lmca32_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
@@ -15864,7 +15864,7 @@ End If</xsd:documentation>
                   <xsd:element name="Lmca33_RequireLMCAMch21H" type="comp:RequireLMCAMch21H"  minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-21-H Multifamily Envelope</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-21-A Multifamily Envelope</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Lmca33_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">

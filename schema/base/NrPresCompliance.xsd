@@ -1749,8 +1749,8 @@
             <dtyp:displayterm value="NRCAMCH17A">NRCA-MCH-17-A</dtyp:displayterm>
             <dtyp:displayterm value="NRCAMCH18A">NRCA-MCH-18-A</dtyp:displayterm>
             <dtyp:displayterm value="NRCAMCH19A">NRCA-MCH-19-A</dtyp:displayterm>
-            <dtyp:displayterm value="NRCAMCH20">NRCA-MCH-20</dtyp:displayterm>
-            <dtyp:displayterm value="NRCAMCH21">NRCA-MCH-21</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH20">NRCA-MCH-20-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH21">NRCA-MCH-21-A</dtyp:displayterm>
             <dtyp:displayterm value="NRCAPRC01F">NRCA-PRC-01-F</dtyp:displayterm>
             <dtyp:displayterm value="NRCAPRC02F">NRCA-PRC-02-F</dtyp:displayterm>
             <dtyp:displayterm value="NRCAPRC03F">NRCA-PRC-03-F</dtyp:displayterm>
@@ -3334,8 +3334,8 @@
             <dtyp:displayterm value="NRCAMCH17A">NRCA-MCH-17-A</dtyp:displayterm>
             <dtyp:displayterm value="NRCAMCH18A">NRCA-MCH-18-A</dtyp:displayterm>
             <dtyp:displayterm value="NRCAMCH19A">NRCA-MCH-19-A</dtyp:displayterm>
-            <dtyp:displayterm value="NRCAMCH20">NRCA-MCH-20</dtyp:displayterm>
-            <dtyp:displayterm value="NRCAMCH21">NRCA-MCH-21</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH20">NRCA-MCH-20-A</dtyp:displayterm>
+            <dtyp:displayterm value="NRCAMCH21">NRCA-MCH-21-A</dtyp:displayterm>
             <dtyp:displayterm value="NRCAPRC01F">NRCA-PRC-01-F</dtyp:displayterm>
             <dtyp:displayterm value="NRCAPRC02F">NRCA-PRC-02-F</dtyp:displayterm>
             <dtyp:displayterm value="NRCAPRC03F">NRCA-PRC-03-F</dtyp:displayterm>

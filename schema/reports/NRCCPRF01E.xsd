@@ -8597,9 +8597,9 @@ result = NotApplicable</xsd:documentation>
                            <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
                               <xsd:complexType>
                                  <xsd:sequence>
-                                    <xsd:element name="HvacCommonMF01_DwellingUnitName" type="com:DwellingUnitName" >
+                                    <xsd:element name="HvacCommonMF01_HvacSystemName" type="comp:HvacSystemName" minOccurs="0">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Dwelling Unit Type</xsd:documentation>
+                                          <xsd:documentation source="FieldText">HVAC System Name</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="HvacCommonMF02_HvacEquipmentName" type="hvac:HvacEquipmentName"  maxOccurs="unbounded">
@@ -15361,7 +15361,7 @@ End If</xsd:documentation>
                   <xsd:element name="Nrca32_RequireNRCAMch20H" type="comp:RequireNRCAMch20H"  minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-20-H Multifamily Ventilation</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-20-A Multifamily Ventilation</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If Nrca32_RequiredNRCAMch20H IsPresent and == true
 Display the AdditionalRequirements text for this element
 Else there is no display for this element
@@ -15383,7 +15383,7 @@ End If</xsd:documentation>
                   <xsd:element name="Nrca33_RequireNRCAMch21H" type="comp:RequireNRCAMch21H"  minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-21-H Multifamily Envelope</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-21-A Multifamily Envelope</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If Nrca33_RequiredNRCAMch21H IsPresent and == true
 Display the AdditionalRequirements text for this element
 Else there is no display for this element
