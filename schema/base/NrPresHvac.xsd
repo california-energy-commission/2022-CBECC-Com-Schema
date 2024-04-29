@@ -4919,6 +4919,11 @@
             <dtyp:displayterm value="Tier3Generic65">NEEA Tier 3 Generic 65</dtyp:displayterm>
             <dtyp:displayterm value="Tier3Generic80">NEEA Tier 3 Generic 80</dtyp:displayterm>
             <dtyp:displayterm value="Tier3NEEA">NEEA Tier 3</dtyp:displayterm>
+            <dtyp:displayterm value="Tier4Generic40">NEEA Tier 4 Generic 40</dtyp:displayterm>
+            <dtyp:displayterm value="Tier4Generic50">NEEA Tier 4 Generic 50</dtyp:displayterm>
+            <dtyp:displayterm value="Tier4Generic65">NEEA Tier 4 Generic 65</dtyp:displayterm>
+            <dtyp:displayterm value="Tier4Generic80">NEEA Tier 4 Generic 80</dtyp:displayterm>
+            <dtyp:displayterm value="Tier4NEEA">NEEA Tier 4</dtyp:displayterm>
             <dtyp:displayterm value="USCraftmasterHPE2F80U">HPE2F80HD045VU 102  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="USCraftmasterHPE2K60">HPE2K60HD045V  (60 gal)</dtyp:displayterm>
             <dtyp:displayterm value="USCraftmasterHPE2K80">HPE2K80HD045V  (80 gal)</dtyp:displayterm>
@@ -5324,6 +5329,11 @@
          <xsd:enumeration value="Tier3Generic65"/>
          <xsd:enumeration value="Tier3Generic80"/>
          <xsd:enumeration value="Tier3NEEA"/>
+         <xsd:enumeration value="Tier4Generic40"/>
+         <xsd:enumeration value="Tier4Generic50"/>
+         <xsd:enumeration value="Tier4Generic65"/>
+         <xsd:enumeration value="Tier4Generic80"/>
+         <xsd:enumeration value="Tier4NEEA"/>
          <xsd:enumeration value="USCraftmasterHPE2F80U"/>
          <xsd:enumeration value="USCraftmasterHPE2K60"/>
          <xsd:enumeration value="USCraftmasterHPE2K80"/>
@@ -5420,6 +5430,10 @@
             <dtyp:displayterm value="Tier3Generic50">NEEA Tier 3 Generic 50</dtyp:displayterm>
             <dtyp:displayterm value="Tier3Generic65">NEEA Tier 3 Generic 65</dtyp:displayterm>
             <dtyp:displayterm value="Tier3Generic80">NEEA Tier 3 Generic 80</dtyp:displayterm>
+            <dtyp:displayterm value="Tier4Generic40">NEEA Tier 4 Generic 40</dtyp:displayterm>
+            <dtyp:displayterm value="Tier4Generic50">NEEA Tier 4 Generic 50</dtyp:displayterm>
+            <dtyp:displayterm value="Tier4Generic65">NEEA Tier 4 Generic 65</dtyp:displayterm>
+            <dtyp:displayterm value="Tier4Generic80">NEEA Tier 4 Generic 80</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -5488,6 +5502,10 @@
          <xsd:enumeration value="Tier3Generic50"/>
          <xsd:enumeration value="Tier3Generic65"/>
          <xsd:enumeration value="Tier3Generic80"/>
+         <xsd:enumeration value="Tier4Generic40"/>
+         <xsd:enumeration value="Tier4Generic50"/>
+         <xsd:enumeration value="Tier4Generic65"/>
+         <xsd:enumeration value="Tier4Generic80"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="HeatRecovery">
@@ -9325,6 +9343,7 @@
             <dtyp:displayterm value="InstantaneousResDutyCommercial">Residential-Duty Commercial Instantaneous</dtyp:displayterm>
             <dtyp:displayterm value="InstantaneousSmall">Small Instantaneous</dtyp:displayterm>
             <dtyp:displayterm value="NEEA_Tier3HP">NEEA Tier 3 heat pump water heater</dtyp:displayterm>
+            <dtyp:displayterm value="NEEA_Tier4HP">NEEA Tier 4 heat pump water heater</dtyp:displayterm>
             <dtyp:displayterm value="SolarElectBackup">Solar water heating system with backup electric</dtyp:displayterm>
             <dtyp:displayterm value="StorageCommercial">Commercial Storage</dtyp:displayterm>
             <dtyp:displayterm value="StorageConsumer">Consumer Storage</dtyp:displayterm>
@@ -9343,6 +9362,7 @@
          <xsd:enumeration value="InstantaneousResDutyCommercial"/>
          <xsd:enumeration value="InstantaneousSmall"/>
          <xsd:enumeration value="NEEA_Tier3HP"/>
+         <xsd:enumeration value="NEEA_Tier4HP"/>
          <xsd:enumeration value="SolarElectBackup"/>
          <xsd:enumeration value="StorageCommercial"/>
          <xsd:enumeration value="StorageConsumer"/>
