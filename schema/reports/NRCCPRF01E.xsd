@@ -7951,25 +7951,29 @@ result = NotApplicable</xsd:documentation>
                                     </xsd:choice>
                                     <xsd:element name="Hvacdwell11to13SubLabel" minOccurs="0">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Supplemental Heating</xsd:documentation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                          <xsd:documentation source="AdditionalRequirements">Supplemental Heating</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Hvacdwell11_HeatingSupplementalCapacity" type="hvac:HeatingSupplementalCapacity" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Output (kBtuh)</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Output (kBtuh)</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Hvacdwell11_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Output (kBtuh)</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Output (kBtuh)</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Hvacdwell12_EfficiencyType" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency Unit</xsd:documentation>
                                           </xsd:annotation>
                                           <xsd:simpleType>
                                              <xsd:restriction base="hvac:EfficiencyType">
@@ -7982,34 +7986,40 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                        <xsd:element name="Hvacdwell12_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency Unit</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Hvacdwell13_EfficiencyCOP" type="hvac:EfficiencyCOP" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Hvacdwell13_EfficiencyHSPF" type="hvac:EfficiencyHSPF" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Hvacdwell13_EfficiencyHSPF2" type="hvac:EfficiencyHSPF2" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Hvacdwell13_EfficiencyAFUE" type="hvac:EfficiencyAFUE" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Hvacdwell13_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -8787,25 +8797,29 @@ result = NotApplicable</xsd:documentation>
                                     </xsd:choice>
                                     <xsd:element name="HvacCommonMF11to13SubLabel" minOccurs="0">
                                        <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Supplemental Heating</xsd:documentation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                          <xsd:documentation source="AdditionalRequirements">Supplemental Heating</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="HvacCommonMF11_HeatingSupplementalCapacity" type="hvac:HeatingSupplementalCapacity" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Output (kBtuh)</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Output (kBtuh)</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="HvacCommonMF11_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Output (kBtuh)</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Output (kBtuh)</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="HvacCommonMF12_EfficiencyType" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency Unit</xsd:documentation>
                                           </xsd:annotation>
                                           <xsd:simpleType>
                                              <xsd:restriction base="hvac:EfficiencyType">
@@ -8818,34 +8832,40 @@ result = NotApplicable</xsd:documentation>
                                        </xsd:element>
                                        <xsd:element name="HvacCommonMF12_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency Unit</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="HvacCommonMF13_EfficiencyCOP" type="hvac:EfficiencyCOP" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="HvacCommonMF13_EfficiencyHSPF" type="hvac:EfficiencyHSPF" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="HvacCommonMF13_EfficiencyHSPF2" type="hvac:EfficiencyHSPF2" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="HvacCommonMF13_EfficiencyAFUE" type="hvac:EfficiencyAFUE" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="HvacCommonMF13_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                             <xsd:documentation source="AdditionalRequirements">Efficiency</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
