@@ -5856,7 +5856,7 @@ p:ExcptCondHERSEnvAirLkge == Yes</dtyp:termConditions>
                <xsd:appinfo source="CBECCnrXML">
                   <dtyp:CBECCnrXMLterm>This section is required if all conditions are true</dtyp:CBECCnrXMLterm>
                   <dtyp:termConditions>p:Proj:CompPathEnv == Performance And 
-p:ConsAssm:CompatibleSufrType == Roof And
+p:ConsAssm:CompatibleSurfType == Roof And
 p:ConsAssm:HasCRRCProdID == 1</dtyp:termConditions>
                </xsd:appinfo>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
