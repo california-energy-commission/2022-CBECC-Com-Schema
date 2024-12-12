@@ -9354,6 +9354,7 @@
             <dtyp:displayterm value="EnergyARGO23">ENERGY+ARGO 23</dtyp:displayterm>
             <dtyp:displayterm value="EnergyARGO25">ENERGY+ARGO 25</dtyp:displayterm>
             <dtyp:displayterm value="EnergyARGO27">ENERGY+ARGO 27</dtyp:displayterm>
+            <dtyp:displayterm value="EnergyARGO29">ENERGY+ARGO 29</dtyp:displayterm>
             <dtyp:displayterm value="EnergyECO15">Energy + ECO 15</dtyp:displayterm>
             <dtyp:displayterm value="EnergyECO17">Energy + ECO 17</dtyp:displayterm>
             <dtyp:displayterm value="EnergyECO19">Energy + ECO 19</dtyp:displayterm>
@@ -10091,6 +10092,7 @@
          <xsd:enumeration value="EnergyARGO23"/>
          <xsd:enumeration value="EnergyARGO25"/>
          <xsd:enumeration value="EnergyARGO27"/>
+         <xsd:enumeration value="EnergyARGO29"/>
          <xsd:enumeration value="EnergyECO15"/>
          <xsd:enumeration value="EnergyECO17"/>
          <xsd:enumeration value="EnergyECO19"/>
