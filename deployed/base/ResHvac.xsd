@@ -5265,14 +5265,18 @@
             <dtyp:displayterm value="RheemXE40T10HMS00U0">XE40T10HMS00U0  (40 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE40T10HS45U0">XE40T10HS45U0  (40 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10">XE50T10HD50U0  (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE50T10H15U0">XE50T10H15U0  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10H22U0">XE50T10H22U0  (50 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10H45U0">XE50T10H45U0  (50 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10H22U1">XE50T10H22U1  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10H45U1">XE50T10H45U1  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10HS45U1">XE50T10HS45U1  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10HD22U0">XE50T10HD22U0  (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE50T10HM00U0">XE50T10HM00U0  (50 gal, JA13)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE50T10HMS00U0">XE50T10HMS00U0  (50 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10HS45U0">XE50T10HS45U0  (50 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10HD50U1">XE50T10HD50U1  (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE50T10U1">XE50T10HD50U1  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T12">XE50T12EH45U0  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T12W">XE50T12EH45U0W  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10">XE65T10HD50U0  (65 gal)</dtyp:displayterm>
@@ -5282,8 +5286,11 @@
             <dtyp:displayterm value="RheemXE65T10HS45U0">XE65T10HS45U0  (65 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10H22U1">XE65T10H22U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10H45U1">XE65T10H45U1  (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE65T10HM00U0">XE65T10HM00U0  (65 gal, JA13)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE65T10HMS00U0">XE65T10HMS00U0  (65 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10HS45U1">XE65T10HS45U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10HD50U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE65T10U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10">XE80T10HD50U0  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H22U0">XE80T10H22U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H45U0">XE80T10H45U0  (80 gal, JA13)</dtyp:displayterm>
@@ -5292,7 +5299,10 @@
             <dtyp:displayterm value="RheemXE80T10HD50U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H22U1">XE80T10H22U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H45U1">XE80T10H45U1  (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10HM00U0">XE80T10HM00U0  (80 gal, JA13)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10HMS00U0">XE80T10HMS00U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HS45U1">XE80T10HS45U1  (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T12">XE80T12EH45U0  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T12W">XE80T12EH45U0W  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E40HP120">10E40-HP120  (40 gal)</dtyp:displayterm>
@@ -5866,6 +5876,7 @@
          <xsd:enumeration value="RheemXE50T10HMS00U0"/>
          <xsd:enumeration value="RheemXE50T10HS45U0"/>
          <xsd:enumeration value="RheemXE50T10HD50U1"/>
+         <xsd:enumeration value="RheemXE50T10U1"/>
          <xsd:enumeration value="RheemXE50T12"/>
          <xsd:enumeration value="RheemXE50T12W"/>
          <xsd:enumeration value="RheemXE65T10"/>
@@ -5879,6 +5890,7 @@
          <xsd:enumeration value="RheemXE65T10H45U1"/>
          <xsd:enumeration value="RheemXE65T10HS45U1"/>
          <xsd:enumeration value="RheemXE65T10HD50U1"/>
+         <xsd:enumeration value="RheemXE65T10U1"/>
          <xsd:enumeration value="RheemXE80T10"/>
          <xsd:enumeration value="RheemXE80T10H22U0"/>
          <xsd:enumeration value="RheemXE80T10H45U0"/>
@@ -5890,6 +5902,7 @@
          <xsd:enumeration value="RheemXE80T10H45U1"/>
          <xsd:enumeration value="RheemXE80T10HS45U1"/>
          <xsd:enumeration value="RheemXE80T10HD50U1"/>
+         <xsd:enumeration value="RheemXE80T10U1"/>
          <xsd:enumeration value="RheemXE80T12"/>
          <xsd:enumeration value="RheemXE80T12W"/>
          <xsd:enumeration value="Richmond10E40HP120"/>
@@ -6425,6 +6438,7 @@
             <dtyp:displayterm value="RheemXE50T10HMS00U0">XE50T10HMS00U0  (50 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10HS45U0">XE50T10HS45U0  (50 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10HD50U1">XE50T10HD50U1  (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE50T10U1">XE50T10HD50U1  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T12">XE50T12EH45U0  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T12W">XE50T12EH45U0W  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10">XE65T10HD50U0  (65 gal)</dtyp:displayterm>
@@ -6438,6 +6452,7 @@
             <dtyp:displayterm value="RheemXE65T10H45U1">XE65T10H45U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10HS45U1">XE65T10HS45U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10HD50U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE65T10U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10">XE80T10HD50U0  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H22U0">XE80T10H22U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H45U0">XE80T10H45U0  (80 gal, JA13)</dtyp:displayterm>
@@ -6449,6 +6464,7 @@
             <dtyp:displayterm value="RheemXE80T10H22U1">XE80T10H22U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H45U1">XE80T10H45U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HS45U1">XE80T10HS45U1  (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T12">XE80T12EH45U0  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T12W">XE80T12EH45U0W  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E40HP120">10E40-HP120  (40 gal)</dtyp:displayterm>
@@ -6968,6 +6984,7 @@
          <xsd:enumeration value="RheemXE50T10HMS00U0"/>
          <xsd:enumeration value="RheemXE50T10HS45U0"/>
          <xsd:enumeration value="RheemXE50T10HD50U1"/>
+         <xsd:enumeration value="RheemXE50T10U1"/>
          <xsd:enumeration value="RheemXE50T12"/>
          <xsd:enumeration value="RheemXE50T12W"/>
          <xsd:enumeration value="RheemXE65T10"/>
@@ -6981,6 +6998,7 @@
          <xsd:enumeration value="RheemXE65T10H45U1"/>
          <xsd:enumeration value="RheemXE65T10HS45U1"/>
          <xsd:enumeration value="RheemXE65T10HD50U1"/>
+         <xsd:enumeration value="RheemXE65T10U1"/>
          <xsd:enumeration value="RheemXE80T10"/>
          <xsd:enumeration value="RheemXE80T10H22U0"/>
          <xsd:enumeration value="RheemXE80T10H45U0"/>
@@ -6992,6 +7010,7 @@
          <xsd:enumeration value="RheemXE80T10H22U1"/>
          <xsd:enumeration value="RheemXE80T10H45U1"/>
          <xsd:enumeration value="RheemXE80T10HS45U1"/>
+         <xsd:enumeration value="RheemXE80T10U1"/>
          <xsd:enumeration value="RheemXE80T12"/>
          <xsd:enumeration value="RheemXE80T12W"/>
          <xsd:enumeration value="Richmond10E40HP120"/>
@@ -7471,6 +7490,8 @@
             <dtyp:displayterm value="RheemXE80T10H22U0">XE80T10H22U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H45U0">XE80T10H45U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HD22U0">XE80T10HD22U0  (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10HM00U0">XE80T10HM00U0  (80 gal, JA13)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10HMS00U0">XE80T10HMS00U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HS45U0">XE80T10HS45U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HD50U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E40HP515">10E40-HP515  (40 gal, JA13)</dtyp:displayterm>
@@ -7687,6 +7708,8 @@
          <xsd:enumeration value="RheemXE80T10H22U0"/>
          <xsd:enumeration value="RheemXE80T10H45U0"/>
          <xsd:enumeration value="RheemXE80T10HD22U0"/>
+         <xsd:enumeration value="RheemXE80T10HM00U0"/>
+         <xsd:enumeration value="RheemXE80T10HMS00U0"/>
          <xsd:enumeration value="RheemXE80T10HS45U0"/>
          <xsd:enumeration value="RheemXE80T10HD50U1"/>
          <xsd:enumeration value="Richmond10E40HP515"/>
@@ -13283,6 +13306,7 @@
             <dtyp:displayterm value="RheemPROPH50RH350DCB">PROPH50 T2 RH350 DCB  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10">XE50T10HD50U0  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10HD50U1">XE50T10HD50U1  (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE50T10U1">XE50T10HD50U1  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E50HP4D">10E50-HP4D  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RuudPROUH50RU350D">PROUH50 T2 RU350 D  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RuudPROUH50RU350DCB">PROUH50 T2 RU350 DCB  (50 gal)</dtyp:displayterm>
@@ -13295,6 +13319,7 @@
          <xsd:enumeration value="RheemPROPH50RH350DCB"/>
          <xsd:enumeration value="RheemXE50T10"/>
          <xsd:enumeration value="RheemXE50T10HD50U1"/>
+         <xsd:enumeration value="RheemXE50T10U1"/>
          <xsd:enumeration value="Richmond10E50HP4D"/>
          <xsd:enumeration value="RuudPROUH50RU350D"/>
          <xsd:enumeration value="RuudPROUH50RU350DCB"/>
@@ -13312,6 +13337,7 @@
             <dtyp:displayterm value="RheemPROPH65RH350DCB">PROPH65 T2 RH350 DCB  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10">XE65T10HD50U0  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10HD50U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE65T10U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E65HP4D">10E65-HP4D  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RuudPROUH65RU350D">PROUH65 T2 RU350 D  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RuudPROUH65RU350DCB">PROUH65 T2 RU350 DCB  (65 gal)</dtyp:displayterm>
@@ -13324,6 +13350,7 @@
          <xsd:enumeration value="RheemPROPH65RH350DCB"/>
          <xsd:enumeration value="RheemXE65T10"/>
          <xsd:enumeration value="RheemXE65T10HD50U1"/>
+         <xsd:enumeration value="RheemXE65T10U1"/>
          <xsd:enumeration value="Richmond10E65HP4D"/>
          <xsd:enumeration value="RuudPROUH65RU350D"/>
          <xsd:enumeration value="RuudPROUH65RU350DCB"/>
@@ -13341,6 +13368,7 @@
             <dtyp:displayterm value="RheemPROPH80RH350DCB">PROPH80 T2 RH350 DCB  (80gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10">XE80T10HD50U0  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HD50U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E80HP4D">10E80-HP4D  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RuudPROUH80RU350D">PROUH80 T2 RU350 D  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RuudPROUH80RU350DCB">PROUH80 T2 RU350 DCB  (80 gal)</dtyp:displayterm>
@@ -13353,6 +13381,7 @@
          <xsd:enumeration value="RheemPROPH80RH350DCB"/>
          <xsd:enumeration value="RheemXE80T10"/>
          <xsd:enumeration value="RheemXE80T10HD50U1"/>
+         <xsd:enumeration value="RheemXE80T10U1"/>
          <xsd:enumeration value="Richmond10E80HP4D"/>
          <xsd:enumeration value="RuudPROUH80RU350D"/>
          <xsd:enumeration value="RuudPROUH80RU350DCB"/>
@@ -14655,6 +14684,7 @@
             <dtyp:displayterm value="RheemXE50T10">XE50T10HD50U0  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10H22U0">XE50T10H22U0  (50 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE50T10HD50U1">XE50T10HD50U1  (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE50T10U1">XE50T10HD50U1  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E50HP4D">10E50-HP4D  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E50HP4D15">10E50-HP4D15  (50 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RuudPROUH50RU350D">PROUH50 T2 RU350 D  (50 gal)</dtyp:displayterm>
@@ -14700,6 +14730,7 @@
          <xsd:enumeration value="RheemXE50T10"/>
          <xsd:enumeration value="RheemXE50T10H22U0"/>
          <xsd:enumeration value="RheemXE50T10HD50U1"/>
+         <xsd:enumeration value="RheemXE50T10U1"/>
          <xsd:enumeration value="Richmond10E50HP4D"/>
          <xsd:enumeration value="Richmond10E50HP4D15"/>
          <xsd:enumeration value="RuudPROUH50RU350D"/>
@@ -14741,6 +14772,7 @@
             <dtyp:displayterm value="RheemPROPH65RH350DCB">PROPH65 T2 RH350 DCB  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10">XE65T10HD50U0  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10HD50U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE65T10U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E65HP4D">10E65-HP4D  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E65HP4D15">10E65-HP4D15  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RuudPROUH65RU350D">PROUH65 T2 RU350 D  (65 gal)</dtyp:displayterm>
@@ -14776,6 +14808,7 @@
          <xsd:enumeration value="RheemXE65T10"/>
          <xsd:enumeration value="RheemXE65T10HD50U1"/>
          <xsd:enumeration value="Richmond10E65HP4D"/>
+         <xsd:enumeration value="RheemXE65T10U1"/>
          <xsd:enumeration value="Richmond10E65HP4D15"/>
          <xsd:enumeration value="RuudPROUH65RU350D"/>
          <xsd:enumeration value="RuudPROUH65RU350D15"/>
@@ -14821,6 +14854,7 @@
             <dtyp:displayterm value="RheemPROPH80RH350D15">PROPH80 T2 RH350 D15  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10">XE80T10HD50U0  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HD50U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E80HP4D">10E80-HP4D  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="Richmond10E80HP4D15">10E80-HP4D15  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RuudPROUH80RU350D">PROUH80 T2 RU350 D  (80 gal)</dtyp:displayterm>
@@ -14871,6 +14905,7 @@
          <xsd:enumeration value="RheemPROPH80RH350D15"/>
          <xsd:enumeration value="RheemXE80T10"/>
          <xsd:enumeration value="RheemXE80T10HD50U1"/>
+         <xsd:enumeration value="RheemXE80T10U1"/>
          <xsd:enumeration value="Richmond10E80HP4D"/>
          <xsd:enumeration value="Richmond10E80HP4D15"/>
          <xsd:enumeration value="RuudPROUH80RU350D"/>
