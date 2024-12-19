@@ -5056,20 +5056,20 @@
             <dtyp:displayterm value="RheemXE65T10HS45U0">XE65T10HS45U0  (65 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10H22U1">XE65T10H22U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10H45U1">XE65T10H45U1  (65 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemXE65T10HM00U0">XE65T10HM00U0  (65 gal, JA13)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemXE65T10HMS00U0">XE65T10HMS00U0  (65 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10HS45U1">XE65T10HS45U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10HD50U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE65T10HM00U0">XE65T10HM00U0  (65 gal, JA13)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE65T10HMS00U0">XE65T10HMS00U0  (65 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE65T10U1">XE65T10HD50U1  (65 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10">XE80T10HD50U0  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H22U0">XE80T10H22U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H45U0">XE80T10H45U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HD22U0">XE80T10HD22U0  (80 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10HM00U0">XE80T10HM00U0  (80 gal, JA13)</dtyp:displayterm>
+            <dtyp:displayterm value="RheemXE80T10HMS00U0">XE80T10HMS00U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HS45U0">XE80T10HS45U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HD50U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H22U1">XE80T10H22U1  (80 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemXE80T10HM00U0">XE80T10HM00U0  (80 gal, JA13)</dtyp:displayterm>
-            <dtyp:displayterm value="RheemXE80T10HMS00U0">XE80T10HMS00U0  (80 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10H45U1">XE80T10H45U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10HS45U1">XE80T10HS45U1  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="RheemXE80T10U1">XE80T10HD50U1  (80 gal)</dtyp:displayterm>
@@ -6963,9 +6963,6 @@
 </dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="AeroTherm2023_50">AeroTherm2023 50 (50 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="AeroTherm2023_65">AeroTherm2023 65 (65 gal)</dtyp:displayterm>
-            <dtyp:displayterm value="AeroTherm2023_80">AeroTherm2023 80 (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithCAHP120">AOSmithCAHP 120 (120 gal)</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithHPTS40">AO Smith HPTS 40</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithHPTS50">AO Smith HPTS 50</dtyp:displayterm>
@@ -6979,6 +6976,9 @@
             <dtyp:displayterm value="AOSmithSHPT50">AO Smith SHPT 50</dtyp:displayterm>
             <dtyp:displayterm value="AOSmithSHPT80">AO Smith SHPT 80</dtyp:displayterm>
             <dtyp:displayterm value="AquaThermAire">AquaThermAire</dtyp:displayterm>
+            <dtyp:displayterm value="BradfordWhiteAeroThermRE2H50">Bradford White AeroTherm RE2H 50 (50 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="BradfordWhiteAeroThermRE2H65">Bradford White AeroTherm RE2H 65 (65 gal)</dtyp:displayterm>
+            <dtyp:displayterm value="BradfordWhiteAeroThermRE2H80">Bradford White AeroTherm RE2H 80 (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="BWC202065">BWC 2020 65</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxA10_SP">Colmac Cx A10-SP</dtyp:displayterm>
             <dtyp:displayterm value="ColmacCxA15_SP">Colmac Cx A15-SP</dtyp:displayterm>
@@ -7048,9 +7048,6 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="AeroTherm2023_50"/>
-         <xsd:enumeration value="AeroTherm2023_65"/>
-         <xsd:enumeration value="AeroTherm2023_80"/>
          <xsd:enumeration value="AOSmithCAHP120"/>
          <xsd:enumeration value="AOSmithHPTS40"/>
          <xsd:enumeration value="AOSmithHPTS50"/>
@@ -7064,6 +7061,9 @@
          <xsd:enumeration value="AOSmithSHPT50"/>
          <xsd:enumeration value="AOSmithSHPT80"/>
          <xsd:enumeration value="AquaThermAire"/>
+         <xsd:enumeration value="BradfordWhiteAeroThermRE2H50"/>
+         <xsd:enumeration value="BradfordWhiteAeroThermRE2H65"/>
+         <xsd:enumeration value="BradfordWhiteAeroThermRE2H80"/>
          <xsd:enumeration value="BWC202065"/>
          <xsd:enumeration value="ColmacCxA10_SP"/>
          <xsd:enumeration value="ColmacCxA15_SP"/>
