@@ -1727,6 +1727,7 @@
             <dtyp:displayterm value="LochinvarAHP250CMP">AHP250-*******-***C**** (MP, 46kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarAHP250MP">AHP250-*******-***N**** (MP, 46kw cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="MITSUBISHI_QAHV_N136TAU_HPB_SP">Mitsubishi QAHV-N136TAU-HPB (40kW cap @ 40F)</dtyp:displayterm>
+            <dtyp:displayterm value="MitsubishiQAHVN136TAUHPB">Mitsubishi QAHV-N136TAU-HPB (40kW cap @ 40F)</dtyp:displayterm>
             <dtyp:displayterm value="NyleC125A">C125A</dtyp:displayterm>
             <dtyp:displayterm value="NyleC125A_C">C125A-C</dtyp:displayterm>
             <dtyp:displayterm value="NyleC125A_CMP">Nyle C125A -C (MP, 26kw cap @ 40F)</dtyp:displayterm>
@@ -1839,6 +1840,7 @@
          <xsd:enumeration value="LochinvarAHP250CMP"/>
          <xsd:enumeration value="LochinvarAHP250MP"/>
          <xsd:enumeration value="MITSUBISHI_QAHV_N136TAU_HPB_SP"/>
+         <xsd:enumeration value="MitsubishiQAHVN136TAUHPB"/>
          <xsd:enumeration value="NyleC125A"/>
          <xsd:enumeration value="NyleC125A_C"/>
          <xsd:enumeration value="NyleC125A_CMP"/>
@@ -5153,6 +5155,7 @@
             <dtyp:displayterm value="Kenmore">Kenmore</dtyp:displayterm>
             <dtyp:displayterm value="LG">LG</dtyp:displayterm>
             <dtyp:displayterm value="Lochinvar">Lochinvar</dtyp:displayterm>
+            <dtyp:displayterm value="Mitsubishi">Mitsubishi</dtyp:displayterm>
             <dtyp:displayterm value="Nyle">Nyle</dtyp:displayterm>
             <dtyp:displayterm value="Reliance">Reliance</dtyp:displayterm>
             <dtyp:displayterm value="Rheem">Rheem</dtyp:displayterm>
@@ -5182,6 +5185,7 @@
          <xsd:enumeration value="Kenmore"/>
          <xsd:enumeration value="LG"/>
          <xsd:enumeration value="Lochinvar"/>
+         <xsd:enumeration value="Mitsubishi"/>
          <xsd:enumeration value="Nyle"/>
          <xsd:enumeration value="Reliance"/>
          <xsd:enumeration value="Rheem"/>
@@ -5459,7 +5463,8 @@
             <dtyp:displayterm value="LochinvarHPPA080KD2xx">HPPA080KD 2**  (80 gal)</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarHPSA050KD2xx">HPSA050KD 2**  (50 gal, JA13)</dtyp:displayterm>
             <dtyp:displayterm value="LochinvarHPSA065KD2xx">HPSA065KD 2**  (66 gal, JA13)</dtyp:displayterm>
-            <dtyp:displayterm value="LochinvarHPSA080KD2xx">HPSA080KD 2**  (80 gal, JA13)</dtyp:displayterm>            
+            <dtyp:displayterm value="LochinvarHPSA080KD2xx">HPSA080KD 2**  (80 gal, JA13)</dtyp:displayterm>
+            <dtyp:displayterm value="MitsubishiQAHVN136TAUHPB">Mitsubishi QAHV-N136TAU-HPB (40kW cap @ 40F)</dtyp:displayterm>            
             <dtyp:displayterm value="NyleC125A">C125A</dtyp:displayterm>
             <dtyp:displayterm value="NyleC125A_C">C125A-C</dtyp:displayterm>
             <dtyp:displayterm value="NyleC185A">C185A</dtyp:displayterm>
@@ -6059,7 +6064,8 @@
          <xsd:enumeration value="LochinvarHPPA080KD2xx"/>
          <xsd:enumeration value="LochinvarHPSA050KD2xx"/>
          <xsd:enumeration value="LochinvarHPSA065KD2xx"/>
-         <xsd:enumeration value="LochinvarHPSA080KD2xx"/>         
+         <xsd:enumeration value="LochinvarHPSA080KD2xx"/>        
+         <xsd:enumeration value="MitsubishiQAHVN136TAUHPB"/>        
          <xsd:enumeration value="NyleC125A"/>
          <xsd:enumeration value="NyleC125A_C"/>
          <xsd:enumeration value="NyleC185A"/>
@@ -7598,6 +7604,7 @@
             <dtyp:displayterm value="Generic5kW">Generic 5kW</dtyp:displayterm>
             <dtyp:displayterm value="LG_APHWC50">LG APHWC 50</dtyp:displayterm>
             <dtyp:displayterm value="LG_APHWC80">LG APHWC 80</dtyp:displayterm>
+            <dtyp:displayterm value="MitsubishiQAHV_N136TAU_HPB">MitsubishiQAHV 136TAU HPB</dtyp:displayterm>
             <dtyp:displayterm value="NyleC125A_CWP_SP">Nyle C125A-CWP-SP</dtyp:displayterm>
             <dtyp:displayterm value="NyleC125A_SP">Nyle C125A-SP</dtyp:displayterm>
             <dtyp:displayterm value="NyleC185A_CWP_SP">Nyle C185A-CWP-SP</dtyp:displayterm>
@@ -7682,6 +7689,7 @@
          <xsd:enumeration value="Generic5kW"/>
          <xsd:enumeration value="LG_APHWC50"/>
          <xsd:enumeration value="LG_APHWC80"/>
+         <xsd:enumeration value="MitsubishiQAHV_N136TAU_HPB"/>
          <xsd:enumeration value="NyleC125A_CWP_SP"/>
          <xsd:enumeration value="NyleC125A_SP"/>
          <xsd:enumeration value="NyleC185A_CWP_SP"/>
@@ -9435,6 +9443,20 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="MitsubishiQAHV_N136TAU_HPBSimulationGroup">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Simulated Model Group MitsubishiQAHV_N136TAU_HPB
+            </dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="MitsubishiQAHVN136TAUHPB">Mitsubishi QAHV-N136TAU-HPB (40kW cap @ 40F)</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="MitsubishiQAHVN136TAUHPB"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="Model">
@@ -12782,6 +12804,20 @@
          <xsd:documentation>  Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResidentialWaterHeaterDemRespCompat">
+      <xsd:annotation>
+         <xsd:documentation>  Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ResidentialWaterHeaterJA13UICompliance">
+      <xsd:annotation>
+         <xsd:documentation>  Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ResidentialWaterHeaterType">
