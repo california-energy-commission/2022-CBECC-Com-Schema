@@ -7782,6 +7782,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                              <xsd:restriction base="hvac:EfficiencyType">
                                                 <xsd:enumeration value="EER"/>
                                                 <xsd:enumeration value="EER2"/>
+                                                <xsd:enumeration value="IEER"/>
                                                 <xsd:enumeration value="SEER"/>
                                                 <xsd:enumeration value="SEER2"/>
                                              </xsd:restriction>
@@ -7800,6 +7801,14 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                        <xsd:complexType>
                                           <xsd:choice>
                                              <xsd:element name="HvacDry08b_EfficiencyEER" type="hvac:EfficiencyEER">
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                                   <xsd:appinfo source="CBECCnrXML">
+                                                      <dtyp:CBECCnrXMLterm>AirSys:ClgEffRpt Or ZnSys:ClgEffRpt Or VRFSys:ClgEffRpt</dtyp:CBECCnrXMLterm>
+                                                   </xsd:appinfo>
+                                                </xsd:annotation>
+                                             </xsd:element>
+                                             <xsd:element name="HvacDry08b_EfficiencyIEER" type="hvac:EfficiencyIEER">
                                                 <xsd:annotation>
                                                    <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                                    <xsd:appinfo source="CBECCnrXML">
@@ -7832,6 +7841,25 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                                          </xsd:annotation>
                                                       </xsd:element>
                                                       <xsd:element name="HvacDry08c_EfficiencySEER" type="hvac:EfficiencySEER">
+                                                         <xsd:annotation>
+                                                            <xsd:documentation source="FieldText"/>
+                                                         </xsd:annotation>
+                                                      </xsd:element>
+                                                   </xsd:sequence>
+                                                </xsd:complexType>
+                                             </xsd:element>
+                                             <xsd:element name="HvacDry08d">
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Efficiency IEER/EER</xsd:documentation>
+                                                </xsd:annotation>
+                                                <xsd:complexType>
+                                                   <xsd:sequence>
+                                                      <xsd:element name="HvacDry08d_EfficiencyEER" type="hvac:EfficiencyEER">
+                                                         <xsd:annotation>
+                                                            <xsd:documentation source="FieldText"/>
+                                                         </xsd:annotation>
+                                                      </xsd:element>
+                                                      <xsd:element name="HvacDry08d_EfficiencyIEER" type="hvac:EfficiencyIEER">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText"/>
                                                          </xsd:annotation>
