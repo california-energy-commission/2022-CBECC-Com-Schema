@@ -4770,7 +4770,7 @@ sum (p:Proj:Bldg:ThrmlZn:HasNoClg) GT 0
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_HersSum" minOccurs="1">
+         <xsd:element name="Section_HersSum" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">E1. HERS VERIFICATION SUMMARY</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>

@@ -2778,7 +2778,8 @@ Not Shared</dtyp:displayterm>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="ChromogenicFen">Chromogenic Glazing</dtyp:displayterm>
-            <dtyp:displayterm value="CurtainWall">Curtain wall</dtyp:displayterm>
+            <dtyp:displayterm value="CurtainWall">Curtain Wall</dtyp:displayterm>
+            <dtyp:displayterm value="CurtainWallStorefront">Curtain Wall / Storefront</dtyp:displayterm>
             <dtyp:displayterm value="DemisingWallFen">Fenestration in Demising Wall</dtyp:displayterm>
             <dtyp:displayterm value="FixedSkylight">Fixed</dtyp:displayterm>
             <dtyp:displayterm value="FixedWindow">Fixed window</dtyp:displayterm>
@@ -2800,6 +2801,7 @@ Not Shared</dtyp:displayterm>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="ChromogenicFen"/>
          <xsd:enumeration value="CurtainWall"/>
+         <xsd:enumeration value="CurtainWallStorefront"/>
          <xsd:enumeration value="DemisingWallFen"/>
          <xsd:enumeration value="FixedSkylight"/>
          <xsd:enumeration value="FixedWindow"/>
