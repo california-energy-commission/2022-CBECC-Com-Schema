@@ -6646,7 +6646,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="ChillerNA">NA - See Chiller</dtyp:displayterm>
             <dtyp:displayterm value="CoolingTowerNA">NA - See Cooling Tower</dtyp:displayterm>
             <dtyp:displayterm value="EfficiencyNA">NA</dtyp:displayterm>
-            <dtyp:displayterm value="ElectricResistanceNA">NA - See Electric Resistance</dtyp:displayterm>
+            <dtyp:displayterm value="ElectricResistanceNA">Electric Resistance</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
