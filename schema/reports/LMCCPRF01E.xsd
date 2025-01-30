@@ -7647,6 +7647,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                                 <xsd:enumeration value="EER"/>
                                                 <xsd:enumeration value="EER2"/>
                                                 <xsd:enumeration value="IEER"/>
+                                                <xsd:enumeration value="NSenCOP"/>
                                                 <xsd:enumeration value="SEER"/>
                                                 <xsd:enumeration value="SEER2"/>
                                              </xsd:restriction>
@@ -7673,6 +7674,14 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                                 </xsd:annotation>
                                              </xsd:element>
                                              <xsd:element name="HvacDry08b_EfficiencyIEER" type="hvac:EfficiencyIEER" >
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                                   <xsd:appinfo source="CBECCnrXML">
+                                                      <dtyp:CBECCnrXMLterm>AirSys:ClgEffRpt Or ZnSys:ClgEffRpt Or VRFSys:ClgEffRpt</dtyp:CBECCnrXMLterm>
+                                                   </xsd:appinfo>
+                                                </xsd:annotation>
+                                             </xsd:element>
+                                             <xsd:element name="HvacDry08b_EfficiencyNSenCOP" type="hvac:EfficiencyNSenCOP" >
                                                 <xsd:annotation>
                                                    <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
                                                    <xsd:appinfo source="CBECCnrXML">
